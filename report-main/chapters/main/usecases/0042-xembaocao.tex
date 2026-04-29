@@ -1,0 +1,53 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem báo cáo \\
+\hline
+\textbf{ID} & UC-0042 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực (xem báo cáo cá nhân) hoặc Quản trị viên (xem tất cả) \\
+\hline
+\textbf{Mô tả} & Người dùng xem báo cáo đã gửi và trạng thái; quản trị viên xem tất cả báo cáo \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Danh sách báo cáo hoặc chi tiết báo cáo được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang báo cáo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang Báo cáo của tôi.
+    \item Hệ thống hiển thị danh sách báo cáo đã gửi phân trang với: tiêu đề, danh mục, trạng thái, ngày tạo.
+    \item Người dùng chọn một báo cáo.
+    \item Hệ thống hiển thị chi tiết đầy đủ bao gồm phản hồi của quản trị viên (nếu có).
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Quản trị viên xem tất cả báo cáo:}
+    \begin{enumerate}
+        \item[1A.] Quản trị viên mở trang quản lý báo cáo.
+        \item[2A.] Hệ thống hiển thị tất cả báo cáo, có thể lọc theo: trạng thái (pending/reviewing/resolved/rejected), danh mục, người gửi.
+        \item[3A.] Phân trang với cursor/limit.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Báo cáo không tồn tại:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[3Err2.] Hệ thống trả về lỗi 403 khi người dùng cố xem báo cáo của người khác mà không phải Admin.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0042 Xem báo cáo}
+}

@@ -1,0 +1,47 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem chi tiết bài thi \\
+\hline
+\textbf{ID} & UC-0011 \\
+\hline
+\textbf{Tác nhân} & Người dùng (công khai) \\
+\hline
+\textbf{Mô tả} & Người dùng xem thông tin chi tiết của một bài thi \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bài thi đã được xuất bản \\
+\hline
+\textbf{Điều kiện sau} & Thông tin chi tiết bài thi được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn một bài thi từ danh sách \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng chọn một bài thi từ danh sách.
+    \item Hệ thống truy vấn thông tin chi tiết bài thi.
+    \item Hệ thống hiển thị: cấu trúc các phần, số lượng câu hỏi mỗi phần, thẻ phân loại, tổng thời gian, tổng số lượt làm bài.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài thi không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404 khi bài thi không tồn tại.
+    \end{enumerate}
+    \item \textbf{Bài thi chưa xuất bản:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về lỗi 403 khi bài thi chưa được xuất bản (trừ Mod/Admin).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0011 Xem chi tiết bài thi}
+}

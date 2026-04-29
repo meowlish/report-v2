@@ -1,0 +1,52 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Duyệt bộ thẻ ghi nhớ \\
+\hline
+\textbf{ID} & UC-0035 \\
+\hline
+\textbf{Tác nhân} & Người dùng (công khai cho bộ thẻ công khai, đã xác thực cho bộ thẻ cá nhân) \\
+\hline
+\textbf{Mô tả} & Người dùng duyệt danh sách bộ thẻ ghi nhớ có sẵn \\
+\hline
+\textbf{Điều kiện tiên quyết} & Không yêu cầu đăng nhập cho bộ thẻ công khai \\
+\hline
+\textbf{Điều kiện sau} & Danh sách bộ thẻ được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang thẻ ghi nhớ \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang thẻ ghi nhớ.
+    \item Hệ thống hiển thị danh sách bộ thẻ công khai với: tên, mô tả, tác giả, thẻ phân loại, tổng số thẻ.
+    \item Người dùng có thể lọc theo thẻ phân loại và tác giả.
+    \item Hệ thống hỗ trợ phân trang (page/limit).
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem bộ thẻ cá nhân:}
+    \begin{enumerate}
+        \item[1A.] Người dùng đã xác thực lọc theo author\_id = bản thân, bao gồm cả bộ thẻ riêng tư.
+    \end{enumerate}
+    \item \textbf{Xem chi tiết bộ thẻ:}
+    \begin{enumerate}
+        \item[4A.] Người dùng chọn một bộ thẻ.
+        \item[5A.] Hệ thống hiển thị thông tin bộ thẻ cùng tất cả thẻ bên trong: từ vựng, định nghĩa, hình ảnh, từ loại, phát âm, ví dụ.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không tìm thấy bộ thẻ:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về danh sách rỗng.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0035 Duyệt bộ thẻ ghi nhớ}
+}

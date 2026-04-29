@@ -1,0 +1,56 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tạo báo cáo \\
+\hline
+\textbf{ID} & UC-0041 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng gửi báo cáo về vấn đề gặp phải (lỗi nội dung, bug, hành vi không phù hợp) \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Báo cáo được tạo với trạng thái chờ xử lý (pending), ID người gửi và thời gian tạo được ghi nhận \\
+\hline
+\textbf{Kích hoạt} & Người dùng gặp vấn đề và chọn gửi báo cáo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng gặp vấn đề cần báo cáo.
+    \item Người dùng nhấn nút Báo cáo.
+    \item Người dùng chọn danh mục: lỗi (bug), nội dung (content), hành vi (behavior).
+    \item Người dùng nhập tiêu đề và mô tả chi tiết.
+    \item Người dùng chỉ định đối tượng bị báo cáo (tùy chọn): ID bài thi, bài viết, hoặc người dùng.
+    \item Người dùng nhấn Gửi.
+    \item Hệ thống tạo báo cáo với trạng thái "pending", ghi nhận ID người gửi và thời gian tạo.
+    \item Hệ thống xác nhận gửi báo cáo thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Báo cáo từ trang nội dung:}
+    \begin{enumerate}
+        \item[2A.] Người dùng nhấn nút Báo cáo trên trang bài thi, bài viết hoặc câu hỏi cụ thể.
+        \item[3A.] Hệ thống tự động điền targetId và danh mục phù hợp.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+    \item \textbf{Thiếu trường bắt buộc:}
+    \begin{enumerate}
+        \item[7Err.] Hệ thống trả về lỗi khi thiếu tiêu đề, mô tả hoặc danh mục.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0041 Tạo báo cáo}
+}

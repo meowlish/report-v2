@@ -1,0 +1,424 @@
+Pages,Category,Test Case ID,Test Case Description,Precondition,Test Steps,Test data,Test Case Expected Result,Test Case Result,Status
+Hệ thống,Kiểm tra sức khỏe,APP-001,Kiểm tra sức khỏe ứng dụng trả về thông tin API,,"1. Mở trang chủ ứng dụng
+2. Quan sát ứng dụng tải không có lỗi",,Ứng dụng tải thành công — hiển thị tên ứng dụng và phiên bản ở footer hoặc trang giới thiệu,,
+Hệ thống,,APP-002,Endpoint kiểm tra sức khỏe trả về trạng thái,,"1. Mở ứng dụng
+2. Xác minh tất cả các tính năng có thể truy cập và đang phản hồi",,Ứng dụng hoạt động đầy đủ — tất cả các trang tải đúng,,
+Xác thực,Đăng ký,AUTH-001,Đăng ký tài khoản học sinh mới,,"1. Mở trang đăng ký
+2. Chọn vai trò ""Student""
+3. Điền tên, email và mật khẩu
+4. Nhấn ""Register""
+5. Xác minh chuyển hướng đến bảng điều khiển học sinh","Role: Student
+Email: ""student@example.com""
+Password: ""Password123!""",Đăng ký thành công — chuyển hướng đến bảng điều khiển học sinh với hồ sơ và đã đăng ký khóa học hiện tại,,
+Xác thực,,AUTH-002,Đăng ký tài khoản phụ huynh mới,,"1. Mở trang đăng ký
+2. Chọn vai trò ""Parent""
+3. Điền tên, email và mật khẩu
+4. Nhấn ""Register""","Role: Parent
+Email: ""parent@example.com""
+Password: ""Password123!""",Đăng ký thành công — chuyển hướng đến bảng điều khiển phụ huynh,,
+Xác thực,,AUTH-003,Đăng ký tài khoản giáo viên mới,,"1. Mở trang đăng ký
+2. Chọn vai trò ""Teacher""
+3. Điền tên, email và mật khẩu
+4. Nhấn ""Register""","Role: Teacher
+Email: ""teacher@example.com""
+Password: ""Password123!""",Đăng ký thành công — chuyển hướng đến bảng điều khiển giáo viên,,
+Xác thực,,AUTH-004,Đăng ký với email trùng lặp bị từ chối,Email đã được đăng ký trong hệ thống,"1. Mở trang đăng ký
+2. Điền email đã tồn tại
+3. Nhấn ""Register""","Email: ""existing@example.com""","Hiển thị lỗi — ""Email already in use""",,
+Xác thực,,AUTH-005,Đăng ký với số điện thoại trùng lặp bị từ chối,Số điện thoại đã được đăng ký,"1. Mở trang đăng ký
+2. Điền số điện thoại đã tồn tại
+3. Nhấn ""Register""","Phone: ""0901234567""","Hiển thị lỗi — ""Phone number already in use""",,
+Xác thực,Đăng nhập,AUTH-006,Đăng nhập với thông tin đăng nhập hợp lệ,Tài khoản đã được đăng ký,"1. Mở trang đăng nhập
+2. Nhập email và mật khẩu
+3. Nhấn ""Login""","Email: ""test@example.com""
+Password: ""Password123!""",Đăng nhập thành công — chuyển hướng đến bảng điều khiển với thông tin người dùng được hiển thị,,
+Xác thực,,AUTH-007,Đăng nhập với email không tồn tại bị từ chối,,"1. Mở trang đăng nhập
+2. Nhập email chưa đăng ký trong hệ thống
+3. Nhấn ""Login""","Email: ""unknown@example.com""","Hiển thị lỗi — ""Invalid credentials""",,
+Xác thực,,AUTH-008,Đăng nhập với mật khẩu sai bị từ chối,Tài khoản đã tồn tại,"1. Mở trang đăng nhập
+2. Nhập email đúng nhưng mật khẩu sai
+3. Nhấn ""Login""","Email: ""test@example.com""
+Password: ""WrongPass!""","Hiển thị lỗi — ""Invalid credentials""",,
+Xác thực,,AUTH-009,Đăng nhập với tài khoản bị khóa bị từ chối,Tài khoản đã bị quản trị viên khóa,"1. Mở trang đăng nhập
+2. Nhập thông tin đăng nhập của tài khoản bị khóa
+3. Nhấn ""Login""",,"""Hiển thị lỗi — ""Account locked""; không thể truy cập bảng điều khiển",,
+Xác thực,,AUTH-010,Phiên đăng nhập tồn tại sau khi làm mới trang,Đã đăng nhập,"1. Đăng nhập thành công
+2. Làm mới trang trình duyệt
+3. Xác minh vẫn đang đăng nhập",,Người dùng vẫn đang đăng nhập — bảng điều khiển hiển thị đúng mà không cần đăng nhập lại,,
+Xác thực,,AUTH-011,Phiên không hợp lệ chuyển hướng đến trang đăng nhập,,"1. Mở trình duyệt không có phiên hoạt động
+2. Điều hướng trực tiếp đến URL bảng điều khiển",,Chuyển hướng đến trang đăng nhập,,
+Xác thực,Hồ sơ,AUTH-012,Xem hồ sơ của chính học sinh,Đã đăng nhập với tư cách học sinh,"1. Nhấn vào biểu tượng/tên hồ sơ trên thanh điều hướng
+2. Chọn ""My Profile""",,"""Trang hồ sơ hiển thị: tên, email, thông tin học sinh, ID hồ sơ",,
+Xác thực,,AUTH-013,Xem hồ sơ với phiên không hợp lệ,,"1. Xóa cookie/phiên trình duyệt
+2. Điều hướng đến trang hồ sơ",,Chuyển hướng đến trang đăng nhập — hiển thị thông báo lỗi,,
+Học sinh,Danh sách học sinh,STU-001,Xem danh sách tất cả học sinh,Đã đăng nhập với tư cách giáo viên hoặc quản trị viên,"1. Mở trang ""Students"" từ menu điều hướng
+2. Xem danh sách học sinh",,"""Danh sách học sinh hiển thị với: tên, email, lớp, trình độ CEFR",,
+Học sinh,,STU-002,Xem chi tiết học sinh,Đã đăng nhập; học sinh tồn tại,"1. Mở trang ""Students""
+2. Nhấn vào tên học sinh để xem chi tiết",,"""Trang chi tiết học sinh hiển thị tất cả các trường: tên, email, lớp, trình độ CEFR, thông tin đăng ký",,
+Học sinh,,STU-003,Xem học sinh không tồn tại hiển thị lỗi,Đã đăng nhập,"1. Điều hướng đến trang chi tiết học sinh với ID không hợp lệ (ví dụ: qua URL)",,"""Trang lỗi hiển thị — ""Student not found""",,
+Học sinh,,STU-004,Xem học sinh liên kết với phụ huynh,Đã đăng nhập với tư cách phụ huynh có con đã được liên kết,"1. Mở trang ""My Children"" từ bảng điều khiển phụ huynh
+2. Xem danh sách học sinh đã liên kết",,Danh sách hiển thị tất cả học sinh được liên kết với tài khoản phụ huynh,,
+Học sinh,,STU-005,Xem học sinh cho phụ huynh không tồn tại,Đã đăng nhập với tư cách quản trị viên,"1. Tìm kiếm phụ huynh không tồn tại
+2. Cố gắng xem con của họ",,"""Hiển thị lỗi — ""Parent not found""",,
+Học sinh,Đăng ký khóa học,STU-006,Xem trạng thái đăng ký khóa học của học sinh,Đã đăng nhập; học sinh đã đăng ký,"1. Mở trang chi tiết học sinh
+2. Xem phần ""Enrollment""",,"""Thông tin đăng ký được hiển thị: trạng thái, tên khóa học, ngày đăng ký",,
+Học sinh,,STU-007,Xem đăng ký cho học sinh chưa đăng ký,Đã đăng nhập; học sinh chưa đăng ký khóa học,"1. Mở trang chi tiết học sinh chưa đăng ký
+2. Xem phần ""Enrollment""",,"""Phần đăng ký hiển thị ""Not enrolled"" hoặc trạng thái trống",,
+Học sinh,Video tiến độ,STU-008,Xem video tiến độ của học sinh,Đã đăng nhập; học sinh có video trước và sau,"1. Mở trang chi tiết học sinh
+2. Nhấn vào tab ""Progress Videos""
+3. Xem cả hai video",ID khóa học đã đăng ký,Cả video trước và sau đều được hiển thị và có thể phát,,
+Học sinh,,STU-009,Xem video tiến độ khi chưa có video nào được tải lên,Đã đăng nhập; học sinh không có video,"1. Mở trang chi tiết học sinh
+2. Nhấn vào tab ""Progress Videos""",,"""Hiển thị trạng thái trống — ""No progress videos uploaded yet""",,
+Giáo viên,Danh sách giáo viên,TCH-001,Xem danh sách tất cả giáo viên,Đã đăng nhập,"1. Mở trang ""Teachers"" từ menu điều hướng
+2. Xem danh sách giáo viên",,Danh sách giáo viên hiển thị với tên và loại giáo viên,,
+Giáo viên,,TCH-002,Lọc giáo viên theo loại,Đã đăng nhập,"1. Mở trang ""Teachers""
+2. Chọn bộ lọc ""Video Call"" từ dropdown loại
+3. Xem kết quả đã lọc",Bộ lọc: Video Call,Chỉ hiển thị giáo viên dạy qua video call trong danh sách,,
+Giáo viên,,TCH-003,Chỉ xem giáo viên video call,Đã đăng nhập,"1. Mở trang ""Teachers""
+2. Nhấn tab hoặc phần ""Video Call Teachers""",,Chỉ hiển thị giáo viên có sẵn cho video call,,
+Giáo viên,,TCH-004,Xem chi tiết giáo viên,Đã đăng nhập; giáo viên tồn tại,"1. Mở trang ""Teachers""
+2. Nhấn vào tên giáo viên",,"""Trang chi tiết giáo viên hiển thị tất cả thông tin: tên, loại, lịch trống",,
+Giáo viên,,TCH-005,Xem giáo viên không tồn tại hiển thị lỗi,Đã đăng nhập,1. Điều hướng đến trang chi tiết giáo viên với ID không hợp lệ,,"""Trang lỗi hiển thị — ""Teacher not found""",,
+Giáo viên,Lịch trống,TCH-006,Xem lịch trống giáo viên vào thứ Bảy,Đã đăng nhập; đang xem chi tiết giáo viên,"1. Mở trang chi tiết giáo viên
+2. Nhấn vào tab ""Availability""
+3. Chọn ngày thứ Bảy trên lịch",Ngày: Thứ Bảy,Hiển thị các khung giờ trống cho thứ Bảy đã chọn,,
+Giáo viên,,TCH-007,Xem lịch trống giáo viên vào ngày thường hiển thị trống,Đã đăng nhập; đang xem chi tiết giáo viên,"1. Mở trang chi tiết giáo viên
+2. Nhấn vào tab ""Availability""
+3. Chọn ngày thường (Thứ Hai đến Thứ Sáu)",Ngày: Thứ Hai,"""Không có khung giờ trống — thông báo ""Video calls available on weekends only""",,
+Giáo viên,,TCH-008,Các khung giờ đã đặt hiển thị là không khả dụng,Đã đăng nhập; giáo viên có lịch đặt vào thứ Bảy lúc 09:00,"1. Mở trang chi tiết giáo viên
+2. Nhấn vào tab ""Availability""
+3. Chọn thứ Bảy có lịch đặt hiện tại",Ngày: Thứ Bảy có lịch đặt lúc 09:00,Khung giờ 09:00 hiển thị là không khả dụng/đã đặt; các khung giờ khác vẫn còn trống,,
+Khóa học,Danh sách khóa học,CRS-001,Xem danh sách tất cả khóa học,Đã đăng nhập,"1. Mở trang ""Courses"" từ menu điều hướng
+2. Xem danh sách khóa học",,Danh sách khóa học hiển thị với tên và chi tiết,,
+Khóa học,,CRS-002,Xem khóa học hiện tại đang thực hiện,Đã đăng nhập; đã đăng ký khóa học đang thực hiện,"1. Mở bảng điều khiển hoặc trang ""Courses""
+2. Xem khóa học hiện tại được làm nổi bật",,Khóa học hiện tại được hiển thị nổi bật với trạng thái đang thực hiện,,
+Khóa học,,CRS-003,Khóa học hiện tại dự phòng về khóa gần nhất,Đã đăng nhập; không có khóa học đang thực hiện,"1. Mở bảng điều khiển
+2. Xem phần khóa học hiện tại",,Khóa học được bắt đầu gần đây nhất được hiển thị là khóa học hiện tại,,
+Khóa học,,CRS-004,Không có khóa học hiển thị trạng thái trống,Đã đăng nhập; không có khóa học nào tồn tại,"1. Mở trang ""Courses""",,"""Hiển thị trạng thái trống — ""No courses available""",,
+Khóa học,,CRS-005,Xem chi tiết khóa học,Đã đăng nhập; khóa học tồn tại,"1. Mở trang ""Courses""
+2. Nhấn vào tên khóa học",,"""Trang chi tiết khóa học hiển thị: tên, mô tả, mô-đun, thời lượng",,
+Khóa học,,CRS-006,Xem khóa học không tồn tại hiển thị lỗi,Đã đăng nhập,1. Điều hướng đến trang chi tiết khóa học với ID không hợp lệ,,"""Trang lỗi hiển thị — ""Course not found""",,
+Khóa học,Mô-đun,CRS-007,Xem các mô-đun của khóa học,Đã đăng nhập; khóa học có mô-đun tồn tại,"1. Mở trang chi tiết khóa học
+2. Xem danh sách/phần mô-đun",,Danh sách mô-đun được hiển thị với chủ đề và nội dung cho mỗi mô-đun,,
+Khóa học,,CRS-008,Xem chi tiết một mô-đun,Đã đăng nhập; mô-đun tồn tại,"1. Mở trang chi tiết khóa học
+2. Nhấn vào mô-đun cụ thể",,"""Trang chi tiết mô-đun hiển thị: tiêu đề, chủ đề, nội dung, hoạt động",,
+Khóa học,,CRS-009,Xem mô-đun không tồn tại hiển thị lỗi,Đã đăng nhập,1. Điều hướng đến trang chi tiết mô-đun với ID không hợp lệ,,"""Trang lỗi hiển thị — ""Module not found""",,
+Đặt lịch,Tạo đặt lịch,BKG-001,Đặt lịch học video call thành công,Đã đăng nhập với tư cách học sinh; giáo viên có lịch trống vào ngày/khung giờ đã chọn,"1. Mở trang ""Book a Lesson""
+2. Chọn giáo viên từ danh sách
+3. Chọn ngày có sẵn (Thứ Bảy/Chủ nhật)
+4. Chọn khung giờ có sẵn
+5. Nhấn ""Book""","Teacher: Ms. Smith
+Date: Saturday
+Slot: 09:00","""Xác nhận đặt lịch — trang xác nhận hiển thị chi tiết đặt lịch với trạng thái ""Confirmed""",,
+Đặt lịch,,BKG-002,Đặt lịch với học sinh không tồn tại hiển thị lỗi,Đã đăng nhập; hồ sơ học sinh bị thiếu,"1. Cố gắng đặt lịch học
+2. Hệ thống không thể tìm thấy hồ sơ học sinh",,"""Hiển thị lỗi — ""Student profile not found""",,
+Đặt lịch,,BKG-003,Đặt lịch với giáo viên không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách học sinh,1. Điều hướng đến trang đặt lịch với ID giáo viên không hợp lệ,,"""Hiển thị lỗi — ""Teacher not found""",,
+Đặt lịch,,BKG-004,Đặt lịch video call cho giáo viên dạy trực tiếp bị từ chối,Đã đăng nhập với tư cách học sinh; giáo viên chỉ dạy trực tiếp,"1. Mở trang đặt lịch của giáo viên
+2. Cố gắng đặt khung giờ video call",,"""Hiển thị lỗi — ""Teacher not available for video calls""",,
+Đặt lịch,,BKG-005,Đặt khung giờ đã có người đặt bị từ chối,Đã đăng nhập; khung giờ đã được học sinh khác đặt,"1. Mở trang đặt lịch của giáo viên
+2. Chọn ngày và khung giờ đã được đặt
+3. Nhấn ""Book""",Slot: 09:00 (đã được đặt),"""Hiển thị lỗi — ""This slot is no longer available""",,
+Đặt lịch,Xem đặt lịch,BKG-006,Xem đặt lịch của tôi với tư cách học sinh,Đã đăng nhập với tư cách học sinh có đặt lịch,"1. Mở trang ""My Bookings"" từ bảng điều khiển
+2. Xem danh sách đặt lịch",,"""Danh sách đặt lịch hiển thị: tên giáo viên, ngày, giờ, trạng thái cho mỗi lịch đặt",,
+Đặt lịch,,BKG-007,Xem đặt lịch với tư cách giáo viên,Đã đăng nhập với tư cách giáo viên có đặt lịch,"1. Mở trang ""My Schedule"" từ bảng điều khiển giáo viên
+2. Xem danh sách đặt lịch",,"""Danh sách đặt lịch hiển thị: tên học sinh, ngày, giờ, trạng thái cho mỗi lịch",,
+Đặt lịch,,BKG-008,Xem chi tiết đặt lịch,Đã đăng nhập; đặt lịch tồn tại,"1. Mở danh sách đặt lịch
+2. Nhấn vào đặt lịch cụ thể",,"""Chi tiết đặt lịch hiển thị: thông tin học sinh, thông tin giáo viên, mô-đun, ngày, giờ, trạng thái",,
+Đặt lịch,,BKG-009,Xem đặt lịch không tồn tại hiển thị lỗi,Đã đăng nhập,1. Điều hướng đến trang chi tiết đặt lịch với ID không hợp lệ,,"""Hiển thị lỗi — ""Booking not found""",,
+Đặt lịch,Quản lý đặt lịch,BKG-010,Hoàn thành đặt lịch,Đã đăng nhập với tư cách giáo viên; đặt lịch đã được xác nhận,"1. Mở trang chi tiết đặt lịch
+2. Nhấn ""Complete Lesson""
+3. Xác nhận hoàn thành",,"""Trạng thái đặt lịch thay đổi thành ""Completed""; tạo lịch sử học tập cho học sinh",,
+Đặt lịch,,BKG-011,Hoàn thành đặt lịch không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách giáo viên,1. Cố gắng hoàn thành đặt lịch với ID không hợp lệ,,"""Hiển thị lỗi — ""Booking not found""",,
+Đặt lịch,,BKG-012,Hủy đặt lịch,Đã đăng nhập; đặt lịch đã được xác nhận,"1. Mở trang chi tiết đặt lịch
+2. Nhấn ""Cancel Booking""
+3. Xác nhận hủy",,"""Trạng thái đặt lịch thay đổi thành ""Cancelled""; khung giờ trở nên khả dụng lại",,
+Đặt lịch,,BKG-013,Hủy đặt lịch không tồn tại hiển thị lỗi,Đã đăng nhập,1. Cố gắng hủy đặt lịch với ID không hợp lệ,,"""Hiển thị lỗi — ""Booking not found""",,
+Phụ huynh,Hồ sơ phụ huynh,PAR-001,Xem hồ sơ phụ huynh,Đã đăng nhập với tư cách phụ huynh,"1. Nhấn vào biểu tượng hồ sơ trên thanh điều hướng
+2. Chọn ""My Profile""",,"""Trang hồ sơ phụ huynh hiển thị: tên, email, số điện thoại",,
+Phụ huynh,,PAR-002,Xem phụ huynh không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến hồ sơ phụ huynh với ID không hợp lệ,,"""Hiển thị lỗi — ""Parent not found""",,
+Phụ huynh,Con cái,PAR-003,Xem con cái đã liên kết,Đã đăng nhập với tư cách phụ huynh có con đã liên kết,"1. Mở trang ""My Children"" từ bảng điều khiển phụ huynh
+2. Xem danh sách con cái",,Danh sách học sinh đã liên kết được hiển thị với thông tin chi tiết,,
+Phụ huynh,,PAR-004,Xem lịch sử học tập của con,Đã đăng nhập với tư cách phụ huynh; con đã được liên kết,"1. Mở trang ""My Children""
+2. Nhấn vào tên của con
+3. Chọn tab ""Learning History""",,Lịch sử học tập được hiển thị với hồ sơ bài học và tiến độ,,
+Phụ huynh,,PAR-005,Xem lịch sử của con chưa liên kết bị từ chối,Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết,1. Điều hướng đến lịch sử học tập của học sinh chưa được liên kết với phụ huynh này,,"""Hiển thị lỗi — ""Child not linked to your account""",,
+Phụ huynh,,PAR-006,Xem đăng ký khóa học của con,Đã đăng nhập với tư cách phụ huynh; con đã được liên kết,"1. Mở trang chi tiết của con
+2. Xem phần ""Enrollment""",,"""Thông tin đăng ký được hiển thị: khóa học, trạng thái, ngày tháng",,
+Phụ huynh,,PAR-007,Xem đăng ký của con chưa liên kết bị từ chối,Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết,1. Điều hướng đến trang đăng ký của con chưa liên kết,,"""Hiển thị lỗi — ""Child not linked to your account""",,
+Phụ huynh,Video tiến độ,PAR-008,Xem video tiến độ của con,Đã đăng nhập với tư cách phụ huynh; con đã liên kết và có video,"1. Mở trang chi tiết của con
+2. Nhấn vào tab ""Progress Videos""",ID khóa học,Hiển thị video tiến độ trước và sau cho con,,
+Phụ huynh,,PAR-009,Xem video của con chưa liên kết bị từ chối,Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết,1. Điều hướng đến video tiến độ của con chưa liên kết,,"""Hiển thị lỗi — ""Child not linked to your account""",,
+Phụ huynh,Thanh toán,PAR-010,Xem lịch sử thanh toán,Đã đăng nhập với tư cách phụ huynh,"1. Mở trang ""Payment History"" từ bảng điều khiển phụ huynh
+2. Xem danh sách thanh toán",,"""Hồ sơ thanh toán được hiển thị với: số tiền, tên học sinh, tên khóa học, ngày",,
+Thông báo,Xem thông báo,NTF-001,Xem danh sách thông báo,Đã đăng nhập; có thông báo,"1. Nhấn vào biểu tượng chuông thông báo trên thanh điều hướng
+2. Xem dropdown hoặc trang thông báo",,"""Thông báo được liệt kê với: biểu tượng loại, tiêu đề, tin nhắn, thời gian, trạng thái đã đọc/chưa đọc",,
+Thông báo,,NTF-002,Danh sách thông báo trống,Đã đăng nhập; không có thông báo,1. Nhấn vào biểu tượng chuông thông báo,,"""Hiển thị trạng thái trống — ""No notifications""",,
+Thông báo,,NTF-003,Thông báo không có dữ liệu hiển thị đúng,Đã đăng nhập; có thông báo không có dữ liệu bổ sung,"1. Nhấn vào biểu tượng chuông thông báo
+2. Xem thông báo không có dữ liệu bổ sung",,Thông báo hiển thị đúng không có lỗi — tiêu đề và tin nhắn được hiển thị,,
+Thông báo,,NTF-004,Xem số lượng thông báo chưa đọc,Đã đăng nhập; có thông báo chưa đọc,1. Nhìn vào biểu tượng chuông thông báo trên thanh điều hướng,,Badge trên biểu tượng chuông hiển thị số lượng thông báo chưa đọc chính xác,,
+Thông báo,,NTF-005,Số lượng chưa đọc hiển thị bằng không khi tất cả đã đọc,Đã đăng nhập; tất cả thông báo đã được đọc,"1. Đánh dấu tất cả thông báo là đã đọc
+2. Nhìn vào biểu tượng chuông thông báo",,Không có badge trên biểu tượng chuông — hoặc badge hiển thị 0,,
+Thông báo,Đánh dấu đã đọc,NTF-006,Đánh dấu thông báo đơn là đã đọc,Đã đăng nhập; có thông báo chưa đọc,"1. Mở danh sách thông báo
+2. Nhấn vào thông báo chưa đọc",,Thông báo được đánh dấu là đã đọc — kiểu hiển thị thay đổi sang trạng thái đã đọc,,
+Thông báo,,NTF-007,Đánh dấu thông báo không tồn tại là đã đọc,Đã đăng nhập,1. Cố gắng tương tác với thông báo đã bị xóa,,"""Xử lý lỗi mượt mà — ""Notification not found""",,
+Thông báo,,NTF-008,Đánh dấu tất cả thông báo là đã đọc,Đã đăng nhập; có thông báo chưa đọc,"1. Mở danh sách thông báo
+2. Nhấn nút ""Mark all as read""",,Tất cả thông báo chuyển sang trạng thái đã đọc — số lượng chưa đọc thành 0,,
+Kết nối,Tạo kết nối,CON-001,Liên kết học sinh với giáo viên qua email,Đã đăng nhập với tư cách học sinh hoặc phụ huynh,"1. Mở trang ""Connections"" hoặc ""Link Teacher""
+2. Nhập địa chỉ email của giáo viên
+3. Chọn loại liên kết ""Teacher""
+4. Nhấn ""Send Request""","Email: ""teacher@example.com""
+Type: Teacher",Kết nối được tạo — giáo viên xuất hiện trong danh sách kết nối đã liên kết; giáo viên nhận được thông báo,,
+Kết nối,,CON-002,Liên kết học sinh với phụ huynh qua email,Đã đăng nhập với tư cách học sinh,"1. Mở trang ""Connections""
+2. Nhập địa chỉ email của phụ huynh
+3. Chọn loại liên kết ""Parent""
+4. Nhấn ""Send Request""","Email: ""parent@example.com""
+Type: Parent",Kết nối được tạo — phụ huynh xuất hiện trong danh sách kết nối đã liên kết,,
+Kết nối,,CON-003,Liên kết với email không tồn tại hiển thị lỗi,Đã đăng nhập,"1. Mở trang ""Connections""
+2. Nhập email chưa được đăng ký trong hệ thống
+3. Nhấn ""Send Request""","Email: ""nobody@example.com""","""Hiển thị lỗi — ""Email not found in system""",,
+Kết nối,,CON-004,Liên kết với vai trò sai hiển thị lỗi,Đã đăng nhập,"1. Mở trang ""Connections""
+2. Nhập email của học sinh
+3. Chọn loại liên kết ""Teacher""
+4. Nhấn ""Send Request""","Email: ""student@example.com""
+Type: Teacher","""Hiển thị lỗi — ""User is not a teacher""",,
+Kết nối,,CON-005,Kết nối trùng lặp bị từ chối,Đã đăng nhập; kết nối đã tồn tại,"1. Mở trang ""Connections""
+2. Nhập email của giáo viên đã được liên kết
+3. Nhấn ""Send Request""","Email: ""linked-teacher@example.com""","""Hiển thị lỗi — ""Connection already exists""",,
+Kết nối,,CON-006,Liên kết với học sinh không tồn tại hiển thị lỗi,Hồ sơ học sinh không tồn tại,"1. Cố gắng tạo kết nối
+2. Hệ thống không thể tìm thấy hồ sơ học sinh",,"""Hiển thị lỗi — ""Student not found""",,
+Kết nối,Xóa kết nối,CON-007,Xóa kết nối,Đã đăng nhập; kết nối tồn tại,"1. Mở trang ""Connections""
+2. Tìm kết nối cần xóa
+3. Nhấn nút ""Remove""
+4. Xác nhận xóa",,Kết nối đã bị xóa — người dùng không còn xuất hiện trong danh sách kết nối,,
+Kết nối,,CON-008,Xóa kết nối không tồn tại hiển thị lỗi,Đã đăng nhập,1. Cố gắng xóa kết nối không tồn tại,,"""Hiển thị lỗi — ""Connection not found""",,
+Chat,Cuộc trò chuyện,CHT-001,Mở cuộc trò chuyện hỗ trợ hiện có,Đã đăng nhập; có cuộc trò chuyện đang mở,"1. Nhấn ""Support Chat"" hoặc biểu tượng chat
+2. Xem cuộc trò chuyện hiện có",,Cuộc trò chuyện hiện có mở ra với các tin nhắn trước đó được hiển thị,,
+Chat,,CHT-002,Bắt đầu cuộc trò chuyện hỗ trợ mới,Đã đăng nhập; không có cuộc trò chuyện đang mở,"1. Nhấn ""Support Chat"" hoặc biểu tượng chat
+2. Cuộc trò chuyện mới được tạo tự động",,Cuộc trò chuyện mới trống được mở — sẵn sàng nhập tin nhắn,,
+Chat,Tin nhắn,CHT-003,Xem tin nhắn cuộc trò chuyện,Đã đăng nhập; đang trong cuộc trò chuyện của mình có tin nhắn,"1. Mở chat hỗ trợ
+2. Cuộn qua lịch sử tin nhắn",,Tất cả tin nhắn được hiển thị theo thứ tự thời gian với thông tin người gửi,,
+Chat,,CHT-004,Xem cuộc trò chuyện không tồn tại hiển thị lỗi,Đã đăng nhập,1. Điều hướng đến cuộc trò chuyện không tồn tại,,"""Hiển thị lỗi — ""Conversation not found""",,
+Chat,,CHT-005,Truy cập cuộc trò chuyện của người dùng khác bị chặn,Đã đăng nhập; cuộc trò chuyện thuộc về người dùng khác,1. Cố gắng điều hướng đến URL cuộc trò chuyện của người dùng khác,,"""Hiển thị lỗi — ""Access denied""",,
+Chat,,CHT-006,Gửi tin nhắn trong chat hỗ trợ,Đã đăng nhập; cuộc trò chuyện đang mở,"1. Mở chat hỗ trợ
+2. Nhập tin nhắn trong ô nhập liệu
+3. Nhấn Enter hoặc nhấn ""Send""","Message: ""Hello, I need help""",Tin nhắn xuất hiện trong cuộc trò chuyện — thời gian được cập nhật,,
+Chat,,CHT-007,Gửi tin nhắn đến cuộc trò chuyện không tồn tại,Đã đăng nhập,1. Cố gắng gửi tin nhắn đến cuộc trò chuyện đã bị xóa,,"""Hiển thị lỗi — ""Conversation not found""",,
+Chat,,CHT-008,Gửi tin nhắn đến cuộc trò chuyện của người dùng khác bị chặn,Đã đăng nhập,1. Cố gắng gửi tin nhắn qua cuộc trò chuyện của người dùng khác,,"""Hiển thị lỗi — ""Access denied""",,
+Chat,,CHT-009,Gửi tin nhắn đến cuộc trò chuyện đã đóng bị từ chối,Đã đăng nhập; cuộc trò chuyện đã bị đóng,"1. Mở cuộc trò chuyện đã đóng
+2. Cố gắng nhập và gửi tin nhắn",,"""Ô nhập liệu bị vô hiệu hóa hoặc hiển thị lỗi — ""Conversation is closed""",,
+Chat,Đóng,CHT-010,Đóng cuộc trò chuyện hỗ trợ,Đã đăng nhập; cuộc trò chuyện đang mở,"1. Mở chat hỗ trợ
+2. Nhấn nút ""Close Conversation""
+3. Xác nhận đóng",,"""Trạng thái cuộc trò chuyện thay đổi thành ""Closed"" — ô nhập liệu bị vô hiệu hóa",,
+Chat,,CHT-011,Đóng cuộc trò chuyện không tồn tại hiển thị lỗi,Đã đăng nhập,1. Cố gắng đóng cuộc trò chuyện không tồn tại,,"""Hiển thị lỗi — ""Conversation not found""",,
+Chat,Chat quản trị,CHT-012,Quản trị viên trả lời và được gán vào cuộc trò chuyện,Đã đăng nhập với tư cách quản trị viên; có cuộc trò chuyện chưa được gán,"1. Mở bảng điều khiển chat quản trị
+2. Chọn cuộc trò chuyện chưa được gán
+3. Nhập và gửi trả lời","Message: ""How can I help?""",Quản trị viên được gán vào cuộc trò chuyện — tin nhắn xuất hiện trong chat,,
+Chat,,CHT-013,Quản trị viên gửi đến cuộc trò chuyện đã đóng bị từ chối,Đã đăng nhập với tư cách quản trị viên; cuộc trò chuyện đã đóng,"1. Mở cuộc trò chuyện đã đóng trong bảng điều khiển quản trị
+2. Cố gắng gửi tin nhắn",,"""Ô nhập liệu bị vô hiệu hóa hoặc lỗi — ""Conversation is closed""",,
+Chat,,CHT-014,Quản trị viên xem tin nhắn và được tự động gán,Đã đăng nhập với tư cách quản trị viên; có cuộc trò chuyện chưa được gán,"1. Mở bảng điều khiển chat quản trị
+2. Nhấn vào cuộc trò chuyện chưa được gán để xem tin nhắn",,Tin nhắn được hiển thị — quản trị viên được tự động gán vào cuộc trò chuyện,,
+Chat,,CHT-015,Quản trị viên xem cuộc trò chuyện không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến cuộc trò chuyện không tồn tại,,"""Hiển thị lỗi — ""Conversation not found""",,
+Quản trị viên,Thống kê,ADM-001,Xem bảng điều khiển thống kê người dùng,Đã đăng nhập với tư cách quản trị viên,"1. Mở bảng điều khiển quản trị
+2. Xem phần ""User Statistics""",,"""Hiển thị tổng số người dùng và phân tích theo vai trò (học sinh, phụ huynh, giáo viên) với tỷ lệ phần trăm",,
+Quản trị viên,,ADM-002,Thống kê người dùng khi không có người dùng,Đã đăng nhập với tư cách quản trị viên; hệ thống trống,"1. Mở bảng điều khiển quản trị
+2. Xem phần ""User Statistics""",,Hiển thị tổng số: 0 với tất cả số lượng vai trò bằng 0 và 0%,,
+Quản trị viên,Quản lý người dùng,ADM-003,Xem chi tiết người dùng,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang ""User Management""
+2. Nhấn vào tên hoặc hàng của người dùng",,"""Chi tiết người dùng hiển thị: ID, email, họ tên, vai trò, trạng thái khóa",,
+Quản trị viên,,ADM-004,Xem người dùng không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến trang chi tiết người dùng với ID không hợp lệ,,"""Hiển thị lỗi — ""User not found""",,
+Quản trị viên,,ADM-005,Chỉnh sửa thông tin người dùng,Đã đăng nhập với tư cách quản trị viên; người dùng tồn tại,"1. Mở trang chi tiết người dùng
+2. Nhấn ""Edit""
+3. Thay đổi họ tên và email
+4. Nhấn ""Save""","Full name: ""New Name""
+Email: ""newemail@example.com""",Thông tin người dùng được cập nhật — trang chi tiết hiển thị giá trị mới,,
+Quản trị viên,,ADM-006,Chỉnh sửa người dùng không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng chỉnh sửa người dùng không tồn tại,,"""Hiển thị lỗi — ""User not found""",,
+Quản trị viên,,ADM-007,Chỉnh sửa người dùng quản trị bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang chi tiết của người dùng quản trị khác
+2. Cố gắng chỉnh sửa thông tin của họ",,"""Hiển thị lỗi — ""Cannot modify admin users""",,
+Quản trị viên,,ADM-008,Chỉnh sửa người dùng với email trùng lặp bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang chi tiết người dùng
+2. Thay đổi email sang email đã được người dùng khác sử dụng
+3. Nhấn ""Save""","Email: ""existing@example.com""","""Hiển thị lỗi — ""Email already in use""",,
+Quản trị viên,Khóa/Mở khóa,ADM-009,Khóa tài khoản người dùng,Đã đăng nhập với tư cách quản trị viên; người dùng chưa bị khóa,"1. Mở trang chi tiết người dùng
+2. Nhấn nút ""Lock Account""
+3. Xác nhận khóa",,"""Tài khoản người dùng bị khóa — trạng thái hiển thị ""Locked""; người dùng không thể đăng nhập",,
+Quản trị viên,,ADM-010,Mở khóa tài khoản người dùng bị khóa,Đã đăng nhập với tư cách quản trị viên; người dùng đang bị khóa,"1. Mở trang chi tiết người dùng
+2. Nhấn nút ""Unlock Account""
+3. Xác nhận mở khóa",,"""Tài khoản người dùng được mở khóa — trạng thái hiển thị ""Active""; người dùng có thể đăng nhập lại",,
+Quản trị viên,,ADM-011,Khóa người dùng không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng khóa người dùng không tồn tại,,"""Hiển thị lỗi — ""User not found""",,
+Quản trị viên,,ADM-012,Khóa người dùng quản trị bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang chi tiết người dùng quản trị
+2. Cố gắng nhấn ""Lock Account""",,"""Nút bị vô hiệu hóa hoặc hiển thị lỗi — ""Cannot lock admin users""",,
+Quản trị viên,Tạo người dùng,ADM-013,Tạo người dùng học sinh mới,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang ""User Management""
+2. Nhấn ""Create User""
+3. Điền tên, email, mật khẩu
+4. Chọn vai trò ""Student""
+5. Nhấn ""Create""","Name: ""New Student""
+Email: ""newstudent@example.com""
+Role: Student",Người dùng được tạo — xuất hiện trong danh sách người dùng; hồ sơ học sinh được tạo tự động; email chào mừng được gửi,,
+Quản trị viên,,ADM-014,Tạo người dùng quản trị bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở biểu mẫu ""Create User""
+2. Cố gắng chọn vai trò ""Admin""",,"""Vai trò Admin không có trong dropdown, hoặc lỗi — ""Cannot create admin users""",,
+Quản trị viên,,ADM-015,Tạo người dùng với email trùng lặp bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở biểu mẫu ""Create User""
+2. Nhập email đã được sử dụng
+3. Nhấn ""Create""","Email: ""existing@example.com""","""Hiển thị lỗi — ""Email already in use""",,
+Quản trị viên,Quản lý vai trò,ADM-016,Thay đổi vai trò người dùng,Đã đăng nhập với tư cách quản trị viên; người dùng là học sinh,"1. Mở trang chi tiết người dùng
+2. Nhấn ""Change Role""
+3. Chọn vai trò mới ""Teacher""
+4. Xác nhận thay đổi vai trò",Vai trò mới: Teacher,Vai trò được cập nhật — hồ sơ học sinh cũ bị xóa; hồ sơ giáo viên mới được tạo,,
+Quản trị viên,,ADM-017,Gán vai trò quản trị bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang chi tiết người dùng
+2. Cố gắng thay đổi vai trò thành ""Admin""",,"""Vai trò Admin không có, hoặc lỗi — ""Cannot assign admin role""",,
+Quản trị viên,,ADM-018,Thay đổi vai trò cho người dùng không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng thay đổi vai trò cho người dùng không tồn tại,,"""Hiển thị lỗi — ""User not found""",,
+Quản trị viên,,ADM-019,Thay đổi vai trò của người dùng quản trị bị từ chối,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang chi tiết người dùng quản trị
+2. Cố gắng thay đổi vai trò của họ",,"""Hiển thị lỗi — ""Cannot modify admin users""",,
+Quản trị viên,,ADM-020,Thay đổi vai trò thành cùng vai trò không có thay đổi,Đã đăng nhập với tư cách quản trị viên; người dùng đã là học sinh,"1. Mở trang chi tiết người dùng
+2. Nhấn ""Change Role""
+3. Chọn ""Student"" (cùng vai trò hiện tại)
+4. Xác nhận",Vai trò mới: Student (giống nhau),Không có thay đổi — hồ sơ vẫn nguyên vẹn; không có lỗi,,
+Quản trị viên,Phân tích,ADM-021,Xem thống kê lượt truy cập,Đã đăng nhập với tư cách quản trị viên,"1. Mở bảng điều khiển quản trị
+2. Xem phần ""Visit Statistics""
+3. Chọn khoảng thời gian",Khoảng thời gian: 24 giờ qua,Hiển thị tổng lượt truy cập và biểu đồ phân tích theo giờ,,
+Quản trị viên,,ADM-022,Xem thống kê luyện tập,Đã đăng nhập với tư cách quản trị viên,"1. Mở bảng điều khiển quản trị
+2. Xem phần ""Practice Statistics""
+3. Chọn khoảng thời gian",Khoảng thời gian: 24 giờ qua,Hiển thị tổng số AI practice và video call với biểu đồ phân tích theo giờ,,
+Luyện tập AI,Chat,AIP-001,Trò chuyện với AI,Đã đăng nhập với tư cách học sinh,"1. Mở trang ""AI Practice""
+2. Chọn chủ đề và mức độ khó
+3. Nhập tin nhắn và nhấn Enter
+4. Chờ phản hồi của AI","Level: A2
+Topic: ""Daily Routines""
+Message: ""What do you do in the morning?""",AI phản hồi với cuộc trò chuyện tiếng Anh phù hợp — phản hồi được hiển thị trong chat,,
+Luyện tập AI,,AIP-002,AI xử lý không có phản hồi mượt mà,Đã đăng nhập với tư cách học sinh; dịch vụ AI tạm thời không khả dụng,"1. Mở trang ""AI Practice""
+2. Gửi tin nhắn
+3. AI không thể tạo phản hồi",,Xử lý mượt mà — hiển thị phản hồi trống hoặc tùy chọn thử lại mà không bị lỗi,,
+Luyện tập AI,Phản hồi,AIP-003,Tạo phản hồi nói với phân tích,Đã đăng nhập với tư cách học sinh; đã hoàn thành buổi nói,"1. Hoàn thành buổi luyện nói AI
+2. Nhấn ""Get Feedback""
+3. Xem báo cáo phản hồi",,"""Phản hồi được hiển thị: độ chính xác chuyển đổi giọng nói sang văn bản, thời lượng phản hồi, phát hiện tạm dừng, độ dài buổi học, gợi ý, điểm nổi bật",,
+Luyện tập AI,,AIP-004,Phát hiện tạm dừng trong phản hồi nói,Đã đăng nhập với tư cách học sinh; buổi nói có các khoảng tạm dừng,"1. Hoàn thành buổi nói có các khoảng tạm dừng đáng chú ý
+2. Xem báo cáo phản hồi
+3. Kiểm tra phần phát hiện tạm dừng",,"""Các khoảng tạm dừng được phát hiện và hiển thị: ""X pauses found"" với các vị trí được đánh dấu",,
+Luyện tập AI,,AIP-005,Cảnh báo dữ liệu không đủ cho buổi học ngắn,Đã đăng nhập với tư cách học sinh; buổi nói rất ngắn,"1. Hoàn thành buổi nói rất ngắn (< 3 lượt trao đổi)
+2. Nhấn ""Get Feedback""",,"""Hiển thị cảnh báo — ""Insufficient data for detailed feedback""; vẫn cung cấp phản hồi cơ bản",,
+Luyện tập AI,,AIP-006,Phản hồi được tạo từ văn bản không có dấu thời gian,Đã đăng nhập với tư cách học sinh; buổi học được ghi lại chỉ dưới dạng văn bản,"1. Hoàn thành buổi luyện tập dựa trên văn bản
+2. Nhấn ""Get Feedback""",,Phản hồi được tạo bằng phân tích văn bản — thời lượng ước tính được hiển thị,,
+Luyện tập AI,Phiên âm,AIP-007,Phiên âm giọng nói với chi tiết từng từ,Đã đăng nhập với tư cách học sinh,"1. Mở chế độ nói trong ""AI Practice""
+2. Nhấn nút ghi âm và nói
+3. Dừng ghi âm
+4. Xem kết quả phiên âm",Âm thanh: câu tiếng Anh được nói,Phiên âm được hiển thị với văn bản và dấu thời gian từng từ riêng lẻ,,
+Luyện tập AI,,AIP-008,Phiên âm ghi âm im lặng/trống,Đã đăng nhập với tư cách học sinh,"1. Nhấn nút ghi âm
+2. Không nói (im lặng)
+3. Dừng ghi âm",,Phiên âm trống — không có văn bản được hiển thị; không có lỗi,,
+Luyện tập AI,Chuyển văn bản thành giọng nói,AIP-009,Nghe giọng nói do AI tạo ra,Đã đăng nhập với tư cách học sinh; phản hồi AI được hiển thị,"1. Xem phản hồi AI trong chat
+2. Nhấn ""Listen"" hoặc biểu tượng loa trên phản hồi",Văn bản: phản hồi AI,Âm thanh phát — phản hồi AI được đọc to với phát âm tự nhiên,,
+Trọng tâm tuần,Tạo,WKF-001,Tạo trọng tâm tuần mới,Đã đăng nhập với tư cách giáo viên; không có trọng tâm hiện có cho mô-đun này,"1. Mở trang ""Weekly Focus""
+2. Nhấn ""Create Weekly Focus""
+3. Chọn mô-đun và nhập chủ đề tuần
+4. Thêm mục tiêu nói
+5. Nhấn ""Save""","Module: Module 3
+Topic: ""Present Perfect Tense""
+Goals: ""Practice using have/has""",Trọng tâm tuần được tạo — hiển thị trên trang với chủ đề và mục tiêu,,
+Trọng tâm tuần,,WKF-002,Cập nhật trọng tâm tuần hiện có qua tạo mới,Đã đăng nhập với tư cách giáo viên; trọng tâm tuần đã tồn tại cho mô-đun,"1. Mở trang ""Weekly Focus""
+2. Nhấn ""Create Weekly Focus"" cho mô-đun đã có trọng tâm
+3. Nhập chủ đề và mục tiêu mới
+4. Nhấn ""Save""","Topic: ""Updated Topic""",Trọng tâm tuần hiện có được cập nhật — không tạo bản sao,,
+Trọng tâm tuần,Chỉnh sửa,WKF-003,Chỉnh sửa chi tiết trọng tâm tuần,Đã đăng nhập với tư cách giáo viên; trọng tâm tuần tồn tại,"1. Mở trang chi tiết trọng tâm tuần
+2. Nhấn ""Edit""
+3. Thay đổi chủ đề tuần
+4. Nhấn ""Save""","New topic: ""Conditionals""",Trọng tâm tuần được cập nhật với chủ đề mới — trang phản ánh thay đổi,,
+Trọng tâm tuần,,WKF-004,Chỉnh sửa trọng tâm tuần không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách giáo viên,1. Cố gắng chỉnh sửa trọng tâm tuần không tồn tại,,"""Hiển thị lỗi — ""Weekly focus not found""",,
+Trọng tâm tuần,Xem,WKF-005,Xem trọng tâm tuần cho một mô-đun,Đã đăng nhập; mô-đun có trọng tâm tuần,"1. Mở trang chi tiết mô-đun
+2. Xem phần ""Weekly Focus""",,Trọng tâm tuần được hiển thị với chủ đề và thông tin giáo viên,,
+Trọng tâm tuần,,WKF-006,Xem trọng tâm tuần cho mô-đun chưa có,Đã đăng nhập; mô-đun chưa có trọng tâm tuần,"1. Mở trang chi tiết mô-đun
+2. Xem phần ""Weekly Focus""",,"""Trạng thái trống — ""No weekly focus set for this module""",,
+Trọng tâm tuần,,WKF-007,Xem tất cả trọng tâm tuần của giáo viên,Đã đăng nhập với tư cách giáo viên,"1. Mở trang ""My Weekly Focuses""
+2. Xem danh sách tất cả trọng tâm đã tạo",,Danh sách trọng tâm tuần được sắp xếp theo mới nhất trước,,
+Trọng tâm tuần,Tóm tắt người hướng dẫn,WKF-008,Xem tóm tắt người hướng dẫn với thống kê luyện tập AI,Đã đăng nhập với tư cách giáo viên; học sinh có lịch sử luyện tập AI,"1. Mở trang chuẩn bị bài học của học sinh
+2. Xem phần ""Mentor Brief""",ID học sinh và mô-đun,Hiển thị trọng tâm tuần và số lượng luyện tập AI và tóm tắt phản hồi gần nhất của học sinh,,
+Trọng tâm tuần,,WKF-009,Xem tóm tắt người hướng dẫn không có lịch sử AI,Đã đăng nhập với tư cách giáo viên; học sinh chưa luyện tập AI,"1. Mở trang chuẩn bị bài học của học sinh
+2. Xem phần ""Mentor Brief""",,"""Thống kê AI trống — ""No AI practice sessions yet""",,
+Trọng tâm tuần,Xóa,WKF-010,Xóa trọng tâm tuần,Đã đăng nhập với tư cách giáo viên; trọng tâm tuần tồn tại,"1. Mở trang chi tiết trọng tâm tuần
+2. Nhấn ""Delete""
+3. Xác nhận xóa",,Trọng tâm tuần bị xóa — không còn hiển thị trên mô-đun,,
+Chương trình,Danh sách chương trình,PRG-001,Xem danh sách tất cả chương trình,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang ""Programs"" từ menu quản trị
+2. Xem danh sách chương trình",,Chương trình được liệt kê với nhóm học và khóa học lồng nhau,,
+Chương trình,,PRG-002,Xem chi tiết chương trình,Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại,"1. Mở trang ""Programs""
+2. Nhấn vào tên chương trình",,Chi tiết chương trình hiển thị cấu trúc đầy đủ: nhóm học và khóa học,,
+Chương trình,,PRG-003,Xem chương trình không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến chi tiết chương trình với ID không hợp lệ,,"""Hiển thị lỗi — ""Program not found""",,
+Chương trình,Tạo/Xóa,PRG-004,Tạo chương trình mới,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang ""Programs""
+2. Nhấn ""Create Program""
+3. Nhập tên và mô tả
+4. Nhấn ""Create""","Name: ""English Foundations""
+Description: ""Beginner program""",Chương trình mới xuất hiện trong danh sách,,
+Chương trình,,PRG-005,Xóa chương trình,Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại,"1. Mở trang chi tiết chương trình
+2. Nhấn ""Delete Program""
+3. Xác nhận xóa",,Chương trình bị xóa khỏi danh sách,,
+Chương trình,,PRG-006,Xóa chương trình không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng xóa chương trình không tồn tại,,"""Hiển thị lỗi — ""Program not found""",,
+Chương trình,Nhóm học,PRG-007,Xem chi tiết nhóm học,Đã đăng nhập với tư cách quản trị viên; nhóm học tồn tại,"1. Mở trang chi tiết chương trình
+2. Nhấn vào tên nhóm học",,Chi tiết nhóm học hiển thị: thông tin chương trình và khóa học liên kết,,
+Chương trình,,PRG-008,Xem nhóm học không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến chi tiết nhóm học với ID không hợp lệ,,"""Hiển thị lỗi — ""Cohort not found""",,
+Chương trình,,PRG-009,Tạo nhóm học mới,Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại,"1. Mở trang chi tiết chương trình
+2. Nhấn ""Add Cohort""
+3. Nhập tên và ngày bắt đầu
+4. Nhấn ""Create""","Name: ""Cohort Spring 2026""
+Start date: 2026-03-01",Nhóm học mới xuất hiện dưới chương trình,,
+Chương trình,Khóa học nhóm học,PRG-010,Xem chi tiết khóa học nhóm học,Đã đăng nhập với tư cách quản trị viên; khóa học nhóm học tồn tại,"1. Mở trang chi tiết nhóm học
+2. Nhấn vào khóa học",,Chi tiết khóa học nhóm học hiển thị: thông tin nhóm học và khóa học,,
+Chương trình,,PRG-011,Xem khóa học nhóm học không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến chi tiết khóa học nhóm học với ID không hợp lệ,,"""Hiển thị lỗi — ""Cohort course not found""",,
+Chương trình,Mô-đun,PRG-012,Tạo mô-đun cho khóa học,Đã đăng nhập với tư cách quản trị viên; khóa học tồn tại,"1. Mở trang chi tiết khóa học
+2. Nhấn ""Add Module""
+3. Nhập số mô-đun, tiêu đề và chủ đề
+4. Nhấn ""Create""","Module #: 1
+Title: ""Introduction""
+Topic: ""Greetings""",Mô-đun mới xuất hiện trong danh sách mô-đun của khóa học,,
+Chương trình,,PRG-013,Xóa mô-đun,Đã đăng nhập với tư cách quản trị viên; mô-đun tồn tại,"1. Mở trang chi tiết mô-đun
+2. Nhấn ""Delete Module""
+3. Xác nhận xóa",,Mô-đun bị xóa khỏi khóa học,,
+Chương trình,,PRG-014,Xóa mô-đun không tồn tại hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng xóa mô-đun không tồn tại,,"""Hiển thị lỗi — ""Module not found""",,
+Chương trình,Đăng ký,PRG-015,Đăng ký học sinh vào khóa học nhóm học,Đã đăng nhập với tư cách quản trị viên; học sinh và khóa học nhóm học tồn tại,"1. Mở trang chi tiết khóa học nhóm học
+2. Nhấn ""Enroll Student""
+3. Tìm kiếm và chọn học sinh
+4. Nhấn ""Enroll""",Tên hoặc ID học sinh,Học sinh xuất hiện trong danh sách đã đăng ký — số lượng đăng ký tăng lên,,
+Chương trình,,PRG-016,Đăng ký học sinh đã đăng ký trả về thông tin hiện có,Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký,1. Cố gắng đăng ký học sinh đã đăng ký vào cùng khóa học nhóm học,,Không tạo bản sao — hiển thị đăng ký hiện có,,
+Chương trình,,PRG-017,Xem đăng ký học sinh trong khóa học nhóm học,Đã đăng nhập; học sinh đã đăng ký,"1. Mở trang chi tiết học sinh
+2. Xem phần đăng ký cho khóa học nhóm học cụ thể",,Chi tiết đăng ký được hiển thị với khóa học và trạng thái,,
+Chương trình,,PRG-018,Xem đăng ký cho học sinh chưa đăng ký,Đã đăng nhập; học sinh chưa đăng ký,"1. Mở trang chi tiết học sinh
+2. Xem phần đăng ký cho khóa học nhóm học họ chưa tham gia",,"""Trạng thái trống — ""Not enrolled in this course""",,
+Chương trình,Thanh toán,PRG-019,Đánh dấu đăng ký là đã thanh toán,Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký,"1. Mở chi tiết đăng ký của học sinh
+2. Nhấn ""Mark as Paid""
+3. Xác nhận thanh toán",Học sinh và khóa học nhóm học,Đăng ký được đánh dấu là đã thanh toán — trạng thái đã thanh toán và thời gian được hiển thị,,
+Chương trình,,PRG-020,Đánh dấu đã thanh toán tự động đăng ký nếu chưa đăng ký,Đã đăng nhập với tư cách quản trị viên; học sinh chưa đăng ký,"1. Mở trang xử lý thanh toán
+2. Đánh dấu thanh toán cho học sinh chưa đăng ký
+3. Xác nhận",Học sinh và khóa học nhóm học,Học sinh được tự động đăng ký và đánh dấu đã thanh toán trong một bước,,
+Chương trình,,PRG-021,Kiểm tra trạng thái đã thanh toán — đã thanh toán,Đã đăng nhập; học sinh đã đăng ký đã thanh toán,"1. Mở chi tiết đăng ký học sinh
+2. Xem trạng thái thanh toán",,"""Trạng thái thanh toán hiển thị ""Paid"" với dấu thời gian",,
+Chương trình,,PRG-022,Kiểm tra trạng thái đã thanh toán — chưa thanh toán,Đã đăng nhập; học sinh đã đăng ký chưa thanh toán,"1. Mở chi tiết đăng ký học sinh
+2. Xem trạng thái thanh toán",,"""Trạng thái thanh toán hiển thị ""Unpaid""",,
+Chương trình,,PRG-023,Kiểm tra trạng thái đã thanh toán — chưa đăng ký,Đã đăng nhập; học sinh chưa đăng ký,1. Kiểm tra trạng thái thanh toán cho học sinh chưa đăng ký,,"""Hiển thị ""Not enrolled"" — không có thông tin thanh toán",,
+Chương trình,Hủy đăng ký,PRG-024,Hủy đăng ký học sinh,Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký,"1. Mở danh sách đăng ký khóa học nhóm học
+2. Tìm học sinh
+3. Nhấn ""Unenroll""
+4. Xác nhận xóa",,Học sinh bị xóa khỏi danh sách đăng ký — số lượng giảm,,
+Chương trình,,PRG-025,Hủy đăng ký học sinh chưa đăng ký hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên,1. Cố gắng hủy đăng ký học sinh chưa đăng ký,,"""Hiển thị lỗi — ""Enrollment not found""",,
+Chương trình,,PRG-026,Đăng ký học sinh qua tài khoản người dùng,Đã đăng nhập với tư cách quản trị viên; người dùng có hồ sơ học sinh,"1. Mở trang đăng ký
+2. Tìm kiếm qua tài khoản người dùng (không phải hồ sơ học sinh)
+3. Chọn người dùng và đăng ký",ID người dùng,Học sinh được tìm thấy tự động qua hồ sơ — đã đăng ký và đánh dấu đã thanh toán,,
+Chương trình,,PRG-027,Đăng ký người dùng không có hồ sơ học sinh hiển thị lỗi,Đã đăng nhập với tư cách quản trị viên; người dùng không có hồ sơ học sinh,1. Cố gắng đăng ký người dùng không có hồ sơ học sinh,,"""Hiển thị lỗi — ""Student profile not found""",,
+Xác thực Google,Trạng thái kết nối,GAU-001,Kiểm tra kết nối Google — đã kết nối,Đã đăng nhập với tư cách giáo viên; tài khoản Google đã liên kết,"1. Mở trang ""Settings"" hoặc ""Integrations""
+2. Xem trạng thái kết nối Google Calendar",,"""Trạng thái hiển thị ""Connected"" với email Google đã liên kết",,
+Xác thực Google,,GAU-002,Kiểm tra kết nối Google — chưa kết nối,Đã đăng nhập với tư cách giáo viên; không có tài khoản Google liên kết,"1. Mở trang ""Settings"" hoặc ""Integrations""
+2. Xem trạng thái kết nối Google Calendar",,"""Trạng thái hiển thị ""Not connected"" với nút ""Connect Google""",,
+Xác thực Google,Ngắt kết nối,GAU-003,Ngắt kết nối tài khoản Google,Đã đăng nhập với tư cách giáo viên; tài khoản Google đã liên kết,"1. Mở trang ""Settings""
+2. Nhấn ""Disconnect Google""
+3. Xác nhận ngắt kết nối",,"""Tài khoản Google bị ngắt kết nối — trạng thái thay đổi thành ""Not connected""",,
+Xác thực Google,,GAU-004,Ngắt kết nối khi chưa kết nối không có thay đổi,Đã đăng nhập với tư cách giáo viên; không có tài khoản Google liên kết,"1. Mở trang ""Settings""
+2. Không có tùy chọn ngắt kết nối (đã ngắt kết nối)",,Không cần thực hiện — trang chỉ hiển thị tùy chọn kết nối,,
+Xác thực Google,,GAU-005,Hồ sơ giáo viên được liên kết đúng cho xác thực Google,Đã đăng nhập với tư cách giáo viên,"1. Mở trang ""Settings""
+2. Xem thông tin tài khoản",,ID hồ sơ giáo viên được hiển thị đúng trong cài đặt,,
+Xác thực Google,,GAU-006,Người không phải giáo viên cố gắng xác thực Google hiển thị lỗi,Đã đăng nhập với tư cách học sinh (không có hồ sơ giáo viên),1. Điều hướng đến cài đặt tích hợp Google Calendar,,"""Tính năng không khả dụng — ""Only teachers can connect Google Calendar""",,
+Đăng ký sự kiện,Tạo,INR-001,Gửi đăng ký sự kiện khai giảng,,"1. Mở trang đăng ký sự kiện
+2. Điền tên phụ huynh, số điện thoại và email
+3. Chọn ô ""Wants to sign up""
+4. Nhấn ""Submit""","Name: ""Nguyen Van A""
+Phone: ""0901234567""
+Email: ""parent@example.com""
+Wants to sign up: Yes",Đăng ký được gửi thành công — hiển thị thông báo xác nhận,,
+Đăng ký sự kiện,Xem,INR-002,Xem tất cả đăng ký sự kiện khai giảng,Đã đăng nhập với tư cách quản trị viên,"1. Mở trang ""Inaugural Registrations"" từ menu quản trị
+2. Xem danh sách đăng ký",,Danh sách đăng ký được sắp xếp theo mới nhất trước,,
+Đăng ký sự kiện,,INR-003,Danh sách đăng ký trống,Đã đăng nhập với tư cách quản trị viên; không có đăng ký,"1. Mở trang ""Inaugural Registrations""",,"""Trạng thái trống — ""No registrations yet""",,
+Đăng ký sự kiện,,INR-004,Xem chi tiết đăng ký,Đã đăng nhập với tư cách quản trị viên; đăng ký tồn tại,"1. Mở danh sách đăng ký
+2. Nhấn vào mục đăng ký",,"""Chi tiết đăng ký hiển thị: tên phụ huynh, số điện thoại, email, tùy chọn đăng ký, ngày",,
+Đăng ký sự kiện,,INR-005,Xem đăng ký không tồn tại,Đã đăng nhập với tư cách quản trị viên,1. Điều hướng đến chi tiết đăng ký với ID không hợp lệ,,"""Trang trống hoặc ""Registration not found""",,

@@ -1,0 +1,49 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tạo bộ thẻ ghi nhớ \\
+\hline
+\textbf{ID} & UC-0032 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng tạo bộ thẻ ghi nhớ (flashcard deck) mới để tổ chức các thẻ từ vựng \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Bộ thẻ ghi nhớ mới được tạo với người dùng là tác giả \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn tạo bộ thẻ mới \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang thẻ ghi nhớ.
+    \item Người dùng nhấn Tạo bộ thẻ mới.
+    \item Người dùng nhập: tên (bắt buộc), mô tả (tùy chọn), chế độ hiển thị (công khai/riêng tư), thẻ phân loại.
+    \item Hệ thống tạo bộ thẻ với người dùng là tác giả.
+    \item Hệ thống trả về ID bộ thẻ và xác nhận tạo thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+    \item \textbf{Thiếu trường bắt buộc:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi thiếu tên bộ thẻ.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0032 Tạo bộ thẻ ghi nhớ}
+}

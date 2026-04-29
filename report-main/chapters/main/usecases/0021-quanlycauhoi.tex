@@ -1,0 +1,61 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Quản lý câu hỏi \\
+\hline
+\textbf{ID} & UC-0021 \\
+\hline
+\textbf{Tác nhân} & Người kiểm duyệt (Mod) hoặc Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Quản lý câu hỏi trong phần thi: tạo, chỉnh sửa, xóa và di chuyển câu hỏi \\
+\hline
+\textbf{Điều kiện tiên quyết} & Phần thi tồn tại trong bài thi, người dùng có vai trò Mod hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Câu hỏi được tạo, cập nhật, xóa hoặc di chuyển thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn quản lý câu hỏi trong phần thi \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở phần thi trong trang quản lý.
+    \item Người dùng nhấn Thêm câu hỏi mới.
+    \item Hệ thống tạo câu hỏi ở vị trí chỉ định (tùy chọn).
+    \item Hệ thống xác nhận tạo câu hỏi thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Chỉnh sửa câu hỏi:}
+    \begin{enumerate}
+        \item[2A.] Người dùng chọn câu hỏi cần sửa.
+        \item[3A.] Người dùng chỉnh sửa: nội dung, giải thích, điểm số, loại câu hỏi, thêm/cập nhật/xóa lựa chọn, thêm/xóa thẻ, thêm/xóa tệp.
+        \item[4A.] Hệ thống cập nhật câu hỏi.
+    \end{enumerate}
+    \item \textbf{Xóa câu hỏi:}
+    \begin{enumerate}
+        \item[2B.] Người dùng chọn xóa câu hỏi, xác nhận, hệ thống xóa câu hỏi.
+    \end{enumerate}
+    \item \textbf{Di chuyển câu hỏi:}
+    \begin{enumerate}
+        \item[2C.] Người dùng di chuyển câu hỏi sang phần khác hoặc thay đổi thứ tự.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Phần hoặc câu hỏi không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0021 Quản lý câu hỏi}
+}

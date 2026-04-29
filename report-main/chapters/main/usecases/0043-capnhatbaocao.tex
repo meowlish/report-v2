@@ -1,0 +1,60 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Cập nhật báo cáo \\
+\hline
+\textbf{ID} & UC-0043 \\
+\hline
+\textbf{Tác nhân} & Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Quản trị viên xem xét và cập nhật trạng thái báo cáo, cung cấp phản hồi \\
+\hline
+\textbf{Điều kiện tiên quyết} & Báo cáo tồn tại, người dùng có vai trò Admin \\
+\hline
+\textbf{Điều kiện sau} & Trạng thái báo cáo được cập nhật, phản hồi được ghi nhận, thời gian cập nhật được lưu \\
+\hline
+\textbf{Kích hoạt} & Quản trị viên chọn xử lý báo cáo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Quản trị viên mở trang quản lý báo cáo.
+    \item Quản trị viên chọn báo cáo ở trạng thái pending hoặc reviewing.
+    \item Quản trị viên xem xét nội dung được báo cáo.
+    \item Quản trị viên thay đổi trạng thái (pending → reviewing → resolved/rejected).
+    \item Quản trị viên viết phản hồi (adminResponse) giải thích hành động đã thực hiện.
+    \item Quản trị viên nhấn Cập nhật.
+    \item Hệ thống cập nhật báo cáo, ghi nhận thời gian cập nhật.
+    \item Hệ thống tạo thông báo cho người gửi báo cáo (UC-0046).
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Người dùng cập nhật báo cáo của mình:}
+    \begin{enumerate}
+        \item[2A.] Người dùng chỉ có thể chỉnh sửa tiêu đề/mô tả của báo cáo khi trạng thái còn "pending".
+        \item[3A.] Người dùng nhấn Lưu, hệ thống cập nhật báo cáo.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Báo cáo không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+    \item \textbf{Chuyển trạng thái không hợp lệ:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi chuyển trạng thái không hợp lệ (ví dụ: resolved → pending).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0043 Cập nhật báo cáo}
+}

@@ -1,0 +1,49 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Gửi tin nhắn \\
+\hline
+\textbf{ID} & UC-0027 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng gửi tin nhắn thời gian thực trong phòng chat \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập và đã tham gia phòng chat \\
+\hline
+\textbf{Điều kiện sau} & Tin nhắn được gửi đến tất cả thành viên khác trong phòng \\
+\hline
+\textbf{Kích hoạt} & Người dùng nhập và gửi tin nhắn \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng nhập nội dung tin nhắn.
+    \item Người dùng gửi sự kiện 'chat' với \{roomId, message\}.
+    \item Hệ thống xác minh người dùng đã tham gia phòng.
+    \item Hệ thống phát sự kiện 'message' đến tất cả thành viên khác trong phòng với \{message, uid\}.
+    \item Tin nhắn được hiển thị thời gian thực cho tất cả thành viên.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa tham gia phòng:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về ForbiddenException vì người dùng chưa tham gia phòng (phải gửi 'join-room' trước).
+    \end{enumerate}
+    \item \textbf{Mất kết nối WebSocket:}
+    \begin{enumerate}
+        \item[2Err.] Kết nối WebSocket bị ngắt, tin nhắn không được gửi.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0027 Gửi tin nhắn}
+}

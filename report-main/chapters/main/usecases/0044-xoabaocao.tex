@@ -1,0 +1,57 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xóa báo cáo \\
+\hline
+\textbf{ID} & UC-0044 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực (người tạo, chỉ khi pending) hoặc Quản trị viên (bất kỳ trạng thái nào) \\
+\hline
+\textbf{Mô tả} & Người dùng xóa báo cáo pending của mình, hoặc quản trị viên xóa bất kỳ báo cáo nào \\
+\hline
+\textbf{Điều kiện tiên quyết} & Báo cáo tồn tại \\
+\hline
+\textbf{Điều kiện sau} & Báo cáo bị xóa khỏi hệ thống \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn xóa báo cáo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở báo cáo của mình.
+    \item Người dùng xác minh trạng thái là "pending".
+    \item Người dùng nhấn Xóa.
+    \item Hệ thống hiển thị cảnh báo xác nhận.
+    \item Người dùng xác nhận xóa.
+    \item Hệ thống xóa báo cáo.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Quản trị viên xóa báo cáo:}
+    \begin{enumerate}
+        \item[1A.] Quản trị viên có thể xóa bất kỳ báo cáo nào bất kể trạng thái từ trang quản lý.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Báo cáo không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+    \item \textbf{Không thể xóa báo cáo không phải pending:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 403 khi người dùng thường cố xóa báo cáo ở trạng thái khác pending.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0044 Xóa báo cáo}
+}

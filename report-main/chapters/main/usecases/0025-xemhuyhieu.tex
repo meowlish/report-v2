@@ -1,0 +1,53 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem huy hiệu \\
+\hline
+\textbf{ID} & UC-0025 \\
+\hline
+\textbf{Tác nhân} & Người dùng (công khai cho danh sách huy hiệu, đã xác thực cho huy hiệu cá nhân) \\
+\hline
+\textbf{Mô tả} & Người dùng xem danh sách huy hiệu, huy hiệu đã đạt được và tiến trình \\
+\hline
+\textbf{Điều kiện tiên quyết} & Không yêu cầu đăng nhập cho danh sách huy hiệu công khai \\
+\hline
+\textbf{Điều kiện sau} & Thông tin huy hiệu được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang huy hiệu \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang huy hiệu.
+    \item Hệ thống hiển thị danh sách tất cả huy hiệu có sẵn với tên, tên hiển thị và mô tả.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem huy hiệu cá nhân:}
+    \begin{enumerate}
+        \item[1A.] Người dùng đã xác thực xem huy hiệu đã đạt được của mình (phân trang cursor-based).
+    \end{enumerate}
+    \item \textbf{Xem huy hiệu người dùng khác:}
+    \begin{enumerate}
+        \item[1B.] Người dùng xem huy hiệu đã đạt được của người dùng khác theo ID.
+    \end{enumerate}
+    \item \textbf{Xem tiến trình huy hiệu:}
+    \begin{enumerate}
+        \item[1C.] Người dùng đã xác thực xem tiến trình: chuỗi đăng nhập (hiện tại/dài nhất/tổng), thống kê nộp bài (điểm tốt/điểm hoàn hảo/tổng).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Người dùng không tồn tại:}
+    \begin{enumerate}
+        \item[1BErr.] Hệ thống trả về lỗi 404 khi xem huy hiệu của người dùng không tồn tại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0025 Xem huy hiệu}
+}

@@ -1,0 +1,257 @@
+Pages,Category,Test Case ID,Test Case Description,Precondition,Test Steps,Test data,Test Case Expected Result,Test Case Result,Status
+Xác thực,Đăng nhập,AUTH 001,Đăng nhập bằng email và mật khẩu thành công,Tài khoản đã được đăng ký,"1. Mở trang đăng nhập
+2. Nhập email vào ô ""Email""
+3. Nhập mật khẩu vào ô ""Mật khẩu""
+4. Nhấn nút ""Đăng nhập""","Email: ""test@example.com""
+Mật khẩu: ""Password123!""",Đăng nhập thành công — chuyển đến trang chính và hiển thị tên người dùng,,
+Xác thực,,AUTH 002,Đăng nhập bằng Google OAuth2 thành công,Tài khoản Google đã liên kết trong hệ thống,"1. Mở trang đăng nhập
+2. Nhấn nút ""Đăng nhập bằng Google""
+3. Chọn tài khoản Google trên trang xác thực của Google
+4. Chờ được chuyển về ứng dụng",Không có,Đăng nhập thành công — chuyển đến trang chính và hiển thị tên người dùng,,
+Xác thực,,AUTH 003,Phiên tự động làm mới khi access token hết hạn,Đã đăng nhập; access token sắp hết hạn,"1. Đăng nhập thành công
+2. Đợi đến khi access token hết hạn
+3. Thực hiện thao tác bất kỳ trên ứng dụng (ví dụ: mở trang hồ sơ)",Không có,Ứng dụng tự động làm mới phiên — người dùng không bị gián đoạn và không cần đăng nhập lại,,
+Xác thực,Đăng ký,AUTH 004,Đăng ký tài khoản mới thành công,,"1. Mở trang đăng ký
+2. Nhập tên người dùng vào ô ""Tên người dùng""
+3. Nhập email vào ô ""Email""
+4. Nhập mật khẩu vào ô ""Mật khẩu""
+5. Nhấn nút ""Đăng ký""
+6. Mở trang hồ sơ cá nhân để kiểm tra","Username: ""newuser""
+Email: ""new@example.com""
+Mật khẩu: ""StrongPass123!""",Tài khoản được tạo thành công — chuyển đến trang chính; trang hồ sơ hiển thị đúng username đã đăng ký,,
+Xác thực,,AUTH 005,Đăng ký bằng Google OAuth2 thành công,Tài khoản Google chưa có trong hệ thống,"1. Mở trang đăng ký
+2. Nhấn nút ""Đăng ký bằng Google""
+3. Chọn tài khoản Google trên trang xác thực
+4. Chờ được chuyển về ứng dụng",Không có,Tài khoản mới được tạo với thông tin Google — chuyển đến trang chính,,
+Xác thực,Đăng xuất,AUTH 006,Đăng xuất tất cả phiên thành công,Đã đăng nhập trên nhiều thiết bị,"1. Mở menu tài khoản (nhấn vào avatar)
+2. Nhấn ""Đăng xuất tất cả thiết bị""
+3. Xác nhận đăng xuất
+4. Mở ứng dụng trên thiết bị/trình duyệt khác đang đăng nhập",Không có,Tất cả phiên bị đăng xuất — thiết bị khác yêu cầu đăng nhập lại,,
+Xác thực,Xem hồ sơ,AUTH 007,Xem hồ sơ cá nhân thành công,Đã đăng nhập,"1. Nhấn vào avatar hoặc tên người dùng trên thanh điều hướng
+2. Chọn ""Hồ sơ cá nhân""",Không có,"Trang hồ sơ hiển thị đầy đủ: tên người dùng, họ tên, bio, ảnh đại diện, vai trò",,
+Xác thực,,AUTH 008,Xem hồ sơ công khai người dùng khác,,"1. Tìm kiếm hoặc nhấn vào tên người dùng khác trong danh sách
+2. Xem trang hồ sơ công khai của người đó","Người dùng mục tiêu: ""user123""","Hiển thị hồ sơ giới hạn: tên người dùng, họ tên, bio, ảnh đại diện (không hiển thị thông tin nhạy cảm)",,
+Xác thực,,AUTH 009,Xem hồ sơ nhiều người dùng trong danh sách,Có nhiều người dùng trong hệ thống,"1. Mở trang kết quả tìm kiếm hoặc danh sách người dùng
+2. Kiểm tra thông tin hiển thị của từng người trong danh sách",Không có,"Mỗi người dùng hiển thị đúng: tên, ảnh đại diện, bio",,
+Xác thực,Cập nhật hồ sơ,AUTH 010,Cập nhật hồ sơ cá nhân thành công,Đã đăng nhập,"1. Mở trang hồ sơ cá nhân
+2. Nhấn nút ""Chỉnh sửa hồ sơ""
+3. Thay đổi tên người dùng, họ tên và bio
+4. Nhấn nút ""Lưu""
+5. Tải lại trang hồ sơ để kiểm tra","Username: ""newname""
+Họ tên: ""Nguyễn Văn A""
+Bio: ""Hello world""",Hồ sơ được cập nhật — trang hiển thị đúng các thông tin vừa thay đổi,,
+Xác thực,Liên kết tài khoản,AUTH 011,Liên kết email vào tài khoản thành công,Đã đăng nhập; chưa có email liên kết,"1. Mở trang Cài đặt tài khoản
+2. Trong mục ""Phương thức đăng nhập"", nhấn ""Liên kết email""
+3. Nhập email và mật khẩu vào form
+4. Nhấn ""Liên kết""
+5. Kiểm tra danh sách phương thức đăng nhập","Email: ""link@example.com""
+Mật khẩu: ""LinkPass123!""",Email mới xuất hiện trong danh sách phương thức đăng nhập,,
+Xác thực,,AUTH 012,Liên kết Google vào tài khoản thành công,Đã đăng nhập; chưa có Google liên kết,"1. Mở trang Cài đặt tài khoản
+2. Trong mục ""Phương thức đăng nhập"", nhấn ""Liên kết Google""
+3. Chọn tài khoản Google trên trang xác thực
+4. Chờ được chuyển về trang Cài đặt
+5. Kiểm tra danh sách phương thức đăng nhập",Không có,Google mới xuất hiện trong danh sách phương thức đăng nhập,,
+Xác thực,Đổi mật khẩu,AUTH 013,Đổi mật khẩu thành công,Đã đăng nhập; có email liên kết,"1. Mở trang Cài đặt tài khoản
+2. Nhấn ""Đổi mật khẩu""
+3. Nhập mật khẩu mới vào form
+4. Nhấn ""Lưu""
+5. Đăng xuất
+6. Đăng nhập lại bằng mật khẩu mới","Mật khẩu mới: ""NewStrongPass456!""",Đổi mật khẩu thành công — đăng nhập lại bằng mật khẩu mới thành công,,
+Xác thực,Xóa phương thức đăng nhập,AUTH 014,Xóa phương thức đăng nhập thành công,"Đã đăng nhập; có ít nhất 2 phương thức (email + Google)","1. Mở trang Cài đặt tài khoản
+2. Trong mục ""Phương thức đăng nhập"", tìm phương thức muốn xóa
+3. Nhấn nút ""Xóa"" bên cạnh phương thức đó
+4. Xác nhận xóa trong hộp thoại
+5. Kiểm tra danh sách phương thức đăng nhập",Không có,Phương thức đã bị xóa — không còn hiển thị trong danh sách,,
+Xác thực,,AUTH 015,Xem danh sách phương thức đăng nhập,Đã đăng nhập,"1. Mở trang Cài đặt tài khoản
+2. Xem mục ""Phương thức đăng nhập""",Không có,"Hiển thị danh sách phương thức đã liên kết (Email, Google) kèm loại và trạng thái",,
+Xác thực,Tìm kiếm người dùng,AUTH 016,Tìm kiếm người dùng theo tên,,"1. Nhấn vào ô tìm kiếm trên thanh điều hướng
+2. Nhập tên người dùng cần tìm
+3. Nhấn Enter hoặc nhấn nút tìm kiếm
+4. Xem danh sách kết quả","Từ khóa: ""test""",Danh sách người dùng phù hợp hiển thị với phân trang — nhấn vào để xem hồ sơ,,
+Xác thực,,AUTH 017,Gợi ý người dùng khi nhập từ khóa,,"1. Nhấn vào ô tìm kiếm người dùng
+2. Nhập từ khóa
+3. Xem kết quả gợi ý tự động hiển thị","Từ khóa: ""test""",Kết quả gợi ý hiển thị nhanh khi nhập — danh sách cập nhật theo từ khóa,,
+Bài thi - Luyện tập,Duyệt bài thi,EXAM 001,Duyệt danh sách bài thi công khai,,"1. Mở trang ""Luyện tập"" từ thanh điều hướng
+2. Xem danh sách bài thi hiển thị",Không có,"Danh sách bài thi hiển thị với tên, thẻ phân loại, thống kê lượt làm — có phân trang",,
+Bài thi - Luyện tập,,EXAM 002,Lọc bài thi theo tên,,"1. Mở trang ""Luyện tập""
+2. Nhập từ khóa vào ô tìm kiếm bài thi
+3. Xem danh sách kết quả cập nhật","Từ khóa: ""TOEIC""",Chỉ hiển thị bài thi có tên chứa từ khóa đã nhập,,
+Bài thi - Luyện tập,,EXAM 003,Lọc bài thi theo thẻ phân loại,,"1. Mở trang ""Luyện tập""
+2. Mở bộ lọc thẻ phân loại
+3. Chọn thẻ muốn lọc
+4. Xem danh sách kết quả cập nhật","Thẻ: ""Grammar""",Chỉ hiển thị bài thi thuộc thẻ phân loại đã chọn,,
+Bài thi - Luyện tập,,EXAM 004,Sắp xếp danh sách bài thi,,"1. Mở trang ""Luyện tập""
+2. Nhấn vào tùy chọn sắp xếp
+3. Chọn tiêu chí sắp xếp (ví dụ: tên A-Z)
+4. Xem danh sách cập nhật thứ tự","Sắp xếp: tên tăng dần",Danh sách bài thi được sắp xếp lại theo tiêu chí đã chọn,,
+Bài thi - Luyện tập,Xem chi tiết,EXAM 005,Xem chi tiết bài thi,Bài thi đã được xuất bản,"1. Mở trang ""Luyện tập""
+2. Nhấn vào bài thi muốn xem
+3. Xem trang chi tiết bài thi",Không có,"Trang chi tiết hiển thị: cấu trúc các phần, số câu hỏi mỗi phần, thẻ phân loại, tổng thời gian, tổng lượt làm",,
+Bài thi - Luyện tập,,EXAM 006,Xem thống kê bài thi,Bài thi đã được xuất bản,"1. Mở trang chi tiết bài thi
+2. Chọn tab ""Thống kê""",Không có,"Hiển thị điểm trung bình, thời gian làm bài trung bình, tỷ lệ đúng theo từng thẻ phân loại",,
+Bài thi - Luyện tập,,EXAM 007,Xem chi tiết câu hỏi trong bài xem lại,Đã nộp bài và đang xem lại kết quả,"1. Mở trang xem lại kết quả bài thi
+2. Nhấn vào câu hỏi cần xem chi tiết",Không có,"Hiển thị nội dung câu hỏi, các lựa chọn, giải thích đáp án, tệp đính kèm (nếu có)",,
+Bài thi - Luyện tập,Làm bài thi,EXAM 008,Bắt đầu làm bài thi thành công,Đã đăng nhập; bài thi đã xuất bản,"1. Mở trang chi tiết bài thi
+2. Nhấn nút ""Bắt đầu làm bài""
+3. Xác nhận bắt đầu trong hộp thoại",Không có,Chuyển đến giao diện làm bài — hiển thị câu hỏi đầu tiên và bộ đếm thời gian,,
+Bài thi - Luyện tập,,EXAM 009,Bắt đầu làm bài với tùy chọn phần và thời gian,Đã đăng nhập; bài thi có nhiều phần,"1. Mở trang chi tiết bài thi
+2. Nhấn nút ""Bắt đầu làm bài""
+3. Bỏ chọn các phần không muốn làm
+4. Nhập thời gian tùy chỉnh
+5. Nhấn ""Bắt đầu""","Phần chọn: ""Reading""
+Thời gian: 30 phút","Giao diện làm bài chỉ chứa câu hỏi từ phần đã chọn, bộ đếm thời gian hiển thị đúng thời gian tùy chỉnh",,
+Bài thi - Luyện tập,,EXAM 010,Chọn đáp án cho câu hỏi,Đã bắt đầu lượt làm bài,"1. Đọc nội dung câu hỏi trong giao diện làm bài
+2. Nhấn chọn đáp án (A/B/C/D)
+3. Chuyển sang câu tiếp theo bằng nút ""Câu sau""
+4. Quay lại câu trước để kiểm tra đáp án đã lưu","Đáp án chọn: A",Đáp án được lưu — khi quay lại câu hỏi vẫn hiển thị đáp án đã chọn,,
+Bài thi - Luyện tập,,EXAM 011,Xóa đáp án đã chọn,Đã chọn đáp án cho câu hỏi,"1. Quay lại câu hỏi đã trả lời
+2. Nhấn ""Xóa đáp án"" hoặc bỏ chọn đáp án hiện tại",Không có,Đáp án bị xóa — câu hỏi trở về trạng thái chưa trả lời trên bảng câu hỏi,,
+Bài thi - Luyện tập,,EXAM 012,Đánh dấu câu hỏi để xem lại,Đã bắt đầu lượt làm bài,"1. Trong giao diện làm bài, nhấn biểu tượng ""Đánh dấu"" (cờ/ngôi sao) trên câu hỏi
+2. Mở bảng tổng quan câu hỏi để kiểm tra",Không có,Câu hỏi được đánh dấu — hiển thị biểu tượng đặc biệt trên bảng tổng quan câu hỏi,,
+Bài thi - Luyện tập,,EXAM 013,Thêm ghi chú cho câu hỏi,Đã bắt đầu lượt làm bài,"1. Trong giao diện làm bài, nhấn nút ""Ghi chú"" trên câu hỏi
+2. Nhập nội dung ghi chú vào ô văn bản
+3. Nhấn ""Lưu ghi chú""","Ghi chú: ""Cần xem lại ngữ pháp""",Ghi chú được lưu — hiển thị khi mở lại câu hỏi,,
+Bài thi - Luyện tập,,EXAM 014,Xem bảng tổng quan trạng thái bài làm,Đã trả lời vài câu và đánh dấu vài câu,"1. Trong giao diện làm bài, nhấn mở bảng tổng quan câu hỏi
+2. Kiểm tra trạng thái hiển thị của từng câu",Không có,"Bảng hiển thị đúng trạng thái: câu đã trả lời, câu đánh dấu, câu chưa làm, thời gian còn lại",,
+Bài thi - Luyện tập,,EXAM 015,Nộp bài thi thành công,Đã bắt đầu lượt làm bài và trả lời câu hỏi,"1. Nhấn nút ""Nộp bài""
+2. Xác nhận nộp trong hộp thoại cảnh báo
+3. Chờ hệ thống chấm điểm",Không có,Bài thi được nộp — chuyển đến trang kết quả hiển thị điểm số và tổng kết,,
+Bài thi - Luyện tập,Xem kết quả,EXAM 016,Xem kết quả lượt làm bài đã nộp,Đã nộp bài thành công,"1. Sau khi nộp bài, xem trang kết quả tự động hiển thị
+2. Cuộn qua từng câu hỏi để xem chi tiết kết quả",Không có,"Hiển thị kết quả từng câu: đúng/sai, đáp án đã chọn vs đáp án đúng, bảng điểm tổng kết theo phần",,
+Bài thi - Luyện tập,Lịch sử & Thống kê,EXAM 017,Xem lịch sử làm bài,Đã đăng nhập; đã hoàn thành ít nhất 1 bài thi,"1. Mở menu người dùng
+2. Chọn ""Lịch sử làm bài""
+3. Xem danh sách các lượt làm bài",Không có,"Danh sách lượt làm bài hiển thị với: tên bài thi, điểm số, ngày làm — có phân trang",,
+Bài thi - Luyện tập,,EXAM 018,Lọc lịch sử theo bài thi cụ thể,Đã đăng nhập; có lịch sử nhiều bài thi,"1. Mở trang ""Lịch sử làm bài""
+2. Mở bộ lọc bài thi
+3. Chọn bài thi cụ thể muốn xem
+4. Xem danh sách cập nhật","Bài thi: ""TOEIC Practice Test 1""",Chỉ hiển thị các lượt làm bài của bài thi đã chọn,,
+Bài thi - Luyện tập,,EXAM 019,Xem lịch hoạt động học tập,Đã đăng nhập,"1. Mở trang ""Thống kê cá nhân""
+2. Xem phần lịch hoạt động
+3. Nhấn vào ngày cụ thể để xem chi tiết",Không có,Lịch hiển thị các ngày có hoạt động với số lượt làm bài — ngày có hoạt động được tô màu,,
+Bài thi - Luyện tập,,EXAM 020,Xem thống kê cá nhân tổng hợp,Đã đăng nhập; đã làm bài thi,"1. Mở trang ""Thống kê cá nhân""
+2. Xem các chỉ số tổng hợp",Không có,"Hiển thị: tổng số lượt làm bài, điểm trung bình, tỷ lệ đúng phân theo từng thẻ phân loại",,
+Bài thi - Luyện tập,Mục tiêu học tập,EXAM 021,Tạo mục tiêu học tập thành công,Đã đăng nhập; chưa có mục tiêu,"1. Mở trang ""Mục tiêu học tập""
+2. Nhấn ""Tạo mục tiêu mới""
+3. Chọn loại mục tiêu (số lượt làm bài / điểm số)
+4. Nhập giá trị mục tiêu và ngày hoàn thành
+5. Nhấn ""Lưu""","Loại: số lượt làm bài
+Mục tiêu: 10
+Ngày: 01/06/2026",Mục tiêu được tạo — hiển thị trên trang với thanh tiến độ,,
+Bài thi - Luyện tập,,EXAM 022,Cập nhật mục tiêu học tập,Đã đăng nhập; đã có mục tiêu,"1. Mở trang ""Mục tiêu học tập""
+2. Nhấn ""Chỉnh sửa"" trên mục tiêu hiện tại
+3. Thay đổi giá trị mục tiêu
+4. Nhấn ""Lưu""","Mục tiêu mới: 20
+Loại: điểm số",Mục tiêu được cập nhật — hiển thị giá trị mới và thanh tiến độ cập nhật,,
+Bài thi - Luyện tập,,EXAM 023,Xóa mục tiêu học tập,Đã đăng nhập; đã có mục tiêu,"1. Mở trang ""Mục tiêu học tập""
+2. Nhấn ""Xóa"" trên mục tiêu
+3. Xác nhận xóa trong hộp thoại",Không có,Mục tiêu đã bị xóa — không còn hiển thị trên trang,,
+Bài thi - Quản lý,Tạo bài thi,MGMT 001,Tạo bài thi mới thành công,Đã đăng nhập với vai trò Mod hoặc Admin,"1. Mở trang ""Quản lý bài thi""
+2. Nhấn nút ""Tạo bài thi mới""
+3. Nhập tiêu đề, mô tả và thời gian làm bài
+4. Nhấn ""Tạo""
+5. Kiểm tra bài thi mới trong danh sách","Tiêu đề: ""TOEIC Practice Test 1""
+Mô tả: ""Bài thi thử TOEIC""
+Thời gian: 120 phút",Bài thi mới xuất hiện trong danh sách quản lý ở trạng thái ""Nháp"",,
+Bài thi - Quản lý,,MGMT 002,Xem danh sách bài thi quản lý,Đã đăng nhập Mod/Admin; có bài thi đã tạo,"1. Mở trang ""Quản lý bài thi""
+2. Xem danh sách bài thi hiển thị
+3. Sử dụng bộ lọc theo tiêu đề, người tạo hoặc trạng thái",Không có,"Danh sách bài thi hiển thị với: tiêu đề, người tạo, trạng thái, ngày tạo — có bộ lọc và phân trang",,
+Bài thi - Quản lý,,MGMT 003,Xem chi tiết bài thi trong trang quản lý,Đã đăng nhập Mod/Admin; bài thi tồn tại,"1. Mở trang ""Quản lý bài thi""
+2. Nhấn vào bài thi cần xem chi tiết",Không có,"Trang chi tiết hiển thị: trạng thái, mô tả, thời gian, danh sách các phần thi, thẻ phân loại",,
+Bài thi - Quản lý,Chỉnh sửa bài thi,MGMT 004,Chỉnh sửa thông tin bài thi thành công,Đã đăng nhập Mod/Admin; bài thi tồn tại,"1. Mở trang chi tiết bài thi trong mục quản lý
+2. Nhấn nút ""Chỉnh sửa""
+3. Sửa tiêu đề, mô tả, thời gian
+4. Thêm thẻ phân loại mới
+5. Nhấn ""Lưu""
+6. Kiểm tra trang chi tiết hiển thị đúng","Tiêu đề mới: ""Tên mới""
+Thời gian: 60 phút
+Thẻ thêm: ""Grammar""",Thông tin bài thi được cập nhật — thẻ mới xuất hiện và các trường hiển thị giá trị mới,,
+Bài thi - Quản lý,Xóa bài thi,MGMT 005,Xóa bài thi thành công,Đã đăng nhập Mod/Admin; bài thi tồn tại,"1. Mở trang ""Quản lý bài thi""
+2. Nhấn nút ""Xóa"" trên bài thi cần xóa
+3. Xác nhận xóa trong hộp thoại
+4. Kiểm tra danh sách bài thi",Không có,Bài thi không còn xuất hiện trong danh sách quản lý,,
+Bài thi - Quản lý,Phê duyệt bài thi,MGMT 006,Phê duyệt và xuất bản bài thi thành công,"Đã đăng nhập Admin có quyền EXAM_APPROVE; bài thi ở trạng thái nháp","1. Mở trang ""Quản lý bài thi""
+2. Chọn bài thi ở trạng thái ""Nháp""
+3. Nhấn nút ""Phê duyệt"" hoặc ""Xuất bản""
+4. Mở trang ""Luyện tập"" công khai để kiểm tra",Không có,"Trạng thái bài thi chuyển thành ""Đã xuất bản"" — bài thi hiển thị trong trang luyện tập công khai",,
+Bài thi - Quản lý,Quản lý phần thi,MGMT 007,Tạo phần thi mới trong bài thi,Đã đăng nhập Mod/Admin; bài thi tồn tại,"1. Mở trang chi tiết bài thi trong mục quản lý
+2. Nhấn nút ""Thêm phần thi""
+3. Nhập tên phần thi
+4. Nhấn ""Tạo""",Không có,Phần thi mới xuất hiện trong cấu trúc bài thi,,
+Bài thi - Quản lý,,MGMT 008,Tạo phần thi con lồng bên trong phần cha,Đã đăng nhập Mod/Admin; đã có phần thi cha,"1. Mở phần thi cha trong cấu trúc bài thi
+2. Nhấn ""Thêm phần con""
+3. Nhập tên phần con
+4. Nhấn ""Tạo""",Không có,Phần thi con xuất hiện lồng bên trong phần cha trên giao diện,,
+Bài thi - Quản lý,,MGMT 009,Cập nhật thông tin phần thi,Đã đăng nhập Mod/Admin; phần thi tồn tại,"1. Nhấn nút ""Chỉnh sửa"" trên phần thi
+2. Sửa tên, chỉ dẫn, loại nội dung
+3. Thêm thẻ phân loại
+4. Nhấn ""Lưu""","Tên: ""Reading Comprehension""
+Loại nội dung: passage",Phần thi hiển thị đúng các thông tin đã cập nhật,,
+Bài thi - Quản lý,,MGMT 010,Xóa phần thi,Đã đăng nhập Mod/Admin; phần thi tồn tại,"1. Nhấn nút ""Xóa"" trên phần thi cần xóa
+2. Xác nhận xóa trong hộp thoại
+3. Kiểm tra cấu trúc bài thi",Không có,Phần thi và toàn bộ câu hỏi bên trong đã bị xóa khỏi cấu trúc,,
+Bài thi - Quản lý,,MGMT 011,Di chuyển phần thi đến vị trí mới,Đã đăng nhập Mod/Admin; có nhiều phần thi,"1. Nhấn nút ""Di chuyển"" trên phần thi hoặc kéo thả
+2. Chọn vị trí đích và phần cha mới (nếu cần)
+3. Xác nhận di chuyển",Không có,Phần thi hiển thị tại vị trí mới trong cấu trúc bài thi,,
+Bài thi - Quản lý,Quản lý câu hỏi,MGMT 012,Tạo câu hỏi mới trong phần thi,Đã đăng nhập Mod/Admin; phần thi tồn tại,"1. Mở phần thi trong cấu trúc bài
+2. Nhấn nút ""Thêm câu hỏi""",Không có,Câu hỏi trống được tạo trong phần thi — sẵn sàng chỉnh sửa nội dung,,
+Bài thi - Quản lý,,MGMT 013,Chỉnh sửa nội dung và đáp án câu hỏi,Đã đăng nhập Mod/Admin; câu hỏi tồn tại,"1. Nhấn vào câu hỏi cần sửa
+2. Nhập nội dung câu hỏi và giải thích
+3. Nhập điểm số
+4. Thêm các lựa chọn đáp án và đánh dấu đáp án đúng
+5. Nhấn ""Lưu""
+6. Mở lại câu hỏi để kiểm tra","Nội dung: ""What is...?""
+Điểm: 1
+Loại: trắc nghiệm một đáp án
+Lựa chọn: A (đúng), B, C, D",Câu hỏi hiển thị đúng nội dung và các lựa chọn — đáp án đúng được đánh dấu,,
+Bài thi - Quản lý,,MGMT 014,Xóa câu hỏi khỏi phần thi,Đã đăng nhập Mod/Admin; câu hỏi tồn tại,"1. Nhấn nút ""Xóa"" trên câu hỏi cần xóa
+2. Xác nhận xóa trong hộp thoại
+3. Kiểm tra danh sách câu hỏi trong phần thi",Không có,Câu hỏi không còn hiển thị trong phần thi,,
+Bài thi - Quản lý,,MGMT 015,Di chuyển câu hỏi sang phần khác,Đã đăng nhập Mod/Admin; có nhiều phần và câu hỏi,"1. Nhấn nút ""Di chuyển"" trên câu hỏi
+2. Chọn phần thi đích từ danh sách
+3. Xác nhận di chuyển
+4. Mở phần thi đích để kiểm tra",Không có,Câu hỏi xuất hiện trong phần thi mới — không còn trong phần cũ,,
+Bài thi - Quản lý,Quản lý thẻ phân loại,MGMT 016,Xem cây thẻ phân loại,,"1. Mở trang ""Quản lý thẻ phân loại""
+2. Xem cây thẻ hiển thị dạng phân cấp",Không có,"Cây thẻ hiển thị đầy đủ với các cấp lồng nhau: thẻ cha, thẻ con",,
+Bài thi - Quản lý,,MGMT 017,Xem danh sách thẻ phân loại dạng phẳng,,"1. Mở trang ""Quản lý thẻ phân loại""
+2. Chuyển sang chế độ xem danh sách phẳng",Không có,"Hiển thị tất cả thẻ dạng danh sách phẳng kèm tên thẻ cha tương ứng",,
+Bài thi - Quản lý,,MGMT 018,Tạo thẻ phân loại mới,Đã đăng nhập Mod/Admin,"1. Mở trang ""Quản lý thẻ phân loại""
+2. Nhấn ""Thêm thẻ mới""
+3. Nhập tên thẻ
+4. Chọn thẻ cha từ cây (nếu cần)
+5. Nhấn ""Tạo""","Tên thẻ: ""Grammar""
+Thẻ cha: ""English Skills""",Thẻ mới xuất hiện trong cây dưới thẻ cha đã chọn,,
+Bài thi - Quản lý,,MGMT 019,Đổi tên thẻ phân loại,Đã đăng nhập Mod/Admin; thẻ tồn tại,"1. Nhấn nút ""Chỉnh sửa"" trên thẻ cần đổi tên
+2. Nhập tên mới
+3. Nhấn ""Lưu""","Tên mới: ""Advanced Grammar""",Tên thẻ được cập nhật trong cây phân loại,,
+Bài thi - Quản lý,,MGMT 020,Di chuyển thẻ phân loại đến vị trí cha mới,Đã đăng nhập Mod/Admin; thẻ tồn tại,"1. Nhấn nút ""Di chuyển"" trên thẻ cần di chuyển
+2. Chọn thẻ cha mới từ cây
+3. Xác nhận di chuyển",Không có,Thẻ hiển thị tại vị trí cha mới trong cây phân loại,,
+Bài thi - Quản lý,,MGMT 021,Xóa thẻ phân loại,Đã đăng nhập Mod/Admin; thẻ tồn tại,"1. Nhấn nút ""Xóa"" trên thẻ cần xóa
+2. Xác nhận xóa trong hộp thoại
+3. Kiểm tra cây thẻ phân loại",Không có,Thẻ không còn xuất hiện trong cây phân loại,,
+Tải tệp,Tải ảnh công khai,FILE 001,Tải ảnh đại diện lên thành công,Đã đăng nhập,"1. Mở trang chỉnh sửa hồ sơ
+2. Nhấn vào vùng ảnh đại diện hoặc nút ""Chọn ảnh""
+3. Chọn tệp ảnh từ máy tính
+4. Chờ ảnh tải lên hoàn tất
+5. Nhấn ""Lưu"" hồ sơ","Tệp: avatar.png
+Kích thước: 100KB
+Loại: image/png",Ảnh được tải lên thành công — hiển thị xem trước trên trang hồ sơ,,
+Tải tệp,,FILE 002,Đính kèm tệp riêng tư vào nội dung,Đã đăng nhập,"1. Mở form tạo/chỉnh sửa nội dung (ví dụ: câu hỏi bài thi)
+2. Nhấn nút ""Đính kèm tệp""
+3. Chọn tệp từ máy tính
+4. Chờ tệp tải lên hoàn tất","Tệp: document.pdf
+Kích thước: 200KB",Tệp được đính kèm thành công — chỉ người có quyền mới truy cập được,,
+Tải tệp,,FILE 003,Ảnh công khai hiển thị đúng sau khi tải lên,Đã tải ảnh lên thành công ở FILE 001,"1. Mở trang hồ sơ cá nhân
+2. Kiểm tra ảnh đại diện hiển thị
+3. Nhấn chuột phải vào ảnh, chọn ""Mở ảnh trong tab mới""",Không có,Ảnh hiển thị đúng trên trang hồ sơ và có thể mở trực tiếp trong tab mới,,
+Giới hạn tốc độ,Throttle Guard,RATE 001,Bị chặn khi thao tác quá nhanh liên tục,,"1. Thực hiện thao tác liên tục rất nhanh (ví dụ: tải lại trang, nhấn nút liên tục hơn 60 lần trong 60 giây)
+2. Quan sát phản hồi sau lần thao tác thứ 61",Không có,"Hiển thị thông báo lỗi ""Quá nhiều yêu cầu, vui lòng thử lại sau"" — thao tác bị từ chối",,
+Giới hạn tốc độ,,RATE 002,Thao tác trở lại bình thường sau thời gian chờ,Đã bị giới hạn tốc độ ở RATE 001,"1. Đợi 60 giây sau khi bị giới hạn
+2. Thực hiện lại thao tác bình thường (ví dụ: mở trang luyện tập)",Không có,Trang hoạt động bình thường — nội dung hiển thị đúng không còn lỗi,,
+Giới hạn tốc độ,JWT Guard,RATE 003,Truy cập trang yêu cầu đăng nhập khi chưa đăng nhập,,"1. Mở trình duyệt mới (chưa đăng nhập)
+2. Truy cập trực tiếp trang hồ sơ cá nhân qua URL",Không có,Chuyển hướng về trang đăng nhập hoặc hiển thị thông báo yêu cầu đăng nhập,,
+Giới hạn tốc độ,,RATE 004,Phiên hết hạn khi không hoạt động lâu,Đã đăng nhập,"1. Đăng nhập thành công
+2. Không thao tác trong thời gian dài để phiên hết hạn
+3. Thực hiện thao tác yêu cầu xác thực (ví dụ: mở hồ sơ cá nhân)",Không có,Hệ thống tự động làm mới phiên hoặc yêu cầu đăng nhập lại,,
+Giới hạn tốc độ,,RATE 005,Phiên bị từ chối khi token bị giả mạo,,"1. Sử dụng công cụ phát triển trình duyệt để sửa đổi token thành chuỗi không hợp lệ
+2. Thực hiện thao tác yêu cầu xác thực (ví dụ: mở hồ sơ cá nhân)",Không có,Chuyển hướng về trang đăng nhập — phiên không hợp lệ bị từ chối,,

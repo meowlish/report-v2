@@ -1,0 +1,57 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Nhận thông báo trực tiếp \\
+\hline
+\textbf{ID} & UC-0046 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng nhận thông báo thời gian thực qua SSE (Server-Sent Events) khi đang sử dụng ứng dụng \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập và có phiên hoạt động \\
+\hline
+\textbf{Điều kiện sau} & Thông báo được hiển thị thời gian thực và lưu vào cơ sở dữ liệu \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở ứng dụng (kết nối SSE được thiết lập tự động) \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở ứng dụng.
+    \item Client thiết lập kết nối SSE đến endpoint thông báo (GET /notifications/sse) với xác thực JWT.
+    \item Kết nối SSE được duy trì mở.
+    \item Khi có sự kiện xảy ra (bài viết mới từ tác giả đã theo dõi, hoặc quản trị viên phản hồi báo cáo), hệ thống đẩy thông báo qua kênh SSE.
+    \item Client hiển thị thông báo thời gian thực (toast/popup).
+    \item Thông báo đồng thời được lưu vào cơ sở dữ liệu để truy xuất sau qua REST (UC-0045).
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Kết nối lại khi bị ngắt:}
+    \begin{enumerate}
+        \item[3A.] Nếu kết nối SSE bị mất, client tự động kết nối lại và nhận các thông báo bị bỏ lỡ kể từ event ID cuối cùng.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Kết nối SSE thất bại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 401 khi chưa xác thực.
+    \end{enumerate}
+    \item \textbf{Kết nối hết thời gian:}
+    \begin{enumerate}
+        \item[3Err.] Client tự động kết nối lại.
+    \end{enumerate}
+    \item \textbf{Máy chủ không khả dụng:}
+    \begin{enumerate}
+        \item[2Err2.] Client chuyển sang chế độ polling REST endpoint để kiểm tra thông báo mới.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0046 Nhận thông báo trực tiếp}
+}

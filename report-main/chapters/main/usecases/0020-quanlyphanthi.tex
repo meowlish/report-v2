@@ -1,0 +1,66 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Quản lý phần thi \\
+\hline
+\textbf{ID} & UC-0020 \\
+\hline
+\textbf{Tác nhân} & Người kiểm duyệt (Mod) hoặc Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Quản lý các phần trong bài thi: tạo, chỉnh sửa, xóa và di chuyển phần thi \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bài thi tồn tại, người dùng có vai trò Mod hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Phần thi được tạo, cập nhật, xóa hoặc di chuyển thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn quản lý phần trong bài thi \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở bài thi trong trang quản lý.
+    \item Người dùng nhấn Thêm phần mới.
+    \item Hệ thống tạo phần mới ở vị trí chỉ định (tùy chọn).
+    \item Hệ thống xác nhận tạo phần thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Tạo phần con lồng nhau:}
+    \begin{enumerate}
+        \item[2A.] Người dùng chọn phần cha và thêm phần con.
+        \item[3A.] Hệ thống tạo phần con bên trong phần cha.
+    \end{enumerate}
+    \item \textbf{Chỉnh sửa phần:}
+    \begin{enumerate}
+        \item[2B.] Người dùng chọn phần cần sửa.
+        \item[3B.] Người dùng chỉnh sửa: tên, chỉ dẫn, loại nội dung, thêm/xóa thẻ, thêm/xóa tệp.
+        \item[4B.] Hệ thống cập nhật phần thi.
+    \end{enumerate}
+    \item \textbf{Xóa phần:}
+    \begin{enumerate}
+        \item[2C.] Người dùng chọn xóa phần, xác nhận, hệ thống xóa phần và nội dung liên quan.
+    \end{enumerate}
+    \item \textbf{Di chuyển/sắp xếp lại phần:}
+    \begin{enumerate}
+        \item[2D.] Người dùng di chuyển phần: thay đổi vị trí, đổi phần cha, hoặc đưa về gốc.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài thi hoặc phần không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0020 Quản lý phần thi}
+}

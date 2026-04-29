@@ -1,0 +1,51 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xóa phòng chat \\
+\hline
+\textbf{ID} & UC-0029 \\
+\hline
+\textbf{Tác nhân} & Quản trị viên (Admin) hoặc Người tạo phòng \\
+\hline
+\textbf{Mô tả} & Chủ phòng hoặc quản trị viên xóa phòng chat và toàn bộ nhật ký tin nhắn \\
+\hline
+\textbf{Điều kiện tiên quyết} & Phòng chat tồn tại, người dùng là chủ phòng hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Phòng chat và tất cả nhật ký tin nhắn bị xóa, các thành viên bị ngắt kết nối \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn xóa phòng chat \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang quản lý phòng chat.
+    \item Người dùng chọn phòng cần xóa.
+    \item Người dùng nhấn Xóa.
+    \item Hệ thống hiển thị cảnh báo xác nhận.
+    \item Người dùng xác nhận xóa.
+    \item Hệ thống xóa phòng và tất cả nhật ký tin nhắn liên quan.
+    \item Tất cả thành viên đang kết nối bị ngắt khỏi phòng.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Phòng không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về lỗi 403 khi người dùng không phải chủ phòng hoặc Admin.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0029 Xóa phòng chat}
+}

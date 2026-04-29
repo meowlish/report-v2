@@ -1,0 +1,58 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Phê duyệt bài thi \\
+\hline
+\textbf{ID} & UC-0019 \\
+\hline
+\textbf{Tác nhân} & Quản trị viên (Admin) có quyền EXAM\_APPROVE \\
+\hline
+\textbf{Mô tả} & Quản trị viên xem xét và thay đổi trạng thái bài thi (nháp sang xuất bản) \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bài thi tồn tại ở trạng thái nháp/chờ duyệt, người dùng có vai trò Admin và quyền EXAM\_APPROVE \\
+\hline
+\textbf{Điều kiện sau} & Trạng thái bài thi được thay đổi thành công \\
+\hline
+\textbf{Kích hoạt} & Quản trị viên chọn duyệt bài thi \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Quản trị viên mở trang quản lý bài thi.
+    \item Quản trị viên chọn bài thi ở trạng thái chờ duyệt.
+    \item Quản trị viên xem xét nội dung bài thi.
+    \item Quản trị viên thay đổi trạng thái thành xuất bản.
+    \item Hệ thống cập nhật trạng thái bài thi và xác nhận thành công.
+    \item Bài thi trở nên hiển thị công khai cho người dùng.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Từ chối bài thi:}
+    \begin{enumerate}
+        \item[4A.] Quản trị viên thay đổi trạng thái thành từ chối kèm lý do.
+        \item[5A.] Hệ thống cập nhật trạng thái và thông báo cho người tạo.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài thi không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về lỗi 403 khi thiếu vai trò Admin hoặc quyền EXAM\_APPROVE.
+    \end{enumerate}
+    \item \textbf{Chuyển trạng thái không hợp lệ:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi chuyển trạng thái không hợp lệ.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0019 Phê duyệt bài thi}
+}

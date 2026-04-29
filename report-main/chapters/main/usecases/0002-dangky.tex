@@ -1,0 +1,61 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Đăng ký \\
+\hline
+\textbf{ID} & UC-0002 \\
+\hline
+\textbf{Tác nhân} & Người dùng chưa xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng tạo tài khoản mới trong hệ thống \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng chưa có tài khoản trong hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Tài khoản mới được tạo, người dùng nhận access token và refresh token \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn Đăng ký trên trang đăng nhập \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở ứng dụng và chọn Đăng ký.
+    \item Hệ thống hiển thị biểu mẫu đăng ký.
+    \item Người dùng nhập tên người dùng, email và mật khẩu.
+    \item Hệ thống xác minh tính hợp lệ của thông tin (định dạng email, độ mạnh mật khẩu, tên người dùng chưa tồn tại).
+    \item Hệ thống tạo tài khoản mới và trả về access token cùng refresh token.
+    \item Hệ thống chuyển hướng người dùng đến trang thiết lập hồ sơ.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Đăng ký bằng Google OAuth2:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn Đăng ký bằng Google.
+        \item[4A.] Hệ thống chuyển hướng đến trang xác thực Google.
+        \item[5A.] Người dùng xác thực bằng tài khoản Google.
+        \item[6A.] Hệ thống nhận thông tin từ Google, tạo tài khoản mới với thông tin xác thực Google.
+        \item[7A.] Tiếp tục từ bước 5 của luồng chính.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Email đã tồn tại:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi thông báo email đã được sử dụng.
+    \end{enumerate}
+    \item \textbf{Tên người dùng đã tồn tại:}
+    \begin{enumerate}
+        \item[4Err2.] Hệ thống trả về lỗi thông báo tên người dùng đã được sử dụng.
+    \end{enumerate}
+    \item \textbf{Mật khẩu yếu:}
+    \begin{enumerate}
+        \item[4Err3.] Hệ thống trả về lỗi thông báo mật khẩu không đủ mạnh.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0002 Đăng ký}
+}

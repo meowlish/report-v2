@@ -1,0 +1,74 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Quản lý thẻ ghi nhớ \\
+\hline
+\textbf{ID} & UC-0036 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực (chủ sở hữu bộ thẻ) \\
+\hline
+\textbf{Mô tả} & Người dùng quản lý các thẻ ghi nhớ trong bộ thẻ: tạo, chỉnh sửa, xóa \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bộ thẻ tồn tại, người dùng là tác giả \\
+\hline
+\textbf{Điều kiện sau} & Thẻ ghi nhớ được tạo, cập nhật hoặc xóa thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở bộ thẻ và quản lý các thẻ bên trong \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở bộ thẻ ghi nhớ.
+    \item Người dùng nhấn Thêm thẻ mới.
+    \item Người dùng nhập: từ vựng (bắt buộc), định nghĩa (bắt buộc), hình ảnh (tùy chọn), từ loại (tùy chọn), phát âm (tùy chọn), ví dụ (danh sách), ghi chú (tùy chọn), thẻ phân loại.
+    \item Hệ thống tạo thẻ ghi nhớ trong bộ thẻ.
+    \item Hệ thống xác nhận tạo thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Chỉnh sửa thẻ:}
+    \begin{enumerate}
+        \item[2A.] Người dùng chọn thẻ cần sửa.
+        \item[3A.] Người dùng chỉnh sửa các trường thông tin.
+        \item[4A.] Hệ thống cập nhật thẻ.
+    \end{enumerate}
+    \item \textbf{Xóa thẻ:}
+    \begin{enumerate}
+        \item[2B.] Người dùng chọn thẻ cần xóa, xác nhận, hệ thống xóa thẻ khỏi bộ thẻ.
+    \end{enumerate}
+    \item \textbf{Thêm thẻ có sẵn vào bộ:}
+    \begin{enumerate}
+        \item[2C.] Người dùng chọn thẻ đã tồn tại và thêm vào bộ thẻ tại vị trí chỉ định.
+    \end{enumerate}
+    \item \textbf{Xem danh sách thẻ trong bộ:}
+    \begin{enumerate}
+        \item[1D.] Hệ thống hiển thị danh sách thẻ trong bộ thẻ với lọc theo thẻ phân loại và phân trang.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bộ thẻ không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Thẻ không tồn tại:}
+    \begin{enumerate}
+        \item[2AErr.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403 khi người dùng không phải tác giả.
+    \end{enumerate}
+    \item \textbf{Thiếu trường bắt buộc:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi thiếu từ vựng hoặc định nghĩa.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0036 Quản lý thẻ ghi nhớ}
+}

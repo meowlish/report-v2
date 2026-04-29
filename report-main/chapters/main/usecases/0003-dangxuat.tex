@@ -1,0 +1,45 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Đăng xuất \\
+\hline
+\textbf{ID} & UC-0003 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng đăng xuất khỏi tất cả các phiên đăng nhập \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Tất cả refresh token của người dùng bị vô hiệu hóa, người dùng được chuyển về trang đăng nhập \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn Đăng xuất \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng chọn chức năng Đăng xuất.
+    \item Hệ thống gửi yêu cầu đăng xuất tất cả phiên.
+    \item Hệ thống vô hiệu hóa tất cả refresh token liên kết với tài khoản.
+    \item Hệ thống xác nhận đăng xuất thành công.
+    \item Hệ thống chuyển hướng người dùng về trang đăng nhập.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Token hết hạn:}
+    \begin{enumerate}
+        \item[2Err.] Access token đã hết hạn, hệ thống vẫn xóa phiên cục bộ và chuyển hướng về trang đăng nhập.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0003 Đăng xuất}
+}

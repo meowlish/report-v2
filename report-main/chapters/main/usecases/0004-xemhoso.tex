@@ -1,0 +1,48 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem hồ sơ cá nhân \\
+\hline
+\textbf{ID} & UC-0004 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng xem thông tin hồ sơ cá nhân của mình \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Thông tin hồ sơ được hiển thị cho người dùng \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn xem hồ sơ cá nhân \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng chọn mục Hồ sơ cá nhân.
+    \item Hệ thống truy vấn thông tin danh tính của người dùng.
+    \item Hệ thống hiển thị hồ sơ bao gồm: tên người dùng, họ tên, tiểu sử, ảnh đại diện, vai trò và quyền hạn.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem hồ sơ công khai của người dùng khác:}
+    \begin{enumerate}
+        \item[1A.] Người dùng tìm kiếm hoặc chọn một người dùng khác.
+        \item[2A.] Hệ thống truy vấn thông tin công khai của người dùng đó.
+        \item[3A.] Hệ thống hiển thị hồ sơ giới hạn: tên người dùng, họ tên, tiểu sử, ảnh đại diện.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Người dùng không tồn tại:}
+    \begin{enumerate}
+        \item[2AErr.] Hệ thống trả về lỗi 404 khi tìm kiếm hồ sơ của người dùng khác.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0004 Xem hồ sơ cá nhân}
+}

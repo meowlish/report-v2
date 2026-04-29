@@ -1,0 +1,50 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tạo bài viết \\
+\hline
+\textbf{ID} & UC-0037 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng tạo bài viết blog mới để chia sẻ kiến thức hoặc kinh nghiệm \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Bài viết mới được tạo với người dùng là tác giả, thời gian tạo được ghi nhận \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn tạo bài viết mới \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang blog.
+    \item Người dùng nhấn Tạo bài viết mới.
+    \item Người dùng nhập: tiêu đề (bắt buộc), nội dung (bắt buộc), thẻ phân loại (tùy chọn).
+    \item Người dùng nhấn Xuất bản.
+    \item Hệ thống tạo bài viết với người dùng là tác giả, ghi nhận thời gian tạo.
+    \item Hệ thống trả về thông tin bài viết: id, tiêu đề, nội dung, author\_id, thẻ phân loại, created\_at, updated\_at.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+    \item \textbf{Thiếu trường bắt buộc:}
+    \begin{enumerate}
+        \item[5Err.] Hệ thống trả về lỗi khi thiếu tiêu đề hoặc nội dung.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0037 Tạo bài viết}
+}

@@ -1,0 +1,62 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem thông báo \\
+\hline
+\textbf{ID} & UC-0045 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng xem danh sách thông báo đã nhận qua REST API \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Danh sách thông báo được hiển thị, thông báo được chọn có thể được đánh dấu đã đọc \\
+\hline
+\textbf{Kích hoạt} & Người dùng nhấn biểu tượng thông báo hoặc mở trang thông báo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng nhấn biểu tượng thông báo hoặc mở trang thông báo.
+    \item Hệ thống truy vấn thông báo của người dùng qua REST API (GET /notifications/my).
+    \item Hệ thống hiển thị danh sách thông báo phân trang với: biểu tượng loại, tiêu đề, nội dung, thời gian, trạng thái đọc.
+    \item Người dùng nhấn vào thông báo.
+    \item Hệ thống điều hướng đến nội dung liên quan (bài viết blog hoặc báo cáo).
+    \item Hệ thống đánh dấu thông báo là đã đọc.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Đánh dấu tất cả đã đọc:}
+    \begin{enumerate}
+        \item[3A.] Người dùng nhấn "Đánh dấu tất cả đã đọc".
+        \item[4A.] Hệ thống cập nhật tất cả thông báo chưa đọc thành đã đọc.
+    \end{enumerate}
+    \item \textbf{Lọc theo loại:}
+    \begin{enumerate}
+        \item[2B.] Người dùng lọc theo loại thông báo: blog\_follow (bài viết mới từ tác giả đã theo dõi) hoặc report\_response (phản hồi từ quản trị viên về báo cáo).
+    \end{enumerate}
+    \item \textbf{Lọc theo trạng thái đọc:}
+    \begin{enumerate}
+        \item[2C.] Người dùng lọc chỉ xem thông báo chưa đọc hoặc đã đọc.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không có thông báo:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về danh sách rỗng.
+    \end{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0045 Xem thông báo}
+}

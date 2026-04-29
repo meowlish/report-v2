@@ -1,0 +1,49 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tạo bài thi \\
+\hline
+\textbf{ID} & UC-0016 \\
+\hline
+\textbf{Tác nhân} & Người kiểm duyệt (Mod) hoặc Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Người kiểm duyệt hoặc quản trị viên tạo bài thi mới trong hệ thống \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập và có vai trò Mod hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Bài thi mới được tạo ở trạng thái nháp \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn Tạo bài thi mới trong trang quản lý \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang quản lý bài thi.
+    \item Người dùng nhấn Tạo bài thi mới.
+    \item Người dùng nhập tiêu đề, mô tả và thời gian làm bài.
+    \item Hệ thống tạo bài thi ở trạng thái nháp và trả về ID bài thi.
+    \item Người dùng tiếp tục thêm các phần (UC-0020), câu hỏi (UC-0021), và thẻ phân loại.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 403 khi người dùng không có vai trò Mod hoặc Admin.
+    \end{enumerate}
+    \item \textbf{Dữ liệu không hợp lệ:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi thiếu các trường bắt buộc (tiêu đề).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0016 Tạo bài thi}
+}

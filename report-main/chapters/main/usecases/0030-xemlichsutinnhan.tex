@@ -1,0 +1,63 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem lịch sử tin nhắn \\
+\hline
+\textbf{ID} & UC-0030 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng xem lịch sử tin nhắn trong phòng chat với phân trang và bộ lọc \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập, phòng chat tồn tại \\
+\hline
+\textbf{Điều kiện sau} & Lịch sử tin nhắn được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở phòng chat hoặc cuộn lên để xem tin nhắn cũ \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở phòng chat.
+    \item Hệ thống tải lịch sử tin nhắn qua gRPC GetChatLog.
+    \item Hệ thống hiển thị tin nhắn với: thông tin người gửi (uid), nội dung, thời gian gửi.
+    \item Người dùng cuộn để tải thêm tin nhắn (phân trang cursor-based với next\_cursor/prev\_cursor).
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Lọc theo người dùng:}
+    \begin{enumerate}
+        \item[2A.] Người dùng lọc tin nhắn theo uid cụ thể.
+    \end{enumerate}
+    \item \textbf{Lọc theo ngày:}
+    \begin{enumerate}
+        \item[2B.] Người dùng lọc tin nhắn theo ngày cụ thể.
+    \end{enumerate}
+    \item \textbf{Xem tất cả tin nhắn:}
+    \begin{enumerate}
+        \item[2C.] Hệ thống sử dụng GetChatOf để tải toàn bộ tin nhắn trong phòng (không phân trang).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Phòng không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có tin nhắn:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về danh sách rỗng.
+    \end{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0030 Xem lịch sử tin nhắn}
+}

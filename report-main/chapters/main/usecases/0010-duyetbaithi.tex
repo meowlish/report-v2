@@ -1,0 +1,54 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Duyệt bài thi \\
+\hline
+\textbf{ID} & UC-0010 \\
+\hline
+\textbf{Tác nhân} & Người dùng (công khai) \\
+\hline
+\textbf{Mô tả} & Người dùng duyệt và tìm kiếm danh sách bài thi đã xuất bản \\
+\hline
+\textbf{Điều kiện tiên quyết} & Không yêu cầu đăng nhập \\
+\hline
+\textbf{Điều kiện sau} & Danh sách bài thi được hiển thị cho người dùng \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang danh sách bài thi \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang danh sách bài thi.
+    \item Hệ thống hiển thị danh sách bài thi đã xuất bản với tên, thẻ phân loại và thống kê.
+    \item Người dùng có thể lọc theo tên, thẻ phân loại.
+    \item Người dùng có thể sắp xếp theo các tiêu chí khác nhau (tên, ngày tạo) với thứ tự tăng/giảm.
+    \item Hệ thống hỗ trợ phân trang dạng cursor-based.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem thống kê bài thi:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn xem thống kê của một bài thi.
+        \item[4A.] Hệ thống hiển thị: điểm trung bình, thời gian trung bình, tỷ lệ đúng theo từng thẻ phân loại.
+    \end{enumerate}
+    \item \textbf{Xem chi tiết câu hỏi:}
+    \begin{enumerate}
+        \item[3B.] Người dùng chọn xem chi tiết một câu hỏi.
+        \item[4B.] Hệ thống hiển thị nội dung câu hỏi, các lựa chọn, giải thích và tệp đính kèm.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không tìm thấy bài thi:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về danh sách rỗng khi không có bài thi phù hợp với bộ lọc.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0010 Duyệt bài thi}
+}

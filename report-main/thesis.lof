@@ -1,0 +1,65 @@
+\babel@toc {english}{}\relax 
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Trang chủ Study4}}{15}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Trang chủ IELTS Online Tests}}{17}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Trang chủ The Forum}}{18}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Trang chủ Prep Education}}{19}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Các Use case về phân quyền, xác thực và quản lý hồ sơ}}{24}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Các Use case thuộc hoạt động học tập}}{25}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Các Use case dành cho nhân viên}}{25}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Activity diagram cho quy trình "Thực hiện bài kiểm tra thử"}}{26}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Activity diagram cho quy trình "Quản lý bài kiểm tra"}}{28}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Tổng quan về mẫu Clean architecture}}{32}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Tổng quan kiến trúc hệ thống}}{34}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces ERD mức khái niệm cho các web service.}}{35}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Ánh xạ ERD mức logic cho các web service.}}{41}{figure.3.13}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Giao diện tổng quan của nền tảng Lingriser dành cho học sinh}}{47}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Giao diện theo dõi tiến trình học sinh từ phía phụ huynh trên Lingriser}}{48}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Quản lý chương trình học và tiến trình theo module trong Lingriser}}{49}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Kiến trúc triển khai của Lingriser với mô-đun AI Practice}}{50}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Giao diện luyện nói với AI của học sinh trên Lingriser}}{53}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Giao diện dashboard giáo viên với danh sách buổi học và công cụ đặt mục tiêu hằng tuần}}{53}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Giao diện đặt lịch video call với mentor trên Lingriser}}{54}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Quản lý chương trình học và tiến trình theo module trong Lingriser}}{57}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Giao diện dashboard phụ huynh — theo dõi tiến trình AI practice và lịch học của con}}{59}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Trang web IELTS Mentor cung cấp nhiều đề bài, bài mẫu và bài viết được chấm điểm}}{62}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Trang web IELTS Blog bổ sung thêm các bài viết và nhận xét từ môi trường ôn luyện thực tế}}{63}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Phân phối Overall Band Score}}{65}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Phân phối Task Type}}{65}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces So sánh kết quả đánh giá Writing giữa mô hình Phi-3 SFT và GPT o4-mini theo điểm dự đoán}}{70}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces So sánh sai số đánh giá Writing của mô hình Phi-3 SFT và GPT o4-mini}}{70}{figure.4.15}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Giao diện trang chủ}}{74}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Trang xác thực người dùng}}{75}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Bảng điều khiển người dùng}}{76}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Giao diện lựa chọn bài thi}}{77}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Giao diện chi tiết bài thi}}{78}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Giao diện làm bài thi}}{79}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Công cụ tô sáng và ghi chú văn bản}}{80}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tạo flashcard ngay trong lúc làm bài}}{81}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Kết quả và phân tích bài thi}}{82}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Tổng quan và lựa chọn bài thi nói}}{83}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Giai đoạn ghi âm trực tiếp}}{84}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Kết quả bài thi nói}}{85}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Giao diện bài thi viết}}{87}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Kết quả bài thi viết}}{88}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Danh sách bộ flashcard cá nhân}}{89}{figure.5.15}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Giao diện học với flashcard}}{89}{figure.5.16}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Tạo danh sách flashcard mới}}{90}{figure.5.17}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Thêm flashcard mới}}{91}{figure.5.18}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Tổng quan hồ sơ cá nhân}}{92}{figure.5.19}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Danh hiệu trong hồ sơ cá nhân}}{93}{figure.5.20}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Lịch sử học tập}}{94}{figure.5.21}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Hộp thoại thiết lập mục tiêu}}{95}{figure.5.22}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Danh sách bài viết blog}}{96}{figure.5.23}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Trang chi tiết bài viết blog}}{97}{figure.5.24}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Giao diện tạo đề thi}}{98}{figure.5.25}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Giao diện phê duyệt đề thi}}{98}{figure.5.26}%
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}

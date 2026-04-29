@@ -1,0 +1,57 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tạo phòng chat \\
+\hline
+\textbf{ID} & UC-0028 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng tạo phòng chat mới cho cuộc trò chuyện nhóm \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Phòng chat mới được tạo, người dùng là chủ phòng \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn tạo phòng chat mới \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang quản lý phòng chat.
+    \item Người dùng nhấn Tạo phòng mới.
+    \item Người dùng nhập tên phòng.
+    \item Hệ thống tạo phòng với người dùng là chủ phòng (createdBy).
+    \item Hệ thống trả về ID phòng và xác nhận tạo thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Tạo phòng với lịch phát trực tiếp:}
+    \begin{enumerate}
+        \item[3A.] Người dùng cung cấp thêm: URL phát trực tiếp (scheduledLiveUrl) và ngày giờ dự kiến (scheduledDate).
+        \item[4A.] Hệ thống tạo phòng với thông tin lịch phát trực tiếp.
+    \end{enumerate}
+    \item \textbf{Cập nhật lịch phát trực tiếp:}
+    \begin{enumerate}
+        \item[5B.] Chủ phòng cập nhật hoặc xóa URL phát trực tiếp và ngày giờ dự kiến.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+    \item \textbf{Dữ liệu không hợp lệ:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi thiếu tên phòng.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0028 Tạo phòng chat}
+}

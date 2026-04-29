@@ -1,0 +1,49 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tìm kiếm người dùng \\
+\hline
+\textbf{ID} & UC-0009 \\
+\hline
+\textbf{Tác nhân} & Người dùng (công khai) \\
+\hline
+\textbf{Mô tả} & Người dùng tìm kiếm người dùng khác theo tên người dùng hoặc thông tin xác thực \\
+\hline
+\textbf{Điều kiện tiên quyết} & Không yêu cầu đăng nhập \\
+\hline
+\textbf{Điều kiện sau} & Danh sách người dùng phù hợp được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng nhập từ khóa tìm kiếm \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở chức năng tìm kiếm người dùng.
+    \item Người dùng nhập từ khóa (tên người dùng hoặc định danh xác thực).
+    \item Hệ thống tìm kiếm và trả về danh sách hồ sơ công khai phù hợp với phân trang (cursor-based).
+    \item Hệ thống hiển thị kết quả bao gồm: tên người dùng, họ tên, tiểu sử, ảnh đại diện.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Quản trị viên tìm kiếm nâng cao:}
+    \begin{enumerate}
+        \item[1A.] Quản trị viên mở trang quản lý người dùng.
+        \item[2A.] Quản trị viên tìm kiếm với bộ lọc nâng cao: tên người dùng, ID, vai trò, quyền hạn.
+        \item[3A.] Hệ thống trả về danh sách đầy đủ thông tin danh tính.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không tìm thấy kết quả:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về danh sách rỗng khi không có người dùng phù hợp.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0009 Tìm kiếm người dùng}
+}

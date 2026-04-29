@@ -1,0 +1,53 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xóa bài viết \\
+\hline
+\textbf{ID} & UC-0039 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực (tác giả bài viết) \\
+\hline
+\textbf{Mô tả} & Người dùng xóa bài viết blog đã đăng \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bài viết tồn tại, người dùng là tác giả \\
+\hline
+\textbf{Điều kiện sau} & Bài viết bị xóa khỏi hệ thống \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn xóa bài viết \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở bài viết của mình.
+    \item Người dùng nhấn Xóa.
+    \item Hệ thống hiển thị cảnh báo xác nhận.
+    \item Người dùng xác nhận xóa.
+    \item Hệ thống xóa bài viết khỏi cơ sở dữ liệu.
+    \item Người dùng được chuyển hướng về danh sách bài viết.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Quản trị viên xóa bài viết:}
+    \begin{enumerate}
+        \item[1A.] Quản trị viên có thể xóa bất kỳ bài viết nào bất kể quyền sở hữu.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài viết không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403 khi người dùng không phải tác giả hoặc Admin.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0039 Xóa bài viết}
+}

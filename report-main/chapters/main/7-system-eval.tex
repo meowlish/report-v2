@@ -1,0 +1,134 @@
+\chapter{Đánh giá hệ thống}
+\textit{Chương này trình bày quá trình đánh giá hệ thống dựa trên các tiêu chí về chức năng, hiệu năng, tính ổn định và trải nghiệm người dùng, qua đó làm rõ mức độ đáp ứng của hệ thống đối với các mục tiêu đã đề ra.}
+
+\section{Mục tiêu đánh giá}
+Phần này nêu rõ các mục tiêu đánh giá hệ thống, bao gồm việc kiểm chứng các chức năng chính, đo lường hiệu năng xử lý, đánh giá khả năng đáp ứng của các dịch vụ AI và xem xét mức độ phù hợp của hệ thống trong bối cảnh sử dụng thực tế.
+
+\section{Tiêu chí và phương pháp đánh giá}
+Phần này trình bày các tiêu chí đánh giá được lựa chọn, phương pháp đo lường, cách thu thập dữ liệu và các kịch bản kiểm thử được sử dụng để đánh giá từng thành phần của hệ thống.
+
+\subsection{Danh sách test case E2E}
+Để đối chiếu mức độ bao phủ kiểm thử đầu cuối của hệ thống, nhóm tổng hợp toàn bộ các kịch bản kiểm thử thành hai tệp CSV: \texttt{chapters/main/test/e2e-testcases.csv} và \texttt{chapters/main/test/e2e-lingriser-tcs-vi.csv}. Do khối lượng dữ liệu lớn, toàn bộ nội dung của hai tệp này được đưa xuống phần phụ lục để tiện tra cứu và tránh làm gián đoạn mạch trình bày trong chương đánh giá.
+
+\section{Kết quả đánh giá}
+Phần này tổng hợp các kết quả đánh giá, phân tích các điểm mạnh, hạn chế và mức độ đáp ứng của hệ thống đối với yêu cầu chức năng và phi chức năng.
+
+\subsection{Kết quả kiểm thử Unit và Integration Test}
+Bên cạnh các kịch bản kiểm thử toàn trình (E2E), hệ thống cũng được kiểm chứng thông qua bộ Unit Test và Integration Test ở nội bộ các dịch vụ Backend để đảm bảo logic cốt lõi. Dưới đây là trích đoạn các ca kiểm thử đại diện. Chi tiết toàn bộ 251 kịch bản trải dài trên 6 domain có thể xem trong thư mục \texttt{test/}.
+
+\subsubsection*{1. Nhóm Achievement (badge counter)}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm Achievement}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước / Điều kiện} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+CTR-001 & First completed attempt — earns FirstComplete\-Attempt & \textit{Pre:} \newline - AttemptCounter\-BadgeManager tracks total \newline - Thresholds: 1, 10, 100 \newline \textit{Steps:} \newline 1. Create manager (total=0) \newline 2. Call updateProgress() & - total=1 \newline - badges=\{FirstComplete\-Attempt\} \newline - BadgeAddedEvent \newline \textit{Source:} \texttt{attempt-counter-badge-manager.\allowbreak{}entity.ts} & PASS \\
+\hline
+CTR-002 & 10th attempt — earns TenthComplete\-Attempt & \textit{Pre:} AttemptCounter\-BadgeManager tracks attempts \newline \textit{Steps:} \newline 1. Create manager (total=9) \newline 2. Call updateProgress() & - total=10 \newline - badges gains TenthComplete\-Attempt & PASS \\
+\hline
+CTR-003 & 100th attempt — earns Hundredth\-CompleteAttempt & \textit{Pre:} AttemptCounter\-BadgeManager tracks attempts \newline \textit{Steps:} \newline 1. Create manager (total=99) \newline 2. Call updateProgress() & - total=100 \newline - badges gains Hundredth\-CompleteAttempt & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{2. Nhóm Auth (credential)}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm Auth}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+CRD-001 & Create Mail credential with password — hashed & \textit{Steps:} \newline 1. Create Credential: \newline \{ identifier: "john@email.com", loginType: Mail, secretHash: "pass123" \} & - secretHash is bcrypt hash \newline - Starts with \verb|$2b$10$| \newline - NOT plaintext \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
+\hline
+CRD-002 & Create Mail credential with isHashed=true & \textit{Steps:} \newline 1. Create Credential with secretHash already hashed, isHashed: true & - secretHash stored as-is \newline - No double-hashing \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
+\hline
+CRD-003 & Create Google credential — no password & \textit{Steps:} \newline 1. Create Credential (loginType: Google) & - secretHash=null \newline - Google auth doesn't use passwords \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{3. Nhóm Exam (attempt)}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm Exam}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+ATT-001 & Answer MCQ (single) — first answer & \textit{Steps:} \newline 1. Create attempt (Q1, MCQ) \newline 2. Call answer("Q1", "a") & - New Response created \newline - answers=\{"a"\} \newline - AttemptResponse\-CreatedEvent & PASS \\
+\hline
+ATT-002 & Answer MCQ — replaces previous answer & \textit{Steps:} \newline 1. Answer "a" for Q1 \newline 2. Answer "b" for Q1 & - answers=\{"b"\} \newline - AttemptResponse\-UpdatedEvent & PASS \\
+\hline
+ATT-003 & Answer Fill — replaces previous & \textit{Steps:} \newline 1. Answer "paris" \newline 2. Answer "london" & - answers=\{"london"\} \newline - Previous cleared \newline \textit{Source:} \texttt{question-type.\allowbreak{}enum.ts} & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{4. Nhóm File Service}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm File Service}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+FIL-001 & onModuleInit creates public bucket & \textit{Steps:} \newline 1. Call onModuleInit() & - minioClient.makeBucket called \newline - If bucket exists, ignore error \newline \textit{Source:} \texttt{file.service.ts} & PASS \\
+\hline
+FIL-002 & onModuleInit creates private bucket & \textit{Steps:} \newline 1. Call onModuleInit() & - minioClient.makeBucket called \newline - Existing bucket error ignored & PASS \\
+\hline
+FIL-003 & onModuleInit sets public read policy & \textit{Steps:} \newline 1. Call onModuleInit() & - setBucketPolicy called \newline - Access: s3:GetObject \newline \textit{Source:} \texttt{file.service.ts} & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{5. Nhóm API Gateway (routing)}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm Gateway}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+GW-001 & Public endpoint — no token & \textit{Steps:} \newline 1. GET /api/v1/exams/practice (no header) & - 200 OK \newline - @IsPublic() works & PASS \\
+\hline
+GW-002 & Protected endpoint — no token & \textit{Steps:} \newline 1. POST /api/v1/exams/... (no header) & - 401 Unauthorized & PASS \\
+\hline
+GW-003 & Protected endpoint — valid token & \textit{Steps:} \newline 1. Login to get token \newline 2. POST with Auth Bearer & - Request proceeds to handler & PASS \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{6. Nhóm Integration (End-to-End flows)}
+\begin{table}[H]
+\centering
+\caption{Trích đoạn ca kiểm thử - Nhóm Integration}
+\renewcommand{\arraystretch}{1.3}
+\scriptsize
+\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\hline
+\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\hline
+INT-001 & Full registration lifecycle flow & \textit{Steps:} \newline 1. Register $\rightarrow$ Login $\rightarrow$ Refresh $\rightarrow$ Logout-all & Full lifecycle works: authenticate, refresh, revoke & PASS \\
+\hline
+INT-002 & Google OAuth registration linking & \textit{Steps:} \newline 1. Register email \newline 2. Link Google OAuth & Link multiple providers and login with either & AT RISK \\
+\hline
+INT-003 & Full exam creation workflow & \textit{Steps:} \newline 1. Create $\rightarrow$ Add sections $\rightarrow$ Add questions $\rightarrow$ Approve & Approved exam appears in public practice list & AT RISK \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Kết luận chương}
+Chương này cung cấp cái nhìn tổng quát về chất lượng hiện tại của hệ thống, đồng thời là cơ sở để xác định các hướng cải thiện trong các giai đoạn phát triển tiếp theo.

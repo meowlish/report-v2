@@ -1,0 +1,62 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Quản lý mục tiêu học tập \\
+\hline
+\textbf{ID} & UC-0015 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng thiết lập, cập nhật hoặc xóa mục tiêu học tập cá nhân \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Mục tiêu học tập được tạo, cập nhật hoặc xóa thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang quản lý mục tiêu \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang mục tiêu học tập.
+    \item Người dùng nhấn Đặt mục tiêu.
+    \item Người dùng nhập: ngày hoàn thành, giá trị mục tiêu, loại mục tiêu.
+    \item Hệ thống tạo mục tiêu mới và xác nhận thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Cập nhật mục tiêu:}
+    \begin{enumerate}
+        \item[2A.] Người dùng chọn chỉnh sửa mục tiêu hiện tại.
+        \item[3A.] Người dùng thay đổi ngày, giá trị hoặc loại mục tiêu.
+        \item[4A.] Hệ thống cập nhật mục tiêu.
+    \end{enumerate}
+    \item \textbf{Xóa mục tiêu:}
+    \begin{enumerate}
+        \item[2B.] Người dùng chọn xóa mục tiêu.
+        \item[3B.] Hệ thống xóa mục tiêu và xác nhận.
+    \end{enumerate}
+    \item \textbf{Xem mục tiêu hiện tại:}
+    \begin{enumerate}
+        \item[1C.] Hệ thống hiển thị mục tiêu đang hoạt động với tiến trình hiện tại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Mục tiêu đã tồn tại:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi khi cố tạo mục tiêu mới trong khi đã có mục tiêu, phải cập nhật thay vì tạo mới.
+    \end{enumerate}
+    \item \textbf{Ngày không hợp lệ:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về lỗi khi ngày hoàn thành là ngày trong quá khứ.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0015 Quản lý mục tiêu học tập}
+}

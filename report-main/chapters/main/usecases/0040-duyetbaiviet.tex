@@ -1,0 +1,53 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Duyệt bài viết \\
+\hline
+\textbf{ID} & UC-0040 \\
+\hline
+\textbf{Tác nhân} & Người dùng (bất kỳ, công khai) \\
+\hline
+\textbf{Mô tả} & Người dùng duyệt và đọc danh sách bài viết blog \\
+\hline
+\textbf{Điều kiện tiên quyết} & Không yêu cầu đăng nhập \\
+\hline
+\textbf{Điều kiện sau} & Danh sách bài viết hoặc nội dung bài viết được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang blog \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang blog.
+    \item Hệ thống hiển thị danh sách bài viết phân trang với: tiêu đề, tác giả, thẻ phân loại, ngày tạo.
+    \item Người dùng có thể lọc theo tác giả (author\_id) và thẻ phân loại.
+    \item Hệ thống hỗ trợ phân trang với số trang và giới hạn.
+    \item Người dùng chọn một bài viết.
+    \item Hệ thống hiển thị nội dung đầy đủ: tiêu đề, nội dung, author\_id, thẻ phân loại, created\_at, updated\_at.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem bài viết cá nhân:}
+    \begin{enumerate}
+        \item[3A.] Người dùng đã xác thực lọc theo author\_id = bản thân để xem danh sách bài viết của mình.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không tìm thấy bài viết:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về danh sách rỗng với total\_count=0.
+    \end{enumerate}
+    \item \textbf{Bài viết không tồn tại:}
+    \begin{enumerate}
+        \item[6Err.] Hệ thống trả về lỗi 404 khi xem chi tiết bài viết không tồn tại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0040 Duyệt bài viết}
+}
