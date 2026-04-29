@@ -1,7 +1,7 @@
 PWD /home/culove/report-v2/report-main
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /home/culove/.texlive/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT thesis.tex
+INPUT /home/culove/report-v2/report-main/thesis.tex
 OUTPUT thesis.log
 INPUT ./hcmut-thesis.cls
 INPUT hcmut-thesis.cls
