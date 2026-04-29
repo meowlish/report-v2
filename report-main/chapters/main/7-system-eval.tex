@@ -1,134 +1,90 @@
 \chapter{Đánh giá hệ thống}
-\textit{Chương này trình bày quá trình đánh giá hệ thống dựa trên các tiêu chí về chức năng, hiệu năng, tính ổn định và trải nghiệm người dùng, qua đó làm rõ mức độ đáp ứng của hệ thống đối với các mục tiêu đã đề ra.}
+\textit{Chương này trình bày quá trình đánh giá hệ thống dựa trên các tiêu chí về chức năng và phi chức năng, qua đó làm rõ mức độ đáp ứng của hệ thống đối với các mục tiêu đã đề ra.}
 
 \section{Mục tiêu đánh giá}
-Phần này nêu rõ các mục tiêu đánh giá hệ thống, bao gồm việc kiểm chứng các chức năng chính, đo lường hiệu năng xử lý, đánh giá khả năng đáp ứng của các dịch vụ AI và xem xét mức độ phù hợp của hệ thống trong bối cảnh sử dụng thực tế.
+Quá trình đánh giá hệ thống nhắm đến hai nhóm mục tiêu chính:
+
+\begin{itemize}
+    \item \textbf{Yêu cầu chức năng (Functional Requirements):} kiểm chứng rằng tất cả các chức năng của hệ thống hoạt động đúng theo đặc tả, bao gồm các luồng nghiệp vụ cốt lõi như đăng nhập, đăng ký, làm bài thi, quản lý nội dung và các tính năng AI.
+    \item \textbf{Yêu cầu phi chức năng (Non-functional Requirements):} đo lường hiệu năng, khả năng chịu tải và tính nhất quán của hệ thống trên các môi trường triển khai khác nhau, nhằm đảm bảo hệ thống đáp ứng các tiêu chí chất lượng đã cam kết.
+\end{itemize}
 
 \section{Tiêu chí và phương pháp đánh giá}
-Phần này trình bày các tiêu chí đánh giá được lựa chọn, phương pháp đo lường, cách thu thập dữ liệu và các kịch bản kiểm thử được sử dụng để đánh giá từng thành phần của hệ thống.
 
-\subsection{Danh sách test case E2E}
-Để đối chiếu mức độ bao phủ kiểm thử đầu cuối của hệ thống, nhóm tổng hợp toàn bộ các kịch bản kiểm thử thành hai tệp CSV: \texttt{chapters/main/test/e2e-testcases.csv} và \texttt{chapters/main/test/e2e-lingriser-tcs-vi.csv}. Do khối lượng dữ liệu lớn, toàn bộ nội dung của hai tệp này được đưa xuống phần phụ lục để tiện tra cứu và tránh làm gián đoạn mạch trình bày trong chương đánh giá.
+\subsection{Kiểm thử yêu cầu chức năng --- Kiểm thử End-to-End}
+
+Toàn bộ yêu cầu chức năng của hệ thống được kiểm chứng thông qua bộ kiểm thử End-to-End (E2E) sử dụng \textbf{Playwright} --- một framework kiểm thử tự động hóa trình duyệt. Playwright cho phép mô phỏng các thao tác thực tế của người dùng trên giao diện web, bao gồm điều hướng, nhập liệu, nhấn nút và kiểm tra kết quả hiển thị, qua đó kiểm chứng toàn bộ luồng nghiệp vụ từ đầu đến cuối.
+
+Bộ test case E2E được tổ chức thành hai nhóm tương ứng với hai hệ thống: \textbf{English Prep} và \textbf{Lingriser}, bao phủ các nhóm chức năng chính gồm xác thực, quản lý hồ sơ, quản lý bài thi, flashcard, chat, blog, thông báo và quản trị hệ thống. Toàn bộ danh sách test case được trình bày chi tiết trong phần Phụ lục.
+
+\subsection{Kiểm thử yêu cầu phi chức năng}
+
+Các yêu cầu phi chức năng được kiểm thử với phương pháp và công cụ tương ứng như sau:
+
+\begin{table}[H]
+\centering
+\caption{Phương pháp kiểm thử yêu cầu phi chức năng}
+\renewcommand{\arraystretch}{1.4}
+\small
+\begin{tabular}{|p{0.08\linewidth}|p{0.22\linewidth}|p{0.25\linewidth}|p{0.35\linewidth}|}
+\hline
+\textbf{ID} & \textbf{Tên NFR} & \textbf{Công cụ} & \textbf{Phương pháp} \\
+\hline
+NFR1 & Performance & Postman, k6 & Đo thời gian phản hồi API bằng Postman cho các endpoint đơn lẻ. Sử dụng k6 để chạy kịch bản tải với nhiều mức virtual user (VU), đo response time trung bình và tỷ lệ request thành công. \\
+\hline
+NFR2 & Scalability & k6 & Chạy stress test với k6, tăng dần số lượng concurrent user lên đến 1.000 VU, đo khả năng xử lý đồng thời và tính ổn định của hệ thống dưới tải cao. \\
+\hline
+NFR4 & Portability & CI/CD Pipeline & Kiểm chứng thông qua pipeline CI/CD: cùng một bộ mã nguồn được build, test và chạy thành công trên cả môi trường Development và Production, đảm bảo hành vi nhất quán giữa các môi trường. \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{Kết quả đánh giá}
-Phần này tổng hợp các kết quả đánh giá, phân tích các điểm mạnh, hạn chế và mức độ đáp ứng của hệ thống đối với yêu cầu chức năng và phi chức năng.
 
-\subsection{Kết quả kiểm thử Unit và Integration Test}
-Bên cạnh các kịch bản kiểm thử toàn trình (E2E), hệ thống cũng được kiểm chứng thông qua bộ Unit Test và Integration Test ở nội bộ các dịch vụ Backend để đảm bảo logic cốt lõi. Dưới đây là trích đoạn các ca kiểm thử đại diện. Chi tiết toàn bộ 251 kịch bản trải dài trên 6 domain có thể xem trong thư mục \texttt{test/}.
+\subsection{Kết quả kiểm thử E2E}
 
-\subsubsection*{1. Nhóm Achievement (badge counter)}
+Toàn bộ bộ kiểm thử E2E được thực thi trên cả hai hệ thống English Prep và Lingriser. Kết quả cho thấy \textbf{100\% test case đều pass}, xác nhận rằng tất cả các chức năng chính của hệ thống hoạt động đúng theo đặc tả trong điều kiện vận hành bình thường.
+
+Tuy nhiên, khi hệ thống chịu tải cao (stress test), một số request có thể bị từ chối do cơ chế \textbf{throttle guard} --- bộ giới hạn tốc độ request được tích hợp nhằm bảo vệ hệ thống khỏi bị quá tải. Đây là hành vi có chủ đích trong thiết kế hệ thống: throttle guard ưu tiên duy trì tính ổn định tổng thể thay vì cho phép tất cả request đi qua khi tài nguyên không đủ đáp ứng.
+
+\subsection{Kết quả kiểm thử hiệu năng với k6}
+
+Bảng~\ref{tab:k6-results} tổng hợp kết quả chạy stress test bằng k6 trên ba nhóm kịch bản khác nhau, từ các endpoint công khai không yêu cầu xác thực đến kiểm thử toàn tải với 1.000 virtual user đồng thời.
+
 \begin{table}[H]
 \centering
-\caption{Trích đoạn ca kiểm thử - Nhóm Achievement}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
+\caption{Kết quả kiểm thử hiệu năng với k6}
+\label{tab:k6-results}
+\renewcommand{\arraystretch}{1.4}
+\small
+\begin{tabular}{|p{0.2\linewidth}|c|c|r|c|c|c|}
 \hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước / Điều kiện} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
+\textbf{Kịch bản} & \textbf{Thời gian} & \textbf{Max VU} & \textbf{Tổng request} & \textbf{Check pass} & \textbf{Avg response} & \textbf{JSON output} \\
 \hline
-CTR-001 & First completed attempt — earns FirstComplete\-Attempt & \textit{Pre:} \newline - AttemptCounter\-BadgeManager tracks total \newline - Thresholds: 1, 10, 100 \newline \textit{Steps:} \newline 1. Create manager (total=0) \newline 2. Call updateProgress() & - total=1 \newline - badges=\{FirstComplete\-Attempt\} \newline - BadgeAddedEvent \newline \textit{Source:} \texttt{attempt-counter-badge-manager.\allowbreak{}entity.ts} & PASS \\
+Public endpoints & 4 phút & 10 & 944 & 100\% & 5,71 ms & 3,7 MB \\
 \hline
-CTR-002 & 10th attempt — earns TenthComplete\-Attempt & \textit{Pre:} AttemptCounter\-BadgeManager tracks attempts \newline \textit{Steps:} \newline 1. Create manager (total=9) \newline 2. Call updateProgress() & - total=10 \newline - badges gains TenthComplete\-Attempt & PASS \\
+Auth-required endpoints & 18 phút & 1.000 & 237.253 & 98,35\% & 1,8 ms & 988 MB \\
 \hline
-CTR-003 & 100th attempt — earns Hundredth\-CompleteAttempt & \textit{Pre:} AttemptCounter\-BadgeManager tracks attempts \newline \textit{Steps:} \newline 1. Create manager (total=99) \newline 2. Call updateProgress() & - total=100 \newline - badges gains Hundredth\-CompleteAttempt & PASS \\
+Full Stress & 18 phút & 1.000 & 246.301 & 98,83\% & 5,86 ms & 1,1 GB \\
 \hline
 \end{tabular}
 \end{table}
 
-\subsubsection*{2. Nhóm Auth (credential)}
-\begin{table}[H]
-\centering
-\caption{Trích đoạn ca kiểm thử - Nhóm Auth}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
-\hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
-\hline
-CRD-001 & Create Mail credential with password — hashed & \textit{Steps:} \newline 1. Create Credential: \newline \{ identifier: "john@email.com", loginType: Mail, secretHash: "pass123" \} & - secretHash is bcrypt hash \newline - Starts with \verb|$2b$10$| \newline - NOT plaintext \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
-\hline
-CRD-002 & Create Mail credential with isHashed=true & \textit{Steps:} \newline 1. Create Credential with secretHash already hashed, isHashed: true & - secretHash stored as-is \newline - No double-hashing \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
-\hline
-CRD-003 & Create Google credential — no password & \textit{Steps:} \newline 1. Create Credential (loginType: Google) & - secretHash=null \newline - Google auth doesn't use passwords \newline \textit{Source:} \texttt{credential.\allowbreak{}entity.ts} & PASS \\
-\hline
-\end{tabular}
-\end{table}
+\noindent Phân tích kết quả:
 
-\subsubsection*{3. Nhóm Exam (attempt)}
-\begin{table}[H]
-\centering
-\caption{Trích đoạn ca kiểm thử - Nhóm Exam}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
-\hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
-\hline
-ATT-001 & Answer MCQ (single) — first answer & \textit{Steps:} \newline 1. Create attempt (Q1, MCQ) \newline 2. Call answer("Q1", "a") & - New Response created \newline - answers=\{"a"\} \newline - AttemptResponse\-CreatedEvent & PASS \\
-\hline
-ATT-002 & Answer MCQ — replaces previous answer & \textit{Steps:} \newline 1. Answer "a" for Q1 \newline 2. Answer "b" for Q1 & - answers=\{"b"\} \newline - AttemptResponse\-UpdatedEvent & PASS \\
-\hline
-ATT-003 & Answer Fill — replaces previous & \textit{Steps:} \newline 1. Answer "paris" \newline 2. Answer "london" & - answers=\{"london"\} \newline - Previous cleared \newline \textit{Source:} \texttt{question-type.\allowbreak{}enum.ts} & PASS \\
-\hline
-\end{tabular}
-\end{table}
+\begin{itemize}
+    \item \textbf{Public endpoints:} với 10 virtual user, hệ thống xử lý 944 request trong 4 phút với tỷ lệ thành công 100\% và thời gian phản hồi trung bình 5,71ms --- cho thấy các endpoint công khai hoạt động ổn định và đáp ứng nhanh.
+    \item \textbf{Auth-required endpoints:} khi tăng lên 1.000 VU đồng thời trong 18 phút, hệ thống xử lý hơn 237.000 request với tỷ lệ check pass đạt 98,35\%. Thời gian phản hồi trung bình chỉ 1,8ms cho thấy cơ chế xác thực và xử lý nghiệp vụ hoạt động hiệu quả. Tỷ lệ 1,65\% request không pass chủ yếu do throttle guard kích hoạt khi lượng request vượt ngưỡng cho phép.
+    \item \textbf{Full Stress:} kịch bản tải tổng hợp với 1.000 VU và hơn 246.000 request đạt tỷ lệ check pass 98,83\%. Thời gian phản hồi trung bình 5,86ms vẫn nằm trong ngưỡng chấp nhận được, xác nhận hệ thống có khả năng chịu tải ở mức cao mà không suy giảm hiệu năng đáng kể.
+\end{itemize}
 
-\subsubsection*{4. Nhóm File Service}
-\begin{table}[H]
-\centering
-\caption{Trích đoạn ca kiểm thử - Nhóm File Service}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
-\hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
-\hline
-FIL-001 & onModuleInit creates public bucket & \textit{Steps:} \newline 1. Call onModuleInit() & - minioClient.makeBucket called \newline - If bucket exists, ignore error \newline \textit{Source:} \texttt{file.service.ts} & PASS \\
-\hline
-FIL-002 & onModuleInit creates private bucket & \textit{Steps:} \newline 1. Call onModuleInit() & - minioClient.makeBucket called \newline - Existing bucket error ignored & PASS \\
-\hline
-FIL-003 & onModuleInit sets public read policy & \textit{Steps:} \newline 1. Call onModuleInit() & - setBucketPolicy called \newline - Access: s3:GetObject \newline \textit{Source:} \texttt{file.service.ts} & PASS \\
-\hline
-\end{tabular}
-\end{table}
+\noindent Đối chiếu với các yêu cầu phi chức năng:
 
-\subsubsection*{5. Nhóm API Gateway (routing)}
-\begin{table}[H]
-\centering
-\caption{Trích đoạn ca kiểm thử - Nhóm Gateway}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
-\hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
-\hline
-GW-001 & Public endpoint — no token & \textit{Steps:} \newline 1. GET /api/v1/exams/practice (no header) & - 200 OK \newline - @IsPublic() works & PASS \\
-\hline
-GW-002 & Protected endpoint — no token & \textit{Steps:} \newline 1. POST /api/v1/exams/... (no header) & - 401 Unauthorized & PASS \\
-\hline
-GW-003 & Protected endpoint — valid token & \textit{Steps:} \newline 1. Login to get token \newline 2. POST with Auth Bearer & - Request proceeds to handler & PASS \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection*{6. Nhóm Integration (End-to-End flows)}
-\begin{table}[H]
-\centering
-\caption{Trích đoạn ca kiểm thử - Nhóm Integration}
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\begin{tabular}{|p{0.1\linewidth}|p{0.25\linewidth}|p{0.32\linewidth}|p{0.22\linewidth}|c|}
-\hline
-\textbf{Mã} & \textbf{Tiêu đề} & \textbf{Các bước} & \textbf{Mong muốn} & \textbf{Trạng thái} \\
-\hline
-INT-001 & Full registration lifecycle flow & \textit{Steps:} \newline 1. Register $\rightarrow$ Login $\rightarrow$ Refresh $\rightarrow$ Logout-all & Full lifecycle works: authenticate, refresh, revoke & PASS \\
-\hline
-INT-002 & Google OAuth registration linking & \textit{Steps:} \newline 1. Register email \newline 2. Link Google OAuth & Link multiple providers and login with either & AT RISK \\
-\hline
-INT-003 & Full exam creation workflow & \textit{Steps:} \newline 1. Create $\rightarrow$ Add sections $\rightarrow$ Add questions $\rightarrow$ Approve & Approved exam appears in public practice list & AT RISK \\
-\hline
-\end{tabular}
-\end{table}
+\begin{itemize}
+    \item \textbf{NFR1 --- Performance:} thời gian phản hồi trung bình dao động từ 1,8ms đến 5,86ms, thấp hơn đáng kể so với ngưỡng 500ms đã đặt ra cho các thao tác non-AI. Yêu cầu này được đáp ứng.
+    \item \textbf{NFR2 --- Scalability:} hệ thống xử lý thành công hơn 246.000 request với 1.000 VU đồng thời, tỷ lệ thành công trên 98\%. Mặc dù chưa đạt đến mốc 10.000 concurrent user do giới hạn tài nguyên VPS hiện tại, kết quả cho thấy kiến trúc microservices cho phép mở rộng khi bổ sung thêm tài nguyên.
+    \item \textbf{NFR4 --- Portability:} pipeline CI/CD chạy thành công trên cả hai môi trường Development và Production với cùng bộ mã nguồn, xác nhận tính nhất quán giữa các môi trường triển khai.
+\end{itemize}
 
 \section{Kết luận chương}
-Chương này cung cấp cái nhìn tổng quát về chất lượng hiện tại của hệ thống, đồng thời là cơ sở để xác định các hướng cải thiện trong các giai đoạn phát triển tiếp theo.
+Chương này đã trình bày quá trình đánh giá hệ thống dựa trên cả yêu cầu chức năng và phi chức năng. Kết quả kiểm thử E2E cho thấy toàn bộ chức năng hoạt động đúng đặc tả với tỷ lệ pass 100\%. Về hiệu năng, hệ thống đáp ứng tốt các chỉ tiêu đã đề ra với thời gian phản hồi trung bình dưới 6ms và tỷ lệ thành công trên 98\% ngay cả khi chịu tải cao 1.000 virtual user. Các kết quả này khẳng định hệ thống đã sẵn sàng cho môi trường vận hành thực tế, đồng thời chỉ ra hướng cải thiện về khả năng mở rộng khi nhu cầu sử dụng tăng cao.

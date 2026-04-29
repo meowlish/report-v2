@@ -1,0 +1,890 @@
+{
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\small
+\begin{landscape}
+\pagestyle{plain}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.5cm}|>{\raggedright\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{4.3cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{4.3cm}|}
+\caption{Danh sách test case E2E --- Lingriser}
+\label{tab:e2e-lingriser} \\
+\hline
+\textbf{Phân loại} & \textbf{Mã TC} & \textbf{Mô tả} & \textbf{Điều kiện tiên quyết} & \textbf{Các bước kiểm thử} & \textbf{Dữ liệu kiểm thử} & \textbf{Kết quả mong đợi} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Phân loại} & \textbf{Mã TC} & \textbf{Mô tả} & \textbf{Điều kiện tiên quyết} & \textbf{Các bước kiểm thử} & \textbf{Dữ liệu kiểm thử} & \textbf{Kết quả mong đợi} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+Kiểm tra sức khỏe & APP-001 & Kiểm tra sức khỏe ứng dụng trả về thông tin API &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chủ ứng dụng
+    \item Quan sát ứng dụng tải không có lỗi
+\end{enumerate} &  & Ứng dụng tải thành công --- hiển thị tên ứng dụng và phiên bản ở footer hoặc trang giới thiệu \\
+\hline
+ & APP-002 & Endpoint kiểm tra sức khỏe trả về trạng thái &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở ứng dụng
+    \item Xác minh tất cả các tính năng có thể truy cập và đang phản hồi
+\end{enumerate} &  & Ứng dụng hoạt động đầy đủ --- tất cả các trang tải đúng \\
+\hline
+Đăng ký & AUTH-001 & Đăng ký tài khoản học sinh mới &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Chọn vai trò ''Student''
+    \item Điền tên, email và mật khẩu
+    \item Nhấn ''Register''
+    \item Xác minh chuyển hướng đến bảng điều khiển học sinh
+\end{enumerate} & Role: Student \newline
+Email: ''student@example.com'' \newline
+Password: ''Password123!'' & Đăng ký thành công --- chuyển hướng đến bảng điều khiển học sinh với hồ sơ và đã đăng ký khóa học hiện tại \\
+\hline
+ & AUTH-002 & Đăng ký tài khoản phụ huynh mới &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Chọn vai trò ''Parent''
+    \item Điền tên, email và mật khẩu
+    \item Nhấn ''Register''
+\end{enumerate} & Role: Parent \newline
+Email: ''parent@example.com'' \newline
+Password: ''Password123!'' & Đăng ký thành công --- chuyển hướng đến bảng điều khiển phụ huynh \\
+\hline
+ & AUTH-003 & Đăng ký tài khoản giáo viên mới &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Chọn vai trò ''Teacher''
+    \item Điền tên, email và mật khẩu
+    \item Nhấn ''Register''
+\end{enumerate} & Role: Teacher \newline
+Email: ''teacher@example.com'' \newline
+Password: ''Password123!'' & Đăng ký thành công --- chuyển hướng đến bảng điều khiển giáo viên \\
+\hline
+ & AUTH-004 & Đăng ký với email trùng lặp bị từ chối & Email đã được đăng ký trong hệ thống & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Điền email đã tồn tại
+    \item Nhấn ''Register''
+\end{enumerate} & Email: ''existing@example.com'' & Hiển thị lỗi --- ''Email already in use'' \\
+\hline
+ & AUTH-005 & Đăng ký với số điện thoại trùng lặp bị từ chối & Số điện thoại đã được đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Điền số điện thoại đã tồn tại
+    \item Nhấn ''Register''
+\end{enumerate} & Phone: ''0901234567'' & Hiển thị lỗi --- ''Phone number already in use'' \\
+\hline
+Đăng nhập & AUTH-006 & Đăng nhập với thông tin đăng nhập hợp lệ & Tài khoản đã được đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhập email và mật khẩu
+    \item Nhấn ''Login''
+\end{enumerate} & Email: ''test@example.com'' \newline
+Password: ''Password123!'' & Đăng nhập thành công --- chuyển hướng đến bảng điều khiển với thông tin người dùng được hiển thị \\
+\hline
+ & AUTH-007 & Đăng nhập với email không tồn tại bị từ chối &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhập email chưa đăng ký trong hệ thống
+    \item Nhấn ''Login''
+\end{enumerate} & Email: ''unknown@example.com'' & Hiển thị lỗi --- ''Invalid credentials'' \\
+\hline
+ & AUTH-008 & Đăng nhập với mật khẩu sai bị từ chối & Tài khoản đã tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhập email đúng nhưng mật khẩu sai
+    \item Nhấn ''Login''
+\end{enumerate} & Email: ''test@example.com'' \newline
+Password: ''WrongPass!'' & Hiển thị lỗi --- ''Invalid credentials'' \\
+\hline
+ & AUTH-009 & Đăng nhập với tài khoản bị khóa bị từ chối & Tài khoản đã bị quản trị viên khóa & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhập thông tin đăng nhập của tài khoản bị khóa
+    \item Nhấn ''Login''
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Account locked''; không thể truy cập bảng điều khiển \\
+\hline
+ & AUTH-010 & Phiên đăng nhập tồn tại sau khi làm mới trang & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đăng nhập thành công
+    \item Làm mới trang trình duyệt
+    \item Xác minh vẫn đang đăng nhập
+\end{enumerate} &  & Người dùng vẫn đang đăng nhập --- bảng điều khiển hiển thị đúng mà không cần đăng nhập lại \\
+\hline
+ & AUTH-011 & Phiên không hợp lệ chuyển hướng đến trang đăng nhập &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trình duyệt không có phiên hoạt động
+    \item Điều hướng trực tiếp đến URL bảng điều khiển
+\end{enumerate} &  & Chuyển hướng đến trang đăng nhập \\
+\hline
+Hồ sơ & AUTH-012 & Xem hồ sơ của chính học sinh & Đã đăng nhập với tư cách học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào biểu tượng/tên hồ sơ trên thanh điều hướng
+    \item Chọn ''My Profile''
+\end{enumerate} &  & ''Trang hồ sơ hiển thị: tên, email, thông tin học sinh, ID hồ sơ \\
+\hline
+ & AUTH-013 & Xem hồ sơ với phiên không hợp lệ &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Xóa cookie/phiên trình duyệt
+    \item Điều hướng đến trang hồ sơ
+\end{enumerate} &  & Chuyển hướng đến trang đăng nhập --- hiển thị thông báo lỗi \\
+\hline
+Danh sách học sinh & STU-001 & Xem danh sách tất cả học sinh & Đã đăng nhập với tư cách giáo viên hoặc quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Students'' từ menu điều hướng
+    \item Xem danh sách học sinh
+\end{enumerate} &  & ''Danh sách học sinh hiển thị với: tên, email, lớp, trình độ CEFR \\
+\hline
+ & STU-002 & Xem chi tiết học sinh & Đã đăng nhập; học sinh tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Students''
+    \item Nhấn vào tên học sinh để xem chi tiết
+\end{enumerate} &  & ''Trang chi tiết học sinh hiển thị tất cả các trường: tên, email, lớp, trình độ CEFR, thông tin đăng ký \\
+\hline
+ & STU-003 & Xem học sinh không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến trang chi tiết học sinh với ID không hợp lệ (ví dụ: qua URL) &  & ''Trang lỗi hiển thị --- ''Student not found'' \\
+\hline
+ & STU-004 & Xem học sinh liên kết với phụ huynh & Đã đăng nhập với tư cách phụ huynh có con đã được liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Children'' từ bảng điều khiển phụ huynh
+    \item Xem danh sách học sinh đã liên kết
+\end{enumerate} &  & Danh sách hiển thị tất cả học sinh được liên kết với tài khoản phụ huynh \\
+\hline
+ & STU-005 & Xem học sinh cho phụ huynh không tồn tại & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Tìm kiếm phụ huynh không tồn tại
+    \item Cố gắng xem con của họ
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Parent not found'' \\
+\hline
+Đăng ký khóa học & STU-006 & Xem trạng thái đăng ký khóa học của học sinh & Đã đăng nhập; học sinh đã đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh
+    \item Xem phần ''Enrollment''
+\end{enumerate} &  & ''Thông tin đăng ký được hiển thị: trạng thái, tên khóa học, ngày đăng ký \\
+\hline
+ & STU-007 & Xem đăng ký cho học sinh chưa đăng ký & Đã đăng nhập; học sinh chưa đăng ký khóa học & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh chưa đăng ký
+    \item Xem phần ''Enrollment''
+\end{enumerate} &  & ''Phần đăng ký hiển thị ''Not enrolled'' hoặc trạng thái trống \\
+\hline
+Video tiến độ & STU-008 & Xem video tiến độ của học sinh & Đã đăng nhập; học sinh có video trước và sau & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh
+    \item Nhấn vào tab ''Progress Videos''
+    \item Xem cả hai video
+\end{enumerate} & ID khóa học đã đăng ký & Cả video trước và sau đều được hiển thị và có thể phát \\
+\hline
+ & STU-009 & Xem video tiến độ khi chưa có video nào được tải lên & Đã đăng nhập; học sinh không có video & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh
+    \item Nhấn vào tab ''Progress Videos''
+\end{enumerate} &  & ''Hiển thị trạng thái trống --- ''No progress videos uploaded yet'' \\
+\hline
+Danh sách giáo viên & TCH-001 & Xem danh sách tất cả giáo viên & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Teachers'' từ menu điều hướng
+    \item Xem danh sách giáo viên
+\end{enumerate} &  & Danh sách giáo viên hiển thị với tên và loại giáo viên \\
+\hline
+ & TCH-002 & Lọc giáo viên theo loại & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Teachers''
+    \item Chọn bộ lọc ''Video Call'' từ dropdown loại
+    \item Xem kết quả đã lọc
+\end{enumerate} & Bộ lọc: Video Call & Chỉ hiển thị giáo viên dạy qua video call trong danh sách \\
+\hline
+ & TCH-003 & Chỉ xem giáo viên video call & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Teachers''
+    \item Nhấn tab hoặc phần ''Video Call Teachers''
+\end{enumerate} &  & Chỉ hiển thị giáo viên có sẵn cho video call \\
+\hline
+ & TCH-004 & Xem chi tiết giáo viên & Đã đăng nhập; giáo viên tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Teachers''
+    \item Nhấn vào tên giáo viên
+\end{enumerate} &  & ''Trang chi tiết giáo viên hiển thị tất cả thông tin: tên, loại, lịch trống \\
+\hline
+ & TCH-005 & Xem giáo viên không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến trang chi tiết giáo viên với ID không hợp lệ &  & ''Trang lỗi hiển thị --- ''Teacher not found'' \\
+\hline
+Lịch trống & TCH-006 & Xem lịch trống giáo viên vào thứ Bảy & Đã đăng nhập; đang xem chi tiết giáo viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết giáo viên
+    \item Nhấn vào tab ''Availability''
+    \item Chọn ngày thứ Bảy trên lịch
+\end{enumerate} & Ngày: Thứ Bảy & Hiển thị các khung giờ trống cho thứ Bảy đã chọn \\
+\hline
+ & TCH-007 & Xem lịch trống giáo viên vào ngày thường hiển thị trống & Đã đăng nhập; đang xem chi tiết giáo viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết giáo viên
+    \item Nhấn vào tab ''Availability''
+    \item Chọn ngày thường (Thứ Hai đến Thứ Sáu)
+\end{enumerate} & Ngày: Thứ Hai & ''Không có khung giờ trống --- thông báo ''Video calls available on weekends only'' \\
+\hline
+ & TCH-008 & Các khung giờ đã đặt hiển thị là không khả dụng & Đã đăng nhập; giáo viên có lịch đặt vào thứ Bảy lúc 09:00 & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết giáo viên
+    \item Nhấn vào tab ''Availability''
+    \item Chọn thứ Bảy có lịch đặt hiện tại
+\end{enumerate} & Ngày: Thứ Bảy có lịch đặt lúc 09:00 & Khung giờ 09:00 hiển thị là không khả dụng/đã đặt; các khung giờ khác vẫn còn trống \\
+\hline
+Danh sách khóa học & CRS-001 & Xem danh sách tất cả khóa học & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Courses'' từ menu điều hướng
+    \item Xem danh sách khóa học
+\end{enumerate} &  & Danh sách khóa học hiển thị với tên và chi tiết \\
+\hline
+ & CRS-002 & Xem khóa học hiện tại đang thực hiện & Đã đăng nhập; đã đăng ký khóa học đang thực hiện & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển hoặc trang ''Courses''
+    \item Xem khóa học hiện tại được làm nổi bật
+\end{enumerate} &  & Khóa học hiện tại được hiển thị nổi bật với trạng thái đang thực hiện \\
+\hline
+ & CRS-003 & Khóa học hiện tại dự phòng về khóa gần nhất & Đã đăng nhập; không có khóa học đang thực hiện & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển
+    \item Xem phần khóa học hiện tại
+\end{enumerate} &  & Khóa học được bắt đầu gần đây nhất được hiển thị là khóa học hiện tại \\
+\hline
+ & CRS-004 & Không có khóa học hiển thị trạng thái trống & Đã đăng nhập; không có khóa học nào tồn tại & 1. Mở trang ''Courses'' &  & ''Hiển thị trạng thái trống --- ''No courses available'' \\
+\hline
+ & CRS-005 & Xem chi tiết khóa học & Đã đăng nhập; khóa học tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Courses''
+    \item Nhấn vào tên khóa học
+\end{enumerate} &  & ''Trang chi tiết khóa học hiển thị: tên, mô tả, mô-đun, thời lượng \\
+\hline
+ & CRS-006 & Xem khóa học không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến trang chi tiết khóa học với ID không hợp lệ &  & ''Trang lỗi hiển thị --- ''Course not found'' \\
+\hline
+Mô-đun & CRS-007 & Xem các mô-đun của khóa học & Đã đăng nhập; khóa học có mô-đun tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết khóa học
+    \item Xem danh sách/phần mô-đun
+\end{enumerate} &  & Danh sách mô-đun được hiển thị với chủ đề và nội dung cho mỗi mô-đun \\
+\hline
+ & CRS-008 & Xem chi tiết một mô-đun & Đã đăng nhập; mô-đun tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết khóa học
+    \item Nhấn vào mô-đun cụ thể
+\end{enumerate} &  & ''Trang chi tiết mô-đun hiển thị: tiêu đề, chủ đề, nội dung, hoạt động \\
+\hline
+ & CRS-009 & Xem mô-đun không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến trang chi tiết mô-đun với ID không hợp lệ &  & ''Trang lỗi hiển thị --- ''Module not found'' \\
+\hline
+Tạo đặt lịch & BKG-001 & Đặt lịch học video call thành công & Đã đăng nhập với tư cách học sinh; giáo viên có lịch trống vào ngày/khung giờ đã chọn & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Book a Lesson''
+    \item Chọn giáo viên từ danh sách
+    \item Chọn ngày có sẵn (Thứ Bảy/Chủ nhật)
+    \item Chọn khung giờ có sẵn
+    \item Nhấn ''Book''
+\end{enumerate} & Teacher: Ms. Smith \newline
+Date: Saturday \newline
+Slot: 09:00 & ''Xác nhận đặt lịch --- trang xác nhận hiển thị chi tiết đặt lịch với trạng thái ''Confirmed'' \\
+\hline
+ & BKG-002 & Đặt lịch với học sinh không tồn tại hiển thị lỗi & Đã đăng nhập; hồ sơ học sinh bị thiếu & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Cố gắng đặt lịch học
+    \item Hệ thống không thể tìm thấy hồ sơ học sinh
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Student profile not found'' \\
+\hline
+ & BKG-003 & Đặt lịch với giáo viên không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách học sinh & 1. Điều hướng đến trang đặt lịch với ID giáo viên không hợp lệ &  & ''Hiển thị lỗi --- ''Teacher not found'' \\
+\hline
+ & BKG-004 & Đặt lịch video call cho giáo viên dạy trực tiếp bị từ chối & Đã đăng nhập với tư cách học sinh; giáo viên chỉ dạy trực tiếp & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đặt lịch của giáo viên
+    \item Cố gắng đặt khung giờ video call
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Teacher not available for video calls'' \\
+\hline
+ & BKG-005 & Đặt khung giờ đã có người đặt bị từ chối & Đã đăng nhập; khung giờ đã được học sinh khác đặt & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đặt lịch của giáo viên
+    \item Chọn ngày và khung giờ đã được đặt
+    \item Nhấn ''Book''
+\end{enumerate} & Slot: 09:00 (đã được đặt) & ''Hiển thị lỗi --- ''This slot is no longer available'' \\
+\hline
+Xem đặt lịch & BKG-006 & Xem đặt lịch của tôi với tư cách học sinh & Đã đăng nhập với tư cách học sinh có đặt lịch & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Bookings'' từ bảng điều khiển
+    \item Xem danh sách đặt lịch
+\end{enumerate} &  & ''Danh sách đặt lịch hiển thị: tên giáo viên, ngày, giờ, trạng thái cho mỗi lịch đặt \\
+\hline
+ & BKG-007 & Xem đặt lịch với tư cách giáo viên & Đã đăng nhập với tư cách giáo viên có đặt lịch & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Schedule'' từ bảng điều khiển giáo viên
+    \item Xem danh sách đặt lịch
+\end{enumerate} &  & ''Danh sách đặt lịch hiển thị: tên học sinh, ngày, giờ, trạng thái cho mỗi lịch \\
+\hline
+ & BKG-008 & Xem chi tiết đặt lịch & Đã đăng nhập; đặt lịch tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở danh sách đặt lịch
+    \item Nhấn vào đặt lịch cụ thể
+\end{enumerate} &  & ''Chi tiết đặt lịch hiển thị: thông tin học sinh, thông tin giáo viên, mô-đun, ngày, giờ, trạng thái \\
+\hline
+ & BKG-009 & Xem đặt lịch không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến trang chi tiết đặt lịch với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Booking not found'' \\
+\hline
+Quản lý đặt lịch & BKG-010 & Hoàn thành đặt lịch & Đã đăng nhập với tư cách giáo viên; đặt lịch đã được xác nhận & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết đặt lịch
+    \item Nhấn ''Complete Lesson''
+    \item Xác nhận hoàn thành
+\end{enumerate} &  & ''Trạng thái đặt lịch thay đổi thành ''Completed''; tạo lịch sử học tập cho học sinh \\
+\hline
+ & BKG-011 & Hoàn thành đặt lịch không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách giáo viên & 1. Cố gắng hoàn thành đặt lịch với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Booking not found'' \\
+\hline
+ & BKG-012 & Hủy đặt lịch & Đã đăng nhập; đặt lịch đã được xác nhận & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết đặt lịch
+    \item Nhấn ''Cancel Booking''
+    \item Xác nhận hủy
+\end{enumerate} &  & ''Trạng thái đặt lịch thay đổi thành ''Cancelled''; khung giờ trở nên khả dụng lại \\
+\hline
+ & BKG-013 & Hủy đặt lịch không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Cố gắng hủy đặt lịch với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Booking not found'' \\
+\hline
+Hồ sơ phụ huynh & PAR-001 & Xem hồ sơ phụ huynh & Đã đăng nhập với tư cách phụ huynh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào biểu tượng hồ sơ trên thanh điều hướng
+    \item Chọn ''My Profile''
+\end{enumerate} &  & ''Trang hồ sơ phụ huynh hiển thị: tên, email, số điện thoại \\
+\hline
+ & PAR-002 & Xem phụ huynh không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến hồ sơ phụ huynh với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Parent not found'' \\
+\hline
+Con cái & PAR-003 & Xem con cái đã liên kết & Đã đăng nhập với tư cách phụ huynh có con đã liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Children'' từ bảng điều khiển phụ huynh
+    \item Xem danh sách con cái
+\end{enumerate} &  & Danh sách học sinh đã liên kết được hiển thị với thông tin chi tiết \\
+\hline
+ & PAR-004 & Xem lịch sử học tập của con & Đã đăng nhập với tư cách phụ huynh; con đã được liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Children''
+    \item Nhấn vào tên của con
+    \item Chọn tab ''Learning History''
+\end{enumerate} &  & Lịch sử học tập được hiển thị với hồ sơ bài học và tiến độ \\
+\hline
+ & PAR-005 & Xem lịch sử của con chưa liên kết bị từ chối & Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết & 1. Điều hướng đến lịch sử học tập của học sinh chưa được liên kết với phụ huynh này &  & ''Hiển thị lỗi --- ''Child not linked to your account'' \\
+\hline
+ & PAR-006 & Xem đăng ký khóa học của con & Đã đăng nhập với tư cách phụ huynh; con đã được liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết của con
+    \item Xem phần ''Enrollment''
+\end{enumerate} &  & ''Thông tin đăng ký được hiển thị: khóa học, trạng thái, ngày tháng \\
+\hline
+ & PAR-007 & Xem đăng ký của con chưa liên kết bị từ chối & Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết & 1. Điều hướng đến trang đăng ký của con chưa liên kết &  & ''Hiển thị lỗi --- ''Child not linked to your account'' \\
+\hline
+Video tiến độ & PAR-008 & Xem video tiến độ của con & Đã đăng nhập với tư cách phụ huynh; con đã liên kết và có video & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết của con
+    \item Nhấn vào tab ''Progress Videos''
+\end{enumerate} & ID khóa học & Hiển thị video tiến độ trước và sau cho con \\
+\hline
+ & PAR-009 & Xem video của con chưa liên kết bị từ chối & Đã đăng nhập với tư cách phụ huynh; con CHƯA được liên kết & 1. Điều hướng đến video tiến độ của con chưa liên kết &  & ''Hiển thị lỗi --- ''Child not linked to your account'' \\
+\hline
+Thanh toán & PAR-010 & Xem lịch sử thanh toán & Đã đăng nhập với tư cách phụ huynh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Payment History'' từ bảng điều khiển phụ huynh
+    \item Xem danh sách thanh toán
+\end{enumerate} &  & ''Hồ sơ thanh toán được hiển thị với: số tiền, tên học sinh, tên khóa học, ngày \\
+\hline
+Xem thông báo & NTF-001 & Xem danh sách thông báo & Đã đăng nhập; có thông báo & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào biểu tượng chuông thông báo trên thanh điều hướng
+    \item Xem dropdown hoặc trang thông báo
+\end{enumerate} &  & ''Thông báo được liệt kê với: biểu tượng loại, tiêu đề, tin nhắn, thời gian, trạng thái đã đọc/chưa đọc \\
+\hline
+ & NTF-002 & Danh sách thông báo trống & Đã đăng nhập; không có thông báo & 1. Nhấn vào biểu tượng chuông thông báo &  & ''Hiển thị trạng thái trống --- ''No notifications'' \\
+\hline
+ & NTF-003 & Thông báo không có dữ liệu hiển thị đúng & Đã đăng nhập; có thông báo không có dữ liệu bổ sung & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào biểu tượng chuông thông báo
+    \item Xem thông báo không có dữ liệu bổ sung
+\end{enumerate} &  & Thông báo hiển thị đúng không có lỗi --- tiêu đề và tin nhắn được hiển thị \\
+\hline
+ & NTF-004 & Xem số lượng thông báo chưa đọc & Đã đăng nhập; có thông báo chưa đọc & 1. Nhìn vào biểu tượng chuông thông báo trên thanh điều hướng &  & Badge trên biểu tượng chuông hiển thị số lượng thông báo chưa đọc chính xác \\
+\hline
+ & NTF-005 & Số lượng chưa đọc hiển thị bằng không khi tất cả đã đọc & Đã đăng nhập; tất cả thông báo đã được đọc & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đánh dấu tất cả thông báo là đã đọc
+    \item Nhìn vào biểu tượng chuông thông báo
+\end{enumerate} &  & Không có badge trên biểu tượng chuông --- hoặc badge hiển thị 0 \\
+\hline
+Đánh dấu đã đọc & NTF-006 & Đánh dấu thông báo đơn là đã đọc & Đã đăng nhập; có thông báo chưa đọc & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở danh sách thông báo
+    \item Nhấn vào thông báo chưa đọc
+\end{enumerate} &  & Thông báo được đánh dấu là đã đọc --- kiểu hiển thị thay đổi sang trạng thái đã đọc \\
+\hline
+ & NTF-007 & Đánh dấu thông báo không tồn tại là đã đọc & Đã đăng nhập & 1. Cố gắng tương tác với thông báo đã bị xóa &  & ''Xử lý lỗi mượt mà --- ''Notification not found'' \\
+\hline
+ & NTF-008 & Đánh dấu tất cả thông báo là đã đọc & Đã đăng nhập; có thông báo chưa đọc & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở danh sách thông báo
+    \item Nhấn nút ''Mark all as read''
+\end{enumerate} &  & Tất cả thông báo chuyển sang trạng thái đã đọc --- số lượng chưa đọc thành 0 \\
+\hline
+Tạo kết nối & CON-001 & Liên kết học sinh với giáo viên qua email & Đã đăng nhập với tư cách học sinh hoặc phụ huynh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections'' hoặc ''Link Teacher''
+    \item Nhập địa chỉ email của giáo viên
+    \item Chọn loại liên kết ''Teacher''
+    \item Nhấn ''Send Request''
+\end{enumerate} & Email: ''teacher@example.com'' \newline
+Type: Teacher & Kết nối được tạo --- giáo viên xuất hiện trong danh sách kết nối đã liên kết; giáo viên nhận được thông báo \\
+\hline
+ & CON-002 & Liên kết học sinh với phụ huynh qua email & Đã đăng nhập với tư cách học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections''
+    \item Nhập địa chỉ email của phụ huynh
+    \item Chọn loại liên kết ''Parent''
+    \item Nhấn ''Send Request''
+\end{enumerate} & Email: ''parent@example.com'' \newline
+Type: Parent & Kết nối được tạo --- phụ huynh xuất hiện trong danh sách kết nối đã liên kết \\
+\hline
+ & CON-003 & Liên kết với email không tồn tại hiển thị lỗi & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections''
+    \item Nhập email chưa được đăng ký trong hệ thống
+    \item Nhấn ''Send Request''
+\end{enumerate} & Email: ''nobody@example.com'' & ''Hiển thị lỗi --- ''Email not found in system'' \\
+\hline
+ & CON-004 & Liên kết với vai trò sai hiển thị lỗi & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections''
+    \item Nhập email của học sinh
+    \item Chọn loại liên kết ''Teacher''
+    \item Nhấn ''Send Request''
+\end{enumerate} & Email: ''student@example.com'' \newline
+Type: Teacher & ''Hiển thị lỗi --- ''User is not a teacher'' \\
+\hline
+ & CON-005 & Kết nối trùng lặp bị từ chối & Đã đăng nhập; kết nối đã tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections''
+    \item Nhập email của giáo viên đã được liên kết
+    \item Nhấn ''Send Request''
+\end{enumerate} & Email: ''linked-teacher@example.com'' & ''Hiển thị lỗi --- ''Connection already exists'' \\
+\hline
+ & CON-006 & Liên kết với học sinh không tồn tại hiển thị lỗi & Hồ sơ học sinh không tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Cố gắng tạo kết nối
+    \item Hệ thống không thể tìm thấy hồ sơ học sinh
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Student not found'' \\
+\hline
+Xóa kết nối & CON-007 & Xóa kết nối & Đã đăng nhập; kết nối tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Connections''
+    \item Tìm kết nối cần xóa
+    \item Nhấn nút ''Remove''
+    \item Xác nhận xóa
+\end{enumerate} &  & Kết nối đã bị xóa --- người dùng không còn xuất hiện trong danh sách kết nối \\
+\hline
+ & CON-008 & Xóa kết nối không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Cố gắng xóa kết nối không tồn tại &  & ''Hiển thị lỗi --- ''Connection not found'' \\
+\hline
+Cuộc trò chuyện & CHT-001 & Mở cuộc trò chuyện hỗ trợ hiện có & Đã đăng nhập; có cuộc trò chuyện đang mở & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn ''Support Chat'' hoặc biểu tượng chat
+    \item Xem cuộc trò chuyện hiện có
+\end{enumerate} &  & Cuộc trò chuyện hiện có mở ra với các tin nhắn trước đó được hiển thị \\
+\hline
+ & CHT-002 & Bắt đầu cuộc trò chuyện hỗ trợ mới & Đã đăng nhập; không có cuộc trò chuyện đang mở & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn ''Support Chat'' hoặc biểu tượng chat
+    \item Cuộc trò chuyện mới được tạo tự động
+\end{enumerate} &  & Cuộc trò chuyện mới trống được mở --- sẵn sàng nhập tin nhắn \\
+\hline
+Tin nhắn & CHT-003 & Xem tin nhắn cuộc trò chuyện & Đã đăng nhập; đang trong cuộc trò chuyện của mình có tin nhắn & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chat hỗ trợ
+    \item Cuộn qua lịch sử tin nhắn
+\end{enumerate} &  & Tất cả tin nhắn được hiển thị theo thứ tự thời gian với thông tin người gửi \\
+\hline
+ & CHT-004 & Xem cuộc trò chuyện không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Điều hướng đến cuộc trò chuyện không tồn tại &  & ''Hiển thị lỗi --- ''Conversation not found'' \\
+\hline
+ & CHT-005 & Truy cập cuộc trò chuyện của người dùng khác bị chặn & Đã đăng nhập; cuộc trò chuyện thuộc về người dùng khác & 1. Cố gắng điều hướng đến URL cuộc trò chuyện của người dùng khác &  & ''Hiển thị lỗi --- ''Access denied'' \\
+\hline
+ & CHT-006 & Gửi tin nhắn trong chat hỗ trợ & Đã đăng nhập; cuộc trò chuyện đang mở & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chat hỗ trợ
+    \item Nhập tin nhắn trong ô nhập liệu
+    \item Nhấn Enter hoặc nhấn ''Send''
+\end{enumerate} & Message: ''Hello, I need help'' & Tin nhắn xuất hiện trong cuộc trò chuyện --- thời gian được cập nhật \\
+\hline
+ & CHT-007 & Gửi tin nhắn đến cuộc trò chuyện không tồn tại & Đã đăng nhập & 1. Cố gắng gửi tin nhắn đến cuộc trò chuyện đã bị xóa &  & ''Hiển thị lỗi --- ''Conversation not found'' \\
+\hline
+ & CHT-008 & Gửi tin nhắn đến cuộc trò chuyện của người dùng khác bị chặn & Đã đăng nhập & 1. Cố gắng gửi tin nhắn qua cuộc trò chuyện của người dùng khác &  & ''Hiển thị lỗi --- ''Access denied'' \\
+\hline
+ & CHT-009 & Gửi tin nhắn đến cuộc trò chuyện đã đóng bị từ chối & Đã đăng nhập; cuộc trò chuyện đã bị đóng & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở cuộc trò chuyện đã đóng
+    \item Cố gắng nhập và gửi tin nhắn
+\end{enumerate} &  & ''Ô nhập liệu bị vô hiệu hóa hoặc hiển thị lỗi --- ''Conversation is closed'' \\
+\hline
+Đóng & CHT-010 & Đóng cuộc trò chuyện hỗ trợ & Đã đăng nhập; cuộc trò chuyện đang mở & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chat hỗ trợ
+    \item Nhấn nút ''Close Conversation''
+    \item Xác nhận đóng
+\end{enumerate} &  & ''Trạng thái cuộc trò chuyện thay đổi thành ''Closed'' --- ô nhập liệu bị vô hiệu hóa \\
+\hline
+ & CHT-011 & Đóng cuộc trò chuyện không tồn tại hiển thị lỗi & Đã đăng nhập & 1. Cố gắng đóng cuộc trò chuyện không tồn tại &  & ''Hiển thị lỗi --- ''Conversation not found'' \\
+\hline
+Chat quản trị & CHT-012 & Quản trị viên trả lời và được gán vào cuộc trò chuyện & Đã đăng nhập với tư cách quản trị viên; có cuộc trò chuyện chưa được gán & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển chat quản trị
+    \item Chọn cuộc trò chuyện chưa được gán
+    \item Nhập và gửi trả lời
+\end{enumerate} & Message: ''How can I help?'' & Quản trị viên được gán vào cuộc trò chuyện --- tin nhắn xuất hiện trong chat \\
+\hline
+ & CHT-013 & Quản trị viên gửi đến cuộc trò chuyện đã đóng bị từ chối & Đã đăng nhập với tư cách quản trị viên; cuộc trò chuyện đã đóng & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở cuộc trò chuyện đã đóng trong bảng điều khiển quản trị
+    \item Cố gắng gửi tin nhắn
+\end{enumerate} &  & ''Ô nhập liệu bị vô hiệu hóa hoặc lỗi --- ''Conversation is closed'' \\
+\hline
+ & CHT-014 & Quản trị viên xem tin nhắn và được tự động gán & Đã đăng nhập với tư cách quản trị viên; có cuộc trò chuyện chưa được gán & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển chat quản trị
+    \item Nhấn vào cuộc trò chuyện chưa được gán để xem tin nhắn
+\end{enumerate} &  & Tin nhắn được hiển thị --- quản trị viên được tự động gán vào cuộc trò chuyện \\
+\hline
+ & CHT-015 & Quản trị viên xem cuộc trò chuyện không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến cuộc trò chuyện không tồn tại &  & ''Hiển thị lỗi --- ''Conversation not found'' \\
+\hline
+Thống kê & ADM-001 & Xem bảng điều khiển thống kê người dùng & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển quản trị
+    \item Xem phần ''User Statistics''
+\end{enumerate} &  & ''Hiển thị tổng số người dùng và phân tích theo vai trò (học sinh, phụ huynh, giáo viên) với tỷ lệ phần trăm \\
+\hline
+ & ADM-002 & Thống kê người dùng khi không có người dùng & Đã đăng nhập với tư cách quản trị viên; hệ thống trống & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển quản trị
+    \item Xem phần ''User Statistics''
+\end{enumerate} &  & Hiển thị tổng số: 0 với tất cả số lượng vai trò bằng 0 và 0\% \\
+\hline
+Quản lý người dùng & ADM-003 & Xem chi tiết người dùng & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''User Management''
+    \item Nhấn vào tên hoặc hàng của người dùng
+\end{enumerate} &  & ''Chi tiết người dùng hiển thị: ID, email, họ tên, vai trò, trạng thái khóa \\
+\hline
+ & ADM-004 & Xem người dùng không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến trang chi tiết người dùng với ID không hợp lệ &  & ''Hiển thị lỗi --- ''User not found'' \\
+\hline
+ & ADM-005 & Chỉnh sửa thông tin người dùng & Đã đăng nhập với tư cách quản trị viên; người dùng tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Nhấn ''Edit''
+    \item Thay đổi họ tên và email
+    \item Nhấn ''Save''
+\end{enumerate} & Full name: ''New Name'' \newline
+Email: ''newemail@example.com'' & Thông tin người dùng được cập nhật --- trang chi tiết hiển thị giá trị mới \\
+\hline
+ & ADM-006 & Chỉnh sửa người dùng không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng chỉnh sửa người dùng không tồn tại &  & ''Hiển thị lỗi --- ''User not found'' \\
+\hline
+ & ADM-007 & Chỉnh sửa người dùng quản trị bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết của người dùng quản trị khác
+    \item Cố gắng chỉnh sửa thông tin của họ
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Cannot modify admin users'' \\
+\hline
+ & ADM-008 & Chỉnh sửa người dùng với email trùng lặp bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Thay đổi email sang email đã được người dùng khác sử dụng
+    \item Nhấn ''Save''
+\end{enumerate} & Email: ''existing@example.com'' & ''Hiển thị lỗi --- ''Email already in use'' \\
+\hline
+Khóa/Mở khóa & ADM-009 & Khóa tài khoản người dùng & Đã đăng nhập với tư cách quản trị viên; người dùng chưa bị khóa & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Nhấn nút ''Lock Account''
+    \item Xác nhận khóa
+\end{enumerate} &  & ''Tài khoản người dùng bị khóa --- trạng thái hiển thị ''Locked''; người dùng không thể đăng nhập \\
+\hline
+ & ADM-010 & Mở khóa tài khoản người dùng bị khóa & Đã đăng nhập với tư cách quản trị viên; người dùng đang bị khóa & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Nhấn nút ''Unlock Account''
+    \item Xác nhận mở khóa
+\end{enumerate} &  & ''Tài khoản người dùng được mở khóa --- trạng thái hiển thị ''Active''; người dùng có thể đăng nhập lại \\
+\hline
+ & ADM-011 & Khóa người dùng không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng khóa người dùng không tồn tại &  & ''Hiển thị lỗi --- ''User not found'' \\
+\hline
+ & ADM-012 & Khóa người dùng quản trị bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng quản trị
+    \item Cố gắng nhấn ''Lock Account''
+\end{enumerate} &  & ''Nút bị vô hiệu hóa hoặc hiển thị lỗi --- ''Cannot lock admin users'' \\
+\hline
+Tạo người dùng & ADM-013 & Tạo người dùng học sinh mới & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''User Management''
+    \item Nhấn ''Create User''
+    \item Điền tên, email, mật khẩu
+    \item Chọn vai trò ''Student''
+    \item Nhấn ''Create''
+\end{enumerate} & Name: ''New Student'' \newline
+Email: ''newstudent@example.com'' \newline
+Role: Student & Người dùng được tạo --- xuất hiện trong danh sách người dùng; hồ sơ học sinh được tạo tự động; email chào mừng được gửi \\
+\hline
+ & ADM-014 & Tạo người dùng quản trị bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở biểu mẫu ''Create User''
+    \item Cố gắng chọn vai trò ''Admin''
+\end{enumerate} &  & ''Vai trò Admin không có trong dropdown, hoặc lỗi --- ''Cannot create admin users'' \\
+\hline
+ & ADM-015 & Tạo người dùng với email trùng lặp bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở biểu mẫu ''Create User''
+    \item Nhập email đã được sử dụng
+    \item Nhấn ''Create''
+\end{enumerate} & Email: ''existing@example.com'' & ''Hiển thị lỗi --- ''Email already in use'' \\
+\hline
+Quản lý vai trò & ADM-016 & Thay đổi vai trò người dùng & Đã đăng nhập với tư cách quản trị viên; người dùng là học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Nhấn ''Change Role''
+    \item Chọn vai trò mới ''Teacher''
+    \item Xác nhận thay đổi vai trò
+\end{enumerate} & Vai trò mới: Teacher & Vai trò được cập nhật --- hồ sơ học sinh cũ bị xóa; hồ sơ giáo viên mới được tạo \\
+\hline
+ & ADM-017 & Gán vai trò quản trị bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Cố gắng thay đổi vai trò thành ''Admin''
+\end{enumerate} &  & ''Vai trò Admin không có, hoặc lỗi --- ''Cannot assign admin role'' \\
+\hline
+ & ADM-018 & Thay đổi vai trò cho người dùng không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng thay đổi vai trò cho người dùng không tồn tại &  & ''Hiển thị lỗi --- ''User not found'' \\
+\hline
+ & ADM-019 & Thay đổi vai trò của người dùng quản trị bị từ chối & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng quản trị
+    \item Cố gắng thay đổi vai trò của họ
+\end{enumerate} &  & ''Hiển thị lỗi --- ''Cannot modify admin users'' \\
+\hline
+ & ADM-020 & Thay đổi vai trò thành cùng vai trò không có thay đổi & Đã đăng nhập với tư cách quản trị viên; người dùng đã là học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết người dùng
+    \item Nhấn ''Change Role''
+    \item Chọn ''Student'' (cùng vai trò hiện tại)
+    \item Xác nhận
+\end{enumerate} & Vai trò mới: Student (giống nhau) & Không có thay đổi --- hồ sơ vẫn nguyên vẹn; không có lỗi \\
+\hline
+Phân tích & ADM-021 & Xem thống kê lượt truy cập & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển quản trị
+    \item Xem phần ''Visit Statistics''
+    \item Chọn khoảng thời gian
+\end{enumerate} & Khoảng thời gian: 24 giờ qua & Hiển thị tổng lượt truy cập và biểu đồ phân tích theo giờ \\
+\hline
+ & ADM-022 & Xem thống kê luyện tập & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở bảng điều khiển quản trị
+    \item Xem phần ''Practice Statistics''
+    \item Chọn khoảng thời gian
+\end{enumerate} & Khoảng thời gian: 24 giờ qua & Hiển thị tổng số AI practice và video call với biểu đồ phân tích theo giờ \\
+\hline
+Chat & AIP-001 & Trò chuyện với AI & Đã đăng nhập với tư cách học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''AI Practice''
+    \item Chọn chủ đề và mức độ khó
+    \item Nhập tin nhắn và nhấn Enter
+    \item Chờ phản hồi của AI
+\end{enumerate} & Level: A2 \newline
+Topic: ''Daily Routines'' \newline
+Message: ''What do you do in the morning?'' & AI phản hồi với cuộc trò chuyện tiếng Anh phù hợp --- phản hồi được hiển thị trong chat \\
+\hline
+ & AIP-002 & AI xử lý không có phản hồi mượt mà & Đã đăng nhập với tư cách học sinh; dịch vụ AI tạm thời không khả dụng & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''AI Practice''
+    \item Gửi tin nhắn
+    \item AI không thể tạo phản hồi
+\end{enumerate} &  & Xử lý mượt mà --- hiển thị phản hồi trống hoặc tùy chọn thử lại mà không bị lỗi \\
+\hline
+Phản hồi & AIP-003 & Tạo phản hồi nói với phân tích & Đã đăng nhập với tư cách học sinh; đã hoàn thành buổi nói & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Hoàn thành buổi luyện nói AI
+    \item Nhấn ''Get Feedback''
+    \item Xem báo cáo phản hồi
+\end{enumerate} &  & ''Phản hồi được hiển thị: độ chính xác chuyển đổi giọng nói sang văn bản, thời lượng phản hồi, phát hiện tạm dừng, độ dài buổi học, gợi ý, điểm nổi bật \\
+\hline
+ & AIP-004 & Phát hiện tạm dừng trong phản hồi nói & Đã đăng nhập với tư cách học sinh; buổi nói có các khoảng tạm dừng & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Hoàn thành buổi nói có các khoảng tạm dừng đáng chú ý
+    \item Xem báo cáo phản hồi
+    \item Kiểm tra phần phát hiện tạm dừng
+\end{enumerate} &  & ''Các khoảng tạm dừng được phát hiện và hiển thị: ''X pauses found'' với các vị trí được đánh dấu \\
+\hline
+ & AIP-005 & Cảnh báo dữ liệu không đủ cho buổi học ngắn & Đã đăng nhập với tư cách học sinh; buổi nói rất ngắn & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Hoàn thành buổi nói rất ngắn (< 3 lượt trao đổi)
+    \item Nhấn ''Get Feedback''
+\end{enumerate} &  & ''Hiển thị cảnh báo --- ''Insufficient data for detailed feedback''; vẫn cung cấp phản hồi cơ bản \\
+\hline
+ & AIP-006 & Phản hồi được tạo từ văn bản không có dấu thời gian & Đã đăng nhập với tư cách học sinh; buổi học được ghi lại chỉ dưới dạng văn bản & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Hoàn thành buổi luyện tập dựa trên văn bản
+    \item Nhấn ''Get Feedback''
+\end{enumerate} &  & Phản hồi được tạo bằng phân tích văn bản --- thời lượng ước tính được hiển thị \\
+\hline
+Phiên âm & AIP-007 & Phiên âm giọng nói với chi tiết từng từ & Đã đăng nhập với tư cách học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chế độ nói trong ''AI Practice''
+    \item Nhấn nút ghi âm và nói
+    \item Dừng ghi âm
+    \item Xem kết quả phiên âm
+\end{enumerate} & Âm thanh: câu tiếng Anh được nói & Phiên âm được hiển thị với văn bản và dấu thời gian từng từ riêng lẻ \\
+\hline
+ & AIP-008 & Phiên âm ghi âm im lặng/trống & Đã đăng nhập với tư cách học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ghi âm
+    \item Không nói (im lặng)
+    \item Dừng ghi âm
+\end{enumerate} &  & Phiên âm trống --- không có văn bản được hiển thị; không có lỗi \\
+\hline
+Chuyển văn bản thành giọng nói & AIP-009 & Nghe giọng nói do AI tạo ra & Đã đăng nhập với tư cách học sinh; phản hồi AI được hiển thị & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Xem phản hồi AI trong chat
+    \item Nhấn ''Listen'' hoặc biểu tượng loa trên phản hồi
+\end{enumerate} & Văn bản: phản hồi AI & Âm thanh phát --- phản hồi AI được đọc to với phát âm tự nhiên \\
+\hline
+Tạo & WKF-001 & Tạo trọng tâm tuần mới & Đã đăng nhập với tư cách giáo viên; không có trọng tâm hiện có cho mô-đun này & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Weekly Focus''
+    \item Nhấn ''Create Weekly Focus''
+    \item Chọn mô-đun và nhập chủ đề tuần
+    \item Thêm mục tiêu nói
+    \item Nhấn ''Save''
+\end{enumerate} & Module: Module 3 \newline
+Topic: ''Present Perfect Tense'' \newline
+Goals: ''Practice using have/has'' & Trọng tâm tuần được tạo --- hiển thị trên trang với chủ đề và mục tiêu \\
+\hline
+ & WKF-002 & Cập nhật trọng tâm tuần hiện có qua tạo mới & Đã đăng nhập với tư cách giáo viên; trọng tâm tuần đã tồn tại cho mô-đun & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Weekly Focus''
+    \item Nhấn ''Create Weekly Focus'' cho mô-đun đã có trọng tâm
+    \item Nhập chủ đề và mục tiêu mới
+    \item Nhấn ''Save''
+\end{enumerate} & Topic: ''Updated Topic'' & Trọng tâm tuần hiện có được cập nhật --- không tạo bản sao \\
+\hline
+Chỉnh sửa & WKF-003 & Chỉnh sửa chi tiết trọng tâm tuần & Đã đăng nhập với tư cách giáo viên; trọng tâm tuần tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết trọng tâm tuần
+    \item Nhấn ''Edit''
+    \item Thay đổi chủ đề tuần
+    \item Nhấn ''Save''
+\end{enumerate} & New topic: ''Conditionals'' & Trọng tâm tuần được cập nhật với chủ đề mới --- trang phản ánh thay đổi \\
+\hline
+ & WKF-004 & Chỉnh sửa trọng tâm tuần không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách giáo viên & 1. Cố gắng chỉnh sửa trọng tâm tuần không tồn tại &  & ''Hiển thị lỗi --- ''Weekly focus not found'' \\
+\hline
+Xem & WKF-005 & Xem trọng tâm tuần cho một mô-đun & Đã đăng nhập; mô-đun có trọng tâm tuần & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết mô-đun
+    \item Xem phần ''Weekly Focus''
+\end{enumerate} &  & Trọng tâm tuần được hiển thị với chủ đề và thông tin giáo viên \\
+\hline
+ & WKF-006 & Xem trọng tâm tuần cho mô-đun chưa có & Đã đăng nhập; mô-đun chưa có trọng tâm tuần & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết mô-đun
+    \item Xem phần ''Weekly Focus''
+\end{enumerate} &  & ''Trạng thái trống --- ''No weekly focus set for this module'' \\
+\hline
+ & WKF-007 & Xem tất cả trọng tâm tuần của giáo viên & Đã đăng nhập với tư cách giáo viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''My Weekly Focuses''
+    \item Xem danh sách tất cả trọng tâm đã tạo
+\end{enumerate} &  & Danh sách trọng tâm tuần được sắp xếp theo mới nhất trước \\
+\hline
+Tóm tắt người hướng dẫn & WKF-008 & Xem tóm tắt người hướng dẫn với thống kê luyện tập AI & Đã đăng nhập với tư cách giáo viên; học sinh có lịch sử luyện tập AI & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chuẩn bị bài học của học sinh
+    \item Xem phần ''Mentor Brief''
+\end{enumerate} & ID học sinh và mô-đun & Hiển thị trọng tâm tuần và số lượng luyện tập AI và tóm tắt phản hồi gần nhất của học sinh \\
+\hline
+ & WKF-009 & Xem tóm tắt người hướng dẫn không có lịch sử AI & Đã đăng nhập với tư cách giáo viên; học sinh chưa luyện tập AI & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chuẩn bị bài học của học sinh
+    \item Xem phần ''Mentor Brief''
+\end{enumerate} &  & ''Thống kê AI trống --- ''No AI practice sessions yet'' \\
+\hline
+Xóa & WKF-010 & Xóa trọng tâm tuần & Đã đăng nhập với tư cách giáo viên; trọng tâm tuần tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết trọng tâm tuần
+    \item Nhấn ''Delete''
+    \item Xác nhận xóa
+\end{enumerate} &  & Trọng tâm tuần bị xóa --- không còn hiển thị trên mô-đun \\
+\hline
+Danh sách chương trình & PRG-001 & Xem danh sách tất cả chương trình & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Programs'' từ menu quản trị
+    \item Xem danh sách chương trình
+\end{enumerate} &  & Chương trình được liệt kê với nhóm học và khóa học lồng nhau \\
+\hline
+ & PRG-002 & Xem chi tiết chương trình & Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Programs''
+    \item Nhấn vào tên chương trình
+\end{enumerate} &  & Chi tiết chương trình hiển thị cấu trúc đầy đủ: nhóm học và khóa học \\
+\hline
+ & PRG-003 & Xem chương trình không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến chi tiết chương trình với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Program not found'' \\
+\hline
+Tạo/Xóa & PRG-004 & Tạo chương trình mới & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Programs''
+    \item Nhấn ''Create Program''
+    \item Nhập tên và mô tả
+    \item Nhấn ''Create''
+\end{enumerate} & Name: ''English Foundations'' \newline
+Description: ''Beginner program'' & Chương trình mới xuất hiện trong danh sách \\
+\hline
+ & PRG-005 & Xóa chương trình & Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết chương trình
+    \item Nhấn ''Delete Program''
+    \item Xác nhận xóa
+\end{enumerate} &  & Chương trình bị xóa khỏi danh sách \\
+\hline
+ & PRG-006 & Xóa chương trình không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng xóa chương trình không tồn tại &  & ''Hiển thị lỗi --- ''Program not found'' \\
+\hline
+Nhóm học & PRG-007 & Xem chi tiết nhóm học & Đã đăng nhập với tư cách quản trị viên; nhóm học tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết chương trình
+    \item Nhấn vào tên nhóm học
+\end{enumerate} &  & Chi tiết nhóm học hiển thị: thông tin chương trình và khóa học liên kết \\
+\hline
+ & PRG-008 & Xem nhóm học không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến chi tiết nhóm học với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Cohort not found'' \\
+\hline
+ & PRG-009 & Tạo nhóm học mới & Đã đăng nhập với tư cách quản trị viên; chương trình tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết chương trình
+    \item Nhấn ''Add Cohort''
+    \item Nhập tên và ngày bắt đầu
+    \item Nhấn ''Create''
+\end{enumerate} & Name: ''Cohort Spring 2026'' \newline
+Start date: 2026-03-01 & Nhóm học mới xuất hiện dưới chương trình \\
+\hline
+Khóa học nhóm học & PRG-010 & Xem chi tiết khóa học nhóm học & Đã đăng nhập với tư cách quản trị viên; khóa học nhóm học tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết nhóm học
+    \item Nhấn vào khóa học
+\end{enumerate} &  & Chi tiết khóa học nhóm học hiển thị: thông tin nhóm học và khóa học \\
+\hline
+ & PRG-011 & Xem khóa học nhóm học không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến chi tiết khóa học nhóm học với ID không hợp lệ &  & ''Hiển thị lỗi --- ''Cohort course not found'' \\
+\hline
+Mô-đun & PRG-012 & Tạo mô-đun cho khóa học & Đã đăng nhập với tư cách quản trị viên; khóa học tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết khóa học
+    \item Nhấn ''Add Module''
+    \item Nhập số mô-đun, tiêu đề và chủ đề
+    \item Nhấn ''Create''
+\end{enumerate} & Module \#: 1 \newline
+Title: ''Introduction'' \newline
+Topic: ''Greetings'' & Mô-đun mới xuất hiện trong danh sách mô-đun của khóa học \\
+\hline
+ & PRG-013 & Xóa mô-đun & Đã đăng nhập với tư cách quản trị viên; mô-đun tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết mô-đun
+    \item Nhấn ''Delete Module''
+    \item Xác nhận xóa
+\end{enumerate} &  & Mô-đun bị xóa khỏi khóa học \\
+\hline
+ & PRG-014 & Xóa mô-đun không tồn tại hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng xóa mô-đun không tồn tại &  & ''Hiển thị lỗi --- ''Module not found'' \\
+\hline
+Đăng ký & PRG-015 & Đăng ký học sinh vào khóa học nhóm học & Đã đăng nhập với tư cách quản trị viên; học sinh và khóa học nhóm học tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết khóa học nhóm học
+    \item Nhấn ''Enroll Student''
+    \item Tìm kiếm và chọn học sinh
+    \item Nhấn ''Enroll''
+\end{enumerate} & Tên hoặc ID học sinh & Học sinh xuất hiện trong danh sách đã đăng ký --- số lượng đăng ký tăng lên \\
+\hline
+ & PRG-016 & Đăng ký học sinh đã đăng ký trả về thông tin hiện có & Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký & 1. Cố gắng đăng ký học sinh đã đăng ký vào cùng khóa học nhóm học &  & Không tạo bản sao --- hiển thị đăng ký hiện có \\
+\hline
+ & PRG-017 & Xem đăng ký học sinh trong khóa học nhóm học & Đã đăng nhập; học sinh đã đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh
+    \item Xem phần đăng ký cho khóa học nhóm học cụ thể
+\end{enumerate} &  & Chi tiết đăng ký được hiển thị với khóa học và trạng thái \\
+\hline
+ & PRG-018 & Xem đăng ký cho học sinh chưa đăng ký & Đã đăng nhập; học sinh chưa đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết học sinh
+    \item Xem phần đăng ký cho khóa học nhóm học họ chưa tham gia
+\end{enumerate} &  & ''Trạng thái trống --- ''Not enrolled in this course'' \\
+\hline
+Thanh toán & PRG-019 & Đánh dấu đăng ký là đã thanh toán & Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chi tiết đăng ký của học sinh
+    \item Nhấn ''Mark as Paid''
+    \item Xác nhận thanh toán
+\end{enumerate} & Học sinh và khóa học nhóm học & Đăng ký được đánh dấu là đã thanh toán --- trạng thái đã thanh toán và thời gian được hiển thị \\
+\hline
+ & PRG-020 & Đánh dấu đã thanh toán tự động đăng ký nếu chưa đăng ký & Đã đăng nhập với tư cách quản trị viên; học sinh chưa đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang xử lý thanh toán
+    \item Đánh dấu thanh toán cho học sinh chưa đăng ký
+    \item Xác nhận
+\end{enumerate} & Học sinh và khóa học nhóm học & Học sinh được tự động đăng ký và đánh dấu đã thanh toán trong một bước \\
+\hline
+ & PRG-021 & Kiểm tra trạng thái đã thanh toán --- đã thanh toán & Đã đăng nhập; học sinh đã đăng ký đã thanh toán & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chi tiết đăng ký học sinh
+    \item Xem trạng thái thanh toán
+\end{enumerate} &  & ''Trạng thái thanh toán hiển thị ''Paid'' với dấu thời gian \\
+\hline
+ & PRG-022 & Kiểm tra trạng thái đã thanh toán --- chưa thanh toán & Đã đăng nhập; học sinh đã đăng ký chưa thanh toán & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở chi tiết đăng ký học sinh
+    \item Xem trạng thái thanh toán
+\end{enumerate} &  & ''Trạng thái thanh toán hiển thị ''Unpaid'' \\
+\hline
+ & PRG-023 & Kiểm tra trạng thái đã thanh toán --- chưa đăng ký & Đã đăng nhập; học sinh chưa đăng ký & 1. Kiểm tra trạng thái thanh toán cho học sinh chưa đăng ký &  & ''Hiển thị ''Not enrolled'' --- không có thông tin thanh toán \\
+\hline
+Hủy đăng ký & PRG-024 & Hủy đăng ký học sinh & Đã đăng nhập với tư cách quản trị viên; học sinh đã đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở danh sách đăng ký khóa học nhóm học
+    \item Tìm học sinh
+    \item Nhấn ''Unenroll''
+    \item Xác nhận xóa
+\end{enumerate} &  & Học sinh bị xóa khỏi danh sách đăng ký --- số lượng giảm \\
+\hline
+ & PRG-025 & Hủy đăng ký học sinh chưa đăng ký hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên & 1. Cố gắng hủy đăng ký học sinh chưa đăng ký &  & ''Hiển thị lỗi --- ''Enrollment not found'' \\
+\hline
+ & PRG-026 & Đăng ký học sinh qua tài khoản người dùng & Đã đăng nhập với tư cách quản trị viên; người dùng có hồ sơ học sinh & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Tìm kiếm qua tài khoản người dùng (không phải hồ sơ học sinh)
+    \item Chọn người dùng và đăng ký
+\end{enumerate} & ID người dùng & Học sinh được tìm thấy tự động qua hồ sơ --- đã đăng ký và đánh dấu đã thanh toán \\
+\hline
+ & PRG-027 & Đăng ký người dùng không có hồ sơ học sinh hiển thị lỗi & Đã đăng nhập với tư cách quản trị viên; người dùng không có hồ sơ học sinh & 1. Cố gắng đăng ký người dùng không có hồ sơ học sinh &  & ''Hiển thị lỗi --- ''Student profile not found'' \\
+\hline
+Trạng thái kết nối & GAU-001 & Kiểm tra kết nối Google --- đã kết nối & Đã đăng nhập với tư cách giáo viên; tài khoản Google đã liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Settings'' hoặc ''Integrations''
+    \item Xem trạng thái kết nối Google Calendar
+\end{enumerate} &  & ''Trạng thái hiển thị ''Connected'' với email Google đã liên kết \\
+\hline
+ & GAU-002 & Kiểm tra kết nối Google --- chưa kết nối & Đã đăng nhập với tư cách giáo viên; không có tài khoản Google liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Settings'' hoặc ''Integrations''
+    \item Xem trạng thái kết nối Google Calendar
+\end{enumerate} &  & ''Trạng thái hiển thị ''Not connected'' với nút ''Connect Google'' \\
+\hline
+Ngắt kết nối & GAU-003 & Ngắt kết nối tài khoản Google & Đã đăng nhập với tư cách giáo viên; tài khoản Google đã liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Settings''
+    \item Nhấn ''Disconnect Google''
+    \item Xác nhận ngắt kết nối
+\end{enumerate} &  & ''Tài khoản Google bị ngắt kết nối --- trạng thái thay đổi thành ''Not connected'' \\
+\hline
+ & GAU-004 & Ngắt kết nối khi chưa kết nối không có thay đổi & Đã đăng nhập với tư cách giáo viên; không có tài khoản Google liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Settings''
+    \item Không có tùy chọn ngắt kết nối (đã ngắt kết nối)
+\end{enumerate} &  & Không cần thực hiện --- trang chỉ hiển thị tùy chọn kết nối \\
+\hline
+ & GAU-005 & Hồ sơ giáo viên được liên kết đúng cho xác thực Google & Đã đăng nhập với tư cách giáo viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Settings''
+    \item Xem thông tin tài khoản
+\end{enumerate} &  & ID hồ sơ giáo viên được hiển thị đúng trong cài đặt \\
+\hline
+ & GAU-006 & Người không phải giáo viên cố gắng xác thực Google hiển thị lỗi & Đã đăng nhập với tư cách học sinh (không có hồ sơ giáo viên) & 1. Điều hướng đến cài đặt tích hợp Google Calendar &  & ''Tính năng không khả dụng --- ''Only teachers can connect Google Calendar'' \\
+\hline
+Tạo & INR-001 & Gửi đăng ký sự kiện khai giảng &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký sự kiện
+    \item Điền tên phụ huynh, số điện thoại và email
+    \item Chọn ô ''Wants to sign up''
+    \item Nhấn ''Submit''
+\end{enumerate} & Name: ''Nguyen Van A'' \newline
+Phone: ''0901234567'' \newline
+Email: ''parent@example.com'' \newline
+Wants to sign up: Yes & Đăng ký được gửi thành công --- hiển thị thông báo xác nhận \\
+\hline
+Xem & INR-002 & Xem tất cả đăng ký sự kiện khai giảng & Đã đăng nhập với tư cách quản trị viên & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Inaugural Registrations'' từ menu quản trị
+    \item Xem danh sách đăng ký
+\end{enumerate} &  & Danh sách đăng ký được sắp xếp theo mới nhất trước \\
+\hline
+ & INR-003 & Danh sách đăng ký trống & Đã đăng nhập với tư cách quản trị viên; không có đăng ký & 1. Mở trang ''Inaugural Registrations'' &  & ''Trạng thái trống --- ''No registrations yet'' \\
+\hline
+ & INR-004 & Xem chi tiết đăng ký & Đã đăng nhập với tư cách quản trị viên; đăng ký tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở danh sách đăng ký
+    \item Nhấn vào mục đăng ký
+\end{enumerate} &  & ''Chi tiết đăng ký hiển thị: tên phụ huynh, số điện thoại, email, tùy chọn đăng ký, ngày \\
+\hline
+ & INR-005 & Xem đăng ký không tồn tại & Đã đăng nhập với tư cách quản trị viên & 1. Điều hướng đến chi tiết đăng ký với ID không hợp lệ &  & ''Trang trống hoặc ''Registration not found'' \\
+\hline
+\end{longtable}
+\end{landscape}
+}

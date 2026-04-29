@@ -1,0 +1,58 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Luyện tập speaking với AI \\
+\hline
+\textbf{ID} & UC-0049 \\
+\hline
+\textbf{Tác nhân} & Học viên đã xác thực \\
+\hline
+\textbf{Mô tả} & Học viên luyện nói với AI và nhận phản hồi đánh giá \\
+\hline
+\textbf{Điều kiện tiên quyết} & Học viên đã đăng nhập; kết nối mạng ổn định \\
+\hline
+\textbf{Điều kiện sau} & Phiên luyện tập được lưu; phản hồi AI hiển thị cho học viên \\
+\hline
+\textbf{Kích hoạt} & Học viên chọn tính năng Luyện tập với AI \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Học viên chọn chủ đề và trình độ luyện tập.
+    \item Hệ thống hiển thị hướng dẫn và bắt đầu phiên luyện nói.
+    \item Học viên nói hoặc nhập nội dung trả lời.
+    \item Hệ thống gửi nội dung lên AI để phân tích.
+    \item AI trả về phản hồi, gợi ý và điểm nổi bật.
+    \item Hệ thống hiển thị phản hồi và lưu lịch sử phiên luyện tập.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Học viên ghi âm thay vì nhập văn bản:}
+    \begin{enumerate}
+        \item[3A.] Học viên ghi âm, hệ thống chuyển giọng nói thành văn bản.
+        \item[4A.] Tiếp tục từ bước 4 của luồng chính.
+    \end{enumerate}
+    \item \textbf{Dữ liệu luyện tập quá ngắn:}
+    \begin{enumerate}
+        \item[5B.] Hệ thống hiển thị cảnh báo dữ liệu chưa đủ để đánh giá chi tiết.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không thể kết nối AI:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi kết nối và đề nghị thử lại.
+    \end{enumerate}
+    \item \textbf{Tệp âm thanh không hợp lệ:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống báo lỗi định dạng hoặc kích thước tệp.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả ca sử dụng: UC-0049 Luyện tập speaking với AI}
+}

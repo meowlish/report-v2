@@ -13,18 +13,14 @@
 \contentsline {table}{\numberline {3.5}{\ignorespaces Các đặc trưng hàm ẩn cho tính ổn định dài hạn}}{30}{table.3.5}%
 \contentsline {table}{\numberline {3.6}{\ignorespaces So sánh các kiến trúc phần mềm theo các đặc trưng (1 = thấp, 5 = cao)}}{31}{table.3.6}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Lịch trình hoạt động học tập hằng tuần trên Lingriser}}{46}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Các vai trò người dùng trên nền tảng Lingriser}}{46}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Các API endpoint của mô-đun AI Practice}}{50}{table.4.3}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Lịch trình hoạt động học tập hằng tuần trên Lingriser}}{44}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Các vai trò người dùng trên nền tảng Lingriser}}{44}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Các API endpoint của mô-đun AI Practice}}{48}{table.4.3}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm Achievement}}{104}{table.7.1}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm Auth}}{105}{table.7.2}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm Exam}}{105}{table.7.3}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm File Service}}{106}{table.7.4}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm Gateway}}{106}{table.7.5}%
-\contentsline {table}{\numberline {7.6}{\ignorespaces Trích đoạn ca kiểm thử - Nhóm Integration}}{106}{table.7.6}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Phương pháp kiểm thử yêu cầu phi chức năng}}{106}{table.7.1}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Kết quả kiểm thử hiệu năng với k6}}{107}{table.7.2}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}
@@ -75,3 +71,8 @@
 \contentsline {table}{\numberline {A.89}{\ignorespaces Đặc tả Use case: UC-0044 Xóa báo cáo}}{193}{table.Alph0.89}%
 \contentsline {table}{\numberline {A.91}{\ignorespaces Đặc tả Use case: UC-0045 Xem thông báo}}{195}{table.Alph0.91}%
 \contentsline {table}{\numberline {A.93}{\ignorespaces Đặc tả Use case: UC-0046 Nhận thông báo trực tiếp}}{197}{table.Alph0.93}%
+\contentsline {table}{\numberline {A.95}{\ignorespaces Đặc tả ca sử dụng: UC-0047 Đặt lịch gọi video qua Google Meet}}{199}{table.Alph0.95}%
+\contentsline {table}{\numberline {A.97}{\ignorespaces Đặc tả ca sử dụng: UC-0048 Phụ huynh theo dõi tiến trình học}}{201}{table.Alph0.97}%
+\contentsline {table}{\numberline {A.99}{\ignorespaces Đặc tả ca sử dụng: UC-0049 Luyện tập speaking với AI}}{203}{table.Alph0.99}%
+\contentsline {table}{\numberline {A.100}{\ignorespaces Danh sách test case E2E --- English Prep}}{205}{table.Alph0.100}%
+\contentsline {table}{\numberline {A.101}{\ignorespaces Danh sách test case E2E --- Lingriser}}{228}{table.Alph0.101}%

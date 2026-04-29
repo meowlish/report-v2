@@ -2,13 +2,97 @@
 \textit{Chương này trình bày chiến lược triển khai hệ thống, bao gồm môi trường vận hành, cấu trúc triển khai các dịch vụ, quy trình tích hợp và các thành phần hạ tầng hỗ trợ để bảo đảm hệ thống hoạt động ổn định và có khả năng mở rộng.}
 
 \section{Môi trường triển khai}
-Phần này mô tả các môi trường triển khai của hệ thống, bao gồm môi trường phát triển, kiểm thử và production, cùng với các công cụ và nền tảng được sử dụng để vận hành hệ thống.
+
+Hệ thống được tổ chức thành hai môi trường triển khai riêng biệt: \textbf{Development} và \textbf{Production}, mỗi môi trường có pipeline CI/CD riêng nhằm đảm bảo tính cách ly và kiểm soát chất lượng ở từng giai đoạn phát triển.
+
+\subsection{Phân chia môi trường}
+
+\begin{itemize}
+    \item \textbf{Môi trường Development:} phục vụ quá trình phát triển và kiểm thử nội bộ. Mọi nhánh ngoài \texttt{master} đều kích hoạt pipeline Dev CI/CD, thực hiện các bước kiểm tra mã nguồn (lint), chạy unit test và build ứng dụng để phát hiện lỗi sớm trước khi tích hợp vào nhánh chính.
+    \item \textbf{Môi trường Production:} chỉ được cập nhật khi có thay đổi trên nhánh \texttt{master}. Pipeline Production CI/CD bổ sung bước đóng gói Docker image và đẩy lên Docker Hub, sẵn sàng triển khai lên máy chủ vận hành.
+\end{itemize}
+
+\subsection{Tích hợp và phân phối liên tục (CI/CD)}
+
+Cả hai môi trường đều sử dụng GitHub Actions làm nền tảng CI/CD. Pipeline chung cho mỗi lần push bao gồm các bước tuần tự:
+
+\begin{enumerate}
+    \item \textbf{Checkout mã nguồn} --- tải toàn bộ mã nguồn từ repository.
+    \item \textbf{Cài đặt môi trường} --- thiết lập Node.js (phiên bản 24.13.0) và pnpm (phiên bản 10.28.2) làm trình quản lý gói.
+    \item \textbf{Cài đặt phụ thuộc} --- chạy \texttt{pnpm install -{}-frozen-lockfile} để đảm bảo phiên bản các package nhất quán với lockfile.
+    \item \textbf{Sinh mã Prisma} --- chạy \texttt{nx run-many -t prisma:generate} để tạo Prisma Client từ schema cho tất cả các service trong monorepo.
+    \item \textbf{Kiểm tra mã nguồn (Lint)} --- chạy \texttt{nx run-many -t lint} để phát hiện các vi phạm quy tắc viết mã.
+    \item \textbf{Chạy kiểm thử (Test)} --- chạy \texttt{nx run-many -t test} để thực thi toàn bộ unit test và integration test.
+    \item \textbf{Build ứng dụng} --- chạy \texttt{nx run-many -t build} để biên dịch toàn bộ các ứng dụng trong monorepo.
+\end{enumerate}
+
+\noindent Riêng pipeline Production bổ sung job \textbf{Docker} chạy sau khi job Build thành công, thực hiện:
+
+\begin{enumerate}
+    \item Đăng nhập Docker Hub bằng credentials được lưu trong GitHub Secrets.
+    \item Build Docker image từ Dockerfile tại thư mục gốc dự án.
+    \item Push image lên Docker Hub để sẵn sàng triển khai.
+\end{enumerate}
+
+\subsection{Hệ thống ghi log và giám sát}
+
+Để theo dõi hoạt động của hệ thống trong quá trình vận hành, nhóm sử dụng kết hợp nhiều công cụ:
+
+\begin{itemize}
+    \item \textbf{Winston Logger:} thư viện ghi log cho Node.js, được tích hợp vào tất cả các service backend. Log được xuất ra file theo các mức độ nghiêm trọng (error, warn, info, debug), hỗ trợ truy vết sự cố và phân tích hành vi hệ thống.
+    \item \textbf{Adminer:} giao diện web quản trị cơ sở dữ liệu, cho phép truy vấn, kiểm tra và chỉnh sửa dữ liệu trực tiếp trên môi trường triển khai.
+    \item \textbf{Redis Insight:} công cụ trực quan hóa và giám sát Redis, hỗ trợ theo dõi trạng thái cache, phiên đăng nhập và hàng đợi.
+    \item \textbf{RabbitMQ Management:} bảng điều khiển web tích hợp sẵn của RabbitMQ, cho phép theo dõi hàng đợi tin nhắn, tốc độ xử lý, số lượng consumer và các kết nối đang hoạt động.
+    \item \textbf{MinIO Console:} giao diện quản trị MinIO, dùng để giám sát dung lượng lưu trữ, quản lý bucket và theo dõi hoạt động tải lên/tải xuống file.
+\end{itemize}
 
 \section{Kiến trúc triển khai}
-Phần này trình bày cách các thành phần của hệ thống được triển khai trong thực tế, bao gồm frontend, backend, database, AI services, storage và các thành phần trung gian khác.
+
+\subsection{Backend}
+
+Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng \textbf{Caddy} làm reverse proxy và web server, kết hợp với dịch vụ \textbf{No-IP Dynamic DNS} để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
+
+Kiến trúc giao tiếp giữa các thành phần được tổ chức như sau:
+
+\begin{itemize}
+    \item \textbf{API Gateway} đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức \textbf{gRPC}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức \textbf{HTTP} với cơ chế proxy để duy trì kết nối hai chiều.
+    \item Các service nội bộ được \textbf{ẩn sau reverse proxy và DNS resolver}, không tiếp xúc trực tiếp với mạng bên ngoài, giảm thiểu bề mặt tấn công và tăng tính bảo mật.
+\end{itemize}
+
+\subsection{Restate --- Bảo đảm tính ổn định của workflow}
+
+Hệ thống tích hợp \textbf{Restate} --- một nền tảng quản lý workflow phân tán --- nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Restate mang lại các lợi ích:
+
+\begin{itemize}
+    \item \textbf{Đơn giản hóa distributed transaction:} thay vì triển khai thủ công pattern Saga hoặc Two-Phase Commit, Restate cung cấp mô hình lập trình tuần tự với khả năng tự phục hồi, giúp giảm đáng kể độ phức tạp khi phối hợp nhiều service.
+    \item \textbf{Cơ chế retry tự động:} khi một bước trong workflow thất bại, Restate tự động thử lại với chiến lược \textbf{exponential backoff} --- khoảng thời gian giữa các lần retry tăng theo cấp số nhân --- nhằm tránh hiện tượng \textbf{thundering herd} (nhiều request đồng loạt gây quá tải hệ thống).
+    \item \textbf{Bảo toàn trạng thái:} mỗi bước thực thi được ghi lại, cho phép workflow tiếp tục từ điểm lỗi thay vì chạy lại từ đầu, đảm bảo tính idempotent và giảm lãng phí tài nguyên.
+\end{itemize}
 
 \section{Quy trình triển khai và vận hành}
-Phần này mô tả quy trình build, cấu hình, triển khai và giám sát hệ thống, đồng thời nêu rõ cách xử lý cập nhật phiên bản, quản lý tài nguyên và đảm bảo tính liên tục của dịch vụ.
+
+\subsection{Môi trường phát triển}
+
+Nhóm phát triển sử dụng hệ điều hành \textbf{Windows} làm môi trường phát triển chính. Mã nguồn được tổ chức dưới dạng \textbf{Nx monorepo}, cho phép quản lý nhiều ứng dụng và thư viện dùng chung trong cùng một repository, đồng thời tận dụng cơ chế cache và phân tích phụ thuộc của Nx để tối ưu thời gian build.
+
+\subsection{Quy trình build và triển khai}
+
+Quy trình đưa mã nguồn từ môi trường phát triển lên production diễn ra theo các bước:
+
+\begin{enumerate}
+    \item \textbf{Merge vào nhánh master:} sau khi code review và kiểm thử, mã nguồn được merge vào nhánh \texttt{master}.
+    \item \textbf{Pipeline CI/CD tự động:} GitHub Actions tự động kích hoạt pipeline, thực hiện lint, test và build toàn bộ monorepo.
+    \item \textbf{Đóng gói Docker:} ứng dụng được đóng gói thành Docker image thông qua Dockerfile tại thư mục gốc.
+    \item \textbf{Triển khai bằng Docker Compose:} trên VPS, Docker Compose được sử dụng để khởi chạy toàn bộ các container bao gồm các service backend, cơ sở dữ liệu, Redis, RabbitMQ, MinIO và các công cụ giám sát.
+\end{enumerate}
+
+\subsection{Quản lý cơ sở dữ liệu}
+
+Đối với database migration, nhóm sử dụng \textbf{Prisma Migrate} để quản lý phiên bản schema cơ sở dữ liệu. Trong quá trình phát triển, lập trình viên tạo các file migration thông qua lệnh \texttt{prisma migrate dev}, ghi lại mọi thay đổi cấu trúc bảng. Khi triển khai lên production, lệnh \texttt{prisma migrate deploy} được thực thi để áp dụng các migration đã được kiểm chứng, đảm bảo sự đồng bộ giữa schema trong mã nguồn và cơ sở dữ liệu thực tế.
+
+\subsection{Cập nhật phiên bản}
+
+Việc cập nhật phiên bản ứng dụng được thực hiện tự động thông qua pipeline CI/CD. Mỗi lần merge vào nhánh \texttt{master}, Docker image mới được build và push lên Docker Hub. Trên VPS, quá trình cập nhật bao gồm pull image mới và khởi động lại các container tương ứng thông qua Docker Compose, đảm bảo quá trình chuyển đổi phiên bản diễn ra nhanh chóng với thời gian ngừng hoạt động tối thiểu.
 
 \section{Kết luận chương}
-Chương này làm rõ tính khả thi trong việc đưa hệ thống vào vận hành thực tế, đồng thời cung cấp nền tảng cho việc mở rộng và tối ưu hạ tầng trong tương lai.
+Chương này đã trình bày toàn bộ chiến lược triển khai hệ thống, từ việc phân chia môi trường Development và Production với pipeline CI/CD riêng biệt, đến kiến trúc triển khai backend trên VPS sử dụng Caddy, gRPC và Restate. Quy trình vận hành được tự động hóa thông qua Nx monorepo, Docker Compose và Prisma Migrate, kết hợp với bộ công cụ giám sát đa dạng gồm Winston, Adminer, Redis Insight, RabbitMQ Management và MinIO Console. Tổng thể cho thấy hệ thống có khả năng đưa vào vận hành thực tế với mức độ tự động hóa cao, đồng thời tạo nền tảng cho việc mở rộng và tối ưu hạ tầng trong tương lai.

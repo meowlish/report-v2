@@ -1,0 +1,488 @@
+{
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+\small
+\begin{landscape}
+\pagestyle{plain}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.5cm}|>{\raggedright\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{4.3cm}|>{\raggedright\arraybackslash}p{2.8cm}|>{\raggedright\arraybackslash}p{4.3cm}|}
+\caption{Danh sách test case E2E --- English Prep}
+\label{tab:e2e-englishprep} \\
+\hline
+\textbf{Phân loại} & \textbf{Mã TC} & \textbf{Mô tả} & \textbf{Điều kiện tiên quyết} & \textbf{Các bước kiểm thử} & \textbf{Dữ liệu kiểm thử} & \textbf{Kết quả mong đợi} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Phân loại} & \textbf{Mã TC} & \textbf{Mô tả} & \textbf{Điều kiện tiên quyết} & \textbf{Các bước kiểm thử} & \textbf{Dữ liệu kiểm thử} & \textbf{Kết quả mong đợi} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+Đăng nhập & AUTH 001 & Đăng nhập bằng email và mật khẩu thành công & Tài khoản đã được đăng ký & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhập email vào ô ''Email''
+    \item Nhập mật khẩu vào ô ''Mật khẩu''
+    \item Nhấn nút ''Đăng nhập''
+\end{enumerate} & Email: ''test@example.com'' \newline
+Mật khẩu: ''Password123!'' & Đăng nhập thành công --- chuyển đến trang chính và hiển thị tên người dùng \\
+\hline
+ & AUTH 002 & Đăng nhập bằng Google OAuth2 thành công & Tài khoản Google đã liên kết trong hệ thống & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng nhập
+    \item Nhấn nút ''Đăng nhập bằng Google''
+    \item Chọn tài khoản Google trên trang xác thực của Google
+    \item Chờ được chuyển về ứng dụng
+\end{enumerate} & Không có & Đăng nhập thành công --- chuyển đến trang chính và hiển thị tên người dùng \\
+\hline
+ & AUTH 003 & Phiên tự động làm mới khi access token hết hạn & Đã đăng nhập; access token sắp hết hạn & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đăng nhập thành công
+    \item Đợi đến khi access token hết hạn
+    \item Thực hiện thao tác bất kỳ trên ứng dụng (ví dụ: mở trang hồ sơ)
+\end{enumerate} & Không có & Ứng dụng tự động làm mới phiên --- người dùng không bị gián đoạn và không cần đăng nhập lại \\
+\hline
+Đăng ký & AUTH 004 & Đăng ký tài khoản mới thành công &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Nhập tên người dùng vào ô ''Tên người dùng''
+    \item Nhập email vào ô ''Email''
+    \item Nhập mật khẩu vào ô ''Mật khẩu''
+    \item Nhấn nút ''Đăng ký''
+    \item Mở trang hồ sơ cá nhân để kiểm tra
+\end{enumerate} & Username: ''newuser'' \newline
+Email: ''new@example.com'' \newline
+Mật khẩu: ''StrongPass123!'' & Tài khoản được tạo thành công --- chuyển đến trang chính; trang hồ sơ hiển thị đúng username đã đăng ký \\
+\hline
+ & AUTH 005 & Đăng ký bằng Google OAuth2 thành công & Tài khoản Google chưa có trong hệ thống & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang đăng ký
+    \item Nhấn nút ''Đăng ký bằng Google''
+    \item Chọn tài khoản Google trên trang xác thực
+    \item Chờ được chuyển về ứng dụng
+\end{enumerate} & Không có & Tài khoản mới được tạo với thông tin Google --- chuyển đến trang chính \\
+\hline
+Đăng xuất & AUTH 006 & Đăng xuất tất cả phiên thành công & Đã đăng nhập trên nhiều thiết bị & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở menu tài khoản (nhấn vào avatar)
+    \item Nhấn ''Đăng xuất tất cả thiết bị''
+    \item Xác nhận đăng xuất
+    \item Mở ứng dụng trên thiết bị/trình duyệt khác đang đăng nhập
+\end{enumerate} & Không có & Tất cả phiên bị đăng xuất --- thiết bị khác yêu cầu đăng nhập lại \\
+\hline
+Xem hồ sơ & AUTH 007 & Xem hồ sơ cá nhân thành công & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào avatar hoặc tên người dùng trên thanh điều hướng
+    \item Chọn ''Hồ sơ cá nhân''
+\end{enumerate} & Không có & Trang hồ sơ hiển thị đầy đủ: tên người dùng, họ tên, bio, ảnh đại diện, vai trò \\
+\hline
+ & AUTH 008 & Xem hồ sơ công khai người dùng khác &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Tìm kiếm hoặc nhấn vào tên người dùng khác trong danh sách
+    \item Xem trang hồ sơ công khai của người đó
+\end{enumerate} & Người dùng mục tiêu: ''user123'' & Hiển thị hồ sơ giới hạn: tên người dùng, họ tên, bio, ảnh đại diện (không hiển thị thông tin nhạy cảm) \\
+\hline
+ & AUTH 009 & Xem hồ sơ nhiều người dùng trong danh sách & Có nhiều người dùng trong hệ thống & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang kết quả tìm kiếm hoặc danh sách người dùng
+    \item Kiểm tra thông tin hiển thị của từng người trong danh sách
+\end{enumerate} & Không có & Mỗi người dùng hiển thị đúng: tên, ảnh đại diện, bio \\
+\hline
+Cập nhật hồ sơ & AUTH 010 & Cập nhật hồ sơ cá nhân thành công & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang hồ sơ cá nhân
+    \item Nhấn nút ''Chỉnh sửa hồ sơ''
+    \item Thay đổi tên người dùng, họ tên và bio
+    \item Nhấn nút ''Lưu''
+    \item Tải lại trang hồ sơ để kiểm tra
+\end{enumerate} & Username: ''newname'' \newline
+Họ tên: ''Nguyễn Văn A'' \newline
+Bio: ''Hello world'' & Hồ sơ được cập nhật --- trang hiển thị đúng các thông tin vừa thay đổi \\
+\hline
+Liên kết tài khoản & AUTH 011 & Liên kết email vào tài khoản thành công & Đã đăng nhập; chưa có email liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang Cài đặt tài khoản
+    \item Trong mục ''Phương thức đăng nhập'', nhấn ''Liên kết email''
+    \item Nhập email và mật khẩu vào form
+    \item Nhấn ''Liên kết''
+    \item Kiểm tra danh sách phương thức đăng nhập
+\end{enumerate} & Email: ''link@example.com'' \newline
+Mật khẩu: ''LinkPass123!'' & Email mới xuất hiện trong danh sách phương thức đăng nhập \\
+\hline
+ & AUTH 012 & Liên kết Google vào tài khoản thành công & Đã đăng nhập; chưa có Google liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang Cài đặt tài khoản
+    \item Trong mục ''Phương thức đăng nhập'', nhấn ''Liên kết Google''
+    \item Chọn tài khoản Google trên trang xác thực
+    \item Chờ được chuyển về trang Cài đặt
+    \item Kiểm tra danh sách phương thức đăng nhập
+\end{enumerate} & Không có & Google mới xuất hiện trong danh sách phương thức đăng nhập \\
+\hline
+Đổi mật khẩu & AUTH 013 & Đổi mật khẩu thành công & Đã đăng nhập; có email liên kết & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang Cài đặt tài khoản
+    \item Nhấn ''Đổi mật khẩu''
+    \item Nhập mật khẩu mới vào form
+    \item Nhấn ''Lưu''
+    \item Đăng xuất
+    \item Đăng nhập lại bằng mật khẩu mới
+\end{enumerate} & Mật khẩu mới: ''NewStrongPass456!'' & Đổi mật khẩu thành công --- đăng nhập lại bằng mật khẩu mới thành công \\
+\hline
+Xóa phương thức đăng nhập & AUTH 014 & Xóa phương thức đăng nhập thành công & Đã đăng nhập; có ít nhất 2 phương thức (email + Google) & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang Cài đặt tài khoản
+    \item Trong mục ''Phương thức đăng nhập'', tìm phương thức muốn xóa
+    \item Nhấn nút ''Xóa'' bên cạnh phương thức đó
+    \item Xác nhận xóa trong hộp thoại
+    \item Kiểm tra danh sách phương thức đăng nhập
+\end{enumerate} & Không có & Phương thức đã bị xóa --- không còn hiển thị trong danh sách \\
+\hline
+ & AUTH 015 & Xem danh sách phương thức đăng nhập & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang Cài đặt tài khoản
+    \item Xem mục ''Phương thức đăng nhập''
+\end{enumerate} & Không có & Hiển thị danh sách phương thức đã liên kết (Email, Google) kèm loại và trạng thái \\
+\hline
+Tìm kiếm người dùng & AUTH 016 & Tìm kiếm người dùng theo tên &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào ô tìm kiếm trên thanh điều hướng
+    \item Nhập tên người dùng cần tìm
+    \item Nhấn Enter hoặc nhấn nút tìm kiếm
+    \item Xem danh sách kết quả
+\end{enumerate} & Từ khóa: ''test'' & Danh sách người dùng phù hợp hiển thị với phân trang --- nhấn vào để xem hồ sơ \\
+\hline
+ & AUTH 017 & Gợi ý người dùng khi nhập từ khóa &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào ô tìm kiếm người dùng
+    \item Nhập từ khóa
+    \item Xem kết quả gợi ý tự động hiển thị
+\end{enumerate} & Từ khóa: ''test'' & Kết quả gợi ý hiển thị nhanh khi nhập --- danh sách cập nhật theo từ khóa \\
+\hline
+Duyệt bài thi & EXAM 001 & Duyệt danh sách bài thi công khai &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Luyện tập'' từ thanh điều hướng
+    \item Xem danh sách bài thi hiển thị
+\end{enumerate} & Không có & Danh sách bài thi hiển thị với tên, thẻ phân loại, thống kê lượt làm --- có phân trang \\
+\hline
+ & EXAM 002 & Lọc bài thi theo tên &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Luyện tập''
+    \item Nhập từ khóa vào ô tìm kiếm bài thi
+    \item Xem danh sách kết quả cập nhật
+\end{enumerate} & Từ khóa: ''TOEIC'' & Chỉ hiển thị bài thi có tên chứa từ khóa đã nhập \\
+\hline
+ & EXAM 003 & Lọc bài thi theo thẻ phân loại &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Luyện tập''
+    \item Mở bộ lọc thẻ phân loại
+    \item Chọn thẻ muốn lọc
+    \item Xem danh sách kết quả cập nhật
+\end{enumerate} & Thẻ: ''Grammar'' & Chỉ hiển thị bài thi thuộc thẻ phân loại đã chọn \\
+\hline
+ & EXAM 004 & Sắp xếp danh sách bài thi &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Luyện tập''
+    \item Nhấn vào tùy chọn sắp xếp
+    \item Chọn tiêu chí sắp xếp (ví dụ: tên A-Z)
+    \item Xem danh sách cập nhật thứ tự
+\end{enumerate} & Sắp xếp: tên tăng dần & Danh sách bài thi được sắp xếp lại theo tiêu chí đã chọn \\
+\hline
+Xem chi tiết & EXAM 005 & Xem chi tiết bài thi & Bài thi đã được xuất bản & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Luyện tập''
+    \item Nhấn vào bài thi muốn xem
+    \item Xem trang chi tiết bài thi
+\end{enumerate} & Không có & Trang chi tiết hiển thị: cấu trúc các phần, số câu hỏi mỗi phần, thẻ phân loại, tổng thời gian, tổng lượt làm \\
+\hline
+ & EXAM 006 & Xem thống kê bài thi & Bài thi đã được xuất bản & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết bài thi
+    \item Chọn tab ''Thống kê''
+\end{enumerate} & Không có & Hiển thị điểm trung bình, thời gian làm bài trung bình, tỷ lệ đúng theo từng thẻ phân loại \\
+\hline
+ & EXAM 007 & Xem chi tiết câu hỏi trong bài xem lại & Đã nộp bài và đang xem lại kết quả & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang xem lại kết quả bài thi
+    \item Nhấn vào câu hỏi cần xem chi tiết
+\end{enumerate} & Không có & Hiển thị nội dung câu hỏi, các lựa chọn, giải thích đáp án, tệp đính kèm (nếu có) \\
+\hline
+Làm bài thi & EXAM 008 & Bắt đầu làm bài thi thành công & Đã đăng nhập; bài thi đã xuất bản & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết bài thi
+    \item Nhấn nút ''Bắt đầu làm bài''
+    \item Xác nhận bắt đầu trong hộp thoại
+\end{enumerate} & Không có & Chuyển đến giao diện làm bài --- hiển thị câu hỏi đầu tiên và bộ đếm thời gian \\
+\hline
+ & EXAM 009 & Bắt đầu làm bài với tùy chọn phần và thời gian & Đã đăng nhập; bài thi có nhiều phần & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết bài thi
+    \item Nhấn nút ''Bắt đầu làm bài''
+    \item Bỏ chọn các phần không muốn làm
+    \item Nhập thời gian tùy chỉnh
+    \item Nhấn ''Bắt đầu''
+\end{enumerate} & Phần chọn: ''Reading'' \newline
+Thời gian: 30 phút & Giao diện làm bài chỉ chứa câu hỏi từ phần đã chọn, bộ đếm thời gian hiển thị đúng thời gian tùy chỉnh \\
+\hline
+ & EXAM 010 & Chọn đáp án cho câu hỏi & Đã bắt đầu lượt làm bài & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đọc nội dung câu hỏi trong giao diện làm bài
+    \item Nhấn chọn đáp án (A/B/C/D)
+    \item Chuyển sang câu tiếp theo bằng nút ''Câu sau''
+    \item Quay lại câu trước để kiểm tra đáp án đã lưu
+\end{enumerate} & Đáp án chọn: A & Đáp án được lưu --- khi quay lại câu hỏi vẫn hiển thị đáp án đã chọn \\
+\hline
+ & EXAM 011 & Xóa đáp án đã chọn & Đã chọn đáp án cho câu hỏi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Quay lại câu hỏi đã trả lời
+    \item Nhấn ''Xóa đáp án'' hoặc bỏ chọn đáp án hiện tại
+\end{enumerate} & Không có & Đáp án bị xóa --- câu hỏi trở về trạng thái chưa trả lời trên bảng câu hỏi \\
+\hline
+ & EXAM 012 & Đánh dấu câu hỏi để xem lại & Đã bắt đầu lượt làm bài & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Trong giao diện làm bài, nhấn biểu tượng ''Đánh dấu'' (cờ/ngôi sao) trên câu hỏi
+    \item Mở bảng tổng quan câu hỏi để kiểm tra
+\end{enumerate} & Không có & Câu hỏi được đánh dấu --- hiển thị biểu tượng đặc biệt trên bảng tổng quan câu hỏi \\
+\hline
+ & EXAM 013 & Thêm ghi chú cho câu hỏi & Đã bắt đầu lượt làm bài & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Trong giao diện làm bài, nhấn nút ''Ghi chú'' trên câu hỏi
+    \item Nhập nội dung ghi chú vào ô văn bản
+    \item Nhấn ''Lưu ghi chú''
+\end{enumerate} & Ghi chú: ''Cần xem lại ngữ pháp'' & Ghi chú được lưu --- hiển thị khi mở lại câu hỏi \\
+\hline
+ & EXAM 014 & Xem bảng tổng quan trạng thái bài làm & Đã trả lời vài câu và đánh dấu vài câu & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Trong giao diện làm bài, nhấn mở bảng tổng quan câu hỏi
+    \item Kiểm tra trạng thái hiển thị của từng câu
+\end{enumerate} & Không có & Bảng hiển thị đúng trạng thái: câu đã trả lời, câu đánh dấu, câu chưa làm, thời gian còn lại \\
+\hline
+ & EXAM 015 & Nộp bài thi thành công & Đã bắt đầu lượt làm bài và trả lời câu hỏi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Nộp bài''
+    \item Xác nhận nộp trong hộp thoại cảnh báo
+    \item Chờ hệ thống chấm điểm
+\end{enumerate} & Không có & Bài thi được nộp --- chuyển đến trang kết quả hiển thị điểm số và tổng kết \\
+\hline
+Xem kết quả & EXAM 016 & Xem kết quả lượt làm bài đã nộp & Đã nộp bài thành công & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Sau khi nộp bài, xem trang kết quả tự động hiển thị
+    \item Cuộn qua từng câu hỏi để xem chi tiết kết quả
+\end{enumerate} & Không có & Hiển thị kết quả từng câu: đúng/sai, đáp án đã chọn vs đáp án đúng, bảng điểm tổng kết theo phần \\
+\hline
+Lịch sử \& Thống kê & EXAM 017 & Xem lịch sử làm bài & Đã đăng nhập; đã hoàn thành ít nhất 1 bài thi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở menu người dùng
+    \item Chọn ''Lịch sử làm bài''
+    \item Xem danh sách các lượt làm bài
+\end{enumerate} & Không có & Danh sách lượt làm bài hiển thị với: tên bài thi, điểm số, ngày làm --- có phân trang \\
+\hline
+ & EXAM 018 & Lọc lịch sử theo bài thi cụ thể & Đã đăng nhập; có lịch sử nhiều bài thi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Lịch sử làm bài''
+    \item Mở bộ lọc bài thi
+    \item Chọn bài thi cụ thể muốn xem
+    \item Xem danh sách cập nhật
+\end{enumerate} & Bài thi: ''TOEIC Practice Test 1'' & Chỉ hiển thị các lượt làm bài của bài thi đã chọn \\
+\hline
+ & EXAM 019 & Xem lịch hoạt động học tập & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Thống kê cá nhân''
+    \item Xem phần lịch hoạt động
+    \item Nhấn vào ngày cụ thể để xem chi tiết
+\end{enumerate} & Không có & Lịch hiển thị các ngày có hoạt động với số lượt làm bài --- ngày có hoạt động được tô màu \\
+\hline
+ & EXAM 020 & Xem thống kê cá nhân tổng hợp & Đã đăng nhập; đã làm bài thi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Thống kê cá nhân''
+    \item Xem các chỉ số tổng hợp
+\end{enumerate} & Không có & Hiển thị: tổng số lượt làm bài, điểm trung bình, tỷ lệ đúng phân theo từng thẻ phân loại \\
+\hline
+Mục tiêu học tập & EXAM 021 & Tạo mục tiêu học tập thành công & Đã đăng nhập; chưa có mục tiêu & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Mục tiêu học tập''
+    \item Nhấn ''Tạo mục tiêu mới''
+    \item Chọn loại mục tiêu (số lượt làm bài / điểm số)
+    \item Nhập giá trị mục tiêu và ngày hoàn thành
+    \item Nhấn ''Lưu''
+\end{enumerate} & Loại: số lượt làm bài \newline
+Mục tiêu: 10 \newline
+Ngày: 01/06/2026 & Mục tiêu được tạo --- hiển thị trên trang với thanh tiến độ \\
+\hline
+ & EXAM 022 & Cập nhật mục tiêu học tập & Đã đăng nhập; đã có mục tiêu & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Mục tiêu học tập''
+    \item Nhấn ''Chỉnh sửa'' trên mục tiêu hiện tại
+    \item Thay đổi giá trị mục tiêu
+    \item Nhấn ''Lưu''
+\end{enumerate} & Mục tiêu mới: 20 \newline
+Loại: điểm số & Mục tiêu được cập nhật --- hiển thị giá trị mới và thanh tiến độ cập nhật \\
+\hline
+ & EXAM 023 & Xóa mục tiêu học tập & Đã đăng nhập; đã có mục tiêu & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Mục tiêu học tập''
+    \item Nhấn ''Xóa'' trên mục tiêu
+    \item Xác nhận xóa trong hộp thoại
+\end{enumerate} & Không có & Mục tiêu đã bị xóa --- không còn hiển thị trên trang \\
+\hline
+Tạo bài thi & MGMT 001 & Tạo bài thi mới thành công & Đã đăng nhập với vai trò Mod hoặc Admin & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý bài thi''
+    \item Nhấn nút ''Tạo bài thi mới''
+    \item Nhập tiêu đề, mô tả và thời gian làm bài
+    \item Nhấn ''Tạo''
+    \item Kiểm tra bài thi mới trong danh sách
+\end{enumerate} & Tiêu đề: ''TOEIC Practice Test 1'' \newline
+Mô tả: ''Bài thi thử TOEIC'' \newline
+Thời gian: 120 phút & Bài thi mới xuất hiện trong danh sách quản lý ở trạng thái ''''Nháp'''' \\
+\hline
+ & MGMT 002 & Xem danh sách bài thi quản lý & Đã đăng nhập Mod/Admin; có bài thi đã tạo & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý bài thi''
+    \item Xem danh sách bài thi hiển thị
+    \item Sử dụng bộ lọc theo tiêu đề, người tạo hoặc trạng thái
+\end{enumerate} & Không có & Danh sách bài thi hiển thị với: tiêu đề, người tạo, trạng thái, ngày tạo --- có bộ lọc và phân trang \\
+\hline
+ & MGMT 003 & Xem chi tiết bài thi trong trang quản lý & Đã đăng nhập Mod/Admin; bài thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý bài thi''
+    \item Nhấn vào bài thi cần xem chi tiết
+\end{enumerate} & Không có & Trang chi tiết hiển thị: trạng thái, mô tả, thời gian, danh sách các phần thi, thẻ phân loại \\
+\hline
+Chỉnh sửa bài thi & MGMT 004 & Chỉnh sửa thông tin bài thi thành công & Đã đăng nhập Mod/Admin; bài thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết bài thi trong mục quản lý
+    \item Nhấn nút ''Chỉnh sửa''
+    \item Sửa tiêu đề, mô tả, thời gian
+    \item Thêm thẻ phân loại mới
+    \item Nhấn ''Lưu''
+    \item Kiểm tra trang chi tiết hiển thị đúng
+\end{enumerate} & Tiêu đề mới: ''Tên mới'' \newline
+Thời gian: 60 phút \newline
+Thẻ thêm: ''Grammar'' & Thông tin bài thi được cập nhật --- thẻ mới xuất hiện và các trường hiển thị giá trị mới \\
+\hline
+Xóa bài thi & MGMT 005 & Xóa bài thi thành công & Đã đăng nhập Mod/Admin; bài thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý bài thi''
+    \item Nhấn nút ''Xóa'' trên bài thi cần xóa
+    \item Xác nhận xóa trong hộp thoại
+    \item Kiểm tra danh sách bài thi
+\end{enumerate} & Không có & Bài thi không còn xuất hiện trong danh sách quản lý \\
+\hline
+Phê duyệt bài thi & MGMT 006 & Phê duyệt và xuất bản bài thi thành công & Đã đăng nhập Admin có quyền EXAM\_APPROVE; bài thi ở trạng thái nháp & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý bài thi''
+    \item Chọn bài thi ở trạng thái ''Nháp''
+    \item Nhấn nút ''Phê duyệt'' hoặc ''Xuất bản''
+    \item Mở trang ''Luyện tập'' công khai để kiểm tra
+\end{enumerate} & Không có & Trạng thái bài thi chuyển thành ''Đã xuất bản'' --- bài thi hiển thị trong trang luyện tập công khai \\
+\hline
+Quản lý phần thi & MGMT 007 & Tạo phần thi mới trong bài thi & Đã đăng nhập Mod/Admin; bài thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chi tiết bài thi trong mục quản lý
+    \item Nhấn nút ''Thêm phần thi''
+    \item Nhập tên phần thi
+    \item Nhấn ''Tạo''
+\end{enumerate} & Không có & Phần thi mới xuất hiện trong cấu trúc bài thi \\
+\hline
+ & MGMT 008 & Tạo phần thi con lồng bên trong phần cha & Đã đăng nhập Mod/Admin; đã có phần thi cha & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở phần thi cha trong cấu trúc bài thi
+    \item Nhấn ''Thêm phần con''
+    \item Nhập tên phần con
+    \item Nhấn ''Tạo''
+\end{enumerate} & Không có & Phần thi con xuất hiện lồng bên trong phần cha trên giao diện \\
+\hline
+ & MGMT 009 & Cập nhật thông tin phần thi & Đã đăng nhập Mod/Admin; phần thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Chỉnh sửa'' trên phần thi
+    \item Sửa tên, chỉ dẫn, loại nội dung
+    \item Thêm thẻ phân loại
+    \item Nhấn ''Lưu''
+\end{enumerate} & Tên: ''Reading Comprehension'' \newline
+Loại nội dung: passage & Phần thi hiển thị đúng các thông tin đã cập nhật \\
+\hline
+ & MGMT 010 & Xóa phần thi & Đã đăng nhập Mod/Admin; phần thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Xóa'' trên phần thi cần xóa
+    \item Xác nhận xóa trong hộp thoại
+    \item Kiểm tra cấu trúc bài thi
+\end{enumerate} & Không có & Phần thi và toàn bộ câu hỏi bên trong đã bị xóa khỏi cấu trúc \\
+\hline
+ & MGMT 011 & Di chuyển phần thi đến vị trí mới & Đã đăng nhập Mod/Admin; có nhiều phần thi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Di chuyển'' trên phần thi hoặc kéo thả
+    \item Chọn vị trí đích và phần cha mới (nếu cần)
+    \item Xác nhận di chuyển
+\end{enumerate} & Không có & Phần thi hiển thị tại vị trí mới trong cấu trúc bài thi \\
+\hline
+Quản lý câu hỏi & MGMT 012 & Tạo câu hỏi mới trong phần thi & Đã đăng nhập Mod/Admin; phần thi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở phần thi trong cấu trúc bài
+    \item Nhấn nút ''Thêm câu hỏi''
+\end{enumerate} & Không có & Câu hỏi trống được tạo trong phần thi --- sẵn sàng chỉnh sửa nội dung \\
+\hline
+ & MGMT 013 & Chỉnh sửa nội dung và đáp án câu hỏi & Đã đăng nhập Mod/Admin; câu hỏi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn vào câu hỏi cần sửa
+    \item Nhập nội dung câu hỏi và giải thích
+    \item Nhập điểm số
+    \item Thêm các lựa chọn đáp án và đánh dấu đáp án đúng
+    \item Nhấn ''Lưu''
+    \item Mở lại câu hỏi để kiểm tra
+\end{enumerate} & Nội dung: ''What is...?'' \newline
+Điểm: 1 \newline
+Loại: trắc nghiệm một đáp án \newline
+Lựa chọn: A (đúng), B, C, D & Câu hỏi hiển thị đúng nội dung và các lựa chọn --- đáp án đúng được đánh dấu \\
+\hline
+ & MGMT 014 & Xóa câu hỏi khỏi phần thi & Đã đăng nhập Mod/Admin; câu hỏi tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Xóa'' trên câu hỏi cần xóa
+    \item Xác nhận xóa trong hộp thoại
+    \item Kiểm tra danh sách câu hỏi trong phần thi
+\end{enumerate} & Không có & Câu hỏi không còn hiển thị trong phần thi \\
+\hline
+ & MGMT 015 & Di chuyển câu hỏi sang phần khác & Đã đăng nhập Mod/Admin; có nhiều phần và câu hỏi & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Di chuyển'' trên câu hỏi
+    \item Chọn phần thi đích từ danh sách
+    \item Xác nhận di chuyển
+    \item Mở phần thi đích để kiểm tra
+\end{enumerate} & Không có & Câu hỏi xuất hiện trong phần thi mới --- không còn trong phần cũ \\
+\hline
+Quản lý thẻ phân loại & MGMT 016 & Xem cây thẻ phân loại &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý thẻ phân loại''
+    \item Xem cây thẻ hiển thị dạng phân cấp
+\end{enumerate} & Không có & Cây thẻ hiển thị đầy đủ với các cấp lồng nhau: thẻ cha, thẻ con \\
+\hline
+ & MGMT 017 & Xem danh sách thẻ phân loại dạng phẳng &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý thẻ phân loại''
+    \item Chuyển sang chế độ xem danh sách phẳng
+\end{enumerate} & Không có & Hiển thị tất cả thẻ dạng danh sách phẳng kèm tên thẻ cha tương ứng \\
+\hline
+ & MGMT 018 & Tạo thẻ phân loại mới & Đã đăng nhập Mod/Admin & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang ''Quản lý thẻ phân loại''
+    \item Nhấn ''Thêm thẻ mới''
+    \item Nhập tên thẻ
+    \item Chọn thẻ cha từ cây (nếu cần)
+    \item Nhấn ''Tạo''
+\end{enumerate} & Tên thẻ: ''Grammar'' \newline
+Thẻ cha: ''English Skills'' & Thẻ mới xuất hiện trong cây dưới thẻ cha đã chọn \\
+\hline
+ & MGMT 019 & Đổi tên thẻ phân loại & Đã đăng nhập Mod/Admin; thẻ tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Chỉnh sửa'' trên thẻ cần đổi tên
+    \item Nhập tên mới
+    \item Nhấn ''Lưu''
+\end{enumerate} & Tên mới: ''Advanced Grammar'' & Tên thẻ được cập nhật trong cây phân loại \\
+\hline
+ & MGMT 020 & Di chuyển thẻ phân loại đến vị trí cha mới & Đã đăng nhập Mod/Admin; thẻ tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Di chuyển'' trên thẻ cần di chuyển
+    \item Chọn thẻ cha mới từ cây
+    \item Xác nhận di chuyển
+\end{enumerate} & Không có & Thẻ hiển thị tại vị trí cha mới trong cây phân loại \\
+\hline
+ & MGMT 021 & Xóa thẻ phân loại & Đã đăng nhập Mod/Admin; thẻ tồn tại & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Nhấn nút ''Xóa'' trên thẻ cần xóa
+    \item Xác nhận xóa trong hộp thoại
+    \item Kiểm tra cây thẻ phân loại
+\end{enumerate} & Không có & Thẻ không còn xuất hiện trong cây phân loại \\
+\hline
+Tải ảnh công khai & FILE 001 & Tải ảnh đại diện lên thành công & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang chỉnh sửa hồ sơ
+    \item Nhấn vào vùng ảnh đại diện hoặc nút ''Chọn ảnh''
+    \item Chọn tệp ảnh từ máy tính
+    \item Chờ ảnh tải lên hoàn tất
+    \item Nhấn ''Lưu'' hồ sơ
+\end{enumerate} & Tệp: avatar.png \newline
+Kích thước: 100KB \newline
+Loại: image/png & Ảnh được tải lên thành công --- hiển thị xem trước trên trang hồ sơ \\
+\hline
+ & FILE 002 & Đính kèm tệp riêng tư vào nội dung & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở form tạo/chỉnh sửa nội dung (ví dụ: câu hỏi bài thi)
+    \item Nhấn nút ''Đính kèm tệp''
+    \item Chọn tệp từ máy tính
+    \item Chờ tệp tải lên hoàn tất
+\end{enumerate} & Tệp: document.pdf \newline
+Kích thước: 200KB & Tệp được đính kèm thành công --- chỉ người có quyền mới truy cập được \\
+\hline
+ & FILE 003 & Ảnh công khai hiển thị đúng sau khi tải lên & Đã tải ảnh lên thành công ở FILE 001 & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trang hồ sơ cá nhân
+    \item Kiểm tra ảnh đại diện hiển thị
+    \item Nhấn chuột phải vào ảnh, chọn ''Mở ảnh trong tab mới''
+\end{enumerate} & Không có & Ảnh hiển thị đúng trên trang hồ sơ và có thể mở trực tiếp trong tab mới \\
+\hline
+Throttle Guard & RATE 001 & Bị chặn khi thao tác quá nhanh liên tục &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Thực hiện thao tác liên tục rất nhanh (ví dụ: tải lại trang, nhấn nút liên tục hơn 60 lần trong 60 giây)
+    \item Quan sát phản hồi sau lần thao tác thứ 61
+\end{enumerate} & Không có & Hiển thị thông báo lỗi ''Quá nhiều yêu cầu, vui lòng thử lại sau'' --- thao tác bị từ chối \\
+\hline
+ & RATE 002 & Thao tác trở lại bình thường sau thời gian chờ & Đã bị giới hạn tốc độ ở RATE 001 & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đợi 60 giây sau khi bị giới hạn
+    \item Thực hiện lại thao tác bình thường (ví dụ: mở trang luyện tập)
+\end{enumerate} & Không có & Trang hoạt động bình thường --- nội dung hiển thị đúng không còn lỗi \\
+\hline
+JWT Guard & RATE 003 & Truy cập trang yêu cầu đăng nhập khi chưa đăng nhập &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Mở trình duyệt mới (chưa đăng nhập)
+    \item Truy cập trực tiếp trang hồ sơ cá nhân qua URL
+\end{enumerate} & Không có & Chuyển hướng về trang đăng nhập hoặc hiển thị thông báo yêu cầu đăng nhập \\
+\hline
+ & RATE 004 & Phiên hết hạn khi không hoạt động lâu & Đã đăng nhập & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Đăng nhập thành công
+    \item Không thao tác trong thời gian dài để phiên hết hạn
+    \item Thực hiện thao tác yêu cầu xác thực (ví dụ: mở hồ sơ cá nhân)
+\end{enumerate} & Không có & Hệ thống tự động làm mới phiên hoặc yêu cầu đăng nhập lại \\
+\hline
+ & RATE 005 & Phiên bị từ chối khi token bị giả mạo &  & \begin{enumerate}[leftmargin=*, nosep, labelsep=0.3em]
+    \item Sử dụng công cụ phát triển trình duyệt để sửa đổi token thành chuỗi không hợp lệ
+    \item Thực hiện thao tác yêu cầu xác thực (ví dụ: mở hồ sơ cá nhân)
+\end{enumerate} & Không có & Chuyển hướng về trang đăng nhập --- phiên không hợp lệ bị từ chối \\
+\hline
+\end{longtable}
+\end{landscape}
+}

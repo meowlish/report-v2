@@ -1,0 +1,57 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Phụ huynh theo dõi tiến trình học của con \\
+\hline
+\textbf{ID} & UC-0048 \\
+\hline
+\textbf{Tác nhân} & Phụ huynh đã xác thực \\
+\hline
+\textbf{Mô tả} & Phụ huynh xem hồ sơ, tiến độ học, lịch sử học tập và thanh toán của con \\
+\hline
+\textbf{Điều kiện tiên quyết} & Phụ huynh đã đăng nhập; con đã được liên kết với phụ huynh \\
+\hline
+\textbf{Điều kiện sau} & Phụ huynh nhận được thông tin cập nhật của con \\
+\hline
+\textbf{Kích hoạt} & Phụ huynh mở trang Theo dõi con \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Phụ huynh vào trang Theo dõi con.
+    \item Hệ thống hiển thị danh sách con đã liên kết.
+    \item Phụ huynh chọn một học viên.
+    \item Hệ thống hiển thị thông tin hồ sơ học viên.
+    \item Hệ thống hiển thị tiến trình học, lịch sử buổi học và bài tập/AI practice gần nhất.
+    \item Hệ thống hiển thị trạng thái học phí và lịch sử thanh toán.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Có nhiều con:}
+    \begin{enumerate}
+        \item[3A.] Phụ huynh chuyển đổi giữa các học viên để xem thông tin.
+    \end{enumerate}
+    \item \textbf{Không có dữ liệu lịch sử học:}
+    \begin{enumerate}
+        \item[5B.] Hệ thống hiển thị trạng thái chưa có lịch sử học.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Học viên chưa liên kết:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về lỗi không tìm thấy liên kết phụ huynh - học viên.
+    \end{enumerate}
+    \item \textbf{Không tìm thấy học viên:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi học viên không tồn tại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả ca sử dụng: UC-0048 Phụ huynh theo dõi tiến trình học}
+}
