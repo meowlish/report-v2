@@ -3,7 +3,7 @@
 
 
 \section{Phát biểu bài toán}
-Nhu cầu sở hữu các chứng chỉ năng lực tiếng Anh trên toàn cầu đã tăng mạnh, với hàng triệu người học mỗi năm tham gia các kỳ thi chuẩn hóa như IELTS, TOEIC, TOEFL và SAT. Tuy nhiên, các phương pháp ôn luyện truyền thống vẫn tồn tại nhiều hạn chế quan trọng:
+Nhu cầu sở hữu các chứng chỉ năng lực tiếng Anh trên toàn cầu đã tăng mạnh, với hàng triệu người học mỗi năm tham gia các kỳ thi chuẩn hóa như IELTS \cite{ielts_official}, TOEIC \cite{toeic_official}, TOEFL và SAT. Tuy nhiên, các phương pháp ôn luyện truyền thống vẫn tồn tại nhiều hạn chế quan trọng:
 
 \begin{itemize}
 \item \textbf{Khả năng tiếp cận còn hạn chế}: Các khóa ôn thi chất lượng cao thường đắt đỏ và bị giới hạn về địa lý, khiến nhiều người học khó tiếp cận nguồn tài nguyên phù hợp.
@@ -15,7 +15,7 @@ Nhu cầu sở hữu các chứng chỉ năng lực tiếng Anh trên toàn cầ
 \item \textbf{Thiếu nhất quán khi triển khai}: Nhiều nền tảng giáo dục gặp tình trạng hoạt động không đồng nhất giữa các môi trường triển khai do lệch cấu hình và xung đột phụ thuộc.
 \end{itemize}
 
-Bên cạnh đó, các nền tảng số hiện có còn hạn chế về cách tiếp cận công nghệ, thường thiếu tích hợp AI, chưa bao phủ đầy đủ các dạng bài thi và chưa mang lại trải nghiệm người dùng trực quan. Sự phân mảnh của các công cụ hiện có buộc người học phải sử dụng nhiều nền tảng khác nhau, làm giảm hiệu quả và tăng tải nhận thức. Những vấn đề này tạo ra khoảng trống rõ rệt cho một nền tảng tích hợp, thông minh và dễ tiếp cận, có khả năng hỗ trợ ôn luyện toàn diện cho nhiều định dạng kỳ thi khác nhau đồng thời tận dụng công nghệ AI hiện đại để cá nhân hóa việc học.
+Bên cạnh đó, các nền tảng số hiện có còn hạn chế về cách tiếp cận công nghệ, thường thiếu tích hợp AI, chưa bao phủ đầy đủ các dạng bài thi và chưa mang lại trải nghiệm người dùng trực quan. Sự phân mảnh của các công cụ hiện có buộc người học phải sử dụng nhiều nền tảng khác nhau, làm giảm hiệu quả và tăng tải nhận thức. Những vấn đề này tạo ra khoảng trống rõ rệt cho một nền tảng tích hợp, thông minh và dễ tiếp cận, có khả năng hỗ trợ ôn luyện toàn diện cho nhiều định dạng kỳ thi khác nhau đồng thời tận dụng công nghệ AI hiện đại để cá nhân hóa việc học \cite{ai_education}.
 
 \section{Mục tiêu}
 
@@ -52,10 +52,14 @@ Phạm vi của dự án bao gồm các hoạt động được thực hiện tr
 
 \subsection{Giới hạn kỹ thuật}
 
-Hệ thống sử dụng Next.js cho giao diện người dùng, NestJS cho phát triển API phía máy chủ, MongoDB và PostgreSQL cho lưu trữ dữ liệu, FastAPI cho các thành phần AI và AWS cho hạ tầng đám mây. Đề tài chỉ tập trung vào việc tích hợp các mô hình hoặc API AI có sẵn; việc huấn luyện hay tinh chỉnh các mô hình AI lớn tùy biến không thuộc phạm vi thực hiện.
+Hệ thống sử dụng Next.js \cite{nextjs_docs} cho giao diện người dùng, NestJS \cite{nestjs} cho phát triển API phía máy chủ, MongoDB \cite{mongodb} và PostgreSQL \cite{postgresql} cho lưu trữ dữ liệu, FastAPI \cite{fastapi} cho các thành phần AI và AWS \cite{aws} cho hạ tầng đám mây. Đề tài chỉ tập trung vào việc tích hợp các mô hình hoặc API AI có sẵn; việc huấn luyện hay tinh chỉnh các mô hình AI lớn tùy biến không thuộc phạm vi thực hiện.
 
 \subsection{Ràng buộc}
 
 Dự án được thực hiện trong bối cảnh học thuật nên chịu các ràng buộc điển hình như thời gian phát triển hạn chế, tài nguyên tính toán có giới hạn và yêu cầu hệ thống phải phù hợp với năng lực triển khai của nhóm bốn thành viên. Vì vậy, tăng cường bảo mật ở mức sản phẩm thương mại, cấu hình sẵn sàng cao và tối ưu hiệu năng cấp production không phải là mục tiêu chính.
+
+
+\section{Kết luận chương}
+Chương này đã trình bày bài toán ôn luyện tiếng Anh chuẩn hóa với những hạn chế của các phương pháp và nền tảng hiện có. Từ đó, nhóm xác định mục tiêu xây dựng một nền tảng tích hợp AI nhằm hỗ trợ nhiều kỳ thi, cá nhân hóa lộ trình học tập, cung cấp phản hồi tức thì cho kỹ năng Nói và Viết, đồng thời theo dõi tiến độ người học. Phạm vi dự án được giới hạn rõ ràng về đối tượng, thời gian, công nghệ và ràng buộc tài nguyên để đảm bảo tính khả thi trong bối cảnh học thuật.
 
 

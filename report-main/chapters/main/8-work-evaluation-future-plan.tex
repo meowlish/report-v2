@@ -25,6 +25,44 @@ toàn diện trong phạm vi đồ án.
 
 Việc triển khai Writing service như một lớp trung gian giữa backend chính và mô hình suy luận cũng là một kết quả có ý nghĩa về mặt kiến trúc. Cách tiếp cận này giúp hệ thống dễ tích hợp, thuận tiện trong giám sát và tạo nền tảng cho các cải tiến tiếp theo.
 
+\section{Lợi ích thực tế của hệ thống}
+
+So với các nền tảng hiện có đã phân tích ở Chương~3, hệ thống mang lại một số lợi ích thực tế rõ rệt:
+
+\begin{enumerate}
+    \item \textbf{Tích hợp đánh giá AI cho kỹ năng Nói và Viết trên cùng một nền tảng:} Trong khi phần lớn các nền tảng phổ biến như Study4 không hỗ trợ thi Nói/Viết, hoặc IELTS Online Tests phải dùng giám khảo thật (chi phí cao), hệ thống của nhóm sử dụng pipeline AI hoàn toàn tự động --- Whisper cho phiên âm, GPT-4o-mini cho phản hồi Speaking, và Phi-3 fine-tuned cho chấm điểm Writing --- giúp người học nhận phản hồi chi tiết mà không phụ thuộc vào giám khảo.
+
+    \item \textbf{Giảm chi phí ôn luyện:} Các nền tảng như IELTS Online Tests, The Forum và Prep Edu đều yêu cầu trả phí. Hệ thống của nhóm cung cấp miễn phí các tính năng cốt lõi bao gồm làm bài thi thử, chấm điểm AI và phản hồi tự động, giúp mở rộng khả năng tiếp cận cho người học có ngân sách hạn chế.
+
+    \item \textbf{Hỗ trợ đa kỳ thi trên một hệ thống thống nhất:} Thay vì phải sử dụng nhiều nền tảng riêng lẻ cho từng kỳ thi, người học có thể ôn luyện IELTS, TOEIC, TOEFL và SAT trên cùng một giao diện với dữ liệu học tập được tổng hợp, giúp tiết kiệm thời gian chuyển đổi giữa các công cụ và theo dõi tiến độ nhất quán.
+
+    \item \textbf{Hiệu năng đáp ứng yêu cầu thực tế:} Kết quả kiểm thử với k6 cho thấy hệ thống duy trì thời gian phản hồi trung bình dưới 6ms và tỷ lệ thành công trên 98\% ngay cả khi chịu tải 1.000 người dùng đồng thời, xác nhận khả năng phục vụ nhóm người dùng quy mô vừa trong điều kiện vận hành thực tế.
+
+    \item \textbf{Kiến trúc microservices cho phép mở rộng linh hoạt:} Việc tách biệt các service (AI, xác thực, bài thi, thông báo) cho phép nâng cấp hoặc thay thế từng thành phần mà không ảnh hưởng toàn hệ thống. Ví dụ, khi mô hình AI mới ra đời, chỉ cần cập nhật AI service mà không cần sửa đổi backend chính hay frontend.
+\end{enumerate}
+
+\begin{table}[H]
+\centering
+\caption{So sánh lợi thế của hệ thống so với các nền tảng hiện có}
+\renewcommand{\arraystretch}{1.4}
+\small
+\begin{tabular}{|p{0.28\linewidth}|c|c|c|c|c|}
+\hline
+\textbf{Tiêu chí} & \textbf{Study4} & \textbf{IELTS OT} & \textbf{The Forum} & \textbf{Prep Edu} & \textbf{Hệ thống} \\
+\hline
+Đánh giá Speaking bằng AI & -- & -- & -- & -- & \checkmark \\
+\hline
+Chấm Writing tự động & -- & -- & -- & -- & \checkmark \\
+\hline
+Hỗ trợ $\geq$ 4 kỳ thi & \checkmark & -- & -- & \checkmark & \checkmark \\
+\hline
+Miễn phí tính năng cốt lõi & \checkmark & -- & -- & -- & \checkmark \\
+\hline
+Kiến trúc mở rộng được & ? & ? & ? & ? & \checkmark \\
+\hline
+\end{tabular}
+\end{table}
+
 \section{Những hạn chế hiện tại}
 Mặc dù đã đạt được nhiều kết quả tích cực, hệ thống hiện vẫn còn một số hạn chế.
 
@@ -36,6 +74,8 @@ Thứ ba, thời gian phản hồi của pipeline Speaking hiện chưa tối ư
 
 Thứ tư, công tác kiểm thử và đánh giá toàn hệ thống vẫn cần được đầu tư thêm. Dù nhóm đã xác định được định hướng kiểm thử cho cả ứng dụng web và các chức năng AI, độ bao phủ kiểm thử hiện tại vẫn chưa đủ để khẳng định độ ổn định của toàn bộ hệ thống trong nhiều bối cảnh sử dụng khác nhau.
 
+
+\section{Định hướng phát triển}
 
 \subsection{Hoàn thiện tích hợp hệ thống}
 Ưu tiên đầu tiên là hoàn thiện việc tích hợp các mô-đun AI vào ứng dụng web để tạo thành một trải nghiệm sử dụng thống nhất. Điều này bao gồm việc chuẩn hóa giao tiếp giữa backend và các AI service, tối ưu các luồng dữ liệu và bảo đảm kết quả AI được phản ánh rõ ràng, nhất quán trên giao diện người dùng.

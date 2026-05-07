@@ -99,7 +99,7 @@ POST & \texttt{/api/ai-practice/feedback} & Sinh phân tích buổi luyện từ
 
 \subsubsection{System Prompt Engineering cho hội thoại}
 
-Điểm kỹ thuật then chốt là hàm \texttt{buildSystemPrompt()} được gọi mỗi lần khởi tạo cuộc hội thoại. Hàm này tổng hợp ngữ cảnh từ ba nguồn thành một system prompt duy nhất truyền vào GPT-4o-mini:
+Điểm kỹ thuật then chốt là hàm \texttt{buildSystemPrompt()} được gọi mỗi lần khởi tạo cuộc hội thoại. Hàm này tổng hợp ngữ cảnh từ ba nguồn thành một system prompt duy nhất truyền vào GPT-4o-mini \cite{openai_gpt4o}:
 
 \begin{enumerate}
     \item \textbf{Trình độ CEFR:} Mỗi level ánh xạ sang một bộ hướng dẫn ngôn ngữ cụ thể. Ví dụ, \texttt{beginner} → \textit{"Use simple vocabulary and short sentences. Avoid complex grammar."}, còn \texttt{advanced} → \textit{"Use rich vocabulary, complex grammar, and natural expressions like a native speaker."} Tham số \texttt{temperature = 0.8} và \texttt{max\_tokens = 500} được cố định để đảm bảo phản hồi đa dạng nhưng không quá dài.
@@ -111,7 +111,7 @@ POST & \texttt{/api/ai-practice/feedback} & Sinh phân tích buổi luyện từ
 
 \subsubsection{Phiên âm Whisper và thuật toán Pause Detection}
 
-Khi học sinh gửi audio, backend gọi Whisper-1 với cấu hình \texttt{response\_format: 'verbose\_json'} và \texttt{timestamp\_granularities: ['word']} để nhận timestamp cấp độ từng từ thay vì chỉ chuỗi văn bản. Whisper còn được truyền vào một prompt hướng dẫn phiên âm nguyên văn, không tự động sửa lỗi phát âm, không bổ sung từ thiếu — nhằm bảo toàn các lỗi thực tế của học sinh để phân tích.
+Khi học sinh gửi audio, backend gọi Whisper-1 \cite{openai_whisper} với cấu hình \texttt{response\_format: 'verbose\_json'} và \texttt{timestamp\_granularities: ['word']} để nhận timestamp cấp độ từng từ thay vì chỉ chuỗi văn bản. Whisper còn được truyền vào một prompt hướng dẫn phiên âm nguyên văn, không tự động sửa lỗi phát âm, không bổ sung từ thiếu — nhằm bảo toàn các lỗi thực tế của học sinh để phân tích.
 
 Dữ liệu \texttt{words[]} từ Whisper sau đó được đưa vào thuật toán Pause Detection trong \texttt{generateFeedback()}:
 
@@ -279,7 +279,7 @@ Mục tiêu chính của mô-đun là tự động hóa một phần quá trình
 \subsection{Bài toán và định hướng mô hình}
 Ở góc độ kỹ thuật, đây là bài toán \textit{instruction tuning} cho mô hình ngôn ngữ lớn với đầu vào là \textbf{đề bài IELTS Writing} và \textbf{bài viết của người học}, còn đầu ra là một phản hồi có cấu trúc gồm điểm số và nhận xét. Mô hình không chỉ thực hiện một tác vụ đơn lẻ mà kết hợp đồng thời ba lớp nhiệm vụ: \textit{scoring}, \textit{feedback generation} và \textit{error explanation}. 
 
-Nhóm lựa chọn \textbf{Phi-3-mini-4k-instruct} làm mô hình nền vì mô hình này có quy mô vừa phải, phù hợp với tài nguyên tính toán sẵn có trên Kaggle GPU, đồng thời vẫn giữ được khả năng sinh ngôn ngữ đủ tốt cho bài toán đánh giá viết. Ngoài ra, kiến trúc này tương thích tốt với các kỹ thuật fine-tune tiết kiệm tài nguyên như \textit{QLoRA}, cho phép nhóm huấn luyện mô hình trong điều kiện VRAM hạn chế nhưng vẫn đạt được chất lượng đầu ra chấp nhận được.
+Nhóm lựa chọn \textbf{Phi-3-mini-4k-instruct} \cite{phi3_microsoft} làm mô hình nền vì mô hình này có quy mô vừa phải, phù hợp với tài nguyên tính toán sẵn có trên Kaggle GPU, đồng thời vẫn giữ được khả năng sinh ngôn ngữ đủ tốt cho bài toán đánh giá viết. Ngoài ra, kiến trúc này tương thích tốt với các kỹ thuật fine-tune tiết kiệm tài nguyên như \textit{QLoRA}, cho phép nhóm huấn luyện mô hình trong điều kiện VRAM hạn chế nhưng vẫn đạt được chất lượng đầu ra chấp nhận được.
 
 Trong hệ thống thực tế, mô hình đóng vai trò là thành phần suy luận cho chức năng Writing trên web: backend nhận bài viết từ người dùng, chuẩn hóa request, chuyển tới service chứa mô hình đã train, sau đó trả về điểm và phản hồi để hiển thị trên giao diện.
 
@@ -364,7 +364,7 @@ Tuy vậy, dữ liệu vẫn tồn tại một số hạn chế. Thứ nhất, p
 Nhóm chọn \textbf{Phi-3-mini-4k-instruct} vì đây là mô hình có quy mô khoảng \textbf{3.8B tham số}, phù hợp với giới hạn tài nguyên của môi trường Kaggle nhưng vẫn đủ năng lực xử lý prompt dài và sinh phản hồi tự nhiên. Mô hình hỗ trợ ngữ cảnh 4k tokens, đủ cho cấu trúc đầu vào gồm đề bài, bài viết và chỉ dẫn chấm điểm. Ngoài ra, việc kết hợp phiên bản 4-bit với LoRA giúp giảm đáng kể chi phí bộ nhớ mà vẫn giữ được khả năng thích nghi cho tác vụ chuyên biệt.
 
 \subsubsection{Chiến lược huấn luyện}
-Nhóm áp dụng chiến lược \textbf{QLoRA}, tức fine-tune mô hình lượng tử hóa 4-bit bằng các adapter LoRA. Cấu hình chính gồm:
+Nhóm áp dụng chiến lược \textbf{QLoRA} \cite{qlora}, tức fine-tune mô hình lượng tử hóa 4-bit bằng các adapter LoRA \cite{lora_hu}. Cấu hình chính gồm:
 \begin{itemize}
     \item Base model: \texttt{unsloth/Phi-3-mini-4k-instruct-bnb-4bit}
     \item \texttt{max\_seq\_length = 4096}
@@ -414,9 +414,9 @@ Mô hình sau huấn luyện cho đầu ra đúng cấu trúc mong muốn, gồm
 \subsection{Triển khai mô hình sau huấn luyện}
 
 \subsubsection{Kiến trúc triển khai}
-Sau khi huấn luyện xong, mô hình được lưu tại thư mục làm việc trên Kaggle dưới dạng adapter LoRA, tokenizer, chat template và metadata để phục vụ tái lập thí nghiệm. Đồng thời, nhóm chuyển đổi mô hình sang định dạng 	\textbf{GGUF} và đẩy lên \textbf{Hugging Face} nhằm quản lý version một cách nhất quán, thuận tiện cho việc theo dõi các lần cập nhật mô hình, tái sử dụng trong suy luận và triển khai ở các môi trường khác nhau. Ở giai đoạn triển khai, mô hình được đưa lên \textbf{Hugging Face Inference Endpoint} để tạo một endpoint suy luận ổn định cho mô-đun Writing. Trên hệ thống ứng dụng, nhóm xây dựng một \textbf{Writing service} làm lớp trung gian: service này nhận request từ backend, gọi tới Hugging Face endpoint để lấy kết quả suy luận, sau đó đóng gói dữ liệu phản hồi và chuyển tiếp về hệ thống chính.
+Sau khi huấn luyện xong, mô hình được lưu tại thư mục làm việc trên Kaggle dưới dạng adapter LoRA, tokenizer, chat template và metadata để phục vụ tái lập thí nghiệm. Đồng thời, nhóm chuyển đổi mô hình sang định dạng 	\textbf{GGUF} và đẩy lên \textbf{Hugging Face} nhằm quản lý version một cách nhất quán, thuận tiện cho việc theo dõi các lần cập nhật mô hình, tái sử dụng trong suy luận và triển khai ở các môi trường khác nhau. Ở giai đoạn triển khai, mô hình được đưa lên \textbf{Hugging Face Inference Endpoint} \cite{huggingface_inference} để tạo một endpoint suy luận ổn định cho mô-đun Writing. Trên hệ thống ứng dụng, nhóm xây dựng một \textbf{Writing service} làm lớp trung gian: service này nhận request từ backend, gọi tới Hugging Face endpoint để lấy kết quả suy luận, sau đó đóng gói dữ liệu phản hồi và chuyển tiếp về hệ thống chính.
 
-Để tách biệt xử lý đồng bộ và bất đồng bộ, Writing service giao tiếp với backend chính thông qua \textbf{RabbitMQ}. Cách tổ chức này giúp backend không phải gọi trực tiếp tới mô hình, đồng thời thuận tiện hơn cho việc mở rộng, giám sát và xử lý retry khi có lỗi trong quá trình sinh kết quả.
+Để tách biệt xử lý đồng bộ và bất đồng bộ, Writing service giao tiếp với backend chính thông qua \textbf{RabbitMQ} \cite{rabbitmq_docs}. Cách tổ chức này giúp backend không phải gọi trực tiếp tới mô hình, đồng thời thuận tiện hơn cho việc mở rộng, giám sát và xử lý retry khi có lỗi trong quá trình sinh kết quả.
 
 \subsubsection{Pipeline suy luận}
 Pipeline suy luận trong hệ thống có thể mô tả như sau:

@@ -14,7 +14,7 @@ Hệ thống được tổ chức thành hai môi trường triển khai riêng 
 
 \subsection{Tích hợp và phân phối liên tục (CI/CD)}
 
-Cả hai môi trường đều sử dụng GitHub Actions làm nền tảng CI/CD. Pipeline chung cho mỗi lần push bao gồm các bước tuần tự:
+Cả hai môi trường đều sử dụng GitHub Actions \cite{github_actions} làm nền tảng CI/CD. Pipeline chung cho mỗi lần push bao gồm các bước tuần tự:
 
 \begin{enumerate}
     \item \textbf{Checkout mã nguồn} --- tải toàn bộ mã nguồn từ repository.
@@ -50,18 +50,18 @@ Cả hai môi trường đều sử dụng GitHub Actions làm nền tảng CI/C
 
 \subsection{Backend}
 
-Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng \textbf{Caddy} làm reverse proxy và web server, kết hợp với dịch vụ \textbf{No-IP Dynamic DNS} để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
+Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng \textbf{Caddy} \cite{caddy_docs} làm reverse proxy và web server, kết hợp với dịch vụ \textbf{No-IP Dynamic DNS} để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
 
 Kiến trúc giao tiếp giữa các thành phần được tổ chức như sau:
 
 \begin{itemize}
-    \item \textbf{API Gateway} đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức \textbf{gRPC}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức \textbf{HTTP} với cơ chế proxy để duy trì kết nối hai chiều.
+    \item \textbf{API Gateway} đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức \textbf{gRPC} \cite{grpc_docs}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức \textbf{HTTP} với cơ chế proxy để duy trì kết nối hai chiều.
     \item Các service nội bộ được \textbf{ẩn sau reverse proxy và DNS resolver}, không tiếp xúc trực tiếp với mạng bên ngoài, giảm thiểu bề mặt tấn công và tăng tính bảo mật.
 \end{itemize}
 
 \subsection{Restate --- Bảo đảm tính ổn định của workflow}
 
-Hệ thống tích hợp \textbf{Restate} --- một nền tảng quản lý workflow phân tán --- nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Restate mang lại các lợi ích:
+Hệ thống tích hợp \textbf{Restate} \cite{restate_docs} --- một nền tảng quản lý workflow phân tán --- nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Restate mang lại các lợi ích:
 
 \begin{itemize}
     \item \textbf{Đơn giản hóa distributed transaction:} thay vì triển khai thủ công pattern Saga hoặc Two-Phase Commit, Restate cung cấp mô hình lập trình tuần tự với khả năng tự phục hồi, giúp giảm đáng kể độ phức tạp khi phối hợp nhiều service.
@@ -73,7 +73,7 @@ Hệ thống tích hợp \textbf{Restate} --- một nền tảng quản lý work
 
 \subsection{Môi trường phát triển}
 
-Nhóm phát triển sử dụng hệ điều hành \textbf{Windows} làm môi trường phát triển chính. Mã nguồn được tổ chức dưới dạng \textbf{Nx monorepo}, cho phép quản lý nhiều ứng dụng và thư viện dùng chung trong cùng một repository, đồng thời tận dụng cơ chế cache và phân tích phụ thuộc của Nx để tối ưu thời gian build.
+Nhóm phát triển sử dụng hệ điều hành \textbf{Windows} làm môi trường phát triển chính. Mã nguồn được tổ chức dưới dạng \textbf{Nx monorepo} \cite{nx_monorepo}, cho phép quản lý nhiều ứng dụng và thư viện dùng chung trong cùng một repository, đồng thời tận dụng cơ chế cache và phân tích phụ thuộc của Nx để tối ưu thời gian build.
 
 \subsection{Quy trình build và triển khai}
 
@@ -88,7 +88,7 @@ Quy trình đưa mã nguồn từ môi trường phát triển lên production d
 
 \subsection{Quản lý cơ sở dữ liệu}
 
-Đối với database migration, nhóm sử dụng \textbf{Prisma Migrate} để quản lý phiên bản schema cơ sở dữ liệu. Trong quá trình phát triển, lập trình viên tạo các file migration thông qua lệnh \texttt{prisma migrate dev}, ghi lại mọi thay đổi cấu trúc bảng. Khi triển khai lên production, lệnh \texttt{prisma migrate deploy} được thực thi để áp dụng các migration đã được kiểm chứng, đảm bảo sự đồng bộ giữa schema trong mã nguồn và cơ sở dữ liệu thực tế.
+Đối với database migration, nhóm sử dụng \textbf{Prisma Migrate} \cite{prisma_docs} để quản lý phiên bản schema cơ sở dữ liệu. Trong quá trình phát triển, lập trình viên tạo các file migration thông qua lệnh \texttt{prisma migrate dev}, ghi lại mọi thay đổi cấu trúc bảng. Khi triển khai lên production, lệnh \texttt{prisma migrate deploy} được thực thi để áp dụng các migration đã được kiểm chứng, đảm bảo sự đồng bộ giữa schema trong mã nguồn và cơ sở dữ liệu thực tế.
 
 \subsection{Cập nhật phiên bản}
 
