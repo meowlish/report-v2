@@ -1,235 +1,158 @@
 \chapter{Nền tảng công nghệ}
-\textit{Chương này trình bày việc lựa chọn toàn diện các công nghệ, framework và công cụ được sử dụng trong quá trình phát triển nền tảng, bao gồm frontend, backend, database, cloud infrastructure, containerization và AI integration.}
-
-\section{Phát triển web}
-
-\subsection{Tổng quan về phát triển Web Application}
-
-Phát triển web application đã tiến hóa mạnh mẽ từ các trang HTML tĩnh đơn giản thành các hệ thống phức tạp và có tính tương tác cao. Các web application hiện đại tuân theo kiến trúc client-server, trong đó frontend xử lý giao diện người dùng và các tương tác, còn backend quản lý business logic, data processing và storage. \cite{web_overview}
-
-Quá trình phát triển web có thể được mô tả thông qua một số mô hình chính. Thế hệ website đầu tiên chủ yếu gồm các trang HTML tĩnh với mức độ tương tác tối thiểu. Sự ra đời của JavaScript cho phép tạo ra hành vi động ở phía client, trong khi các công nghệ server-side như PHP và Java Servlets cho phép xây dựng các ứng dụng vận hành dựa trên database. Ngày nay, các framework hiện đại hỗ trợ xây dựng các Single Page Applications (SPAs) tinh vi, mang lại trải nghiệm người dùng gần tương tự desktop application ngay trong trình duyệt.
-
-Những đặc điểm chính của web application hiện đại bao gồm:
-
-\begin{itemize}
-\item \textbf{Responsive Design}: Giao diện có thể thích ứng mượt mà với nhiều kích thước màn hình và thiết bị khác nhau, bảo đảm khả năng truy cập trên desktop, tablet và smartphone.
-\item \textbf{Single Page Applications (SPAs)}: Ứng dụng tải một trang HTML duy nhất và cập nhật nội dung một cách động khi người dùng tương tác, loại bỏ việc tải lại toàn bộ trang và mang lại trải nghiệm mượt mà hơn.
-\item \textbf{RESTful APIs}: Các giao thức giao tiếp được chuẩn hóa, cho phép frontend và backend trao đổi dữ liệu hiệu quả thông qua các HTTP method.
-\item \textbf{Cloud-Native Architecture}: Các design pattern tận dụng năng lực của cloud computing để đạt được scalability, reliability và khả năng phân phối trên phạm vi toàn cầu.
-\end{itemize}
-
-% [IMAGE PLACEHOLDER: Web Application Architecture Diagram]
-% Mô tả: Sơ đồ thể hiện kiến trúc ba lớp gồm Presentation Layer (Browser/Client), Application Layer (Web Server/API) và Data Layer (Database). Bao gồm các mũi tên thể hiện HTTP request/response và luồng dữ liệu.
+\textit{Chương này phân tích lý do lựa chọn các công nghệ cốt lõi cho nền tảng ôn luyện tiếng Anh tích hợp AI. Mỗi quyết định được đánh giá dựa trên các yêu cầu đặc thù của dự án: xử lý nội dung giáo dục đa phương tiện, tích hợp AI inference, khả năng mở rộng cho lượng người dùng lớn, và tốc độ phát triển phù hợp với tiến độ đồ án.}
 
 \section{Phát triển frontend}
 
-\subsection{Phân tích các frontend framework}
+\subsection{Phân tích và lựa chọn frontend framework}
 
-Việc lựa chọn một frontend framework phù hợp có ý nghĩa then chốt đối với việc cung cấp trải nghiệm người dùng tối ưu. Chúng tôi đã đánh giá ba framework hàng đầu dựa trên performance, developer experience, độ trưởng thành của ecosystem và mức độ phù hợp với các ứng dụng giáo dục.
+Nền tảng ôn luyện tiếng Anh có ba yêu cầu frontend đặc thù: (1) SEO tốt để người dùng tìm thấy nội dung luyện thi qua search engine, (2) tối ưu hiệu năng tải trang cho nội dung giàu hình ảnh và audio, và (3) hỗ trợ cả trang tĩnh (giới thiệu, blog) lẫn trang động (dashboard, làm bài thi). Ba framework được đánh giá dựa trên các tiêu chí này:
 
-\textbf{AngularJS} là một framework toàn diện do Google phát triển, cung cấp giải pháp đầy đủ để xây dựng web application. Framework này sử dụng kiến trúc Model-View-Controller (MVC) và cung cấp các tính năng như two-way data binding, dependency injection và tập directive tích hợp sẵn phong phú. Tuy nhiên, AngularJS gặp hạn chế về performance do cơ chế digest cycle, đồng thời có learning curve khá dốc đối với các developer mới làm quen. Ngoài ra, tính chất monolithic của framework có thể dẫn đến bundle size lớn hơn, ảnh hưởng đến thời gian tải ban đầu. \cite{angularjs}
+\textbf{AngularJS} (Google) sử dụng kiến trúc MVC với two-way data binding, nhưng không hỗ trợ server-side rendering mặc định --- hạn chế nghiêm trọng đối với yêu cầu SEO của nền tảng giáo dục. Bundle size lớn do tính chất monolithic cũng ảnh hưởng đến thời gian tải ban đầu. \cite{angularjs}
 
-\textbf{ReactJS} là một JavaScript library do Meta (trước đây là Facebook) phát triển, tập trung vào việc xây dựng user interface thông qua kiến trúc component-based. React giới thiệu khái niệm Virtual DOM, giúp tối ưu hiệu năng render bằng cách giảm thiểu các thao tác trực tiếp lên DOM thực. Mặc dù React rất mạnh trong việc xây dựng user interface tương tác, nó cần thêm các library khác cho routing (React Router), state management (Redux hoặc Context API) và các chức năng phổ biến khác. Bên cạnh đó, cách tiếp cận client-side rendering mặc định của React cũng đặt ra thách thức đối với search engine optimization (SEO). \cite{angular_react}
+\textbf{ReactJS} (Meta) mạnh về xây dựng UI tương tác nhờ Virtual DOM và kiến trúc component-based, nhưng client-side rendering mặc định gây bất lợi cho SEO. Cần bổ sung nhiều library riêng cho routing, state management và image optimization. \cite{angular_react}
 
-\textbf{Next.js} là một framework sẵn sàng cho production được xây dựng trên nền React, giúp khắc phục nhiều hạn chế của React đồng thời bổ sung các tính năng mạnh mẽ cho phát triển web hiện đại. Next.js cung cấp khả năng hybrid rendering, hỗ trợ cả Server-Side Rendering (SSR) và Static Site Generation (SSG) trong cùng một ứng dụng. Framework này còn hỗ trợ automatic code splitting, optimized image handling và built-in API routes, trở thành một giải pháp all-in-one cho full-stack development. \cite{next_react_angular}
+\textbf{Next.js} xây dựng trên React, bổ sung hybrid rendering (SSR + SSG), automatic code splitting và built-in image optimization --- giải quyết trực tiếp cả ba yêu cầu đặc thù của dự án mà không cần cấu hình thêm. \cite{next_react_angular}
 
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|p{4cm}|p{4cm}|p{4cm}|}
 \hline
-\textbf{Tiêu chí} & \textbf{AngularJS} & \textbf{ReactJS} & \textbf{Next.js} \\ \hline
-
-
-Hỗ trợ SEO & Kém, cần thiết lập server-side & Trung bình, render phía client, cần cấu hình thêm & Rất tốt, tích hợp sẵn SSR và SSG \\ \hline
-
-Độ khó học & Cao: khái niệm phức tạp, cấu trúc MVC & Trung bình: JSX và kiến trúc component-based & Trung bình: dựa trên React với routing và SSR \\ \hline
-
-Server-Side Rendering & Không tích hợp sẵn, cần Angular Universal & Cần thiết lập thủ công & Tích hợp sẵn, SSR/SSG tự động \\ \hline
-
-Tối ưu hình ảnh & Cần library bên thứ ba & Cần library bên thứ ba & Tích hợp sẵn tối ưu tự động \\ \hline
-
-Cộng đồng & Lớn nhưng đang suy giảm & Rất lớn & Lớn và tăng trưởng nhanh \\ \hline
-
-Ưu điểm & 
-Two-way data binding, ecosystem trưởng thành &
-Linh hoạt, component có thể tái sử dụng &
-Hiệu năng nhanh, thân thiện với SEO, bundle được tối ưu \\ \hline
-
-Nhược điểm & 
-Nặng, tải ban đầu chậm hơn, learning curve dốc &
-SEO cần cấu hình thêm, tối ưu thủ công &
-Yêu cầu hiểu về SSR/SSG, cấu trúc thư mục mang tính opinionated \\ \hline
-
+\textbf{Tiêu chí dự án} & \textbf{AngularJS} & \textbf{ReactJS} & \textbf{Next.js} \\ \hline
+Hỗ trợ SEO cho nội dung giáo dục & Kém --- cần Angular Universal riêng & Trung bình --- render phía client, cần cấu hình SSR thủ công & Tích hợp sẵn SSR/SSG, index tốt bởi search engine \\ \hline
+Tối ưu nội dung đa phương tiện & Cần library bên thứ ba & Cần library bên thứ ba & Built-in image optimization, tự động chuyển WebP \\ \hline
+Hỗ trợ hybrid (tĩnh + động) & Không hỗ trợ native & Cần thiết lập thủ công & SSG cho trang tĩnh, SSR cho dashboard --- cùng một app \\ \hline
+Tốc độ phát triển & Chậm --- learning curve dốc, boilerplate nhiều & Nhanh cho UI, nhưng cần tích hợp nhiều library & Nhanh --- routing, API routes, TypeScript đều tích hợp sẵn \\ \hline
 \end{tabular}%
 }
-\caption{Ma trận so sánh các framework frontend với ưu, nhược điểm và chỉ số định lượng}
+\caption{So sánh frontend framework theo yêu cầu dự án}
 \end{table}
 
-Sau khi đánh giá nhiều frontend framework, nhóm chúng tôi kết luận rằng Next.js phù hợp nhất với mục tiêu của nền tảng. Next.js được lựa chọn là phương án tối ưu cho nền tảng vì một số lý do thuyết phục sau:
+Nhóm chọn \textbf{Next.js} vì framework này đáp ứng trực tiếp các yêu cầu đặc thù của nền tảng giáo dục:
 
 \begin{enumerate}
-\item \textbf{Yêu cầu về SEO}: Các nền tảng giáo dục phụ thuộc nhiều vào organic search traffic để thu hút người dùng mới. Khả năng server-side rendering tích hợp sẵn của Next.js bảo đảm mọi nội dung đều có thể được search engine index đầy đủ, từ đó cải thiện khả năng được tìm thấy của các tài nguyên luyện thi.
+\item \textbf{SEO cho nội dung luyện thi}: Nền tảng phụ thuộc vào organic search traffic để tiếp cận học viên. SSR tích hợp sẵn bảo đảm nội dung bài thi, bài viết hướng dẫn được search engine index đầy đủ --- yếu tố quyết định khả năng tăng trưởng người dùng mà không cần ngân sách quảng cáo lớn.
 
-\item \textbf{Tối ưu performance}: Next.js tự động chia code thành các chunk nhỏ hơn, chỉ tải lượng JavaScript cần thiết cho từng trang. Điều này giúp giảm đáng kể thời gian tải ban đầu, đặc biệt quan trọng đối với người dùng có tốc độ kết nối Internet khác nhau giữa các khu vực địa lý.
+\item \textbf{Tối ưu tài liệu giàu hình ảnh}: Tài liệu luyện thi chứa nhiều hình ảnh minh họa, sơ đồ và biểu đồ. Next.js Image tự động phân phối hình ảnh đúng kích thước ở định dạng WebP, giảm đáng kể thời gian tải --- đặc biệt quan trọng cho người dùng ở vùng có kết nối Internet chậm.
 
-\item \textbf{Nội dung giàu hình ảnh}: Tài liệu luyện thi tiếng Anh chứa nhiều sơ đồ, biểu đồ và học liệu trực quan. Next.js cung cấp cơ chế tối ưu hình ảnh tích hợp sẵn, tự động phân phối hình ảnh với kích thước phù hợp ở các định dạng hiện đại như WebP, giúp giảm băng thông và cải thiện tốc độ tải.
+\item \textbf{Hybrid rendering phù hợp kiến trúc}: Trang giới thiệu và blog dùng SSG (tải nhanh, cache tốt), trong khi dashboard làm bài và kết quả AI dùng SSR (dữ liệu luôn cập nhật). Next.js cho phép kết hợp cả hai trong cùng một ứng dụng mà không cần tách dự án.
 
-\item \textbf{Hybrid Rendering}: Các khu vực khác nhau trong nền tảng có yêu cầu rendering khác nhau. Nội dung tĩnh như trang giới thiệu phù hợp với Static Site Generation (SSG), trong khi nội dung động như dashboard người dùng cần Server-Side Rendering (SSR). Next.js hỗ trợ kết hợp các cách tiếp cận này trong cùng một ứng dụng.
-
-\item \textbf{Tích hợp TypeScript}: Next.js hỗ trợ TypeScript ở mức first-class, cho phép bảo đảm type safety trên toàn bộ codebase frontend. Điều này giúp giảm runtime error, cải thiện maintainability của mã nguồn và tăng năng suất developer thông qua IDE autocompletion và khả năng phát hiện lỗi tốt hơn.
+\item \textbf{TypeScript xuyên suốt}: Sử dụng chung TypeScript với backend NestJS, giúp nhóm tái sử dụng type definition (DTO, API response) giữa frontend và backend, giảm lỗi runtime và tăng tốc phát triển.
 \end{enumerate}
 
-% [IMAGE PLACEHOLDER: Next.js Rendering Modes Diagram]
-% Mô tả: Sơ đồ trực quan thể hiện ba chế độ rendering trong Next.js: Static Site Generation (SSG), Server-Side Rendering (SSR) và Client-Side Rendering (CSR), kèm các mũi tên chỉ ra thời điểm phù hợp để áp dụng từng chế độ.
-
 \section{Phát triển máy chủ}
-\subsection{Phân tích backend framework}
+\subsection{Phân tích và lựa chọn backend framework}
 
-Chúng tôi đã thực hiện đánh giá toàn diện bốn backend framework hàng đầu để xác định lựa chọn tối ưu cho kiến trúc dual-backend của hệ thống.
+Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng người dùng (authentication, CRUD, real-time notification) và (2) AI inference (chấm bài, phân tích giọng nói, sinh đề). Sự phân tách này dẫn đến kiến trúc dual-backend, đòi hỏi đánh giá framework theo hai vai trò khác nhau.
 
-\textbf{FastAPI} là một API framework hiện đại, hiệu năng cao, tận dụng hệ thống type-hinting của Python để cung cấp automatic validation, serialization và interactive OpenAPI/Swagger documentation. Thiết kế này giúp tăng tốc đáng kể quá trình phát triển, đặc biệt đối với các nhóm làm việc trong thời gian ngắn hoặc nguồn lực hạn chế, vì nó loại bỏ nhu cầu phải tự viết validation logic hoặc API specification thủ công. Kiến trúc asynchronous của FastAPI hỗ trợ xử lý hiệu quả các tác vụ concurrent thiên về I/O, điều rất cần thiết cho các workload liên quan đến model inference bất đồng bộ, file upload (audio, text) hoặc external API call. \cite{fastapi}
+\textbf{FastAPI} (Python) --- framework API hiệu năng cao với async native và tự động sinh OpenAPI documentation. Lợi thế cốt lõi: Python là ngôn ngữ chủ đạo của AI/ML ecosystem. Các library thiết yếu cho dự án (Whisper, librosa, LangChain, PyTorch) chỉ hỗ trợ Python hoặc ưu tiên Python. Dùng framework non-Python cho AI backend sẽ tạo overhead xuyên ngôn ngữ không cần thiết. \cite{fastapi}
 
-Từ góc độ AI, FastAPI là ứng viên mạnh nhất trong số các framework được đánh giá. Python là ngôn ngữ chủ đạo cho machine learning, natural language processing và speech analysis. Các library như PyTorch, TensorFlow, OpenAI SDKs, librosa, Whisper và LangChain đều ưu tiên Python hoặc chỉ hỗ trợ Python. Điều này khiến FastAPI trở thành lựa chọn thực tiễn duy nhất cho backend tập trung vào AI mà không làm phát sinh độ phức tạp tốn kém hoặc overhead xuyên ngôn ngữ. Nhược điểm chính là Python thường chậm hơn trong các tác vụ I/O thuần hoặc CPU-bound so với các ngôn ngữ biên dịch như Go hoặc C\#, nhưng đối với các ứng dụng AI --- nơi model inference chiếm phần lớn thời gian chạy --- FastAPI lại phù hợp hoàn hảo với ecosystem cũng như các ràng buộc về ngân sách và tiến độ của dự án.
+\textbf{NestJS} (TypeScript/Node.js) --- framework modular với dependency injection, lấy cảm hứng từ Angular. Mô hình event-driven, non-blocking I/O của Node.js phù hợp cho workload concurrency cao (WebSocket, real-time dashboard). Chia sẻ TypeScript với frontend Next.js giúp tái sử dụng type definition và giảm context switching cho nhóm phát triển. \cite{nestjs}
 
-\textbf{ASP.NET Core} là một framework mạnh mẽ ở cấp độ enterprise, nổi bật với performance cao, static typing chặt chẽ và bộ công cụ mạnh trong .NET ecosystem. Framework này cung cấp các tính năng nâng cao như built-in dependency injection, hệ thống middleware phong phú và khả năng tích hợp liền mạch với các dịch vụ cloud của Azure. Đối với các hệ thống enterprise dài hạn, reliability và maintainability của ASP.NET Core là những lợi thế đáng kể. \cite{aspnet}
-
-Tuy nhiên, ASP.NET Core kém phù hợp hơn đối với các dự án ngân sách thấp và cần chuyển động nhanh. Chu kỳ phát triển thường dài hơn do độ phức tạp của framework và kiến trúc nặng hơn. Mặc dù C\# có performance rất tốt, đây không phải lựa chọn tiết kiệm chi phí nhất khi cần lặp nhanh. Hơn nữa, ecosystem của nó không thật sự phù hợp với các workload AI hiện đại --- phần lớn nghiên cứu tiên tiến về machine learning và NLP diễn ra trong Python. Dù .NET có ML.NET và một số binding cho ONNX Runtime, các công cụ này vẫn hạn chế hơn nhiều so với hệ sinh thái AI của Python. Với một ứng dụng nặng về AI, việc dùng ASP.NET Core làm AI backend chính sẽ làm tăng development overhead và có thể đòi hỏi thêm service hoặc lớp cầu nối để tương tác với các AI model viết bằng Python.
-
-\textbf{NestJS} là một backend framework hiện đại được xây dựng trên Node.js, cung cấp kiến trúc có cấu trúc cao và mang tính opinionated, lấy cảm hứng từ Angular. Framework này hỗ trợ thiết kế modular, dependency injection mạnh mẽ, decorator và TypeScript, giúp phát triển backend dễ maintain và scalable hơn so với việc dùng Node.js thuần. NestJS đặc biệt mạnh trong việc xử lý workload có mức concurrency cao nhờ mô hình event-driven, non-blocking I/O của Node.js. Điều này khiến nó rất phù hợp cho application logic hướng người dùng như authentication, session management, realtime dashboard, notification và các thao tác CRUD tổng quát. \cite{nestjs}
-
-Đối với tiến độ ngắn và ngân sách hạn chế, NestJS là một trong những framework có năng suất cao nhất hiện nay. Các nhóm quen với TypeScript có thể phát triển tính năng nhanh, tái sử dụng code giữa frontend và backend, đồng thời tận dụng npm ecosystem rộng lớn để prototype nhanh. Tuy nhiên, dù NestJS rất mạnh cho web application logic, nó không phù hợp với các workload AI chuyên sâu. JavaScript ecosystem thiếu các AI library đủ trưởng thành và hiệu năng cao khi so sánh với Python. Phần lớn năng lực ML và NLP tiên tiến vẫn phải được tách sang các Python microservice, vì vậy NestJS phù hợp nhất với vai trò application backend hơn là AI backend. Điều này giúp nó trở thành ứng viên mạnh cho phần non-AI của kiến trúc dual-backend, nhưng không phải lựa chọn lý tưởng cho tính toán AI cốt lõi.
-
-\textbf{Spring Boot} là một framework trưởng thành, ổn định, được sử dụng rộng rãi trong môi trường enterprise cho các ứng dụng nhiệm vụ trọng yếu. Framework này có tài liệu rất tốt, ecosystem sâu và phong phú, cùng khả năng hỗ trợ mạnh cho các kiến trúc modular và scalable. Các tính năng như Spring Security, dependency injection và tầng data access mạnh mẽ khiến nó trở thành lựa chọn tiêu chuẩn của ngành cho các hệ thống backend lớn yêu cầu reliability và maintainability lâu dài.
-
-Tuy nhiên, Spring Boot thường có tốc độ phát triển chậm hơn, đặc biệt với nhóm nhỏ hoặc tiến độ ngắn. Sự dài dòng của Java và chi phí cấu hình cao hơn làm giảm tốc độ phát triển so với các framework dựa trên Python hoặc JavaScript. Mặc dù Spring Boot rất mạnh trong môi trường enterprise, nó không lý tưởng cho rapid prototyping hoặc các dự án chi phí thấp, nơi agility và khả năng iteration nhanh là ưu tiên hàng đầu. Ngoài ra, Java không phải là ngôn ngữ ưu tiên cho AI; dù hỗ trợ ONNX và một số ML model, nó vẫn thiếu khả năng tích hợp sâu với các AI library tiên tiến nhất. Việc dùng Spring Boot cho một nền tảng nặng về AI cuối cùng vẫn đòi hỏi tách toàn bộ tác vụ AI sang một Python service riêng, làm tăng độ phức tạp kiến trúc. \cite{springboot}
+\textbf{ASP.NET Core} (C\#) và \textbf{Spring Boot} (Java) --- đều là framework enterprise-grade với performance và reliability cao. Tuy nhiên, cả hai đều có chu kỳ phát triển dài hơn, không phù hợp với tiến độ ngắn của đồ án. Quan trọng hơn, AI ecosystem của C\# và Java hạn chế hơn nhiều so với Python --- việc tích hợp AI model cuối cùng vẫn đòi hỏi service Python riêng, làm tăng độ phức tạp kiến trúc mà không mang lại lợi ích bù đắp. \cite{aspnet, springboot}
 
 \begin{table}[H]
     \centering
-    \caption{Tổng quan so sánh các framework backend}
+    \caption{So sánh backend framework theo yêu cầu dự án}
     \label{tab:framework_comparison}
     \scriptsize
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|p{2.5cm}|p{1.8cm}|p{5.2cm}|p{5.2cm}|}
+    \begin{tabular}{|p{2.8cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
         \hline
-        \textbf{Framework} & \textbf{Ngôn ngữ} & \textbf{Ưu điểm} & \textbf{Nhược điểm} \\
+        \textbf{Tiêu chí dự án} & \textbf{FastAPI (Python)} & \textbf{NestJS (TypeScript)} & \textbf{ASP.NET / Spring Boot} \\
         \hline
-
-        FastAPI & Python &
-        Hiệu năng cao nhờ ASGI; interactive documentation tự động; tốc độ phát triển nhanh; tích hợp rất tốt với AI/ML libraries; hỗ trợ async cho các tác vụ AI thiên về I/O. &
-        Kém hiệu quả hơn trong các workload concurrency cực cao; Python runtime có thể chậm hơn với tác vụ nặng về CPU; không lý tưởng cho các hệ thống enterprise lớn yêu cầu static typing nghiêm ngặt. \\
+        Tích hợp AI/ML (Whisper, LangChain, librosa) & Native --- tất cả AI library đều Python-first & Không hỗ trợ --- cần gọi sang Python service & Hạn chế --- cần cầu nối sang Python \\
         \hline
-
-        ASP.NET Core & C\# &
-        Performance cấp enterprise rất tốt; static typing mạnh; built-in dependency injection; an toàn và scalable; toolchain tốt trong .NET ecosystem. &
-        Tốc độ phát triển chậm hơn so với framework nhẹ; AI ecosystem nhỏ hơn; kém phù hợp cho rapid prototyping hoặc dự án ngân sách thấp; tích hợp AI thường cần cầu nối sang Python. \\
+        Application logic (auth, CRUD, real-time) & Khả dụng nhưng không phải thế mạnh & Rất mạnh --- event-driven, modular, WebSocket native & Mạnh nhưng chu kỳ phát triển dài hơn \\
         \hline
-
-        NestJS & TypeScript &
-        Kiến trúc có cấu trúc và modular; chu kỳ phát triển nhanh; npm ecosystem lớn; rất tốt cho tính năng real-time và I/O concurrency cao; có thể chia sẻ TypeScript code giữa frontend và backend. &
-        JavaScript/TypeScript ecosystem thiếu AI library trưởng thành; cần Python service cho workload ML; có thể kém hiệu quả hơn với tác vụ nặng về CPU; phụ thuộc nhiều vào kiến trúc single-threaded của Node.js. \\
+        Tốc độ phát triển (tiến độ đồ án) & Nhanh cho AI endpoint & Rất nhanh --- chia sẻ TypeScript với frontend & Chậm hơn --- boilerplate nhiều, cấu hình phức tạp \\
         \hline
-
-        Spring Boot & Java &
-        Ecosystem cực kỳ trưởng thành; được dùng rộng rãi trong môi trường enterprise; bảo mật và transaction management mạnh; đáng tin cậy cho các hệ thống lớn và dài hạn. &
-        Java dài dòng làm tăng thời gian phát triển; độ phức tạp ban đầu cao hơn; nhịp iteration chậm khiến framework kém phù hợp với tiến độ ngắn hoặc ngân sách thấp; AI/ML ecosystem native yếu hơn Python. \\
+        Tái sử dụng code với frontend & Không (Python vs TypeScript) & Có --- chung TypeScript type definitions & Không \\
         \hline
-
     \end{tabular}
     }
 \end{table}
 
-Sau khi đánh giá nhiều công nghệ và framework backend, nhóm quyết định chọn NestJS cho các dịch vụ lõi của hệ thống vì framework này cung cấp kiến trúc có cấu trúc và khả năng mở rộng tốt, rất phù hợp với các web application chuyên biệt. Được xây dựng trên Node.js, NestJS tận dụng runtime event-driven và non-blocking, vốn rất mạnh trong các tác vụ concurrency cao. Điều này khiến nó lý tưởng để xử lý tương tác người dùng thời gian thực, session management, authentication, quy trình quản trị và business logic tổng quát. Kiến trúc modular cùng khả năng hỗ trợ TypeScript mạnh cũng giúp cải thiện maintainability và extensibility trong dài hạn.
+\textbf{Quyết định}: Kiến trúc dual-backend kết hợp NestJS và FastAPI, mỗi framework đảm nhận đúng vai trò mà nó phát huy hiệu quả nhất:
 
-Đối với các năng lực do AI điều khiển, nhóm lựa chọn FastAPI nhờ ecosystem vượt trội của Python cho machine learning và natural language processing. Các thành phần AI như speech-to-text (Whisper), đánh giá kỹ năng nói (librosa, Parselmouth), mô hình chấm điểm bài luận và tự động hóa với LangChain đều phụ thuộc mạnh vào các library native của Python. FastAPI là lựa chọn tự nhiên nhất vì vừa cung cấp performance tốt, vừa có hỗ trợ bất đồng bộ tích hợp cho các inference task kéo dài, đồng thời tạo OpenAPI/Swagger documentation tự động để đẩy nhanh phát triển và kiểm thử. Sự phân tách này bảo đảm mỗi technology stack được dùng đúng ở nơi nó phát huy hiệu quả tốt nhất.
+\begin{itemize}
+\item \textbf{NestJS --- Application backend}: Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, payment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
 
-\subsection{Phân tích công nghệ database}
+\item \textbf{FastAPI --- AI backend}: Chuyên trách các tác vụ AI inference: speech-to-text (Whisper), phân tích phát âm (librosa, Parselmouth), chấm điểm bài luận và tự động hóa với LangChain. FastAPI được chọn vì đây là lựa chọn duy nhất cho phép truy cập trực tiếp vào toàn bộ AI/ML ecosystem của Python mà không cần lớp cầu nối. Async native của FastAPI cũng phù hợp với các inference task kéo dài (5--30 giây cho speech analysis).
+\end{itemize}
 
-Việc lựa chọn công nghệ database ảnh hưởng đáng kể đến performance, scalability và độ linh hoạt trong phát triển ứng dụng. Chúng tôi đã đánh giá bốn hệ quản trị database thường được sử dụng trong web application.
+\subsection{Phân tích và lựa chọn database}
 
-\textbf{MySQL} là một hệ quản trị relational database mã nguồn mở được sử dụng rộng rãi, nổi tiếng về reliability và ease of use. Hệ này sử dụng structured query language (SQL) và áp dụng schema definition nghiêm ngặt để bảo đảm data integrity. Tuy nhiên, yêu cầu schema cứng nhắc của MySQL có thể làm phức tạp quá trình iteration đối với các cấu trúc dữ liệu thay đổi nhanh.
+Hệ thống lưu trữ hai nhóm dữ liệu có tính chất khác nhau: (1) dữ liệu transactional có cấu trúc cố định (user, payment, permission) đòi hỏi ACID compliance nghiêm ngặt, và (2) dữ liệu nội dung giáo dục với schema thay đổi thường xuyên (câu hỏi thi, learning analytics, AI-generated content). Sự phân tách này dẫn đến kiến trúc dual-database.
 
-\textbf{PostgreSQL} là một relational database mã nguồn mở tiên tiến, mở rộng khả năng của SQL bằng cách hỗ trợ complex query, kiểu dữ liệu JSON và full-text search. Hệ này mang lại performance vượt trội cho các analytical query phức tạp và có khả năng tuân thủ ACID mạnh mẽ. Dù strict schema của PostgreSQL có lợi cho data integrity, nó cũng có thể làm chậm tốc độ phát triển trong các môi trường agile. \cite{postgresql}
-
-\textbf{MongoDB} là một document-oriented NoSQL database lưu trữ dữ liệu trong các document linh hoạt, tương tự JSON. Khác với relational database, MongoDB không yêu cầu schema định nghĩa trước, cho phép iteration nhanh và dễ thích ứng với yêu cầu thay đổi. Khả năng horizontal scalability thông qua sharding cho phép phân phối dữ liệu trên nhiều server. \cite{mongodb}
-
-\textbf{SQL Server} là relational database cấp enterprise của Microsoft, cung cấp đầy đủ tính năng cho business intelligence, reporting và data warehousing. Dù rất mạnh, chi phí license và ecosystem thiên về Windows khiến nó kém phù hợp hơn với các cloud-native application cần tính độc lập nền tảng. \cite{sqlserver}
+Bốn hệ quản trị database được đánh giá:
 
 \begin{table}[H]
     \centering
-    \caption{Phân tích so sánh các công nghệ cơ sở dữ liệu}
+    \caption{So sánh database theo yêu cầu dự án}
     \label{tab:db_comparison}
     \scriptsize
     \resizebox{\textwidth}{!}{%
-    \begin{tabular}{|p{2.2cm}|p{1.6cm}|p{1.8cm}|p{2.2cm}|p{5.2cm}|}
+    \begin{tabular}{|p{2.2cm}|p{2cm}|p{4.5cm}|p{4.5cm}|}
         \hline
-        \textbf{Hệ quản trị} & \textbf{Loại} & \textbf{Mô hình dữ liệu} & \textbf{Schema} & \textbf{Điểm mạnh chính / Phù hợp nhất cho} \\
+        \textbf{Database} & \textbf{Loại} & \textbf{Phù hợp cho dự án} & \textbf{Hạn chế với dự án} \\
         \hline
-        \textbf{MySQL} & Relational (SQL) & Bảng & Nghiêm ngặt (cố định) & Được sử dụng rộng rãi, cộng đồng hỗ trợ mạnh, reliability cao, phù hợp cho web app đa dụng. \\
+        \textbf{PostgreSQL} & Relational & ACID mạnh cho auth/payment; complex query cho báo cáo; JSONB cho dữ liệu bán cấu trúc & Schema migration phức tạp khi format bài thi thay đổi \\
         \hline
-        \textbf{PostgreSQL} & Relational (SQL) & Bảng, hỗ trợ JSON/GIS & Nghiêm ngặt (cố định), nhưng có thể mở rộng & Nhiều tính năng nâng cao (ví dụ: complex query, extensibility), data integrity mạnh (ACID), phù hợp với analytical workload. \\
+        \textbf{MongoDB} & Document NoSQL & Schema linh hoạt cho nội dung giáo dục; horizontal scaling; aggregation pipeline cho analytics & Không bảo đảm ACID đầy đủ cho transaction phức tạp \\
         \hline
-        \textbf{MongoDB} & NoSQL & Document (BSON dạng JSON-like) & Linh hoạt (schema-less) & Hỗ trợ horizontal scaling (sharding), iteration nhanh, xử lý dữ liệu thay đổi hoặc bán cấu trúc (ví dụ: user profile, content). \\
+        \textbf{MySQL} & Relational & Đơn giản, cộng đồng lớn & Thiếu tính năng nâng cao (JSONB, full-text search) so với PostgreSQL \\
         \hline
-        \textbf{SQL Server} & Relational (SQL) & Bảng & Nghiêm ngặt (cố định) & Tính năng enterprise, business intelligence, tích hợp sâu với ecosystem và công cụ của Microsoft. \\
+        \textbf{SQL Server} & Relational & Enterprise-grade, BI tốt & Chi phí license cao, thiên về Windows ecosystem \cite{sqlserver} \\
         \hline
     \end{tabular}
     }
 \end{table}
 
-\textbf{MongoDB} được chọn làm database chính cho nền tảng vì các lý do sau:
+\textbf{Quyết định}: Kết hợp PostgreSQL và MongoDB thành kiến trúc dual-database bổ trợ:
+
+\textbf{PostgreSQL} cho web application lõi (NestJS backend):
 \begin{itemize}
-\item \textbf{Schema Flexibility}: Cấu trúc nội dung giáo dục thay đổi nhanh khi các định dạng bài thi mới được bổ sung và nội dung hiện có liên tục được tinh chỉnh. Document model linh hoạt của MongoDB thích ứng tốt với các thay đổi này mà không cần database migration phức tạp.
-\item \textbf{Document Model}: Câu hỏi thi, user profile và learning analytics tự nhiên ánh xạ sang các document dạng JSON-like, phù hợp với cấu trúc dữ liệu được sử dụng xuyên suốt trong application stack.
-\item \textbf{Horizontal Scalability}: Khả năng sharding tích hợp sẵn của MongoDB cho phép nền tảng mở rộng theo chiều ngang khi số lượng người dùng tăng lên, phân phối dữ liệu qua nhiều server mà không cần thay đổi ở tầng application.
-\item \textbf{Aggregation Framework}: Các analytical query phức tạp, chẳng hạn như tính toán xu hướng hiệu suất qua nhiều lần làm bài, có thể được xử lý hiệu quả bằng aggregation pipeline mạnh mẽ của MongoDB. \cite{mongodb}
+\item Các workflow transactional quan trọng (authentication, ghi danh, thanh toán, quản trị) đòi hỏi ACID compliance nghiêm ngặt mà PostgreSQL bảo đảm đáng tin cậy.
+\item Relational model phù hợp cho dữ liệu có quan hệ rõ ràng: user $\rightarrow$ enrollment $\rightarrow$ exam result $\rightarrow$ payment.
+\item Hỗ trợ JSONB cho phép lưu metadata linh hoạt khi cần, không bị giới hạn hoàn toàn bởi schema cứng. \cite{postgresql}
 \end{itemize}
 
-\textbf{PostgreSQL} được chọn làm relational database cho web application lõi vì các lý do sau:
+\textbf{MongoDB} cho nội dung giáo dục và AI analytics (FastAPI backend):
 \begin{itemize}
-\item \textbf{Robust ACID Compliance}: Các workflow transactional quan trọng --- như authentication, ghi danh người dùng, bản ghi thanh toán và thao tác quản trị --- đòi hỏi bảo đảm tính nhất quán nghiêm ngặt mà PostgreSQL có thể cung cấp một cách đáng tin cậy.
-\item \textbf{Advanced Feature Set}: PostgreSQL hỗ trợ complex SQL query, relational integrity, trường JSONB, nhiều lựa chọn indexing và full-text search, giúp nó phù hợp cho cả dữ liệu có cấu trúc lẫn bán cấu trúc.
-\item \textbf{Maturity and Stability}: PostgreSQL được xem là một trong những relational database mã nguồn mở ổn định và được kiểm chứng production tốt nhất, bảo đảm maintainability lâu dài và performance có thể dự đoán được.
-\item \textbf{Strong Fit for Web Architecture}: Backend web application (NestJS) hưởng lợi từ relational model của PostgreSQL trong việc quản lý người dùng, quyền hạn, content metadata và các workflow transactional nơi cấu trúc dữ liệu dự đoán được và normalization là rất cần thiết.
+\item Cấu trúc câu hỏi thi thay đổi thường xuyên khi bổ sung định dạng mới (IELTS, TOEIC, custom test). Document model cho phép iteration nhanh mà không cần database migration.
+\item Kết quả phân tích AI (pronunciation score, essay feedback, learning path) có cấu trúc phức tạp và lồng nhau, ánh xạ tự nhiên sang JSON document.
+\item Aggregation pipeline mạnh cho tính toán xu hướng hiệu suất học tập qua nhiều lần làm bài. \cite{mongodb}
 \end{itemize}
 
-Kết hợp lại, MongoDB và PostgreSQL tạo thành một kiến trúc dual-database bổ trợ cho nhau. PostgreSQL bảo đảm tính nhất quán và reliability cho các thao tác transactional cốt lõi, trong khi MongoDB cung cấp tính linh hoạt và khả năng mở rộng cho nội dung động do AI điều khiển và các tác vụ analytics.
+\subsection{Phân tích và lựa chọn cloud infrastructure}
 
-\subsection{Phân tích cloud infrastructure}
-
-Cloud infrastructure cung cấp nền tảng để triển khai các ứng dụng có khả năng mở rộng, đáng tin cậy và có thể truy cập toàn cầu. Chúng tôi đã đánh giá ba cloud provider lớn để lưu trữ nền tảng.
-
-\textbf{Amazon Web Services (AWS)} là cloud platform dẫn đầu thị trường, cung cấp hơn 200 dịch vụ hoàn chỉnh. Danh mục dịch vụ toàn diện của AWS bao gồm compute (EC2, Lambda), storage (S3, EBS), database (RDS, DynamoDB) và các dịch vụ AI/ML (SageMaker, Rekognition). Global infrastructure của AWS trải rộng trên nhiều khu vực địa lý, cho phép cung cấp truy cập độ trễ thấp cho người dùng trên toàn thế giới. \cite{aws}
-
-\textbf{Microsoft Azure} cung cấp một cloud platform mạnh mẽ với khả năng tích hợp tốt với các sản phẩm enterprise của Microsoft. Azure có các dịch vụ tương đương AWS, đồng thời nổi bật ở hybrid cloud deployment và enterprise identity management thông qua Azure Active Directory. \cite{azure}
-
-\textbf{Google Cloud Platform (GCP)} nổi trội trong data analytics, machine learning và container orchestration thông qua Kubernetes (do Google ban đầu phát triển). Global network infrastructure của GCP mang lại performance rất tốt cho các ứng dụng đòi hỏi xử lý dữ liệu cường độ cao. \cite{gcp}
+Nền tảng cần cloud infrastructure hỗ trợ: container orchestration cho kiến trúc dual-backend, managed database (MongoDB Atlas, PostgreSQL), và các dịch vụ AI bổ trợ cho trường hợp cần fallback.
 
 \begin{table}[ht]
     \centering
     \scriptsize
-    \caption{So sánh các nền tảng đám mây hàng đầu}
+    \caption{So sánh cloud provider theo yêu cầu dự án}
     \label{tab:cloud_comp}
-    % Adjusted column widths to fit content better
-    \begin{tabular}{|p{2.8cm}|p{3.75cm}|p{3.75cm}|p{3.75cm}|}
+    \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3.5cm}|}
         \hline
-        Tính năng & Amazon Web Services (AWS) & Microsoft Azure & Google Cloud Platform (GCP) \\
+        \textbf{Tiêu chí dự án} & \textbf{AWS} & \textbf{Azure} & \textbf{GCP} \\
         \hline
-        Vị thế thị trường tổng thể & Nền tảng cloud dẫn đầu thị trường với hơn 200 dịch vụ hoàn chỉnh. & Nền tảng mạnh với khả năng tích hợp tốt cùng các sản phẩm enterprise của Microsoft. & Nổi trội về data analytics, machine learning và container orchestration. \\
+        MongoDB Atlas integration & Native --- tích hợp chính thức, latency thấp & Hỗ trợ nhưng không phải ưu tiên & Hỗ trợ nhưng không phải ưu tiên \\
         \hline
-        Danh mục dịch vụ chính & Danh mục toàn diện (Compute: EC2, Lambda; Storage: S3, EBS; Database: RDS, DynamoDB; AI/ML: SageMaker, Rekognition). & Cung cấp các dịch vụ tương đương AWS. & Cung cấp các dịch vụ tương đương AWS. \\
+        Dịch vụ AI bổ trợ (speech) & Transcribe, Polly --- fallback cho Whisper & Cognitive Services & Speech-to-Text \\
         \hline
-        Điểm khác biệt cốt lõi & Dẫn đầu về serverless (Lambda), tích hợp native với MongoDB Atlas, dịch vụ AI mạnh (Transcribe, Polly). & Mạnh ở hybrid cloud deployment và enterprise identity management (Azure Active Directory). & Dẫn đầu về Kubernetes (container orchestration), tập trung vào các ứng dụng xử lý dữ liệu cường độ cao. \\
+        Container orchestration & ECS/EKS --- trưởng thành, tài liệu phong phú & AKS --- tốt nhưng thiên về .NET ecosystem & GKE --- dẫn đầu Kubernetes nhưng learning curve cao hơn \\
         \hline
-        Hạ tầng & Trải rộng trên nhiều khu vực địa lý, cho phép truy cập độ trễ thấp trên toàn cầu. & Hạ tầng toàn cầu mạnh mẽ. & Mạng lưới toàn cầu mang lại performance rất tốt cho các ứng dụng dữ liệu chuyên sâu. \\
+        Chi phí cho dự án sinh viên & Free tier rộng, nhiều educational credit & Free tier vừa phải & Free tier vừa phải \\
         \hline
     \end{tabular}
 \end{table}
 
-\textbf{Amazon Web Services (AWS)} được lựa chọn là cloud provider vì:
+\textbf{AWS} được chọn vì ba lý do trực tiếp liên quan đến dự án:
 \begin{itemize}
-\item \textbf{Comprehensive Service Catalog}: AWS cung cấp đầy đủ các dịch vụ mà nền tảng yêu cầu, từ compute và storage cơ bản đến các dịch vụ AI chuyên biệt, giúp giảm nhu cầu tích hợp với bên thứ ba.
-\item \textbf{MongoDB Atlas Integration}: MongoDB Atlas, dịch vụ MongoDB được quản lý, hỗ trợ tích hợp native với AWS, từ đó đơn giản hóa việc triển khai và quản lý database.
-\item \textbf{AI Service Offerings}: AWS cung cấp các dịch vụ AI mạnh để bổ trợ cho OpenAI integration của hệ thống, bao gồm Amazon Transcribe và Amazon Polly cho các năng lực speech processing dự phòng.
+\item \textbf{MongoDB Atlas native integration}: Database MongoDB của hệ thống chạy trên MongoDB Atlas --- dịch vụ này tích hợp native với AWS, giúp giảm network latency và đơn giản hóa backup/monitoring so với việc chạy trên cloud provider khác.
+\item \textbf{AI service dự phòng}: AWS Transcribe và Polly cung cấp speech processing fallback khi Whisper self-hosted gặp sự cố hoặc quá tải, bảo đảm tính sẵn sàng cho tính năng luyện nói.
+\item \textbf{Danh mục dịch vụ đầy đủ}: Từ compute (EC2, Lambda) đến storage (S3) và CDN (CloudFront), AWS cung cấp toàn bộ infrastructure cần thiết trong cùng một ecosystem, giảm nhu cầu tích hợp bên thứ ba. \cite{aws}
 \end{itemize}
 

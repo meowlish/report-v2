@@ -49,13 +49,6 @@ V.~L.~S. Architect, ``Understanding postgresql: An introduction.'' [Online].
   2025.
 \newblock [Accessed: Oct. 20, 2025].
 
-\bibitem{web_overview}
-A.~K. Vishwakarma, ``The evolution of web development: From static html to
-  dynamic web apps.'' [Online]. Available:
-  \url{https://dev.to/ayusharpcoder/the-evolution-of-web-development-from-static-html-to-dynamic-web-apps-4hn5},
-  2024.
-\newblock [Accessed: Oct. 20, 2025].
-
 \bibitem{angularjs}
 G.~Allen, ``The state of angularjs in 2025.'' [Online]. Available:
   \url{https://docs.angularjs.org/guide}, 2025.
@@ -91,18 +84,6 @@ T.~Cuong, ``Everything about sqlserver- the best database management system.''
   [Online]. Available:
   \url{https://techmaster.vn/posts/38094/everything-about-sqlserver-the-best-database-management-system},
   2025.
-\newblock [Accessed: Oct. 20, 2025].
-
-\bibitem{azure}
-{TechTarget}, ``What is microsoft azure and how does it work?.'' [Online].
-  Available:
-  \url{https://www.techtarget.com/searchcloudcomputing/definition/Windows-Azure},
-  2025.
-\newblock [Accessed: Oct. 20, 2025].
-
-\bibitem{gcp}
-{Google Cloud}, ``Google cloud overview.'' [Online]. Available:
-  \url{https://docs.cloud.google.com/docs/overview}, 2025.
 \newblock [Accessed: Oct. 20, 2025].
 
 \bibitem{microservices_newman}
@@ -209,9 +190,28 @@ E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and
   \url{https://docs.docker.com/compose/intro/compose-application-model/}, 2025.
 \newblock [Accessed: Oct. 20, 2025].
 
+\bibitem{web_overview}
+A.~K. Vishwakarma, ``The evolution of web development: From static html to
+  dynamic web apps.'' [Online]. Available:
+  \url{https://dev.to/ayusharpcoder/the-evolution-of-web-development-from-static-html-to-dynamic-web-apps-4hn5},
+  2024.
+\newblock [Accessed: Oct. 20, 2025].
+
 \bibitem{mysql}
 J.~Erickson, ``Mysql: Understanding what it is and how it's used.'' [Online].
   Available: \url{https://www.oracle.com/asean/mysql/what-is-mysql/}, 2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{gcp}
+{Google Cloud}, ``Google cloud overview.'' [Online]. Available:
+  \url{https://docs.cloud.google.com/docs/overview}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{azure}
+{TechTarget}, ``What is microsoft azure and how does it work?.'' [Online].
+  Available:
+  \url{https://www.techtarget.com/searchcloudcomputing/definition/Windows-Azure},
+  2025.
 \newblock [Accessed: Oct. 20, 2025].
 
 \bibitem{container}
