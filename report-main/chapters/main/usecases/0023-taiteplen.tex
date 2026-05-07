@@ -1,0 +1,60 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Tải tệp lên \\
+\hline
+\textbf{ID} & UC-0023 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng tải tệp lên hệ thống lưu trữ S3 thông qua URL ký trước \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Tệp được tải lên S3, hệ thống trả về ID tệp để tham chiếu \\
+\hline
+\textbf{Kích hoạt} & Người dùng cần tải tệp lên (ảnh cho câu hỏi, ảnh đại diện, v.v.) \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng gửi yêu cầu tải tệp với: tên tệp, kích thước, loại nội dung (MIME type), cờ công khai/riêng tư.
+    \item Hệ thống tạo URL ký trước (presigned URL) trên S3.
+    \item Hệ thống trả về: ID tệp, URL tải lên, tên tệp, dữ liệu biểu mẫu (form\_data).
+    \item Người dùng tải tệp trực tiếp lên S3 sử dụng URL ký trước và dữ liệu biểu mẫu.
+    \item Tệp được lưu trữ thành công trên S3.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Tải tệp công khai:}
+    \begin{enumerate}
+        \item[1A.] Người dùng đặt isPublicFile=true, tệp sẽ truy cập được công khai không cần xác thực.
+    \end{enumerate}
+    \item \textbf{Tải tệp riêng tư:}
+    \begin{enumerate}
+        \item[1B.] Người dùng đặt isPublicFile=false, tệp chỉ truy cập được khi có xác thực.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Tệp quá lớn:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 413 khi kích thước tệp vượt quá giới hạn.
+    \end{enumerate}
+    \item \textbf{Loại tệp không hỗ trợ:}
+    \begin{enumerate}
+        \item[2Err2.] Hệ thống trả về lỗi khi loại nội dung không được hỗ trợ.
+    \end{enumerate}
+    \item \textbf{Chưa xác thực:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 401.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0023 Tải tệp lên}
+}

@@ -1,0 +1,61 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Đăng nhập \\
+\hline
+\textbf{ID} & UC-0001 \\
+\hline
+\textbf{Tác nhân} & Người dùng chưa xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng chưa đăng nhập vào ứng dụng \\
+\hline
+\textbf{Điều kiện sau} & Người dùng được xác thực và nhận access token cùng refresh token \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở ứng dụng và chọn Đăng nhập \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở ứng dụng và chọn Đăng nhập.
+    \item Hệ thống hiển thị biểu mẫu đăng nhập.
+    \item Người dùng nhập email và mật khẩu.
+    \item Hệ thống xác minh thông tin đăng nhập.
+    \item Nếu hợp lệ, hệ thống xác thực người dùng và trả về access token cùng refresh token.
+    \item Hệ thống chuyển hướng người dùng đến trang chủ.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Hồ sơ chưa hoàn chỉnh:}
+    \begin{enumerate}
+        \item[6A.] Nếu người dùng chưa hoàn thiện hồ sơ, hệ thống chuyển hướng đến trang chỉnh sửa hồ sơ.
+    \end{enumerate}
+    \item \textbf{Đăng nhập bằng Google OAuth2:}
+    \begin{enumerate}
+        \item[3B.] Người dùng chọn Đăng nhập bằng Google.
+        \item[4B.] Hệ thống chuyển hướng đến trang đăng nhập Google.
+        \item[5B.] Người dùng xác thực bằng tài khoản Google.
+        \item[6B.] Hệ thống nhận thông tin xác thực và kiểm tra tài khoản.
+        \item[7B.] Nếu hợp lệ, tiếp tục từ bước 5 của luồng chính.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Sai mật khẩu / Tài khoản không tồn tại:}
+    \begin{enumerate}
+        \item[4Err.] Hệ thống trả về lỗi thông báo tài khoản hoặc mật khẩu không chính xác.
+    \end{enumerate}
+    \item \textbf{Tài khoản Google chưa được liên kết:}
+    \begin{enumerate}
+        \item[6BErr.] Hệ thống trả về lỗi thông báo tài khoản Google chưa được liên kết.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0001 Đăng nhập}
+}

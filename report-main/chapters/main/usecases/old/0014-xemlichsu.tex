@@ -1,0 +1,52 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xem lịch sử và thống kê \\
+\hline
+\textbf{ID} & UC-0014 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng xem lịch sử làm bài, lịch hoạt động và thống kê cá nhân \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Dữ liệu lịch sử và thống kê được hiển thị \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang lịch sử hoặc thống kê \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang lịch sử làm bài.
+    \item Hệ thống hiển thị danh sách lượt làm bài với tên bài thi, điểm số, ngày làm bài (phân trang cursor-based, hỗ trợ sắp xếp).
+    \item Người dùng có thể lọc theo bài thi cụ thể.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem lịch hoạt động:}
+    \begin{enumerate}
+        \item[1A.] Người dùng mở lịch hoạt động.
+        \item[2A.] Hệ thống hiển thị bản đồ ngày-số lượt làm bài trong khoảng thời gian chỉ định (từ ngày đến ngày).
+    \end{enumerate}
+    \item \textbf{Xem thống kê cá nhân:}
+    \begin{enumerate}
+        \item[1B.] Người dùng mở trang thống kê.
+        \item[2B.] Hệ thống hiển thị: tổng số lượt làm bài, điểm trung bình, tỷ lệ đúng theo từng thẻ phân loại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Không có lịch sử:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về danh sách rỗng khi người dùng chưa làm bài thi nào.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0014 Xem lịch sử và thống kê}
+}

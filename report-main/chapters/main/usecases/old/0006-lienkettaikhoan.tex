@@ -1,0 +1,57 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Liên kết tài khoản \\
+\hline
+\textbf{ID} & UC-0006 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng liên kết thêm phương thức xác thực (email hoặc Google) vào tài khoản \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Phương thức xác thực mới được liên kết với tài khoản người dùng \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn liên kết tài khoản trong cài đặt bảo mật \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang cài đặt tài khoản.
+    \item Hệ thống hiển thị danh sách các phương thức xác thực đã liên kết.
+    \item Người dùng chọn liên kết thêm email.
+    \item Người dùng nhập email và mật khẩu.
+    \item Hệ thống xác minh email chưa được sử dụng.
+    \item Hệ thống liên kết thông tin xác thực email vào tài khoản.
+    \item Hệ thống xác nhận liên kết thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Liên kết tài khoản Google:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn liên kết Google.
+        \item[4A.] Hệ thống chuyển hướng đến trang xác thực Google.
+        \item[5A.] Người dùng xác thực bằng tài khoản Google.
+        \item[6A.] Hệ thống nhận thông tin từ Google và liên kết vào tài khoản.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Email đã liên kết với tài khoản khác:}
+    \begin{enumerate}
+        \item[5Err.] Hệ thống trả về lỗi thông báo email đã được sử dụng bởi tài khoản khác.
+    \end{enumerate}
+    \item \textbf{Tài khoản Google đã liên kết:}
+    \begin{enumerate}
+        \item[6AErr.] Hệ thống trả về lỗi thông báo tài khoản Google đã được liên kết với tài khoản khác.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0006 Liên kết tài khoản}
+}

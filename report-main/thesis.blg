@@ -14,11 +14,13 @@ A level-1 auxiliary file: chapters/main/7-system-eval.aux
 A level-1 auxiliary file: chapters/main/8-work-evaluation-future-plan.aux
 A level-1 auxiliary file: chapters/main/9-conclusion.aux
 The style file: ieeetr.bst
-A level-1 auxiliary file: chapters/back/2-test-suite.aux
+A level-1 auxiliary file: chapters/back/appendix-a-contributions.aux
+A level-1 auxiliary file: chapters/back/appendix-b-usecases.aux
+A level-1 auxiliary file: chapters/back/appendix-c-e2e.aux
 Database file #1: refs/example.bib
 You've used 41 entries,
             1876 wiz_defined-function locations,
-            662 strings with 9635 characters,
+            664 strings with 9716 characters,
 and the built_in function-call counts, 5873 in all, are:
 = -- 579
 > -- 216

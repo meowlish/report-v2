@@ -1,0 +1,69 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>\raggedright\arraybackslash X|>\raggedright\arraybackslash X|}
+\hline
+\textbf{Tên Use case} & Quản lý thẻ ghi nhớ \\
+\hline
+\textbf{ID} & UC-0031 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng quản lý bộ thẻ ghi nhớ (flashcard deck) và các thẻ bên trong: tạo, chỉnh sửa, xóa bộ thẻ; thêm, sửa, xóa thẻ từ vựng \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Bộ thẻ hoặc thẻ ghi nhớ được tạo, cập nhật hoặc xóa thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang thẻ ghi nhớ \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang thẻ ghi nhớ.
+    \item Hệ thống hiển thị danh sách bộ thẻ công khai với: tên, mô tả, tác giả, thẻ phân loại, tổng số thẻ.
+    \item Người dùng nhấn Tạo bộ thẻ mới.
+    \item Người dùng nhập: tên (bắt buộc), mô tả, chế độ hiển thị (công khai/riêng tư), thẻ phân loại.
+    \item Hệ thống tạo bộ thẻ với người dùng là tác giả.
+    \item Người dùng mở bộ thẻ và thêm thẻ ghi nhớ: từ vựng, định nghĩa, hình ảnh, từ loại, phát âm, ví dụ.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Chỉnh sửa bộ thẻ:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn bộ thẻ, nhấn Chỉnh sửa, thay đổi tên/mô tả/chế độ hiển thị, nhấn Lưu.
+    \end{enumerate}
+    \item \textbf{Xóa bộ thẻ:}
+    \begin{enumerate}
+        \item[3B.] Người dùng nhấn Xóa trên bộ thẻ, xác nhận. Hệ thống xóa bộ thẻ và tất cả thẻ bên trong (cascade delete).
+    \end{enumerate}
+    \item \textbf{Chỉnh sửa/xóa thẻ từ vựng:}
+    \begin{enumerate}
+        \item[6A.] Người dùng chọn thẻ cần sửa hoặc xóa, thực hiện thao tác tương ứng.
+    \end{enumerate}
+    \item \textbf{Duyệt bộ thẻ công khai:}
+    \begin{enumerate}
+        \item[1D.] Người dùng (kể cả chưa đăng nhập) duyệt và lọc danh sách bộ thẻ công khai theo thẻ phân loại, tác giả.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bộ thẻ/thẻ không tồn tại:}
+    \begin{enumerate}
+        \item[Err1.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[Err2.] Hệ thống trả về lỗi 403 khi người dùng không phải tác giả.
+    \end{enumerate}
+    \item \textbf{Thiếu trường bắt buộc:}
+    \begin{enumerate}
+        \item[Err3.] Hệ thống trả về lỗi khi thiếu tên bộ thẻ hoặc từ vựng/định nghĩa.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0031 Quản lý thẻ ghi nhớ}
+}

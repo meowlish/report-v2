@@ -10,11 +10,11 @@
 \hline
 \textbf{Tác nhân} & Người dùng đã xác thực \\
 \hline
-\textbf{Mô tả} & Người dùng chỉnh sửa thông tin hồ sơ cá nhân \\
+\textbf{Mô tả} & Người dùng chỉnh sửa thông tin hồ sơ cá nhân và thiết lập mục tiêu học tập \\
 \hline
 \textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
 \hline
-\textbf{Điều kiện sau} & Thông tin hồ sơ được cập nhật thành công \\
+\textbf{Điều kiện sau} & Thông tin hồ sơ hoặc mục tiêu học tập được cập nhật thành công \\
 \hline
 \textbf{Kích hoạt} & Người dùng chọn chỉnh sửa hồ sơ \\
 \hline
@@ -33,13 +33,17 @@
     \item \textbf{Tải ảnh đại diện mới:}
     \begin{enumerate}
         \item[3A.] Người dùng chọn tải ảnh đại diện mới.
-        \item[4A.] Hệ thống tạo URL tải lên qua dịch vụ tệp (UC-0024).
+        \item[4A.] Hệ thống tạo URL tải lên qua dịch vụ tệp (UC-0023).
         \item[5A.] Người dùng tải ảnh lên S3.
         \item[6A.] Hệ thống cập nhật avatar\_id trong hồ sơ.
     \end{enumerate}
     \item \textbf{Xóa trường thông tin:}
     \begin{enumerate}
         \item[3B.] Người dùng xóa nội dung một trường (đặt giá trị null) để loại bỏ thông tin đó khỏi hồ sơ.
+    \end{enumerate}
+    \item \textbf{Quản lý mục tiêu học tập:}
+    \begin{enumerate}
+        \item[3C.] Người dùng mở mục Mục tiêu học tập, đặt mục tiêu mới (ngày hoàn thành, giá trị, loại mục tiêu) hoặc chỉnh sửa/xóa mục tiêu hiện tại.
     \end{enumerate}
 \end{enumerate} \\
 \hline

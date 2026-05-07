@@ -1,0 +1,72 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Làm bài thi \\
+\hline
+\textbf{ID} & UC-0012 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng thực hiện một bài thi thử, trả lời câu hỏi và nộp bài \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập, bài thi đã được xuất bản \\
+\hline
+\textbf{Điều kiện sau} & Bài làm được nộp, điểm số được tính và lưu vào lịch sử \\
+\hline
+\textbf{Kích hoạt} & Người dùng nhấn nút Bắt đầu làm bài \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng chọn bài thi và nhấn Bắt đầu.
+    \item Hệ thống tạo lượt làm bài mới và trả về attemptId.
+    \item Hệ thống hiển thị các câu hỏi.
+    \item Người dùng trả lời câu hỏi bằng cách gửi đáp án.
+    \item Người dùng có thể đánh dấu câu hỏi để xem lại sau.
+    \item Người dùng có thể ghi chú cho từng câu hỏi.
+    \item Khi sẵn sàng, người dùng nhấn Nộp bài.
+    \item Hệ thống tính điểm và hiển thị kết quả tóm tắt.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Tùy chỉnh lượt làm bài:}
+    \begin{enumerate}
+        \item[1A.] Người dùng chọn các phần cụ thể và đặt thời gian tùy chỉnh trước khi bắt đầu.
+    \end{enumerate}
+    \item \textbf{Tiếp tục bài làm đã lưu:}
+    \begin{enumerate}
+        \item[1B.] Người dùng quay lại bài làm đang dở thông qua trạng thái đã lưu.
+        \item[2B.] Hệ thống khôi phục các đáp án, cờ đánh dấu, ghi chú và bộ đếm thời gian.
+    \end{enumerate}
+    \item \textbf{Xóa đáp án:}
+    \begin{enumerate}
+        \item[4A.] Người dùng xóa đáp án đã gửi cho một câu hỏi.
+    \end{enumerate}
+    \item \textbf{Bật/tắt đánh dấu:}
+    \begin{enumerate}
+        \item[5A.] Người dùng bật hoặc tắt cờ đánh dấu trên một câu hỏi.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài thi không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Bài làm đã nộp:}
+    \begin{enumerate}
+        \item[7Err.] Hệ thống trả về lỗi khi cố nộp lại bài đã nộp trước đó.
+    \end{enumerate}
+    \item \textbf{Hết thời gian:}
+    \begin{enumerate}
+        \item[7Err2.] Hệ thống tự động nộp bài khi hết thời gian quy định.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0012 Làm bài thi}
+}

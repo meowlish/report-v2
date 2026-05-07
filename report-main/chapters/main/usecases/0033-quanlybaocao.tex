@@ -1,0 +1,64 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>\raggedright\arraybackslash X|>\raggedright\arraybackslash X|}
+\hline
+\textbf{Tên Use case} & Quản lý báo cáo \\
+\hline
+\textbf{ID} & UC-0033 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực (gửi/xem/xóa báo cáo cá nhân), Quản trị viên (xử lý tất cả báo cáo) \\
+\hline
+\textbf{Mô tả} & Người dùng gửi báo cáo về vấn đề gặp phải; Quản trị viên xem xét, cập nhật trạng thái và phản hồi \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Báo cáo được tạo, cập nhật trạng thái hoặc xóa thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng gặp vấn đề cần báo cáo hoặc Quản trị viên mở trang quản lý báo cáo \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng nhấn nút Báo cáo.
+    \item Người dùng chọn danh mục: lỗi (bug), nội dung (content), hành vi (behavior).
+    \item Người dùng nhập tiêu đề, mô tả chi tiết và chỉ định đối tượng bị báo cáo (tùy chọn).
+    \item Người dùng nhấn Gửi.
+    \item Hệ thống tạo báo cáo với trạng thái ``pending''.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Xem báo cáo đã gửi:}
+    \begin{enumerate}
+        \item[1A.] Người dùng mở trang Báo cáo của tôi, xem danh sách và chi tiết báo cáo kèm phản hồi của Admin.
+    \end{enumerate}
+    \item \textbf{Quản trị viên xử lý báo cáo:}
+    \begin{enumerate}
+        \item[1B.] Admin mở trang quản lý, lọc theo trạng thái/danh mục, thay đổi trạng thái (pending → reviewing → resolved/rejected), viết phản hồi.
+    \end{enumerate}
+    \item \textbf{Xóa báo cáo:}
+    \begin{enumerate}
+        \item[1C.] Người dùng xóa báo cáo pending của mình; Admin xóa bất kỳ báo cáo nào.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Báo cáo không tồn tại:}
+    \begin{enumerate}
+        \item[Err1.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+    \item \textbf{Chuyển trạng thái không hợp lệ:}
+    \begin{enumerate}
+        \item[Err3.] Hệ thống trả về lỗi khi chuyển trạng thái không hợp lệ (ví dụ: resolved → pending).
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0033 Quản lý báo cáo}
+}

@@ -1,0 +1,54 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Đổi mật khẩu \\
+\hline
+\textbf{ID} & UC-0007 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng thay đổi mật khẩu của tài khoản email đã liên kết \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập và có thông tin xác thực email đã liên kết \\
+\hline
+\textbf{Điều kiện sau} & Mật khẩu được cập nhật thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn đổi mật khẩu trong cài đặt bảo mật \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang cài đặt bảo mật.
+    \item Người dùng chọn chức năng Đổi mật khẩu.
+    \item Hệ thống hiển thị biểu mẫu đổi mật khẩu.
+    \item Người dùng nhập mật khẩu mới và xác nhận mật khẩu mới.
+    \item Hệ thống xác minh độ mạnh của mật khẩu.
+    \item Hệ thống cập nhật mật khẩu và xác nhận thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Chưa liên kết email:}
+    \begin{enumerate}
+        \item[2Err.] Người dùng chưa liên kết thông tin xác thực email, không thể đổi mật khẩu.
+    \end{enumerate}
+    \item \textbf{Mật khẩu yếu:}
+    \begin{enumerate}
+        \item[5Err.] Hệ thống trả về lỗi thông báo mật khẩu không đủ mạnh.
+    \end{enumerate}
+    \item \textbf{Mật khẩu xác nhận không khớp:}
+    \begin{enumerate}
+        \item[5Err2.] Hệ thống trả về lỗi thông báo mật khẩu xác nhận không trùng khớp.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0007 Đổi mật khẩu}
+}

@@ -1,0 +1,50 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Xóa bài thi \\
+\hline
+\textbf{ID} & UC-0017 \\
+\hline
+\textbf{Tác nhân} & Người kiểm duyệt (Mod) hoặc Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Người kiểm duyệt hoặc quản trị viên xóa bài thi khỏi hệ thống \\
+\hline
+\textbf{Điều kiện tiên quyết} & Bài thi tồn tại, người dùng có vai trò Mod hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Bài thi cùng tất cả phần và câu hỏi liên quan bị xóa \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn xóa bài thi \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang quản lý và chọn bài thi cần xóa.
+    \item Người dùng nhấn Xóa.
+    \item Hệ thống hiển thị cảnh báo xác nhận.
+    \item Người dùng xác nhận xóa.
+    \item Hệ thống xóa bài thi cùng tất cả phần và câu hỏi liên quan.
+    \item Hệ thống xác nhận xóa thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item Không có luồng thay thế.
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Bài thi không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0017 Xóa bài thi}
+}

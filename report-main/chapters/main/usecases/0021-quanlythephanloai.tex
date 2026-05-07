@@ -1,0 +1,68 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Quản lý thẻ phân loại \\
+\hline
+\textbf{ID} & UC-0021 \\
+\hline
+\textbf{Tác nhân} & Người kiểm duyệt (Mod) hoặc Quản trị viên (Admin) \\
+\hline
+\textbf{Mô tả} & Quản lý hệ thống phân loại thẻ: tạo, đổi tên, di chuyển và xóa thẻ \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng có vai trò Mod hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Thẻ phân loại được tạo, cập nhật, di chuyển hoặc xóa thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng mở trang quản lý thẻ phân loại \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang quản lý thẻ phân loại.
+    \item Hệ thống hiển thị cây thẻ phân loại.
+    \item Người dùng nhấn Thêm thẻ mới.
+    \item Người dùng nhập tên thẻ và chọn thẻ cha (tùy chọn).
+    \item Hệ thống tạo thẻ mới trong hệ thống phân cấp và trả về ID.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Đổi tên thẻ:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn thẻ cần đổi tên, nhập tên mới, hệ thống cập nhật.
+    \end{enumerate}
+    \item \textbf{Di chuyển thẻ:}
+    \begin{enumerate}
+        \item[3B.] Người dùng chọn thẻ cần di chuyển, chọn thẻ cha mới hoặc đưa về gốc.
+    \end{enumerate}
+    \item \textbf{Xóa thẻ:}
+    \begin{enumerate}
+        \item[3C.] Người dùng chọn xóa thẻ, xác nhận, hệ thống xóa thẻ.
+    \end{enumerate}
+    \item \textbf{Xem thẻ (công khai):}
+    \begin{enumerate}
+        \item[1D.] Bất kỳ người dùng nào có thể xem cây thẻ hoặc danh sách phẳng mà không cần đăng nhập.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Thẻ không tồn tại:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[3Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+    \item \textbf{Tên thẻ trùng lặp:}
+    \begin{enumerate}
+        \item[5Err.] Hệ thống trả về lỗi khi tên thẻ đã tồn tại dưới cùng thẻ cha.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0021 Quản lý thẻ phân loại}
+}

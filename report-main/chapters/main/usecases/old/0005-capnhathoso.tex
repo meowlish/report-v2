@@ -1,0 +1,64 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Cập nhật hồ sơ cá nhân \\
+\hline
+\textbf{ID} & UC-0005 \\
+\hline
+\textbf{Tác nhân} & Người dùng đã xác thực \\
+\hline
+\textbf{Mô tả} & Người dùng chỉnh sửa thông tin hồ sơ cá nhân và thiết lập mục tiêu học tập \\
+\hline
+\textbf{Điều kiện tiên quyết} & Người dùng đã đăng nhập vào hệ thống \\
+\hline
+\textbf{Điều kiện sau} & Thông tin hồ sơ hoặc mục tiêu học tập được cập nhật thành công \\
+\hline
+\textbf{Kích hoạt} & Người dùng chọn chỉnh sửa hồ sơ \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Người dùng mở trang cài đặt hồ sơ.
+    \item Hệ thống hiển thị biểu mẫu chỉnh sửa với thông tin hiện tại.
+    \item Người dùng chỉnh sửa các trường: tên người dùng, họ tên, tiểu sử, ảnh đại diện.
+    \item Người dùng nhấn Lưu.
+    \item Hệ thống xác minh tính hợp lệ của dữ liệu.
+    \item Hệ thống cập nhật hồ sơ và xác nhận thành công.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Tải ảnh đại diện mới:}
+    \begin{enumerate}
+        \item[3A.] Người dùng chọn tải ảnh đại diện mới.
+        \item[4A.] Hệ thống tạo URL tải lên qua dịch vụ tệp (UC-0024).
+        \item[5A.] Người dùng tải ảnh lên S3.
+        \item[6A.] Hệ thống cập nhật avatar\_id trong hồ sơ.
+    \end{enumerate}
+    \item \textbf{Xóa trường thông tin:}
+    \begin{enumerate}
+        \item[3B.] Người dùng xóa nội dung một trường (đặt giá trị null) để loại bỏ thông tin đó khỏi hồ sơ.
+    \end{enumerate}
+    \item \textbf{Quản lý mục tiêu học tập:}
+    \begin{enumerate}
+        \item[3C.] Người dùng mở mục Mục tiêu học tập, đặt mục tiêu mới (ngày hoàn thành, giá trị, loại mục tiêu) hoặc chỉnh sửa/xóa mục tiêu hiện tại.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Tên người dùng đã tồn tại:}
+    \begin{enumerate}
+        \item[5Err.] Hệ thống trả về lỗi thông báo tên người dùng đã được sử dụng bởi người khác.
+    \end{enumerate}
+    \item \textbf{Dữ liệu không hợp lệ:}
+    \begin{enumerate}
+        \item[5Err2.] Hệ thống trả về lỗi xác thực dữ liệu đầu vào.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0005 Cập nhật hồ sơ cá nhân}
+}

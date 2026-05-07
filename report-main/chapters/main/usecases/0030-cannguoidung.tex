@@ -1,0 +1,62 @@
+{
+\renewcommand{\arraystretch}{1.5}
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em}
+
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Tên Use case} & Cấm người dùng trong phòng chat \\
+\hline
+\textbf{ID} & UC-0030 \\
+\hline
+\textbf{Tác nhân} & Quản trị viên (Admin) hoặc Người tạo phòng \\
+\hline
+\textbf{Mô tả} & Quản trị viên hoặc chủ phòng cấm hoặc bỏ cấm người dùng trong phòng chat \\
+\hline
+\textbf{Điều kiện tiên quyết} & Phòng chat tồn tại, người dùng cần cấm tồn tại, người thực hiện là chủ phòng hoặc Admin \\
+\hline
+\textbf{Điều kiện sau} & Người dùng bị cấm không thể tham gia hoặc gửi tin nhắn trong phòng \\
+\hline
+\textbf{Kích hoạt} & Quản trị viên hoặc chủ phòng chọn cấm người dùng \\
+\hline
+\textbf{Luồng chính} &
+\begin{enumerate}
+    \item Quản trị viên hoặc chủ phòng mở danh sách thành viên phòng chat.
+    \item Người thực hiện chọn người dùng cần cấm.
+    \item Người thực hiện nhấn Cấm và nhập lý do (tùy chọn).
+    \item Hệ thống cấm người dùng khỏi phòng.
+    \item Người dùng bị cấm không thể tham gia hoặc gửi tin nhắn trong phòng.
+\end{enumerate} \\
+\hline
+\textbf{Luồng thay thế} &
+\begin{enumerate}
+    \item \textbf{Bỏ cấm người dùng:}
+    \begin{enumerate}
+        \item[2A.] Người thực hiện chọn người dùng đã bị cấm.
+        \item[3A.] Người thực hiện nhấn Bỏ cấm.
+        \item[4A.] Hệ thống xóa lệnh cấm, người dùng có thể tham gia lại phòng.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\textbf{Luồng ngoại lệ} &
+\begin{enumerate}
+    \item \textbf{Người dùng không tồn tại:}
+    \begin{enumerate}
+        \item[2Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Phòng không tồn tại:}
+    \begin{enumerate}
+        \item[1Err.] Hệ thống trả về lỗi 404.
+    \end{enumerate}
+    \item \textbf{Không có quyền:}
+    \begin{enumerate}
+        \item[1Err2.] Hệ thống trả về lỗi 403.
+    \end{enumerate}
+    \item \textbf{Không thể cấm chủ phòng:}
+    \begin{enumerate}
+        \item[3Err.] Hệ thống trả về lỗi khi cố cấm chủ phòng.
+    \end{enumerate}
+\end{enumerate} \\
+\hline
+\end{tabularx}
+\captionof{table}{Đặc tả Use case: UC-0030 Cấm người dùng trong phòng chat}
+}
