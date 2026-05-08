@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
+      "Bash(bibtex thesis *)",
+      "Read(//home/culove/**)"
+    ]
+  }
+}
