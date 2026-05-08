@@ -36,153 +36,152 @@
 \contentsline {subsection}{\numberline {3.3.2}Sơ đồ tổng quan các module use case}{20}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Các Use case chính}{23}{subsection.3.3.3}%
 \contentsline {subsubsection}{UC-0012: Làm bài thi}{23}{section*.10}%
-\contentsline {subsubsection}{UC-0015: Tạo bài thi}{26}{section*.11}%
-\contentsline {subsubsection}{UC-0024: Xem huy hiệu}{28}{section*.12}%
-\contentsline {subsubsection}{UC-0034: Xem thông báo}{29}{section*.13}%
-\contentsline {subsubsection}{UC-0037: Phụ huynh theo dõi tiến trình học}{31}{section*.14}%
-\contentsline {subsubsection}{UC-0038: Luyện tập speaking với AI}{33}{section*.15}%
-\contentsline {section}{\numberline {3.4}Biểu đồ hoạt động}{35}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Quy trình làm và chấm điểm bài thi}{37}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Quy trình tạo và quản lý đề thi}{38}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Quy trình luyện nói AI}{41}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Quy trình học tập blended learning}{44}{subsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.4.5}Quy trình thanh toán}{47}{subsection.3.4.5}%
-\contentsline {subsection}{\numberline {3.4.6}Quy trình hệ thống huy hiệu}{48}{subsection.3.4.6}%
-\contentsline {subsection}{\numberline {3.4.7}Quy trình thông báo}{51}{subsection.3.4.7}%
-\contentsline {section}{\numberline {3.5}Biểu đồ tuần tự}{52}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Làm và chấm điểm bài thi}{54}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Tạo và quản lý đề thi}{57}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3}Luyện nói AI}{60}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4}Quá trình học tập}{63}{subsection.3.5.4}%
-\contentsline {subsection}{\numberline {3.5.5}Thanh toán}{66}{subsection.3.5.5}%
-\contentsline {subsection}{\numberline {3.5.6}Hệ thống huy hiệu}{69}{subsection.3.5.6}%
-\contentsline {subsection}{\numberline {3.5.7}Thông báo}{72}{subsection.3.5.7}%
-\contentsline {section}{\numberline {3.6}Thiết kế kiến trúc}{73}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Đặc trưng kiến trúc}{73}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}So sánh các kiến trúc}{74}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Kiến trúc Layered}{74}{subsection.3.6.3}%
-\contentsline {subsubsection}{Kiến trúc Modular Monolith}{74}{section*.16}%
-\contentsline {subsubsection}{Kiến trúc Microkernel}{75}{section*.17}%
-\contentsline {subsubsection}{Kiến trúc Microservices}{75}{section*.18}%
-\contentsline {subsubsection}{Kết luận về kiến trúc}{75}{section*.19}%
-\contentsline {subsection}{\numberline {3.6.4}Tổng quan kiến trúc}{76}{subsection.3.6.4}%
-\contentsline {section}{\numberline {3.7}Thiết kế cơ sở dữ liệu}{78}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Auth Service}{79}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2}Exam Service}{80}{subsection.3.7.2}%
-\contentsline {subsubsection}{Exam Domain}{80}{section*.20}%
-\contentsline {subsubsection}{Practice Domain}{80}{section*.21}%
-\contentsline {subsubsection}{Tag Domain}{81}{section*.22}%
-\contentsline {subsubsection}{File \& Goal Domain}{81}{section*.23}%
-\contentsline {subsection}{\numberline {3.7.3}Achievement Service}{81}{subsection.3.7.3}%
-\contentsline {subsection}{\numberline {3.7.4}File Service}{82}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Live Chat Service (chưa merge)}{83}{subsection.3.7.5}%
-\contentsline {subsection}{\numberline {3.7.6}Resource Service (chưa merge)}{83}{subsection.3.7.6}%
-\contentsline {subsection}{\numberline {3.7.7}Engapp-v2 (Monolith PostgreSQL)}{84}{subsection.3.7.7}%
-\contentsline {subsection}{\numberline {3.7.8}Giải pháp cho dữ liệu phân cấp}{85}{subsection.3.7.8}%
-\contentsline {subsubsection}{Các vấn đề}{85}{section*.24}%
-\contentsline {subsubsection}{Các giải pháp}{85}{section*.25}%
-\contentsline {chapter}{\chapternumberline {4}Tính năng AI của hệ thống}{87}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Tính năng AI cho Speaking - Giới thiệu LingriserSpeaking}{87}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Cấu trúc học tập và các vai trò người dùng}{88}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Mô hình học tập kết hợp AI và con người}{89}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Các thành phần AI cốt lõi trong Lingriser}{91}{subsection.4.1.3}%
-\contentsline {subsubsection}{System Prompt Engineering cho hội thoại}{92}{section*.26}%
-\contentsline {subsubsection}{Phiên âm Whisper và thuật toán Pause Detection}{93}{section*.27}%
-\contentsline {subsubsection}{Text-to-Speech và vòng lặp nghe--nói}{93}{section*.28}%
-\contentsline {subsection}{\numberline {4.1.4}Luồng luyện Speaking trên nền tảng}{94}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Giao diện người dùng theo từng vai trò}{94}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}Thiết kế cơ sở dữ liệu}{96}{subsection.4.1.6}%
-\contentsline {subsubsection}{Nhóm bảng xác thực và hồ sơ người dùng}{96}{section*.29}%
-\contentsline {subsubsection}{Nhóm bảng chương trình học}{97}{section*.30}%
-\contentsline {subsubsection}{Nhóm bảng theo dõi hoạt động học tập}{97}{section*.31}%
-\contentsline {subsubsection}{Bảng booking và tích hợp Google Meet}{97}{section*.32}%
-\contentsline {subsubsection}{Bảng \texttt {weekly\_focus}}{97}{section*.33}%
-\contentsline {subsubsection}{Chỉ mục hiệu năng}{98}{section*.34}%
-\contentsline {subsection}{\numberline {4.1.7}Pipeline dữ liệu WeeklyFocus → AI Practice → Mentor Brief}{98}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Cơ chế theo dõi tiến độ học tập dành cho phụ huynh}{99}{subsection.4.1.8}%
-\contentsline {subsubsection}{Cơ chế liên kết tài khoản}{100}{section*.35}%
-\contentsline {subsubsection}{Kiểm soát truy cập theo phụ huynh}{100}{section*.36}%
-\contentsline {subsubsection}{Thống kê AI practice theo tuần}{100}{section*.37}%
-\contentsline {subsubsection}{Xác định module hiện tại theo ngày thực tế}{100}{section*.38}%
-\contentsline {subsubsection}{Video tiến trình trước và sau khoá học}{101}{section*.39}%
-\contentsline {subsection}{\numberline {4.1.9}Giá trị của Lingriser đối với bài toán Speaking}{102}{subsection.4.1.9}%
-\contentsline {section}{\numberline {4.2}Mô-đun chấm điểm và phản hồi IELTS Writing tự động}{102}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Mục tiêu và bài toán xây dựng mô hình}{102}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Cơ sở lý thuyết}{103}{subsection.4.2.2}%
-\contentsline {subsubsection}{Mô hình ngôn ngữ lớn và dòng mô hình Phi-3}{103}{section*.40}%
-\contentsline {subsubsection}{Kỹ thuật tinh chỉnh tham số hiệu quả (PEFT) và QLoRA}{103}{section*.41}%
-\contentsline {subsubsection}{Lượng tử hóa mô hình và định dạng GGUF}{104}{section*.42}%
-\contentsline {subsubsection}{Kiến trúc hướng sự kiện và Hàng đợi thông điệp (Message Queue)}{104}{section*.43}%
-\contentsline {subsection}{\numberline {4.2.3}Xây dựng và tiền xử lý dữ liệu huấn luyện}{104}{subsection.4.2.3}%
-\contentsline {subsubsection}{Nguồn dữ liệu và Pipeline chuẩn hóa}{104}{section*.44}%
-\contentsline {subsubsection}{Đặc trưng dữ liệu và Chat Template}{105}{section*.45}%
-\contentsline {subsection}{\numberline {4.2.4}Chiến lược huấn luyện và Tối ưu hóa}{106}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Kiến trúc triển khai và Quy trình suy luận}{106}{subsection.4.2.5}%
-\contentsline {subsubsection}{Hạ tầng Hugging Face Inference Endpoints}{106}{section*.46}%
-\contentsline {subsubsection}{Cơ chế xử lý bất đồng bộ với RabbitMQ}{107}{section*.47}%
-\contentsline {subsection}{\numberline {4.2.6}Kết quả thực nghiệm và Đánh giá}{107}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Kết luận mô-đun}{108}{subsection.4.2.7}%
-\contentsline {section}{\numberline {4.3}Kết luận chương}{108}{section.4.3}%
-\contentsline {chapter}{\chapternumberline {5}Thiết kế giao diện hệ thống}{109}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Wireframe Design}{109}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Homepage}{110}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Authentication Page}{111}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Dashboard}{112}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Exam}{113}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Speaking Test}{119}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}Writing Test}{123}{subsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.1.7}Flashcard}{125}{subsection.5.1.7}%
-\contentsline {subsection}{\numberline {5.1.8}Profile}{128}{subsection.5.1.8}%
-\contentsline {subsection}{\numberline {5.1.9}Blog}{132}{subsection.5.1.9}%
-\contentsline {subsection}{\numberline {5.1.10}Admin Dashboard}{134}{subsection.5.1.10}%
-\contentsline {section}{\numberline {5.2}LingriserSpeaking}{135}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Student Dashboard}{135}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Mentor Booking}{136}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Parent Dashboard}{137}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Programs}{138}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}Admin Dashboard}{139}{subsection.5.2.5}%
-\contentsline {section}{\numberline {5.3}Kết luận chương}{139}{section.5.3}%
-\contentsline {chapter}{\chapternumberline {6}Triển khai}{141}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Môi trường triển khai}{141}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Phân chia môi trường}{141}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Tích hợp và phân phối liên tục (CI/CD)}{141}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Hệ thống ghi log và giám sát}{142}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Kiến trúc triển khai}{143}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Backend}{143}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Restate --- Bảo đảm tính ổn định của workflow}{143}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Quy trình triển khai và vận hành}{144}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Môi trường phát triển}{144}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Quy trình build và triển khai}{144}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}Quản lý cơ sở dữ liệu}{144}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}Cập nhật phiên bản}{145}{subsection.6.3.4}%
-\contentsline {section}{\numberline {6.4}Kết luận chương}{145}{section.6.4}%
-\contentsline {chapter}{\chapternumberline {7}Đánh giá hệ thống}{147}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Mục tiêu đánh giá}{147}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Tiêu chí và phương pháp đánh giá}{147}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Kiểm thử yêu cầu chức năng --- Kiểm thử End-to-End}{147}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Kiểm thử yêu cầu phi chức năng}{148}{subsection.7.2.2}%
-\contentsline {section}{\numberline {7.3}Kết quả đánh giá}{148}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}Kết quả kiểm thử E2E}{148}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}Kết quả kiểm thử hiệu năng với k6}{149}{subsection.7.3.2}%
-\contentsline {section}{\numberline {7.4}Kết luận chương}{151}{section.7.4}%
-\contentsline {chapter}{\chapternumberline {8}Đánh giá công việc và định hướng phát triển}{153}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Đánh giá kết quả thực hiện}{153}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Các kết quả nổi bật}{153}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Nền tảng ứng dụng web}{153}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}Mô-đun Speaking}{154}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}Mô-đun Writing}{154}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}Lợi ích thực tế của hệ thống}{154}{section.8.3}%
-\contentsline {section}{\numberline {8.4}Những hạn chế hiện tại}{155}{section.8.4}%
-\contentsline {section}{\numberline {8.5}Định hướng phát triển}{156}{section.8.5}%
-\contentsline {subsection}{\numberline {8.5.1}Hoàn thiện tích hợp hệ thống}{156}{subsection.8.5.1}%
-\contentsline {subsection}{\numberline {8.5.2}Tối ưu hiệu năng và khả năng mở rộng}{156}{subsection.8.5.2}%
-\contentsline {subsection}{\numberline {8.5.3}Nâng cao chất lượng các mô-đun AI}{156}{subsection.8.5.3}%
-\contentsline {subsection}{\numberline {8.5.4}Bổ sung yếu tố con người trong vòng lặp học tập}{156}{subsection.8.5.4}%
-\contentsline {subsection}{\numberline {8.5.5}Mở rộng phạm vi ứng dụng}{157}{subsection.8.5.5}%
-\contentsline {section}{\numberline {8.6}Kết luận chương}{157}{section.8.6}%
-\contentsline {chapter}{\chapternumberline {9}Kết luận}{159}{chapter.9}%
-\contentsline {chapter}{Tài liệu tham khảo}{161}{chapter*.49}%
-\contentsline {chapter}{Phân công công việc}{165}{chapter*.51}%
-\contentsline {section}{Tóm tắt phối hợp nhóm}{166}{section*.52}%
-\contentsline {chapter}{Danh sách use case}{167}{chapter*.54}%
-\contentsline {chapter}{Danh sách test case E2E}{223}{chapter*.56}%
+\contentsline {subsubsection}{UC-0015: Tạo bài thi}{24}{section*.11}%
+\contentsline {subsubsection}{UC-0024: Xem huy hiệu}{25}{section*.12}%
+\contentsline {subsubsection}{UC-0034: Xem thông báo}{26}{section*.13}%
+\contentsline {subsubsection}{UC-0037: Phụ huynh theo dõi tiến trình học}{27}{section*.14}%
+\contentsline {subsubsection}{UC-0038: Luyện tập speaking với AI}{28}{section*.15}%
+\contentsline {section}{\numberline {3.4}Biểu đồ hoạt động}{29}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Quy trình làm và chấm điểm bài thi}{31}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Quy trình tạo và quản lý đề thi}{32}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Quy trình luyện nói AI}{35}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Quy trình học tập blended learning}{38}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Quy trình thanh toán}{41}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Quy trình hệ thống huy hiệu}{42}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Quy trình thông báo}{45}{subsection.3.4.7}%
+\contentsline {section}{\numberline {3.5}Biểu đồ tuần tự}{46}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Làm và chấm điểm bài thi}{48}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Tạo và quản lý đề thi}{51}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Luyện nói AI}{54}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Quá trình học tập}{57}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.5}Thanh toán}{60}{subsection.3.5.5}%
+\contentsline {subsection}{\numberline {3.5.6}Hệ thống huy hiệu}{63}{subsection.3.5.6}%
+\contentsline {subsection}{\numberline {3.5.7}Thông báo}{66}{subsection.3.5.7}%
+\contentsline {section}{\numberline {3.6}Thiết kế kiến trúc}{67}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Đặc trưng kiến trúc}{67}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}So sánh các kiến trúc}{68}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Kiến trúc Layered}{68}{subsection.3.6.3}%
+\contentsline {subsubsection}{Kiến trúc Modular Monolith}{68}{section*.16}%
+\contentsline {subsubsection}{Kiến trúc Microkernel}{69}{section*.17}%
+\contentsline {subsubsection}{Kiến trúc Microservices}{69}{section*.18}%
+\contentsline {subsubsection}{Kết luận về kiến trúc}{69}{section*.19}%
+\contentsline {subsection}{\numberline {3.6.4}Tổng quan kiến trúc}{70}{subsection.3.6.4}%
+\contentsline {section}{\numberline {3.7}Thiết kế cơ sở dữ liệu}{72}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Auth Service}{73}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Exam Service}{74}{subsection.3.7.2}%
+\contentsline {subsubsection}{Exam Domain}{74}{section*.20}%
+\contentsline {subsubsection}{Practice Domain}{74}{section*.21}%
+\contentsline {subsubsection}{Tag Domain}{75}{section*.22}%
+\contentsline {subsubsection}{File \& Goal Domain}{75}{section*.23}%
+\contentsline {subsection}{\numberline {3.7.3}Achievement Service}{75}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}File Service}{76}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Live Chat Service (chưa merge)}{77}{subsection.3.7.5}%
+\contentsline {subsection}{\numberline {3.7.6}Resource Service (chưa merge)}{77}{subsection.3.7.6}%
+\contentsline {subsection}{\numberline {3.7.7}Engapp-v2 (Monolith PostgreSQL)}{78}{subsection.3.7.7}%
+\contentsline {subsection}{\numberline {3.7.8}Giải pháp cho dữ liệu phân cấp}{79}{subsection.3.7.8}%
+\contentsline {subsubsection}{Các vấn đề}{79}{section*.24}%
+\contentsline {subsubsection}{Các giải pháp}{79}{section*.25}%
+\contentsline {chapter}{\chapternumberline {4}Tính năng AI của hệ thống}{81}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Tính năng AI cho Speaking - Giới thiệu LingriserSpeaking}{81}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Cấu trúc học tập và các vai trò người dùng}{82}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Mô hình học tập kết hợp AI và con người}{83}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Các thành phần AI cốt lõi trong Lingriser}{85}{subsection.4.1.3}%
+\contentsline {subsubsection}{System Prompt Engineering cho hội thoại}{86}{section*.26}%
+\contentsline {subsubsection}{Phiên âm Whisper và thuật toán Pause Detection}{87}{section*.27}%
+\contentsline {subsubsection}{Text-to-Speech và vòng lặp nghe--nói}{87}{section*.28}%
+\contentsline {subsection}{\numberline {4.1.4}Luồng luyện Speaking trên nền tảng}{88}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Giao diện người dùng theo từng vai trò}{88}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Thiết kế cơ sở dữ liệu}{90}{subsection.4.1.6}%
+\contentsline {subsubsection}{Nhóm bảng xác thực và hồ sơ người dùng}{90}{section*.29}%
+\contentsline {subsubsection}{Nhóm bảng chương trình học}{91}{section*.30}%
+\contentsline {subsubsection}{Nhóm bảng theo dõi hoạt động học tập}{91}{section*.31}%
+\contentsline {subsubsection}{Bảng booking và tích hợp Google Meet}{91}{section*.32}%
+\contentsline {subsubsection}{Bảng \texttt {weekly\_focus}}{91}{section*.33}%
+\contentsline {subsubsection}{Chỉ mục hiệu năng}{92}{section*.34}%
+\contentsline {subsection}{\numberline {4.1.7}Pipeline dữ liệu WeeklyFocus → AI Practice → Mentor Brief}{92}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Cơ chế theo dõi tiến độ học tập dành cho phụ huynh}{93}{subsection.4.1.8}%
+\contentsline {subsubsection}{Cơ chế liên kết tài khoản}{94}{section*.35}%
+\contentsline {subsubsection}{Kiểm soát truy cập theo phụ huynh}{94}{section*.36}%
+\contentsline {subsubsection}{Thống kê AI practice theo tuần}{94}{section*.37}%
+\contentsline {subsubsection}{Xác định module hiện tại theo ngày thực tế}{94}{section*.38}%
+\contentsline {subsubsection}{Video tiến trình trước và sau khoá học}{95}{section*.39}%
+\contentsline {subsection}{\numberline {4.1.9}Giá trị của Lingriser đối với bài toán Speaking}{96}{subsection.4.1.9}%
+\contentsline {section}{\numberline {4.2}Mô-đun chấm điểm và phản hồi IELTS Writing tự động}{96}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Mục tiêu và bài toán xây dựng mô hình}{96}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Cơ sở lý thuyết}{97}{subsection.4.2.2}%
+\contentsline {subsubsection}{Mô hình ngôn ngữ lớn và dòng mô hình Phi-3}{97}{section*.40}%
+\contentsline {subsubsection}{Kỹ thuật tinh chỉnh tham số hiệu quả (PEFT) và QLoRA}{97}{section*.41}%
+\contentsline {subsubsection}{Lượng tử hóa mô hình và định dạng GGUF}{98}{section*.42}%
+\contentsline {subsubsection}{Kiến trúc hướng sự kiện và Hàng đợi thông điệp (Message Queue)}{98}{section*.43}%
+\contentsline {subsection}{\numberline {4.2.3}Xây dựng và tiền xử lý dữ liệu huấn luyện}{98}{subsection.4.2.3}%
+\contentsline {subsubsection}{Nguồn dữ liệu và Pipeline chuẩn hóa}{98}{section*.44}%
+\contentsline {subsubsection}{Đặc trưng dữ liệu và Chat Template}{99}{section*.45}%
+\contentsline {subsection}{\numberline {4.2.4}Chiến lược huấn luyện và Tối ưu hóa}{100}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Kiến trúc triển khai và Quy trình suy luận}{100}{subsection.4.2.5}%
+\contentsline {subsubsection}{Hạ tầng Hugging Face Inference Endpoints}{100}{section*.46}%
+\contentsline {subsubsection}{Cơ chế xử lý bất đồng bộ với RabbitMQ}{101}{section*.47}%
+\contentsline {subsection}{\numberline {4.2.6}Kết quả thực nghiệm và Đánh giá}{101}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.7}Kết luận mô-đun}{102}{subsection.4.2.7}%
+\contentsline {section}{\numberline {4.3}Kết luận chương}{102}{section.4.3}%
+\contentsline {chapter}{\chapternumberline {5}Thiết kế giao diện hệ thống}{103}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Wireframe Design}{103}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Homepage}{104}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Authentication Page}{105}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Dashboard}{106}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Exam}{107}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Speaking Test}{113}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}Writing Test}{117}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}Flashcard}{119}{subsection.5.1.7}%
+\contentsline {subsection}{\numberline {5.1.8}Profile}{122}{subsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.1.9}Blog}{126}{subsection.5.1.9}%
+\contentsline {subsection}{\numberline {5.1.10}Admin Dashboard}{128}{subsection.5.1.10}%
+\contentsline {section}{\numberline {5.2}LingriserSpeaking}{129}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Student Dashboard}{129}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Mentor Booking}{130}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Parent Dashboard}{131}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Programs}{132}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}Admin Dashboard}{133}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Kết luận chương}{133}{section.5.3}%
+\contentsline {chapter}{\chapternumberline {6}Triển khai}{135}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Môi trường triển khai}{135}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Phân chia môi trường}{135}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Tích hợp và phân phối liên tục (CI/CD)}{135}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Hệ thống ghi log và giám sát}{136}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Kiến trúc triển khai}{137}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Backend}{137}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Restate --- Bảo đảm tính ổn định của workflow}{137}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Quy trình triển khai và vận hành}{138}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Môi trường phát triển}{138}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Quy trình build và triển khai}{138}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Quản lý cơ sở dữ liệu}{138}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Cập nhật phiên bản}{139}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Kết luận chương}{139}{section.6.4}%
+\contentsline {chapter}{\chapternumberline {7}Đánh giá hệ thống}{141}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Mục tiêu đánh giá}{141}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Tiêu chí và phương pháp đánh giá}{141}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Kiểm thử yêu cầu chức năng --- Kiểm thử End-to-End}{141}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Kiểm thử yêu cầu phi chức năng}{142}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Kết quả đánh giá}{142}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Kết quả kiểm thử E2E}{142}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Kết quả kiểm thử hiệu năng với k6}{143}{subsection.7.3.2}%
+\contentsline {section}{\numberline {7.4}Kết luận chương}{145}{section.7.4}%
+\contentsline {chapter}{\chapternumberline {8}Đánh giá công việc và định hướng phát triển}{147}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Đánh giá kết quả thực hiện}{147}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Các kết quả nổi bật}{147}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Nền tảng ứng dụng web}{147}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Mô-đun Speaking}{148}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Mô-đun Writing}{148}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}Lợi ích thực tế của hệ thống}{148}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Những hạn chế hiện tại}{149}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Định hướng phát triển}{150}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Hoàn thiện tích hợp hệ thống}{150}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Tối ưu hiệu năng và khả năng mở rộng}{150}{subsection.8.5.2}%
+\contentsline {subsection}{\numberline {8.5.3}Nâng cao chất lượng các mô-đun AI}{150}{subsection.8.5.3}%
+\contentsline {subsection}{\numberline {8.5.4}Bổ sung yếu tố con người trong vòng lặp học tập}{150}{subsection.8.5.4}%
+\contentsline {subsection}{\numberline {8.5.5}Mở rộng phạm vi ứng dụng}{151}{subsection.8.5.5}%
+\contentsline {section}{\numberline {8.6}Kết luận chương}{151}{section.8.6}%
+\contentsline {chapter}{\chapternumberline {9}Kết luận}{153}{chapter.9}%
+\contentsline {chapter}{Tài liệu tham khảo}{155}{chapter*.49}%
+\contentsline {chapter}{Phân công công việc}{159}{chapter*.51}%
+\contentsline {chapter}{Danh sách use case}{161}{chapter*.53}%
+\contentsline {chapter}{Danh sách test case E2E}{191}{chapter*.55}%

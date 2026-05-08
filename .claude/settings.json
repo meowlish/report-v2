@@ -3,7 +3,11 @@
     "allow": [
       "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
       "Bash(bibtex thesis *)",
-      "Read(//home/culove/**)"
+      "Read(//home/culove/**)",
+      "Bash(sed -i 's/{|>{\\\\\\\\raggedright\\\\\\\\arraybackslash}X|>{\\\\\\\\raggedright\\\\\\\\arraybackslash}X|}/{|>{\\\\\\\\raggedright\\\\\\\\arraybackslash}p{3.5cm}|>{\\\\\\\\raggedright\\\\\\\\arraybackslash}X|}/' *.tex && grep \"tabularx\" 0001-dangnhap.tex)"
+    ],
+    "additionalDirectories": [
+      "/home/culove/report-v2/report-main/chapters/main/usecases"
     ]
   }
 }
