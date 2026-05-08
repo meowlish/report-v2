@@ -17,7 +17,7 @@
 \RequirePackage[center]{caption}
 \RequirePackage{hyperref}
 \RequirePackage[super,square,sort]{natbib}
-\RequirePackage{amsmath}
+\RequirePackage{amsmath,amssymb}
 \RequirePackage[nameinlink]{cleveref}
 \RequirePackage[english]{babel}
 
