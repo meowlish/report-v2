@@ -18,17 +18,6 @@ Mục tiêu cốt lõi của mô-đun Speaking là xây dựng môi trường lu
     \item \textbf{Tích hợp đa vai trò:} Dữ liệu AI sinh ra phục vụ đồng thời nhiều tác nhân -- học sinh luyện tập, giáo viên đặt mục tiêu, mentor đọc tóm tắt trước buổi gọi, phụ huynh theo dõi tiến độ.
 \end{enumerate}
 
-\subsubsection{Kiến trúc hệ thống}
-
-Lingriser được tổ chức theo mô hình Client--Server phân tầng rõ ràng. Frontend (Next.js) giao tiếp với Backend (NestJS) qua REST API. Backend đóng vai trò điều phối trung tâm: xử lý nghiệp vụ, xác thực JWT, và gọi các dịch vụ bên ngoài. Lớp AI được tách hoàn toàn khỏi logic nghiệp vụ, giao tiếp với OpenAI API qua SDK chính thức thông qua \texttt{AIPracticeService}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\linewidth]{graphics/lingriser/system_architecture}
-    \captionsetup{skip=5pt}
-    \caption{Kiến trúc triển khai của Lingriser với mô-đun AI Practice}
-\end{figure}
-
 Mỗi khóa học được tổ chức thành \textbf{8 module hằng tuần}, mỗi module phân tầng hoạt động theo ngày:
 
 \begin{table}[H]

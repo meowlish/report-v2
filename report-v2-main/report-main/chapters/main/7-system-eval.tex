@@ -15,7 +15,7 @@ Quá trình đánh giá hệ thống nhắm đến hai nhóm mục tiêu chính:
 
 Toàn bộ yêu cầu chức năng của hệ thống được kiểm chứng thông qua bộ kiểm thử End-to-End (E2E) sử dụng \textbf{Playwright} \cite{playwright_docs}, một framework kiểm thử tự động hóa trình duyệt. Playwright cho phép mô phỏng các thao tác thực tế của người dùng trên giao diện web, bao gồm điều hướng, nhập liệu, nhấn nút và kiểm tra kết quả hiển thị, qua đó kiểm chứng toàn bộ luồng nghiệp vụ từ đầu đến cuối.
 
-Bộ test case E2E được tổ chức thành hai nhóm tương ứng với hai hệ thống: \textbf{English Prep} và \textbf{Lingriser}, bao phủ các nhóm chức năng chính gồm xác thực, quản lý hồ sơ, quản lý bài thi, flashcard, chat, blog, thông báo và quản trị hệ thống. Toàn bộ danh sách test case được trình bày chi tiết trong phần Phụ lục.
+Bộ test case E2E bao phủ các nhóm chức năng chính của hệ thống \textbf{Lingriser}, gồm xác thực, quản lý hồ sơ, quản lý bài thi, flashcard, chat, blog, thông báo và quản trị hệ thống. Toàn bộ danh sách test case được trình bày chi tiết trong phần Phụ lục.
 
 \subsection{Kiểm thử yêu cầu phi chức năng}
 
@@ -30,11 +30,11 @@ Các yêu cầu phi chức năng được kiểm thử với phương pháp và 
 \hline
 \textbf{ID} & \textbf{Tên NFR} & \textbf{Công cụ} & \textbf{Phương pháp} \\
 \hline
-NFR1 & Performance & Postman, k6 & Đo thời gian phản hồi API bằng Postman cho các endpoint đơn lẻ. Sử dụng k6 để chạy kịch bản tải với nhiều mức virtual user (VU), đo response time trung bình và tỷ lệ request thành công. \\
+NFR1 & Hiệu năng & Postman, k6 & Đo thời gian phản hồi API bằng Postman cho các endpoint đơn lẻ. Sử dụng k6 để chạy kịch bản tải với nhiều mức người dùng ảo (VU), đo thời gian phản hồi trung bình và tỷ lệ yêu cầu thành công. \\
 \hline
-NFR2 & Scalability & k6 & Chạy stress test với k6, tăng dần số lượng concurrent user lên đến 1.000 VU, đo khả năng xử lý đồng thời và tính ổn định của hệ thống dưới tải cao. \\
+NFR2 & Khả năng mở rộng & k6 & Chạy kiểm thử tải với k6, tăng dần số lượng người dùng đồng thời lên đến 1.000 VU, đo khả năng xử lý đồng thời và tính ổn định của hệ thống dưới tải cao. \\
 \hline
-NFR4 & Portability & CI/CD Pipeline & Kiểm chứng thông qua pipeline CI/CD: cùng một bộ mã nguồn được build, test và chạy thành công trên cả môi trường Development và Production, đảm bảo hành vi nhất quán giữa các môi trường. \\
+NFR4 & Tính di động & Quy trình CI/CD & Kiểm chứng thông qua quy trình CI/CD: cùng một bộ mã nguồn được xây dựng, kiểm thử và chạy thành công trên cả môi trường phát triển và môi trường triển khai, đảm bảo hành vi nhất quán giữa các môi trường. \\
 \hline
 \end{tabular}
 \end{table}
@@ -43,7 +43,7 @@ NFR4 & Portability & CI/CD Pipeline & Kiểm chứng thông qua pipeline CI/CD: 
 
 \subsection{Kết quả kiểm thử E2E}
 
-Toàn bộ bộ kiểm thử E2E được thực thi trên cả hai hệ thống English Prep và Lingriser. Kết quả cho thấy \textbf{100\% test case đều pass}, xác nhận rằng tất cả các chức năng chính của hệ thống hoạt động đúng theo đặc tả trong điều kiện vận hành bình thường.
+Toàn bộ bộ kiểm thử E2E được thực thi trên hệ thống Lingriser. Kết quả cho thấy \textbf{100\% test case đều pass}, xác nhận rằng tất cả các chức năng chính của hệ thống hoạt động đúng theo đặc tả trong điều kiện vận hành bình thường.
 
 Tuy nhiên, khi hệ thống chịu tải cao (stress test), một số request có thể bị từ chối do cơ chế \textbf{throttle guard}, bộ giới hạn tốc độ request được tích hợp nhằm bảo vệ hệ thống khỏi bị quá tải. Đây là hành vi có chủ đích trong thiết kế hệ thống: throttle guard ưu tiên duy trì tính ổn định tổng thể thay vì cho phép tất cả request đi qua khi tài nguyên không đủ đáp ứng.
 

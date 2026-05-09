@@ -1,4 +1,4 @@
-\chapter{Triển khai}
+\chapter{Triển khai hệ thống}
 \textit{Chương này trình bày chiến lược triển khai hệ thống, bao gồm môi trường vận hành, cấu trúc triển khai các dịch vụ, quy trình tích hợp và các thành phần hạ tầng hỗ trợ để bảo đảm hệ thống hoạt động ổn định và có khả năng mở rộng.}
 
 \section{Môi trường triển khai}
@@ -24,6 +24,17 @@ Riêng pipeline Production bổ sung job Docker chạy sau khi job biên dịch 
 Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng Caddy \cite{caddy_docs} làm reverse proxy và web server, kết hợp với dịch vụ No-IP Dynamic DNS để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
 
 Về kiến trúc giao tiếp, API Gateway đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức gRPC \cite{grpc_docs}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức HTTP với cơ chế proxy để duy trì kết nối hai chiều. Các service nội bộ được ẩn sau reverse proxy và DNS resolver, không tiếp xúc trực tiếp với mạng bên ngoài, giúp giảm thiểu bề mặt tấn công và tăng tính bảo mật.
+
+Hình~\ref{fig:deployment-architecture} minh họa luồng dữ liệu trong môi trường triển khai thực tế của hệ thống.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{graphics/architecture/Deployment}
+\caption{Kiến trúc triển khai hệ thống}
+\label{fig:deployment-architecture}
+\end{figure}
+
+\noindent Theo sơ đồ, luồng dữ liệu đi từ phía Client qua Caddy (reverse proxy, tự động cấp chứng chỉ TLS) đến API Gateway. Tại đây, Envoy đóng vai trò cân bằng tải và proxy, phân phối request đến các container Docker tương ứng. Mỗi dịch vụ được đóng gói trong container riêng với khả năng chạy nhiều bản sao (instance), sử dụng cơ chế phân giải DNS nội bộ để định tuyến giữa các instance. Các container dịch vụ giao tiếp với cơ sở dữ liệu PostgreSQL, bộ nhớ đệm Redis, hệ thống lưu trữ tệp MinIO (S3-compatible) và hàng đợi tin nhắn RabbitMQ tùy theo nhu cầu nghiệp vụ của từng dịch vụ.
 
 Hệ thống cũng tích hợp Restate \cite{restate_docs}, một nền tảng quản lý workflow phân tán, nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Thay vì triển khai thủ công pattern Saga hoặc Two-Phase Commit, Restate cung cấp mô hình lập trình tuần tự với khả năng tự phục hồi, giúp giảm đáng kể độ phức tạp khi phối hợp nhiều service. Khi một bước trong workflow thất bại, Restate tự động thử lại với chiến lược exponential backoff (khoảng thời gian giữa các lần retry tăng theo cấp số nhân), nhằm tránh hiện tượng thundering herd. Mỗi bước thực thi được ghi lại, cho phép workflow tiếp tục từ điểm lỗi thay vì chạy lại từ đầu, đảm bảo tính idempotent và giảm lãng phí tài nguyên.
 

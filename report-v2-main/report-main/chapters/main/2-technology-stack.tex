@@ -145,5 +145,5 @@ Hệ thống cần một giải pháp lưu trữ đối tượng (object storage
     }
 \end{table}
 
-MinIO \cite{minio} được chọn vì ba lý do phù hợp với bối cảnh dự án. Thứ nhất, MinIO là giải pháp mã nguồn mở có thể triển khai trực tiếp trên VPS thông qua Docker Compose, không phát sinh chi phí lưu trữ đám mây. Thứ hai, MinIO tương thích hoàn toàn với S3 API, cho phép nhóm sử dụng các thư viện S3 SDK sẵn có trong cả NestJS và FastAPI, đồng thời dễ dàng chuyển sang Amazon S3 khi cần mở rộng mà không phải thay đổi mã nguồn. Thứ ba, MinIO Console cung cấp giao diện quản trị trực quan để giám sát dung lượng, quản lý bucket và theo dõi hoạt động tải file, phù hợp cho giai đoạn phát triển và vận hành thử nghiệm.
+MinIO \cite{minio} được chọn vì ba lý do phù hợp với bối cảnh dự án. Thứ nhất, MinIO là giải pháp mã nguồn mở có thể triển khai trực tiếp trên VPS thông qua Docker Compose, không phát sinh chi phí lưu trữ đám mây. Thứ hai, MinIO tương thích hoàn toàn với S3 API, cho phép nhóm sử dụng các thư viện S3 SDK sẵn có trong NestJS, đồng thời dễ dàng chuyển sang Amazon S3 khi cần mở rộng mà không phải thay đổi mã nguồn. Thứ ba, MinIO Console cung cấp giao diện quản trị trực quan để giám sát dung lượng, quản lý bucket và theo dõi hoạt động tải file, phù hợp cho giai đoạn phát triển và vận hành thử nghiệm.
 

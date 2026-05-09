@@ -1,0 +1,240 @@
+\begin{thebibliography}{10}
+
+\bibitem{nishanc_clean_arch}
+N.~Chathuranga, ``Clean architecture .net core --- part 1: Introduction.''
+  [Online]. Available:
+  \url{https://nishanc.medium.com/clean-architecture-net-core-part-1-introduction-e70e1c49ef6},
+  2020.
+\newblock [Accessed: May. 10, 2026].
+
+\bibitem{ielts_official}
+{IELTS}, ``About the ielts test.'' [Online]. Available:
+  \url{https://www.ielts.org/about-ielts}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{toeic_official}
+{ETS}, ``About the toeic tests.'' [Online]. Available:
+  \url{https://www.ets.org/toeic/about}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{ai_education}
+{UNESCO}, ``Artificial intelligence in education.'' [Online]. Available:
+  \url{https://www.unesco.org/en/digital-education/artificial-intelligence},
+  2024.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{nextjs_docs}
+{Vercel}, ``Next.js documentation.'' [Online]. Available:
+  \url{https://nextjs.org/docs}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{nestjs}
+{NestJS}, ``Nestjs documentation.'' [Online]. Available:
+  \url{https://docs.nestjs.com/}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{postgresql}
+V.~L.~S. Architect, ``Understanding postgresql: An introduction.'' [Online].
+  Available:
+  \url{https://viblo.asia/p/understanding-postgresql-an-introduction-y37LdYDgVov},
+  2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{minio}
+{MinIO, Inc.}, ``Minio: High performance object storage.'' [Online]. Available:
+  \url{https://min.io/docs/minio/linux/index.html}, 2025.
+\newblock [Accessed: May. 9, 2026].
+
+\bibitem{angularjs}
+G.~Allen, ``The state of angularjs in 2025.'' [Online]. Available:
+  \url{https://docs.angularjs.org/guide}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{angular_react}
+{GeeksforGeeks}, ``Angular vs reactjs: Which one to choose as frontend
+  development framework in 2025.'' [Online]. Available:
+  \url{https://www.geeksforgeeks.org/reactjs/angular-vs-reactjs/}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{next_react_angular}
+D.~V. Meher, ``Nextjs vs reactjs vs angularjs: Key differences you must know.''
+  [Online]. Available:
+  \url{https://www.altudo.co/insights/blogs/nextjs-vs-reactjs-vs-angularjs-key-differences-you-must-know},
+  2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{aspnet}
+V.~Kotenev, ``What is asp.net core? an overview of the platform.'' [Online].
+  Available:
+  \url{https://scand.com/company/blog/what-is-asp-net-core-an-overview-of-the-platform/},
+  2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{springboot}
+{Swovo}, ``What is spring boot in java? an overview in 2026.'' [Online].
+  Available: \url{https://swovo.com/blog/what-is-spring-boot-in-java/}, 2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{fastapi}
+{FastAPI Developers}, ``Fastapi documentation.'' [Online]. Available:
+  \url{https://fastapi.tiangolo.com/}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{sqlserver}
+T.~Cuong, ``Everything about sqlserver- the best database management system.''
+  [Online]. Available:
+  \url{https://techmaster.vn/posts/38094/everything-about-sqlserver-the-best-database-management-system},
+  2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{microservices_newman}
+S.~Newman, {\em Building Microservices: Designing Fine-Grained Systems}.
+\newblock O'Reilly Media, 2nd~ed., 2021.
+
+\bibitem{clean_architecture}
+R.~C. Martin, {\em Clean Architecture: A Craftsman's Guide to Software
+  Structure and Design}.
+\newblock Prentice Hall, 2017.
+
+\bibitem{ddd_evans}
+E.~Evans, {\em Domain-Driven Design: Tackling Complexity in the Heart of
+  Software}.
+\newblock Addison-Wesley, 2003.
+
+\bibitem{rabbitmq_docs}
+{Broadcom}, ``Rabbitmq documentation.'' [Online]. Available:
+  \url{https://www.rabbitmq.com/docs}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{prisma_docs}
+{Prisma}, ``Prisma orm documentation.'' [Online]. Available:
+  \url{https://www.prisma.io/docs}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{openai_gpt4o}
+{OpenAI}, ``Gpt-4o system card.'' [Online]. Available:
+  \url{https://openai.com/index/gpt-4o-system-card/}, 2024.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{openai_whisper}
+A.~Radford, J.~W. Kim, T.~Xu, G.~Brockman, C.~McLeavey, and I.~Sutskever,
+  ``Robust speech recognition via large-scale weak supervision.'' [Online].
+  Available: \url{https://arxiv.org/abs/2212.09720}, 2022.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{phi3_microsoft}
+M.~Abdin {\em et~al.}, ``Phi-3 technical report: A highly capable language
+  model locally on your phone.'' [Online]. Available:
+  \url{https://arxiv.org/abs/2404.14219}, 2024.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{lora_hu}
+E.~J. Hu, Y.~Shen, P.~Wallis, Z.~Allen-Zhu, Y.~Li, S.~Wang, L.~Wang, and
+  W.~Chen, ``Lora: Low-rank adaptation of large language models.'' [Online].
+  Available: \url{https://arxiv.org/abs/2106.09685}, 2021.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{qlora}
+T.~Dettmers, A.~Pagnoni, A.~Holtzman, and L.~Zettlemoyer, ``Qlora: Efficient
+  finetuning of quantized language models.'' [Online]. Available:
+  \url{https://arxiv.org/abs/2305.14314}, 2023.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{github_actions}
+{GitHub}, ``Understanding github actions.'' [Online]. Available:
+  \url{https://docs.github.com/en/actions/about-github-actions/understanding-github-actions},
+  2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{caddy_docs}
+{Caddy}, ``Caddy documentation.'' [Online]. Available:
+  \url{https://caddyserver.com/docs/}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{grpc_docs}
+{gRPC Authors}, ``Introduction to grpc.'' [Online]. Available:
+  \url{https://grpc.io/docs/what-is-grpc/introduction/}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{restate_docs}
+{Restate}, ``Restate documentation.'' [Online]. Available:
+  \url{https://docs.restate.dev/}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{nx_monorepo}
+{Nrwl}, ``Nx: Smart monorepos, fast ci.'' [Online]. Available:
+  \url{https://nx.dev/getting-started/intro}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{playwright_docs}
+{Microsoft}, ``Playwright documentation.'' [Online]. Available:
+  \url{https://playwright.dev/docs/intro}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{k6_docs}
+{Grafana Labs}, ``k6 documentation.'' [Online]. Available:
+  \url{https://grafana.com/docs/k6/latest/}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{dockercompose}
+{Docker}, ``How compose works.'' [Online]. Available:
+  \url{https://docs.docker.com/compose/intro/compose-application-model/}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{web_overview}
+A.~K. Vishwakarma, ``The evolution of web development: From static html to
+  dynamic web apps.'' [Online]. Available:
+  \url{https://dev.to/ayusharpcoder/the-evolution-of-web-development-from-static-html-to-dynamic-web-apps-4hn5},
+  2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{mysql}
+J.~Erickson, ``Mysql: Understanding what it is and how it's used.'' [Online].
+  Available: \url{https://www.oracle.com/asean/mysql/what-is-mysql/}, 2024.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{mongodb}
+{GeeksforGeeks}, ``Mongodb introduction.'' [Online]. Available:
+  \url{https://www.geeksforgeeks.org/mongodb/mongodb-an-introduction/}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{aws}
+{GeeksforGeeks}, ``Introduction to amazon web services.'' [Online]. Available:
+  \url{https://www.geeksforgeeks.org/cloud-computing/introduction-to-amazon-web-services/},
+  2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{gcp}
+{Google Cloud}, ``Google cloud overview.'' [Online]. Available:
+  \url{https://docs.cloud.google.com/docs/overview}, 2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{azure}
+{TechTarget}, ``What is microsoft azure and how does it work?.'' [Online].
+  Available:
+  \url{https://www.techtarget.com/searchcloudcomputing/definition/Windows-Azure},
+  2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{container}
+{Docker}, ``Use containers to build, share and run your applications.''
+  [Online]. Available: \url{https://www.docker.com/resources/what-container/},
+  2025.
+\newblock [Accessed: Oct. 20, 2025].
+
+\bibitem{huggingface_inference}
+{Hugging Face}, ``Inference endpoints documentation.'' [Online]. Available:
+  \url{https://huggingface.co/docs/inference-endpoints/}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\bibitem{closure_table}
+B.~Karwin, {\em SQL Antipatterns: Avoiding the Pitfalls of Database
+  Programming}.
+\newblock Pragmatic Bookshelf, 2010.
+
+\bibitem{elevenlabs_docs}
+{ElevenLabs}, ``Elevenlabs api documentation.'' [Online]. Available:
+  \url{https://elevenlabs.io/docs}, 2025.
+\newblock [Accessed: Mar. 15, 2026].
+
+\end{thebibliography}
