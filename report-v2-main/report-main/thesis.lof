@@ -17,14 +17,14 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Sequence diagram --- Luồng thông báo}}{37}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Tổng quan về mẫu Clean architecture \cite {nishanc_clean_arch}}}{41}{figure.3.14}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Tổng quan kiến trúc hệ thống}}{43}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces ERD --- Auth Service (Identity, Credential, RBAC, Google Calendar)}}{45}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces ERD --- Exam Service (Exam, Practice, Tag, Goal, File)}}{47}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces ERD --- Achievement Service (Badges, Criteria)}}{49}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces ERD --- File Service}}{50}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces ERD --- Live Chat Service}}{50}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces ERD --- Resource Service (Blog, Flashcard)}}{51}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces ERD --- Notification Service}}{53}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces ERD --- Report Service}}{54}{figure.3.23}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces ERD --- Dịch vụ xác thực (Identity, Credential, RBAC, Google Calendar)}}{45}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces ERD --- Dịch vụ bài thi (Exam, Practice, Tag, Goal, File)}}{47}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces ERD --- Dịch vụ thành tích (Badges, Criteria)}}{49}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces ERD --- Dịch vụ quản lý tệp}}{50}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ERD --- Dịch vụ trò chuyện}}{50}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces ERD --- Dịch vụ tài nguyên (Blog, Flashcard)}}{51}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces ERD --- Dịch vụ thông báo}}{53}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces ERD --- Dịch vụ báo cáo}}{54}{figure.3.23}%
 \contentsline {figure}{\numberline {3.24}{\ignorespaces ERD --- Dịch vụ giáo dục học nói -- Người dùng và tương tác}}{55}{figure.3.24}%
 \contentsline {figure}{\numberline {3.25}{\ignorespaces ERD --- Dịch vụ giáo dục học nói -- Khóa học và hoạt động học tập}}{56}{figure.3.25}%
 \addvspace {10pt}

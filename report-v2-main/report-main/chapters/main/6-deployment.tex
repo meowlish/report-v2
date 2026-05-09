@@ -58,5 +58,17 @@ Quy trình đưa mã nguồn từ môi trường phát triển lên production d
 
 Việc cập nhật phiên bản ứng dụng được thực hiện tự động thông qua pipeline CI/CD. Mỗi lần merge vào nhánh \texttt{master}, Docker image mới được build và push lên Docker Hub. Trên VPS, quá trình cập nhật bao gồm pull image mới và khởi động lại các container tương ứng thông qua Docker Compose, đảm bảo quá trình chuyển đổi phiên bản diễn ra nhanh chóng với thời gian ngừng hoạt động tối thiểu.
 
+\subsection{Địa chỉ triển khai}
+
+Hệ thống được triển khai và truy cập công khai tại các địa chỉ sau:
+
+\begin{itemize}
+    \item \textbf{Giao diện người dùng (Frontend):} \url{https://english-prep-website.vercel.app/}
+    \item \textbf{API Backend:} \url{https://meowlish.servebeer.com/api/v1/}
+    \item \textbf{Tài liệu tham chiếu API (API Reference):} \url{https://meowlish.servebeer.com/reference}
+\end{itemize}
+
+\noindent Giao diện frontend được triển khai trên Vercel, tận dụng mạng phân phối nội dung (CDN) toàn cầu để tối ưu tốc độ tải trang. Toàn bộ API backend được triển khai trên VPS và truy cập thông qua reverse proxy Caddy với chứng chỉ TLS tự động. Trang tài liệu API Reference cung cấp mô tả chi tiết các endpoint, tham số và định dạng phản hồi, hỗ trợ quá trình phát triển và kiểm thử.
+
 \section{Kết luận chương}
 Chương này đã trình bày toàn bộ chiến lược triển khai hệ thống, từ việc phân chia môi trường Development và Production với pipeline CI/CD riêng biệt, đến kiến trúc triển khai backend trên VPS sử dụng Caddy, gRPC và Restate. Quy trình vận hành được tự động hóa thông qua Nx monorepo, Docker Compose và Prisma Migrate, kết hợp với bộ công cụ giám sát đa dạng gồm Winston, Adminer, Redis Insight, RabbitMQ Management và MinIO Console. Tổng thể cho thấy hệ thống có khả năng đưa vào vận hành thực tế với mức độ tự động hóa cao, đồng thời tạo nền tảng cho việc mở rộng và tối ưu hạ tầng trong tương lai.
