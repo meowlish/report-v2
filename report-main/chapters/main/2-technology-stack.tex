@@ -5,13 +5,13 @@
 
 \subsection{Phân tích và lựa chọn frontend framework}
 
-Nền tảng ôn luyện tiếng Anh có ba yêu cầu frontend đặc thù: (1) SEO tốt để người dùng tìm thấy nội dung luyện thi qua search engine, (2) tối ưu hiệu năng tải trang cho nội dung giàu hình ảnh và audio, và (3) hỗ trợ cả trang tĩnh (giới thiệu, blog) lẫn trang động (dashboard, làm bài thi). Ba framework được đánh giá dựa trên các tiêu chí này:
+Nền tảng ôn luyện tiếng Anh có ba yêu cầu frontend đặc thù: Thứ nhất là SEO tốt để người dùng tìm thấy nội dung luyện thi qua search engine, hai là tối ưu hiệu năng tải trang cho nội dung giàu hình ảnh và audio, và cuối cùng là hỗ trợ việc truyền tải dữ liệu, trang tĩnh (giới thiệu, blog) lẫn trang động (dashboard, làm bài thi). Ba framework được đánh giá dựa trên các tiêu chí này:
 
-\textbf{AngularJS} (Google) sử dụng kiến trúc MVC với two-way data binding, nhưng không hỗ trợ server-side rendering mặc định --- hạn chế nghiêm trọng đối với yêu cầu SEO của nền tảng giáo dục. Bundle size lớn do tính chất monolithic cũng ảnh hưởng đến thời gian tải ban đầu. \cite{angularjs}
+\textbf{AngularJS} sử dụng kiến trúc MVC với two-way data binding, nhưng không hỗ trợ server-side rendering (SSR) mặc định, gây hạn chế nghiêm trọng đối với yêu cầu SEO của nền tảng giáo dục. Bundle size lớn do tính chất monolithic cũng ảnh hưởng đến thời gian tải ban đầu. \cite{angularjs}
 
-\textbf{ReactJS} (Meta) mạnh về xây dựng UI tương tác nhờ Virtual DOM và kiến trúc component-based, nhưng client-side rendering mặc định gây bất lợi cho SEO. Cần bổ sung nhiều library riêng cho routing, state management và image optimization. \cite{angular_react}
+\textbf{ReactJS} Framework mạnh về xây dựng UI tương tác nhờ Virtual DOM và kiến trúc component-based, nhưng client-side rendering (CSR) mặc định gây bất lợi cho SEO. Cần bổ sung nhiều thư viện riêng cho routing, quản lý state và tối ưu việc truyền tải hình ảnh. \cite{angular_react}
 
-\textbf{Next.js} xây dựng trên React, bổ sung hybrid rendering (SSR + SSG), automatic code splitting và built-in image optimization --- giải quyết trực tiếp cả ba yêu cầu đặc thù của dự án mà không cần cấu hình thêm. \cite{next_react_angular}
+\textbf{Next.js} Được xây dựng trên React, bổ sung hybrid rendering (SSR + SSG), code splitting tự động và có image optimization giải quyết trực tiếp cả ba yêu cầu đặc thù của dự án mà không cần cấu hình thêm. \cite{next_react_angular}
 
 \begin{table}[H]
 \centering
@@ -19,10 +19,10 @@ Nền tảng ôn luyện tiếng Anh có ba yêu cầu frontend đặc thù: (1)
 \begin{tabular}{|l|p{4cm}|p{4cm}|p{4cm}|}
 \hline
 \textbf{Tiêu chí dự án} & \textbf{AngularJS} & \textbf{ReactJS} & \textbf{Next.js} \\ \hline
-Hỗ trợ SEO cho nội dung giáo dục & Kém --- cần Angular Universal riêng & Trung bình --- render phía client, cần cấu hình SSR thủ công & Tích hợp sẵn SSR/SSG, index tốt bởi search engine \\ \hline
-Tối ưu nội dung đa phương tiện & Cần library bên thứ ba & Cần library bên thứ ba & Built-in image optimization, tự động chuyển WebP \\ \hline
-Hỗ trợ hybrid (tĩnh + động) & Không hỗ trợ native & Cần thiết lập thủ công & SSG cho trang tĩnh, SSR cho dashboard --- cùng một app \\ \hline
-Tốc độ phát triển & Chậm --- learning curve dốc, boilerplate nhiều & Nhanh cho UI, nhưng cần tích hợp nhiều library & Nhanh --- routing, API routes, TypeScript đều tích hợp sẵn \\ \hline
+Hỗ trợ SEO cho nội dung giáo dục & Kém, cần Angular Universal riêng & Trung bình, render phía client, cần cấu hình SSR thủ công & Tích hợp sẵn SSR/SSG, index tốt bởi search engine \\ \hline
+Tối ưu nội dung đa phương tiện & Cần thư viện bên thứ ba & Cần thư viện bên thứ ba & Tích hợp sẵn image optimization, tự động chuyển WebP \\ \hline
+Hỗ trợ hybrid (tĩnh + động) & Không hỗ trợ native & Cần thiết lập thủ công & SSG cho trang tĩnh, SSR cho dashboard cùng một app \\ \hline
+Tốc độ phát triển & Chậm,learning curve dốc, boilerplate nhiều & Nhanh cho UI, nhưng cần tích hợp nhiều library & Nhanh, routing, API routes, TypeScript đều tích hợp sẵn \\ \hline
 \end{tabular}%
 }
 \caption{So sánh frontend framework theo yêu cầu dự án}
@@ -31,9 +31,9 @@ Tốc độ phát triển & Chậm --- learning curve dốc, boilerplate nhiều
 Nhóm chọn \textbf{Next.js} vì framework này đáp ứng trực tiếp các yêu cầu đặc thù của nền tảng giáo dục:
 
 \begin{enumerate}
-\item \textbf{SEO cho nội dung luyện thi}: Nền tảng phụ thuộc vào organic search traffic để tiếp cận học viên. SSR tích hợp sẵn bảo đảm nội dung bài thi, bài viết hướng dẫn được search engine index đầy đủ --- yếu tố quyết định khả năng tăng trưởng người dùng mà không cần ngân sách quảng cáo lớn.
+\item \textbf{SEO cho nội dung luyện thi}: Nền tảng phụ thuộc vào nguồn tìm kiếm tự nhiên để tiếp cận học viên. SSR tích hợp sẵn bảo đảm nội dung bài thi, bài viết hướng dẫn được search engine index đầy đủ, là yếu tố quyết định khả năng tăng trưởng người dùng mà không cần ngân sách quảng cáo lớn.
 
-\item \textbf{Tối ưu tài liệu giàu hình ảnh}: Tài liệu luyện thi chứa nhiều hình ảnh minh họa, sơ đồ và biểu đồ. Next.js Image tự động phân phối hình ảnh đúng kích thước ở định dạng WebP, giảm đáng kể thời gian tải --- đặc biệt quan trọng cho người dùng ở vùng có kết nối Internet chậm.
+\item \textbf{Tối ưu tài liệu giàu hình ảnh}: Tài liệu luyện thi chứa nhiều hình ảnh minh họa, sơ đồ và biểu đồ. Next.js Image tự động phân phối hình ảnh đúng kích thước ở định dạng WebP, giảm đáng kể thời gian tải, đặc biệt quan trọng cho người dùng ở vùng có kết nối Internet chậm.
 
 \item \textbf{Hybrid rendering phù hợp kiến trúc}: Trang giới thiệu và blog dùng SSG (tải nhanh, cache tốt), trong khi dashboard làm bài và kết quả AI dùng SSR (dữ liệu luôn cập nhật). Next.js cho phép kết hợp cả hai trong cùng một ứng dụng mà không cần tách dự án.
 

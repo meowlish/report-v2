@@ -15,7 +15,7 @@ Nhu cầu sở hữu các chứng chỉ năng lực tiếng Anh trên toàn cầ
 \item \textbf{Thiếu nhất quán khi triển khai}: Nhiều nền tảng giáo dục gặp tình trạng hoạt động không đồng nhất giữa các môi trường triển khai do lệch cấu hình và xung đột phụ thuộc.
 \end{itemize}
 
-Bên cạnh đó, các nền tảng số hiện có còn hạn chế về cách tiếp cận công nghệ, thường thiếu tích hợp AI, chưa bao phủ đầy đủ các dạng bài thi và chưa mang lại trải nghiệm người dùng trực quan. Sự phân mảnh của các công cụ hiện có buộc người học phải sử dụng nhiều nền tảng khác nhau, làm giảm hiệu quả và tăng tải nhận thức. Những vấn đề này tạo ra khoảng trống rõ rệt cho một nền tảng tích hợp, thông minh và dễ tiếp cận, có khả năng hỗ trợ ôn luyện toàn diện cho nhiều định dạng kỳ thi khác nhau đồng thời tận dụng công nghệ AI hiện đại để cá nhân hóa việc học \cite{ai_education}.
+Bên cạnh đó, các nền tảng số hiện có còn hạn chế về cách tiếp cận công nghệ, thường thiếu tích hợp AI, chưa bao phủ đầy đủ các dạng bài thi và chưa mang lại trải nghiệm người dùng trực quan. Sự phân mảnh của các công cụ hiện có buộc người học phải sử dụng nhiều nền tảng khác nhau, làm giảm hiệu quả và tăng tải nhận thức. Những vấn đề này tạo ra khoảng trống rõ rệt cho một nền tảng tích hợp, thông minh và dễ tiếp cận, có khả năng hỗ trợ ôn luyện toàn diện cho nhiều định dạng kỳ thi khác nhau đồng thời tận dụng công nghệ AI hiện đại để hỗ trợ việc học \cite{ai_education}.
 
 \section{Mục tiêu}
 
@@ -23,8 +23,6 @@ Mục tiêu chính của dự án là xây dựng một nền tảng học tiế
 
 \begin{enumerate}
     \item \textbf{Hỗ trợ nhiều kỳ thi trên một nền tảng:} Cung cấp một hệ thống thống nhất để người học ôn luyện cho IELTS, TOEIC, TOEFL và SAT. Cách tiếp cận này giảm nhu cầu phải dùng nhiều nguồn khác nhau, đảm bảo định dạng học tập nhất quán và tiết kiệm thời gian.
-    
-    \item \textbf{Cá nhân hóa việc học:} Điều chỉnh lộ trình học theo điểm mạnh và điểm yếu của từng người học. Thông qua phân tích mẫu kết quả, nền tảng có thể tập trung vào những phần người học còn yếu để giúp cải thiện nhanh hơn.
     
     \item \textbf{Luyện tập tương tác:} Cung cấp các bài luyện Nói, Nghe và Viết sát với điều kiện thi thực tế. Người học có thể tăng sự tự tin và độ thành thạo khi luyện tập trong môi trường mô phỏng bài thi thật.
     
@@ -40,23 +38,23 @@ Dự án này giới hạn trong việc thiết kế và phát triển một ứ
 
 \subsection{Đối tượng người dùng}
 
-Người dùng chính của hệ thống là người Việt Nam đang chuẩn bị cho các kỳ thi đánh giá năng lực tiếng Anh như IELTS, TOEFL, TOEIC và SAT. Phiên bản hiện tại chưa mở rộng đến nhóm đối tượng là tổ chức, giảng viên hay nhân sự quản trị học vụ.
+Người dùng chính của hệ thống là người Việt Nam đang chuẩn bị cho các kỳ thi đánh giá năng lực tiếng Anh như IELTS, TOEFL, TOEIC và SAT, phụ huynh của những học sinh, sinh viên có nhu cầu ôn luyện cho các kỳ thi đánh giá và các giảng viên tiếng Anh.
 
 \subsection{Môi trường vận hành}
 
-Ứng dụng được định hướng vận hành hoàn toàn trực tuyến và có thể truy cập thông qua trình duyệt web trên máy tính để bàn và thiết bị di động. Dự án không giới hạn ở một khu vực địa lý cụ thể mà giả định môi trường sử dụng có kết nối Internet phổ thông.
+Ứng dụng được định hướng vận hành hoàn toàn trực tuyến và có thể truy cập thông qua trình duyệt web trên máy tính để bàn và thiết bị di động. Dự án không giới hạn khu vực địa lý cụ thể, chỉ yêu cầu môi trường sử dụng có kết nối Internet.
 
 \subsection{Thời gian thực hiện}
 
-Phạm vi của dự án bao gồm các hoạt động được thực hiện trong thời gian học phần được giao, gồm phân tích yêu cầu, thiết kế hệ thống, hiện thực, kiểm thử và triển khai. Bảo trì dài hạn, vận hành thương mại và mở rộng tính năng trong tương lai không nằm trong phạm vi của đề tài.
+Phạm vi của dự án bao gồm các hoạt động được thực hiện trong thời gian học phần được giao, gồm phân tích yêu cầu, thiết kế hệ thống, hiện thực, kiểm thử và triển khai. Quá trình bảo trì dài hạn, vận hành thương mại hoặc mở rộng tính năng trong tương lai không nằm trong phạm vi của đề tài.
 
 \subsection{Giới hạn kỹ thuật}
 
-Hệ thống sử dụng Next.js \cite{nextjs_docs} cho giao diện người dùng, NestJS \cite{nestjs} cho phát triển API phía máy chủ, MongoDB \cite{mongodb} và PostgreSQL \cite{postgresql} cho lưu trữ dữ liệu, FastAPI \cite{fastapi} cho các thành phần AI và AWS \cite{aws} cho hạ tầng đám mây. Đề tài chỉ tập trung vào việc tích hợp các mô hình hoặc API AI có sẵn; việc huấn luyện hay tinh chỉnh các mô hình AI lớn tùy biến không thuộc phạm vi thực hiện.
+Hệ thống sử dụng Next.js \cite{nextjs_docs} cho giao diện người dùng, NestJS \cite{nestjs} cho phát triển API phía máy chủ, MongoDB \cite{mongodb} và PostgreSQL \cite{postgresql} cho lưu trữ dữ liệu. Đề tài chỉ tập trung vào việc tích hợp các mô hình hoặc API AI có sẵn; việc huấn luyện hay tinh chỉnh các mô hình AI lớn không thuộc phạm vi thực hiện.
 
 \subsection{Ràng buộc}
 
-Dự án được thực hiện trong bối cảnh học thuật nên chịu các ràng buộc điển hình như thời gian phát triển hạn chế, tài nguyên tính toán có giới hạn và yêu cầu hệ thống phải phù hợp với năng lực triển khai của nhóm bốn thành viên. Vì vậy, tăng cường bảo mật ở mức sản phẩm thương mại, cấu hình sẵn sàng cao và tối ưu hiệu năng cấp production không phải là mục tiêu chính.
+Dự án được thực hiện trong bối cảnh học thuật nên chịu các ràng buộc điển hình như thời gian phát triển hạn chế, tài nguyên có giới hạn và yêu cầu hệ thống phải phù hợp với năng lực triển khai của nhóm bốn thành viên. Vì vậy, việc tăng cường bảo mật ở mức sản phẩm thương mại, cấu hình mức độ sẵn sàng cao và tối ưu hiệu năng không nằm trong mục tiêu chính của đề tài.
 
 
 \section{Kết luận chương}
