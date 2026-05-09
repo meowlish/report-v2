@@ -127,25 +127,20 @@ Việc thiết kế hệ thống hiệu quả đòi hỏi phải hiểu rõ nhu 
 
 \subsection{Yêu cầu chức năng}
 {
-\renewcommand{\arraystretch}{1.5} % increase row height
+\renewcommand{\arraystretch}{1.5}
 \begin{tabularx}{\textwidth}{|l|l|X|}
 \hline
 \textbf{ID} & \textbf{Tên FR} & \textbf{Mô tả} \\ \hline
-FR1 & Xác thực và phân quyền & Nền tảng phải triển khai cơ chế xác thực người dùng an toàn với phân quyền theo vai trò (role-based access control). Các vai trò bao gồm Người học, Giáo viên, Mentor, Phụ huynh và Quản trị viên, với các tập quyền riêng biệt. Truy cập khách cần được hỗ trợ cho các tính năng công khai mà không yêu cầu đăng nhập. \\ \hline
-FR2 & Hỗ trợ đa kỳ thi & Nền tảng phải hỗ trợ đầy đủ các định dạng bài thi cho các kỳ thi IELTS, TOEIC, TOEFL và SAT. \\ \hline
-FR3 & Đánh giá Speaking &
-\begin{minipage}[t]{\linewidth}
-Nền tảng phải cung cấp chức năng đánh giá kỹ năng nói toàn diện, bao gồm:
-\begin{itemize}
-    \item Phiên âm giọng nói thành văn bản sử dụng Whisper API với timestamp ở mức từng từ
-    \item Phát hiện khoảng ngừng và im lặng sử dụng librosa để phân tích độ trôi chảy
-    \item Phân tích ngữ điệu và cao độ (F0) bằng Parselmouth để đánh giá phát âm
-    \item Chấm điểm tổng hợp bám sát các tiêu chí band score chính thức
-    \item Phản hồi tự động kèm các đề xuất cải thiện cụ thể
-\end{itemize}
-\end{minipage} \\ \hline
-FR4 & Mô phỏng thi Nói & Nền tảng phải cung cấp các phiên luyện Speaking chân thực, sử dụng Whisper cho đầu vào giọng nói và các câu hỏi được điều chỉnh dựa trên câu trả lời của người dùng. \\ \hline
-FR5 & Quản lý kiến thức & Người dùng phải có thể tạo các bộ flashcard, lưu từ vựng và ngữ pháp, ghi chú trong quá trình luyện tập và tổ chức tài liệu học tập thành các bộ sưu tập riêng. \\ \hline
+FR1 & Xác thực và phân quyền & Hệ thống phải hỗ trợ đăng ký, đăng nhập bằng email và Google OAuth, phân quyền theo vai trò (Người học, Giáo viên, Phụ huynh, Quản trị viên) với cơ chế JWT/Refresh Token. Người dùng có thể xem, cập nhật hồ sơ cá nhân, đổi mật khẩu và liên kết tài khoản. \\ \hline
+FR2 & Luyện thi đa kỳ thi & Hệ thống phải hỗ trợ luyện thi cho IELTS, TOEIC với đầy đủ 4 kỹ năng Nghe, Nói, Đọc, Viết. Người dùng có thể duyệt, chọn đề, làm bài thi và xem kết quả chi tiết. \\ \hline
+FR3 & Chấm điểm Writing bằng AI & Hệ thống phải tự động chấm điểm bài viết Writing theo 4 tiêu chí IELTS (Task Achievement, Coherence \& Cohesion, Lexical Resource, Grammatical Range \& Accuracy), trả về Overall Band và nhận xét chi tiết cho từng tiêu chí. \\ \hline
+FR4 & Luyện Speaking với AI & Hệ thống phải cung cấp phiên luyện nói tương tác với AI, bao gồm phiên âm giọng nói bằng Whisper, phân tích phát âm và ngữ điệu, chấm điểm tổng hợp và phản hồi tự động kèm đề xuất cải thiện. \\ \hline
+FR5 & Theo dõi tiến độ và thành tích & Người dùng có thể xem lịch sử làm bài, thống kê điểm số theo thời gian, biểu đồ tiến độ học tập. Hệ thống tự động cấp huy hiệu dựa trên các tiêu chí đạt được (chuỗi đăng nhập, số bài hoàn thành). Phụ huynh có thể theo dõi tiến trình học của con em. \\ \hline
+FR6 & Quản lý kiến thức & Người dùng có thể tạo và quản lý các bộ thẻ ghi nhớ (flashcard), lưu từ vựng và ghi chú trong quá trình luyện tập. \\ \hline
+FR7 & Giao tiếp thời gian thực & Hệ thống phải hỗ trợ phòng chat nhóm với khả năng gửi tin nhắn thời gian thực qua WebSocket, xem lịch sử tin nhắn. Quản trị viên có thể tạo, xóa phòng chat và cấm người dùng vi phạm. \\ \hline
+FR8 & Thông báo & Hệ thống phải gửi thông báo trực tiếp (real-time notification) khi có sự kiện quan trọng (kết quả chấm bài, huy hiệu mới, tin nhắn). Người dùng có thể xem danh sách thông báo. \\ \hline
+FR9 & Đặt lịch học & Người dùng có thể đặt lịch gọi video với giáo viên, hệ thống đồng bộ lịch trình với Google Calendar. \\ \hline
+FR10 & Quản trị nội dung & Quản trị viên có thể tạo, chỉnh sửa, xóa và phê duyệt đề thi; quản lý phần thi, câu hỏi và thẻ phân loại; quản lý người dùng; quản lý bài viết blog; tải tệp lên hệ thống và xử lý báo cáo vi phạm. \\ \hline
 \caption{Bảng yêu cầu chức năng}
 \end{tabularx}}
 
@@ -214,7 +209,7 @@ UC-0021 & Quản lý thẻ phân loại & UC-0033 & Quản lý báo cáo \\
 \end{tabular}
 \end{table}
 
-\noindent Do giới hạn về số trang, báo cáo sử dụng bảng tổng hợp thay vì sơ đồ use case tổng thể. Cách trình bày này giúp người đọc tra cứu nhanh chức năng hệ thống mà vẫn đảm bảo tính đầy đủ.
+\noindent Do giới hạn về số trang, nhóm xin phép trình bày bảng tổng hợp thay vì sơ đồ use case tổng thể.
 
 \subsection{Các Use case chính}
 Hệ thống bao gồm tổng cộng 38 use case, được đánh số từ UC-0001 đến UC-0038. Phần này trình bày chi tiết các use case quan trọng nhất, tương ứng với các quy trình nghiệp vụ có biểu đồ hoạt động và biểu đồ tuần tự. Đặc tả đầy đủ các use case còn lại được trình bày trong Phụ lục.

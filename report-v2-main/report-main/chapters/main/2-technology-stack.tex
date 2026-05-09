@@ -1,7 +1,7 @@
 \chapter{Nền tảng công nghệ}
 \textit{Chương này phân tích lý do lựa chọn các công nghệ cốt lõi cho nền tảng ôn luyện tiếng Anh tích hợp AI. Mỗi quyết định được đánh giá dựa trên các yêu cầu đặc thù của dự án: xử lý nội dung giáo dục đa phương tiện, tích hợp AI inference, khả năng mở rộng cho lượng người dùng lớn, và tốc độ phát triển phù hợp với tiến độ đồ án.}
 
-\section{Phát triển frontend}
+\section{Công nghệ Frontend}
 
 \subsection{Phân tích và lựa chọn frontend framework}
 
@@ -40,16 +40,16 @@ Nhóm chọn \textbf{Next.js} vì framework này đáp ứng trực tiếp các 
 \item \textbf{TypeScript xuyên suốt}: Sử dụng chung TypeScript với backend NestJS, giúp nhóm tái sử dụng type definition (DTO, API response) giữa frontend và backend, giảm lỗi runtime và tăng tốc phát triển.
 \end{enumerate}
 
-\section{Phát triển máy chủ}
+\section{Công nghệ Backend}
 \subsection{Phân tích và lựa chọn backend framework}
 
-Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng người dùng (authentication, CRUD, real-time notification) và (2) AI inference (chấm bài, phân tích giọng nói, sinh đề). Sự phân tách này dẫn đến kiến trúc dual-backend, đòi hỏi đánh giá framework theo hai vai trò khác nhau.
-
-\textbf{FastAPI} (Python): framework API hiệu năng cao với async native và tự động sinh OpenAPI documentation. Lợi thế cốt lõi: Python là ngôn ngữ chủ đạo của AI/ML ecosystem. Các library thiết yếu cho dự án (Whisper, librosa, LangChain, PyTorch) chỉ hỗ trợ Python hoặc ưu tiên Python. Dùng framework non-Python cho AI backend sẽ tạo overhead xuyên ngôn ngữ không cần thiết. \cite{fastapi}
+Hệ thống cần một backend framework đáp ứng các yêu cầu: application logic hướng người dùng (authentication, CRUD, real-time notification), kiến trúc microservices, và khả năng tích hợp với các dịch vụ AI thông qua hàng đợi bất đồng bộ.
 
 \textbf{NestJS} (TypeScript/Node.js): framework modular với dependency injection, lấy cảm hứng từ Angular. Mô hình event-driven, non-blocking I/O của Node.js phù hợp cho workload concurrency cao (WebSocket, real-time dashboard). Chia sẻ TypeScript với frontend Next.js giúp tái sử dụng type definition và giảm context switching cho nhóm phát triển. \cite{nestjs}
 
-\textbf{ASP.NET Core} (C\#) và \textbf{Spring Boot} (Java): đều là framework enterprise-grade với performance và reliability cao. Tuy nhiên, cả hai đều có chu kỳ phát triển dài hơn, không phù hợp với tiến độ ngắn của đồ án. Quan trọng hơn, AI ecosystem của C\# và Java hạn chế hơn nhiều so với Python; việc tích hợp AI model cuối cùng vẫn đòi hỏi service Python riêng, làm tăng độ phức tạp kiến trúc mà không mang lại lợi ích bù đắp. \cite{aspnet, springboot}
+\textbf{ASP.NET Core} (C\#) và \textbf{Spring Boot} (Java): đều là framework enterprise-grade với performance và reliability cao. Tuy nhiên, cả hai đều có chu kỳ phát triển dài hơn, không phù hợp với tiến độ ngắn của đồ án. \cite{aspnet, springboot}
+
+\textbf{FastAPI} (Python): framework API hiệu năng cao với async native. Phù hợp cho AI/ML workload nhưng không phải thế mạnh cho application logic phức tạp (auth, CRUD, real-time). \cite{fastapi}
 
 \begin{table}[H]
     \centering
@@ -59,31 +59,32 @@ Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng ng
     \resizebox{\textwidth}{!}{%
     \begin{tabular}{|p{2.8cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
         \hline
-        \textbf{Tiêu chí dự án} & \textbf{FastAPI (Python)} & \textbf{NestJS (TypeScript)} & \textbf{ASP.NET / Spring Boot} \\
+        \textbf{Tiêu chí dự án} & \textbf{NestJS (TypeScript)} & \textbf{ASP.NET / Spring Boot} & \textbf{FastAPI (Python)} \\
         \hline
-        Tích hợp AI/ML (Whisper, LangChain, librosa) & Native, tất cả AI library đều Python-first & Không hỗ trợ, cần gọi sang Python service & Hạn chế, cần cầu nối sang Python \\
+        Application logic (auth, CRUD, real-time) & Rất mạnh, event-driven, modular, WebSocket native & Mạnh nhưng chu kỳ phát triển dài hơn & Khả dụng nhưng không phải thế mạnh \\
         \hline
-        Application logic (auth, CRUD, real-time) & Khả dụng nhưng không phải thế mạnh & Rất mạnh, event-driven, modular, WebSocket native & Mạnh nhưng chu kỳ phát triển dài hơn \\
+        Kiến trúc Microservices & Hỗ trợ tốt qua module system, CQRS, message queue & Hỗ trợ tốt nhưng cấu hình phức tạp & Hỗ trợ cơ bản \\
         \hline
-        Tốc độ phát triển (tiến độ đồ án) & Nhanh cho AI endpoint & Rất nhanh, chia sẻ TypeScript với frontend & Chậm hơn, boilerplate nhiều, cấu hình phức tạp \\
+        Tốc độ phát triển (tiến độ đồ án) & Rất nhanh, chia sẻ TypeScript với frontend & Chậm hơn, boilerplate nhiều & Nhanh cho API đơn giản \\
         \hline
-        Tái sử dụng code với frontend & Không (Python vs TypeScript) & Có, chung TypeScript type definitions & Không \\
+        Tái sử dụng code với frontend & Có, chung TypeScript type definitions & Không & Không (Python vs TypeScript) \\
         \hline
     \end{tabular}
     }
 \end{table}
 
-\textbf{Quyết định}: Kiến trúc dual-backend kết hợp NestJS và FastAPI, mỗi framework đảm nhận đúng vai trò mà nó phát huy hiệu quả nhất:
+\textbf{Quyết định}: Sử dụng \textbf{NestJS} làm backend framework duy nhất cho toàn bộ hệ thống, với các lý do:
 
 \begin{itemize}
-\item \textbf{NestJS (Application backend):} Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, enrollment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
-
-\item \textbf{FastAPI (AI backend):} Chuyên trách các tác vụ AI inference: speech-to-text (Whisper), phân tích phát âm (librosa, Parselmouth), chấm điểm bài luận và tự động hóa với LangChain. FastAPI được chọn vì đây là lựa chọn duy nhất cho phép truy cập trực tiếp vào toàn bộ AI/ML ecosystem của Python mà không cần lớp cầu nối. Async native của FastAPI cũng phù hợp với các inference task kéo dài (từ 5 đến 30 giây cho speech analysis).
+\item \textbf{Kiến trúc modular:} NestJS cho phép tổ chức hệ thống thành các module độc lập (auth, exam, achievement, file-service), dễ phân chia công việc trong nhóm 4 người và phù hợp với kiến trúc microservices.
+\item \textbf{Chia sẻ TypeScript với frontend:} Cùng ngôn ngữ TypeScript với Next.js frontend, cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp và context switching.
+\item \textbf{Hỗ trợ real-time và message queue:} Event-driven architecture, WebSocket native và tích hợp RabbitMQ giúp xử lý thông báo thời gian thực và giao tiếp bất đồng bộ với AI server.
+\item \textbf{Tích hợp AI qua queue:} Các tác vụ AI inference (chấm bài Writing, phân tích Speaking) được giao tiếp qua RabbitMQ với AI server riêng biệt, không cần tích hợp AI library trực tiếp vào backend.
 \end{itemize}
 
 \subsection{Phân tích và lựa chọn database}
 
-Hệ thống lưu trữ hai nhóm dữ liệu có tính chất khác nhau: (1) dữ liệu transactional có cấu trúc cố định (user, enrollment, permission) đòi hỏi ACID compliance nghiêm ngặt, và (2) dữ liệu nội dung giáo dục với schema thay đổi thường xuyên (câu hỏi thi, learning analytics, AI-generated content). Sự phân tách này dẫn đến kiến trúc dual-database.
+Hệ thống cần một hệ quản trị cơ sở dữ liệu đáp ứng các yêu cầu: ACID compliance cho dữ liệu transactional (user, enrollment, permission), hỗ trợ quan hệ phức tạp giữa các thực thể, và khả năng lưu trữ dữ liệu bán cấu trúc khi cần.
 
 Bốn hệ quản trị database được đánh giá:
 
@@ -97,9 +98,9 @@ Bốn hệ quản trị database được đánh giá:
         \hline
         \textbf{Database} & \textbf{Loại} & \textbf{Phù hợp cho dự án} & \textbf{Hạn chế với dự án} \\
         \hline
-        \textbf{PostgreSQL} & Relational & ACID mạnh cho auth/enrollment; complex query cho báo cáo; JSONB cho dữ liệu bán cấu trúc & Schema migration phức tạp khi format bài thi thay đổi \\
+        \textbf{PostgreSQL} & Relational & ACID mạnh cho auth/enrollment; complex query cho báo cáo; JSONB cho dữ liệu bán cấu trúc & Schema migration cần quản lý cẩn thận khi format bài thi thay đổi \\
         \hline
-        \textbf{MongoDB} & Document NoSQL & Schema linh hoạt cho nội dung giáo dục; horizontal scaling; aggregation pipeline cho analytics & Không bảo đảm ACID đầy đủ cho transaction phức tạp \\
+        \textbf{MongoDB} & Document NoSQL & Schema linh hoạt cho nội dung giáo dục; horizontal scaling & Không bảo đảm ACID đầy đủ cho transaction phức tạp; thêm công nghệ vào stack \\
         \hline
         \textbf{MySQL} & Relational & Đơn giản, cộng đồng lớn & Thiếu tính năng nâng cao (JSONB, full-text search) so với PostgreSQL \\
         \hline
@@ -109,20 +110,13 @@ Bốn hệ quản trị database được đánh giá:
     }
 \end{table}
 
-\textbf{Quyết định}: Kết hợp PostgreSQL và MongoDB thành kiến trúc dual-database bổ trợ:
+\textbf{Quyết định}: Sử dụng \textbf{PostgreSQL} làm hệ quản trị cơ sở dữ liệu duy nhất cho toàn bộ hệ thống, với các lý do:
 
-\textbf{PostgreSQL} cho web application lõi (NestJS backend):
 \begin{itemize}
-\item Các workflow transactional quan trọng (authentication, ghi danh, quản trị) đòi hỏi ACID compliance nghiêm ngặt mà PostgreSQL bảo đảm đáng tin cậy.
-\item Relational model phù hợp cho dữ liệu có quan hệ rõ ràng: user $\rightarrow$ enrollment $\rightarrow$ exam result.
-\item Hỗ trợ JSONB cho phép lưu metadata linh hoạt khi cần, không bị giới hạn hoàn toàn bởi schema cứng. \cite{postgresql}
-\end{itemize}
-
-\textbf{MongoDB} cho nội dung giáo dục và AI analytics (FastAPI backend):
-\begin{itemize}
-\item Cấu trúc câu hỏi thi thay đổi thường xuyên khi bổ sung định dạng mới (IELTS, TOEIC, custom test). Document model cho phép iteration nhanh mà không cần database migration.
-\item Kết quả phân tích AI (pronunciation score, essay feedback, learning path) có cấu trúc phức tạp và lồng nhau, ánh xạ tự nhiên sang JSON document.
-\item Aggregation pipeline mạnh cho tính toán xu hướng hiệu suất học tập qua nhiều lần làm bài. \cite{mongodb}
+\item Các workflow transactional quan trọng (authentication, ghi danh, quản trị, chấm điểm) đòi hỏi ACID compliance nghiêm ngặt mà PostgreSQL bảo đảm đáng tin cậy.
+\item Relational model phù hợp cho dữ liệu có quan hệ rõ ràng: user $\rightarrow$ enrollment $\rightarrow$ exam result $\rightarrow$ achievement.
+\item Hỗ trợ JSONB cho phép lưu metadata linh hoạt (cấu trúc câu hỏi thi, kết quả phân tích AI) mà không cần thêm một hệ quản trị NoSQL riêng.
+\item Giảm độ phức tạp vận hành: chỉ cần quản lý một loại database, đơn giản hóa backup, monitoring và deployment. \cite{postgresql}
 \end{itemize}
 
 \subsection{Phân tích và lựa chọn giải pháp lưu trữ đối tượng}
