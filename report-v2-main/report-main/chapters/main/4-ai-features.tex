@@ -59,13 +59,6 @@ Nền tảng phục vụ năm vai trò người dùng với phạm vi truy cập
 \caption{Các vai trò người dùng trên nền tảng Lingriser}
 \end{table}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.92\linewidth]{graphics/lingriser/dashboard}
-    \captionsetup{skip=5pt}
-    \caption{Giao diện tổng quan của nền tảng Lingriser dành cho học sinh}
-\end{figure}
-
 \subsection{Hiện thực các thành phần AI cốt lõi}
 
 Mô-đun AI Practice được hiện thực trong \texttt{AIPracticeService} (NestJS), giao tiếp trực tiếp với OpenAI API qua SDK chính thức. Bốn endpoint tương ứng với bốn tác vụ AI độc lập:
@@ -197,13 +190,6 @@ Thống kê AI practice theo tuần được tính bằng truy vấn aggregation
 Module hiện tại của học sinh được tính động tại mỗi request qua \texttt{computeCurrentModuleNumber()}, so sánh ngày hiện tại với \texttt{week\_start\_date}/\texttt{week\_end\_date} của từng module -- không lưu cứng trong database để tránh cần scheduled job cập nhật.
 
 Ngoài dữ liệu số, học sinh có thể upload video tự quay trước (\texttt{video\_type = 'before'}) và sau (\texttt{video\_type = 'after'}) khóa học, lưu trên AWS S3 với tiền tố \texttt{lingriser/student-videos/}. Phụ huynh xem cả hai video qua endpoint \texttt{/progress-videos}, tạo bằng chứng hữu hình về sự tiến bộ trong 8 tuần học.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.88\linewidth]{graphics/lingriser/parents}
-    \captionsetup{skip=5pt}
-    \caption{Giao diện dashboard phụ huynh -- theo dõi tiến trình AI practice và lịch học của con}
-\end{figure}
 
 \subsection{Kết luận mô-đun Speaking}
 
