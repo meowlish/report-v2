@@ -11,7 +11,7 @@ Quá trình đánh giá hệ thống nhắm đến hai nhóm mục tiêu chính:
 
 \section{Tiêu chí và phương pháp đánh giá}
 
-\subsection{Kiểm thử yêu cầu chức năng --- Kiểm thử End-to-End}
+\subsection{Kiểm thử yêu cầu chức năng: Kiểm thử End-to-End}
 
 Toàn bộ yêu cầu chức năng của hệ thống được kiểm chứng thông qua bộ kiểm thử End-to-End (E2E) sử dụng \textbf{Playwright} \cite{playwright_docs} --- một framework kiểm thử tự động hóa trình duyệt. Playwright cho phép mô phỏng các thao tác thực tế của người dùng trên giao diện web, bao gồm điều hướng, nhập liệu, nhấn nút và kiểm tra kết quả hiển thị, qua đó kiểm chứng toàn bộ luồng nghiệp vụ từ đầu đến cuối.
 
@@ -45,7 +45,7 @@ NFR4 & Portability & CI/CD Pipeline & Kiểm chứng thông qua pipeline CI/CD: 
 
 Toàn bộ bộ kiểm thử E2E được thực thi trên cả hai hệ thống English Prep và Lingriser. Kết quả cho thấy \textbf{100\% test case đều pass}, xác nhận rằng tất cả các chức năng chính của hệ thống hoạt động đúng theo đặc tả trong điều kiện vận hành bình thường.
 
-Tuy nhiên, khi hệ thống chịu tải cao (stress test), một số request có thể bị từ chối do cơ chế \textbf{throttle guard} --- bộ giới hạn tốc độ request được tích hợp nhằm bảo vệ hệ thống khỏi bị quá tải. Đây là hành vi có chủ đích trong thiết kế hệ thống: throttle guard ưu tiên duy trì tính ổn định tổng thể thay vì cho phép tất cả request đi qua khi tài nguyên không đủ đáp ứng.
+Tuy nhiên, khi hệ thống chịu tải cao (stress test), một số request có thể bị từ chối do cơ chế \textbf{throttle guard}, bộ giới hạn tốc độ request được tích hợp nhằm bảo vệ hệ thống khỏi bị quá tải. Đây là hành vi có chủ đích trong thiết kế hệ thống: throttle guard ưu tiên duy trì tính ổn định tổng thể thay vì cho phép tất cả request đi qua khi tài nguyên không đủ đáp ứng.
 
 \subsection{Kết quả kiểm thử hiệu năng với k6}
 
@@ -73,7 +73,7 @@ Full Stress & 18 phút & 1.000 & 246.301 & 98,83\% & 5,86 ms & 1,1 GB \\
 \noindent Phân tích kết quả:
 
 \begin{itemize}
-    \item \textbf{Public endpoints:} với 1.000 virtual user đồng thời trong 18 phút, hệ thống xử lý hơn 255.000 request với tỷ lệ check pass đạt 100\% và thời gian phản hồi trung bình chỉ 1,96ms. Phần lớn request (98,41\%) bị throttle guard trả về mã 429, đây là hành vi có chủ đích nhằm bảo vệ hệ thống --- cho thấy cơ chế giới hạn tốc độ hoạt động chính xác dưới tải cao.
+    \item \textbf{Public endpoints:} với 1.000 virtual user đồng thời trong 18 phút, hệ thống xử lý hơn 255.000 request với tỷ lệ check pass đạt 100\% và thời gian phản hồi trung bình chỉ 1,96ms. Phần lớn request (98,41\%) bị throttle guard trả về mã 429, đây là hành vi có chủ đích nhằm bảo vệ hệ thống, cho thấy cơ chế giới hạn tốc độ hoạt động chính xác dưới tải cao.
     \item \textbf{Auth-required endpoints:} khi tăng lên 1.000 VU đồng thời trong 18 phút, hệ thống xử lý hơn 237.000 request với tỷ lệ check pass đạt 98,35\%. Thời gian phản hồi trung bình chỉ 1,8ms cho thấy cơ chế xác thực và xử lý nghiệp vụ hoạt động hiệu quả. Tỷ lệ 1,65\% request không pass chủ yếu do throttle guard kích hoạt khi lượng request vượt ngưỡng cho phép.
     \item \textbf{Full Stress:} kịch bản tải tổng hợp với 1.000 VU và hơn 246.000 request đạt tỷ lệ check pass 98,83\%. Thời gian phản hồi trung bình 5,86ms vẫn nằm trong ngưỡng chấp nhận được, xác nhận hệ thống có khả năng chịu tải ở mức cao mà không suy giảm hiệu năng đáng kể.
 \end{itemize}
@@ -81,12 +81,12 @@ Full Stress & 18 phút & 1.000 & 246.301 & 98,83\% & 5,86 ms & 1,1 GB \\
 \noindent Đối chiếu với các yêu cầu phi chức năng:
 
 \begin{itemize}
-    \item \textbf{NFR1 --- Performance:} thời gian phản hồi trung bình dao động từ 1,8ms đến 5,86ms, thấp hơn đáng kể so với ngưỡng 500ms đã đặt ra cho các thao tác non-AI. Yêu cầu này được đáp ứng.
-    \item \textbf{NFR2 --- Scalability:} hệ thống xử lý thành công hơn 255.000 request với 1.000 VU đồng thời, tỷ lệ check pass đạt 100\% cho public endpoints và trên 98\% cho các endpoint yêu cầu xác thực. Mặc dù chưa đạt đến mốc 10.000 concurrent user do giới hạn tài nguyên VPS hiện tại, kết quả cho thấy kiến trúc microservices cho phép mở rộng khi bổ sung thêm tài nguyên.
-    \item \textbf{NFR4 --- Portability:} pipeline CI/CD chạy thành công trên cả hai môi trường Development và Production với cùng bộ mã nguồn, xác nhận tính nhất quán giữa các môi trường triển khai.
-    \item \textbf{NFR3 --- Availability:} hệ thống được triển khai trên kiến trúc microservices \cite{microservices_newman} với từng service có khả năng khởi động lại độc lập thông qua Docker Compose \cite{dockercompose}. Cơ chế health check và restart policy (\texttt{restart: unless-stopped}) đảm bảo các container tự phục hồi khi gặp sự cố. Trong quá trình vận hành thử nghiệm, hệ thống duy trì hoạt động liên tục mà không ghi nhận thời gian ngừng dịch vụ ngoài kế hoạch. Tuy nhiên, do giới hạn tài nguyên (triển khai trên một VPS duy nhất), mục tiêu 99,9\% availability chưa được kiểm chứng bằng công cụ giám sát chuyên dụng và sẽ cần đánh giá thêm khi mở rộng hạ tầng.
-    \item \textbf{NFR5 --- Security:} toàn bộ giao tiếp giữa client và server được mã hóa qua HTTPS nhờ Caddy \cite{caddy_docs} tự động cấp chứng chỉ TLS. Các service nội bộ được ẩn sau reverse proxy, không tiếp xúc trực tiếp với mạng bên ngoài, giúp giảm bề mặt tấn công. Xác thực người dùng sử dụng JWT với thời hạn hết hạn phù hợp, kết hợp cơ chế role-based access control (RBAC) để phân quyền. Throttle guard được tích hợp để ngăn chặn tấn công brute-force và DDoS ở tầng ứng dụng. Mặc dù chưa thực hiện kiểm thử xâm nhập chuyên sâu (penetration testing), các biện pháp bảo mật cơ bản đã được áp dụng đồng bộ trên toàn hệ thống.
-    \item \textbf{NFR6 --- Maintainability:} mã nguồn được tổ chức theo kiến trúc Clean Architecture \cite{clean_architecture} với separation of concerns rõ ràng giữa domain logic, application logic và infrastructure. Hệ thống sử dụng TypeScript với strict mode cho toàn bộ codebase, kết hợp ESLint để đảm bảo tuân thủ coding standard. Pipeline CI/CD tự động chạy lint và test ở mỗi lần push, giúp phát hiện lỗi sớm. Tuy nhiên, test coverage hiện chưa đạt mục tiêu 80\% do ưu tiên phát triển tính năng trong thời gian hạn chế; đây là hạng mục cần cải thiện trong giai đoạn tiếp theo.
+    \item \textbf{NFR1 (Hiệu năng):} thời gian phản hồi trung bình dao động từ 1,8ms đến 5,86ms, thấp hơn đáng kể so với ngưỡng 500ms đã đặt ra cho các thao tác non-AI. Yêu cầu này được đáp ứng.
+    \item \textbf{NFR2 (Khả năng mở rộng):} hệ thống xử lý thành công hơn 255.000 request với 1.000 VU đồng thời, tỷ lệ kiểm tra đạt 100\% cho public endpoints và trên 98\% cho các endpoint yêu cầu xác thực. Kết quả cho thấy hệ thống đáp ứng mục tiêu 1.000 người dùng đồng thời, đồng thời kiến trúc microservices cho phép mở rộng khi bổ sung thêm tài nguyên.
+    \item \textbf{NFR4 (Tính di động):} pipeline CI/CD chạy thành công trên cả hai môi trường Development và Production với cùng bộ mã nguồn, xác nhận tính nhất quán giữa các môi trường triển khai.
+    \item \textbf{NFR3 (Tính sẵn sàng):} hệ thống được triển khai trên kiến trúc microservices \cite{microservices_newman} với từng service có khả năng khởi động lại độc lập thông qua Docker Compose \cite{dockercompose}. Cơ chế health check và restart policy (\texttt{restart: unless-stopped}) đảm bảo các container tự phục hồi khi gặp sự cố. Trong quá trình vận hành thử nghiệm, hệ thống duy trì hoạt động liên tục mà không ghi nhận thời gian ngừng dịch vụ ngoài kế hoạch. Tuy nhiên, do giới hạn tài nguyên (triển khai trên một VPS duy nhất), mục tiêu 99,9\% availability chưa được kiểm chứng bằng công cụ giám sát chuyên dụng và sẽ cần đánh giá thêm khi mở rộng hạ tầng.
+    \item \textbf{NFR5 (Bảo mật):} toàn bộ giao tiếp giữa client và server được mã hóa qua HTTPS nhờ Caddy \cite{caddy_docs} tự động cấp chứng chỉ TLS. Các service nội bộ được ẩn sau reverse proxy, không tiếp xúc trực tiếp với mạng bên ngoài, giúp giảm bề mặt tấn công. Xác thực người dùng sử dụng JWT với thời hạn hết hạn phù hợp, kết hợp cơ chế role-based access control (RBAC) để phân quyền. Throttle guard được tích hợp để ngăn chặn tấn công brute-force và DDoS ở tầng ứng dụng. Mặc dù chưa thực hiện kiểm thử xâm nhập chuyên sâu (penetration testing), các biện pháp bảo mật cơ bản đã được áp dụng đồng bộ trên toàn hệ thống.
+    \item \textbf{NFR6 (Khả năng bảo trì):} mã nguồn được tổ chức theo kiến trúc Clean Architecture \cite{clean_architecture} với separation of concerns rõ ràng giữa domain logic, application logic và infrastructure. Hệ thống sử dụng TypeScript với strict mode cho toàn bộ codebase, kết hợp ESLint để đảm bảo tuân thủ coding standard. Pipeline CI/CD tự động chạy lint và test ở mỗi lần push, giúp phát hiện lỗi sớm. Tuy nhiên, test coverage hiện chưa đạt mục tiêu 80\% do ưu tiên phát triển tính năng trong thời gian hạn chế; đây là hạng mục cần cải thiện trong giai đoạn tiếp theo.
 \end{itemize}
 
 \section{Kết luận chương}

@@ -45,7 +45,7 @@ Nhóm chọn \textbf{Next.js} vì framework này đáp ứng trực tiếp các 
 
 Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng người dùng (authentication, CRUD, real-time notification) và (2) AI inference (chấm bài, phân tích giọng nói, sinh đề). Sự phân tách này dẫn đến kiến trúc dual-backend, đòi hỏi đánh giá framework theo hai vai trò khác nhau.
 
-\textbf{FastAPI} (Python) --- framework API hiệu năng cao với async native và tự động sinh OpenAPI documentation. Lợi thế cốt lõi: Python là ngôn ngữ chủ đạo của AI/ML ecosystem. Các library thiết yếu cho dự án (Whisper, librosa, LangChain, PyTorch) chỉ hỗ trợ Python hoặc ưu tiên Python. Dùng framework non-Python cho AI backend sẽ tạo overhead xuyên ngôn ngữ không cần thiết. \cite{fastapi}
+\textbf{FastAPI} (Python): framework API hiệu năng cao với async native và tự động sinh OpenAPI documentation. Lợi thế cốt lõi: Python là ngôn ngữ chủ đạo của AI/ML ecosystem. Các library thiết yếu cho dự án (Whisper, librosa, LangChain, PyTorch) chỉ hỗ trợ Python hoặc ưu tiên Python. Dùng framework non-Python cho AI backend sẽ tạo overhead xuyên ngôn ngữ không cần thiết. \cite{fastapi}
 
 \textbf{NestJS} (TypeScript/Node.js) --- framework modular với dependency injection, lấy cảm hứng từ Angular. Mô hình event-driven, non-blocking I/O của Node.js phù hợp cho workload concurrency cao (WebSocket, real-time dashboard). Chia sẻ TypeScript với frontend Next.js giúp tái sử dụng type definition và giảm context switching cho nhóm phát triển. \cite{nestjs}
 
@@ -61,13 +61,13 @@ Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng ng
         \hline
         \textbf{Tiêu chí dự án} & \textbf{FastAPI (Python)} & \textbf{NestJS (TypeScript)} & \textbf{ASP.NET / Spring Boot} \\
         \hline
-        Tích hợp AI/ML (Whisper, LangChain, librosa) & Native --- tất cả AI library đều Python-first & Không hỗ trợ --- cần gọi sang Python service & Hạn chế --- cần cầu nối sang Python \\
+        Tích hợp AI/ML (Whisper, LangChain, librosa) & Native, tất cả AI library đều Python-first & Không hỗ trợ, cần gọi sang Python service & Hạn chế, cần cầu nối sang Python \\
         \hline
-        Application logic (auth, CRUD, real-time) & Khả dụng nhưng không phải thế mạnh & Rất mạnh --- event-driven, modular, WebSocket native & Mạnh nhưng chu kỳ phát triển dài hơn \\
+        Application logic (auth, CRUD, real-time) & Khả dụng nhưng không phải thế mạnh & Rất mạnh, event-driven, modular, WebSocket native & Mạnh nhưng chu kỳ phát triển dài hơn \\
         \hline
-        Tốc độ phát triển (tiến độ đồ án) & Nhanh cho AI endpoint & Rất nhanh --- chia sẻ TypeScript với frontend & Chậm hơn --- boilerplate nhiều, cấu hình phức tạp \\
+        Tốc độ phát triển (tiến độ đồ án) & Nhanh cho AI endpoint & Rất nhanh, chia sẻ TypeScript với frontend & Chậm hơn, boilerplate nhiều, cấu hình phức tạp \\
         \hline
-        Tái sử dụng code với frontend & Không (Python vs TypeScript) & Có --- chung TypeScript type definitions & Không \\
+        Tái sử dụng code với frontend & Không (Python vs TypeScript) & Có, chung TypeScript type definitions & Không \\
         \hline
     \end{tabular}
     }
@@ -76,9 +76,9 @@ Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng ng
 \textbf{Quyết định}: Kiến trúc dual-backend kết hợp NestJS và FastAPI, mỗi framework đảm nhận đúng vai trò mà nó phát huy hiệu quả nhất:
 
 \begin{itemize}
-\item \textbf{NestJS --- Application backend}: Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, payment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
+\item \textbf{NestJS (Application backend):} Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, payment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
 
-\item \textbf{FastAPI --- AI backend}: Chuyên trách các tác vụ AI inference: speech-to-text (Whisper), phân tích phát âm (librosa, Parselmouth), chấm điểm bài luận và tự động hóa với LangChain. FastAPI được chọn vì đây là lựa chọn duy nhất cho phép truy cập trực tiếp vào toàn bộ AI/ML ecosystem của Python mà không cần lớp cầu nối. Async native của FastAPI cũng phù hợp với các inference task kéo dài (5--30 giây cho speech analysis).
+\item \textbf{FastAPI (AI backend):} Chuyên trách các tác vụ AI inference: speech-to-text (Whisper), phân tích phát âm (librosa, Parselmouth), chấm điểm bài luận và tự động hóa với LangChain. FastAPI được chọn vì đây là lựa chọn duy nhất cho phép truy cập trực tiếp vào toàn bộ AI/ML ecosystem của Python mà không cần lớp cầu nối. Async native của FastAPI cũng phù hợp với các inference task kéo dài (từ 5 đến 30 giây cho speech analysis).
 \end{itemize}
 
 \subsection{Phân tích và lựa chọn database}
@@ -125,34 +125,31 @@ Bốn hệ quản trị database được đánh giá:
 \item Aggregation pipeline mạnh cho tính toán xu hướng hiệu suất học tập qua nhiều lần làm bài. \cite{mongodb}
 \end{itemize}
 
-\subsection{Phân tích và lựa chọn cloud infrastructure}
+\subsection{Phân tích và lựa chọn giải pháp lưu trữ đối tượng}
 
-Nền tảng cần cloud infrastructure hỗ trợ: container orchestration cho kiến trúc dual-backend, managed database (MongoDB Atlas, PostgreSQL), và các dịch vụ AI bổ trợ cho trường hợp cần fallback.
+Hệ thống cần một giải pháp lưu trữ đối tượng (object storage) để quản lý các file đa phương tiện như audio ghi âm Speaking, hình ảnh bài thi, tài liệu đính kèm và các file kết quả phân tích AI. Ba giải pháp được đánh giá dựa trên yêu cầu dự án:
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
+    \caption{So sánh giải pháp lưu trữ đối tượng theo yêu cầu dự án}
+    \label{tab:storage_comp}
     \scriptsize
-    \caption{So sánh cloud provider theo yêu cầu dự án}
-    \label{tab:cloud_comp}
+    \resizebox{\textwidth}{!}{%
     \begin{tabular}{|p{3cm}|p{4cm}|p{4cm}|p{3.5cm}|}
         \hline
-        \textbf{Tiêu chí dự án} & \textbf{AWS} & \textbf{Azure} & \textbf{GCP} \\
+        \textbf{Tiêu chí dự án} & \textbf{MinIO} & \textbf{Amazon S3} & \textbf{Google Cloud Storage} \\
         \hline
-        MongoDB Atlas integration & Native --- tích hợp chính thức, latency thấp & Hỗ trợ nhưng không phải ưu tiên & Hỗ trợ nhưng không phải ưu tiên \\
+        Chi phí & Mã nguồn mở, miễn phí khi tự triển khai & Trả phí theo dung lượng và lượt truy cập & Trả phí theo dung lượng và lượt truy cập \\
         \hline
-        Dịch vụ AI bổ trợ (speech) & Transcribe, Polly --- fallback cho Whisper & Cognitive Services & Speech-to-Text \\
+        Tương thích S3 API & Hoàn toàn tương thích, có thể chuyển sang S3 khi cần & Native & Cần adapter riêng \\
         \hline
-        Container orchestration & ECS/EKS --- trưởng thành, tài liệu phong phú & AKS --- tốt nhưng thiên về .NET ecosystem & GKE --- dẫn đầu Kubernetes nhưng learning curve cao hơn \\
+        Triển khai trên VPS & Dễ dàng qua Docker Compose & Không hỗ trợ, chỉ dùng trên AWS & Không hỗ trợ, chỉ dùng trên GCP \\
         \hline
-        Chi phí cho dự án sinh viên & Free tier rộng, nhiều educational credit & Free tier vừa phải & Free tier vừa phải \\
+        Kiểm soát dữ liệu & Toàn quyền, dữ liệu lưu trên máy chủ của nhóm & Dữ liệu trên hạ tầng AWS & Dữ liệu trên hạ tầng Google \\
         \hline
     \end{tabular}
+    }
 \end{table}
 
-\textbf{AWS} được chọn vì ba lý do trực tiếp liên quan đến dự án:
-\begin{itemize}
-\item \textbf{MongoDB Atlas native integration}: Database MongoDB của hệ thống chạy trên MongoDB Atlas --- dịch vụ này tích hợp native với AWS, giúp giảm network latency và đơn giản hóa backup/monitoring so với việc chạy trên cloud provider khác.
-\item \textbf{AI service dự phòng}: AWS Transcribe và Polly cung cấp speech processing fallback khi Whisper self-hosted gặp sự cố hoặc quá tải, bảo đảm tính sẵn sàng cho tính năng luyện nói.
-\item \textbf{Danh mục dịch vụ đầy đủ}: Từ compute (EC2, Lambda) đến storage (S3) và CDN (CloudFront), AWS cung cấp toàn bộ infrastructure cần thiết trong cùng một ecosystem, giảm nhu cầu tích hợp bên thứ ba. \cite{aws}
-\end{itemize}
+MinIO \cite{minio} được chọn vì ba lý do phù hợp với bối cảnh dự án. Thứ nhất, MinIO là giải pháp mã nguồn mở có thể triển khai trực tiếp trên VPS thông qua Docker Compose, không phát sinh chi phí lưu trữ đám mây. Thứ hai, MinIO tương thích hoàn toàn với S3 API, cho phép nhóm sử dụng các thư viện S3 SDK sẵn có trong cả NestJS và FastAPI, đồng thời dễ dàng chuyển sang Amazon S3 khi cần mở rộng mà không phải thay đổi mã nguồn. Thứ ba, MinIO Console cung cấp giao diện quản trị trực quan để giám sát dung lượng, quản lý bucket và theo dõi hoạt động tải file, phù hợp cho giai đoạn phát triển và vận hành thử nghiệm.
 

@@ -3,92 +3,45 @@
 
 \section{Môi trường triển khai}
 
-Hệ thống được tổ chức thành hai môi trường triển khai riêng biệt: \textbf{Development} và \textbf{Production}, mỗi môi trường có pipeline CI/CD riêng nhằm đảm bảo tính cách ly và kiểm soát chất lượng ở từng giai đoạn phát triển.
+Hệ thống được tổ chức thành hai môi trường triển khai riêng biệt: Development và Production, mỗi môi trường có pipeline CI/CD riêng nhằm đảm bảo tính cách ly và kiểm soát chất lượng ở từng giai đoạn phát triển.
 
 \subsection{Phân chia môi trường}
 
-\begin{itemize}
-    \item \textbf{Môi trường Development:} phục vụ quá trình phát triển và kiểm thử nội bộ. Mọi nhánh ngoài \texttt{master} đều kích hoạt pipeline Dev CI/CD, thực hiện các bước kiểm tra mã nguồn (lint), chạy unit test và build ứng dụng để phát hiện lỗi sớm trước khi tích hợp vào nhánh chính.
-    \item \textbf{Môi trường Production:} chỉ được cập nhật khi có thay đổi trên nhánh \texttt{master}. Pipeline Production CI/CD bổ sung bước đóng gói Docker image và đẩy lên Docker Hub, sẵn sàng triển khai lên máy chủ vận hành.
-\end{itemize}
+Môi trường Development phục vụ quá trình phát triển và kiểm thử nội bộ. Mọi nhánh ngoài \texttt{master} đều kích hoạt pipeline Dev CI/CD, thực hiện các bước kiểm tra mã nguồn (lint), chạy unit test và build ứng dụng để phát hiện lỗi sớm trước khi tích hợp vào nhánh chính. Môi trường Production chỉ được cập nhật khi có thay đổi trên nhánh \texttt{master}, với pipeline bổ sung bước đóng gói Docker image và đẩy lên Docker Hub, sẵn sàng triển khai lên máy chủ vận hành.
 
 \subsection{Tích hợp và phân phối liên tục (CI/CD)}
 
-Cả hai môi trường đều sử dụng GitHub Actions \cite{github_actions} làm nền tảng CI/CD. Pipeline chung cho mỗi lần push bao gồm các bước tuần tự:
+Cả hai môi trường đều sử dụng GitHub Actions \cite{github_actions} làm nền tảng CI/CD. Pipeline chung cho mỗi lần push bao gồm các bước tuần tự: tải toàn bộ mã nguồn từ repository, thiết lập Node.js (phiên bản 24.13.0) và pnpm (phiên bản 10.28.2) làm trình quản lý gói, chạy \texttt{pnpm install -{}-frozen-lockfile} để đảm bảo phiên bản các package nhất quán với lockfile, sinh Prisma Client từ schema cho tất cả các service trong monorepo, kiểm tra mã nguồn bằng lệnh lint, thực thi toàn bộ unit test và integration test, và cuối cùng biên dịch toàn bộ các ứng dụng trong monorepo.
 
-\begin{enumerate}
-    \item \textbf{Checkout mã nguồn} --- tải toàn bộ mã nguồn từ repository.
-    \item \textbf{Cài đặt môi trường} --- thiết lập Node.js (phiên bản 24.13.0) và pnpm (phiên bản 10.28.2) làm trình quản lý gói.
-    \item \textbf{Cài đặt phụ thuộc} --- chạy \texttt{pnpm install -{}-frozen-lockfile} để đảm bảo phiên bản các package nhất quán với lockfile.
-    \item \textbf{Sinh mã Prisma} --- chạy \texttt{nx run-many -t prisma:generate} để tạo Prisma Client từ schema cho tất cả các service trong monorepo.
-    \item \textbf{Kiểm tra mã nguồn (Lint)} --- chạy \texttt{nx run-many -t lint} để phát hiện các vi phạm quy tắc viết mã.
-    \item \textbf{Chạy kiểm thử (Test)} --- chạy \texttt{nx run-many -t test} để thực thi toàn bộ unit test và integration test.
-    \item \textbf{Build ứng dụng} --- chạy \texttt{nx run-many -t build} để biên dịch toàn bộ các ứng dụng trong monorepo.
-\end{enumerate}
-
-\noindent Riêng pipeline Production bổ sung job \textbf{Docker} chạy sau khi job Build thành công, thực hiện:
-
-\begin{enumerate}
-    \item Đăng nhập Docker Hub bằng credentials được lưu trong GitHub Secrets.
-    \item Build Docker image từ Dockerfile tại thư mục gốc dự án.
-    \item Push image lên Docker Hub để sẵn sàng triển khai.
-\end{enumerate}
+Riêng pipeline Production bổ sung job Docker chạy sau khi job biên dịch thành công. Job này đăng nhập Docker Hub bằng thông tin xác thực lưu trong GitHub Secrets, build Docker image từ Dockerfile tại thư mục gốc dự án và push image lên Docker Hub để sẵn sàng triển khai.
 
 \subsection{Hệ thống ghi log và giám sát}
 
-Để theo dõi hoạt động của hệ thống trong quá trình vận hành, nhóm sử dụng kết hợp nhiều công cụ:
-
-\begin{itemize}
-    \item \textbf{Winston Logger:} thư viện ghi log cho Node.js, được tích hợp vào tất cả các service backend. Log được xuất ra file theo các mức độ nghiêm trọng (error, warn, info, debug), hỗ trợ truy vết sự cố và phân tích hành vi hệ thống.
-    \item \textbf{Adminer:} giao diện web quản trị cơ sở dữ liệu, cho phép truy vấn, kiểm tra và chỉnh sửa dữ liệu trực tiếp trên môi trường triển khai.
-    \item \textbf{Redis Insight:} công cụ trực quan hóa và giám sát Redis, hỗ trợ theo dõi trạng thái cache, phiên đăng nhập và hàng đợi.
-    \item \textbf{RabbitMQ Management:} bảng điều khiển web tích hợp sẵn của RabbitMQ, cho phép theo dõi hàng đợi tin nhắn, tốc độ xử lý, số lượng consumer và các kết nối đang hoạt động.
-    \item \textbf{MinIO Console:} giao diện quản trị MinIO, dùng để giám sát dung lượng lưu trữ, quản lý bucket và theo dõi hoạt động tải lên/tải xuống file.
-\end{itemize}
+Để theo dõi hoạt động của hệ thống trong quá trình vận hành, nhóm sử dụng kết hợp nhiều công cụ. Winston Logger được tích hợp vào tất cả các service backend, cho phép ghi log theo các mức độ nghiêm trọng (error, warn, info, debug) vào file, hỗ trợ truy vết sự cố và phân tích hành vi hệ thống. Adminer cung cấp giao diện web quản trị cơ sở dữ liệu, cho phép truy vấn, kiểm tra và chỉnh sửa dữ liệu trực tiếp trên môi trường triển khai. Ngoài ra, Redis Insight được dùng để trực quan hóa và giám sát Redis, trong khi RabbitMQ Management cho phép theo dõi hàng đợi tin nhắn, tốc độ xử lý và các kết nối đang hoạt động. MinIO Console phục vụ giám sát dung lượng lưu trữ, quản lý bucket và theo dõi hoạt động tải lên, tải xuống file.
 
 \section{Kiến trúc triển khai}
 
-\subsection{Backend}
+Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng Caddy \cite{caddy_docs} làm reverse proxy và web server, kết hợp với dịch vụ No-IP Dynamic DNS để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
 
-Toàn bộ các service backend được triển khai trên một máy chủ ảo riêng (VPS). Hệ thống sử dụng \textbf{Caddy} \cite{caddy_docs} làm reverse proxy và web server, kết hợp với dịch vụ \textbf{No-IP Dynamic DNS} để ánh xạ tên miền đến địa chỉ IP động của VPS, đảm bảo hệ thống luôn truy cập được từ bên ngoài mà không cần IP tĩnh.
+Về kiến trúc giao tiếp, API Gateway đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức gRPC \cite{grpc_docs}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức HTTP với cơ chế proxy để duy trì kết nối hai chiều. Các service nội bộ được ẩn sau reverse proxy và DNS resolver, không tiếp xúc trực tiếp với mạng bên ngoài, giúp giảm thiểu bề mặt tấn công và tăng tính bảo mật.
 
-Kiến trúc giao tiếp giữa các thành phần được tổ chức như sau:
+Hệ thống cũng tích hợp Restate \cite{restate_docs}, một nền tảng quản lý workflow phân tán, nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Thay vì triển khai thủ công pattern Saga hoặc Two-Phase Commit, Restate cung cấp mô hình lập trình tuần tự với khả năng tự phục hồi, giúp giảm đáng kể độ phức tạp khi phối hợp nhiều service. Khi một bước trong workflow thất bại, Restate tự động thử lại với chiến lược exponential backoff (khoảng thời gian giữa các lần retry tăng theo cấp số nhân), nhằm tránh hiện tượng thundering herd. Mỗi bước thực thi được ghi lại, cho phép workflow tiếp tục từ điểm lỗi thay vì chạy lại từ đầu, đảm bảo tính idempotent và giảm lãng phí tài nguyên.
 
-\begin{itemize}
-    \item \textbf{API Gateway} đóng vai trò điểm vào duy nhất, nhận request từ client và chuyển tiếp đến các service nội bộ thông qua giao thức \textbf{gRPC} \cite{grpc_docs}. Đối với các kết nối WebSocket (dùng cho chức năng chat và thông báo thời gian thực), gateway sử dụng giao thức \textbf{HTTP} với cơ chế proxy để duy trì kết nối hai chiều.
-    \item Các service nội bộ được \textbf{ẩn sau reverse proxy và DNS resolver}, không tiếp xúc trực tiếp với mạng bên ngoài, giảm thiểu bề mặt tấn công và tăng tính bảo mật.
-\end{itemize}
-
-\subsection{Restate --- Bảo đảm tính ổn định của workflow}
-
-Hệ thống tích hợp \textbf{Restate} \cite{restate_docs} --- một nền tảng quản lý workflow phân tán --- nhằm đảm bảo tính ổn định và nhất quán cho các tác vụ liên quan đến nhiều service. Restate mang lại các lợi ích:
-
-\begin{itemize}
-    \item \textbf{Đơn giản hóa distributed transaction:} thay vì triển khai thủ công pattern Saga hoặc Two-Phase Commit, Restate cung cấp mô hình lập trình tuần tự với khả năng tự phục hồi, giúp giảm đáng kể độ phức tạp khi phối hợp nhiều service.
-    \item \textbf{Cơ chế retry tự động:} khi một bước trong workflow thất bại, Restate tự động thử lại với chiến lược \textbf{exponential backoff} --- khoảng thời gian giữa các lần retry tăng theo cấp số nhân --- nhằm tránh hiện tượng \textbf{thundering herd} (nhiều request đồng loạt gây quá tải hệ thống).
-    \item \textbf{Bảo toàn trạng thái:} mỗi bước thực thi được ghi lại, cho phép workflow tiếp tục từ điểm lỗi thay vì chạy lại từ đầu, đảm bảo tính idempotent và giảm lãng phí tài nguyên.
-\end{itemize}
+Đối với các tác vụ xử lý bất đồng bộ, hệ thống sử dụng RabbitMQ với kiến trúc hai hàng đợi để hiện thực cơ chế exponential backoff. Hàng đợi chính (main queue) nhận các message từ các service và chuyển đến consumer tương ứng để xử lý. Khi một message xử lý thất bại, thay vì thử lại ngay lập tức, message được chuyển sang hàng đợi Dead Letter Queue (DLQ) có cấu hình TTL (Time-to-Live). Sau khi hết thời gian TTL, message tự động được chuyển ngược lại hàng đợi chính để thử lại. Mỗi lần thất bại, giá trị TTL được tăng theo cấp số nhân, tạo ra cơ chế exponential backoff mà không cần logic phức tạp ở tầng ứng dụng. Cách tiếp cận này đặc biệt hữu ích cho các tác vụ AI có thời gian xử lý dài như chấm điểm Writing hoặc phân tích Speaking, giúp hệ thống tự phục hồi khi service AI tạm thời quá tải.
 
 \section{Quy trình triển khai và vận hành}
 
 \subsection{Môi trường phát triển}
 
-Nhóm phát triển sử dụng hệ điều hành \textbf{Windows} làm môi trường phát triển chính. Mã nguồn được tổ chức dưới dạng \textbf{Nx monorepo} \cite{nx_monorepo}, cho phép quản lý nhiều ứng dụng và thư viện dùng chung trong cùng một repository, đồng thời tận dụng cơ chế cache và phân tích phụ thuộc của Nx để tối ưu thời gian build.
+Nhóm phát triển sử dụng hệ điều hành Windows làm môi trường phát triển chính. Mã nguồn được tổ chức dưới dạng Nx monorepo \cite{nx_monorepo}, cho phép quản lý nhiều ứng dụng và thư viện dùng chung trong cùng một repository, đồng thời tận dụng cơ chế cache và phân tích phụ thuộc của Nx để tối ưu thời gian biên dịch.
 
 \subsection{Quy trình build và triển khai}
 
-Quy trình đưa mã nguồn từ môi trường phát triển lên production diễn ra theo các bước:
-
-\begin{enumerate}
-    \item \textbf{Merge vào nhánh master:} sau khi code review và kiểm thử, mã nguồn được merge vào nhánh \texttt{master}.
-    \item \textbf{Pipeline CI/CD tự động:} GitHub Actions tự động kích hoạt pipeline, thực hiện lint, test và build toàn bộ monorepo.
-    \item \textbf{Đóng gói Docker:} ứng dụng được đóng gói thành Docker image thông qua Dockerfile tại thư mục gốc.
-    \item \textbf{Triển khai bằng Docker Compose:} trên VPS, Docker Compose được sử dụng để khởi chạy toàn bộ các container bao gồm các service backend, cơ sở dữ liệu, Redis, RabbitMQ, MinIO và các công cụ giám sát.
-\end{enumerate}
+Quy trình đưa mã nguồn từ môi trường phát triển lên production diễn ra theo trình tự sau. Trước tiên, sau khi code review và kiểm thử, mã nguồn được merge vào nhánh \texttt{master}. GitHub Actions tự động kích hoạt pipeline, thực hiện lint, test và build toàn bộ monorepo. Tiếp theo, ứng dụng được đóng gói thành Docker image thông qua Dockerfile tại thư mục gốc. Cuối cùng, trên VPS, Docker Compose được sử dụng để khởi chạy toàn bộ các container bao gồm các service backend, cơ sở dữ liệu, Redis, RabbitMQ, MinIO và các công cụ giám sát.
 
 \subsection{Quản lý cơ sở dữ liệu}
 
-Đối với database migration, nhóm sử dụng \textbf{Prisma Migrate} \cite{prisma_docs} để quản lý phiên bản schema cơ sở dữ liệu. Trong quá trình phát triển, lập trình viên tạo các file migration thông qua lệnh \texttt{prisma migrate dev}, ghi lại mọi thay đổi cấu trúc bảng. Khi triển khai lên production, lệnh \texttt{prisma migrate deploy} được thực thi để áp dụng các migration đã được kiểm chứng, đảm bảo sự đồng bộ giữa schema trong mã nguồn và cơ sở dữ liệu thực tế.
+Đối với database migration, nhóm sử dụng Prisma Migrate \cite{prisma_docs} để quản lý phiên bản schema cơ sở dữ liệu. Trong quá trình phát triển, lập trình viên tạo các file migration thông qua lệnh \texttt{prisma migrate dev}, ghi lại mọi thay đổi cấu trúc bảng. Khi triển khai lên production, lệnh \texttt{prisma migrate deploy} được thực thi để áp dụng các migration đã được kiểm chứng, đảm bảo sự đồng bộ giữa schema trong mã nguồn và cơ sở dữ liệu thực tế.
 
 \subsection{Cập nhật phiên bản}
 

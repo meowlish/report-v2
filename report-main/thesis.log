@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  9 MAY 2026 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  9 MAY 2026 13:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1396,7 +1396,7 @@ Package hyperref Info: Link coloring ON on input line 93.
 \openout5 = `thesis.out'.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 99.
-<graphics/hcmut.png, id=597, 291.0072pt x 293.898pt>
+<graphics/hcmut.png, id=585, 291.0072pt x 293.898pt>
 File: graphics/hcmut.png Graphic file (type png)
 <use graphics/hcmut.png>
 Package pdftex.def Info: graphics/hcmut.png  used on input line 100.
@@ -1474,10 +1474,10 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 102.
 ] [8]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 101.
+            Default family used instead on input line 98.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 101.
+            Default family used instead on input line 98.
  [9{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [10]) [11
 ]
 (./thesis.lot [12
@@ -1517,67 +1517,59 @@ CHƯƠNG 2.
 ] [6]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
- [7] [8]
-Overfull \hbox (7.3208pt too wide) in paragraph at lines 137--150
- [][] 
- []
-
-[9]) [10]
+ [7] [8]) [9]
 \openout2 = `chapters/main/3-system-design-analysis.aux'.
 
- (./chapters/main/3-system-design-analysis.tex
+ (./chapters/main/3-system-design-analysis.tex [10
+
+
+
+
+]
 CHƯƠNG 3.
-<graphics/related_products/study4.png, id=1180, 1497.1935pt x 633.567pt>
+<graphics/related_products/study4.png, id=1165, 1497.1935pt x 633.567pt>
 File: graphics/related_products/study4.png Graphic file (type png)
 <use graphics/related_products/study4.png>
 Package pdftex.def Info: graphics/related_products/study4.png  used on input li
 ne 10.
 (pdftex.def)             Requested size: 318.66948pt x 134.85114pt.
-[11
-
-
-
-
- <./graphics/related_products/study4.png>]
-<graphics/related_products/ito.png, id=1186, 886.512pt x 858.20625pt>
+[11 <./graphics/related_products/study4.png>]
+<graphics/related_products/ito.png, id=1171, 886.512pt x 858.20625pt>
 File: graphics/related_products/ito.png Graphic file (type png)
 <use graphics/related_products/ito.png>
 Package pdftex.def Info: graphics/related_products/ito.png  used on input line 
 27.
 (pdftex.def)             Requested size: 318.66948pt x 308.49568pt.
  [12] [13 <./graphics/related_products/ito.png>]
-<graphics/related_products/forum.png, id=1197, 1478.52374pt x 701.62125pt>
+<graphics/related_products/forum.png, id=1182, 1478.52374pt x 701.62125pt>
 File: graphics/related_products/forum.png Graphic file (type png)
 <use graphics/related_products/forum.png>
 Package pdftex.def Info: graphics/related_products/forum.png  used on input lin
 e 47.
 (pdftex.def)             Requested size: 318.66948pt x 151.22032pt.
-<graphics/related_products/prep.png, id=1198, 1282.7925pt x 831.70724pt>
+<graphics/related_products/prep.png, id=1183, 1282.7925pt x 831.70724pt>
 File: graphics/related_products/prep.png Graphic file (type png)
 <use graphics/related_products/prep.png>
 Package pdftex.def Info: graphics/related_products/prep.png  used on input line
  63.
 (pdftex.def)             Requested size: 455.24411pt x 295.15027pt.
  [14 <./graphics/related_products/forum.png>] [15 <./graphics/related_products/
-prep.png>] [16]
-ignored: Infinite glue shrinkage found in box being split [17]
-ignored: Infinite gl
-ue shrinkage found in box being split [18] [19]
-<graphics/usecases/server.png, id=1226, 1707.37875pt x 2372.865pt>
+prep.png>] [16] [17] [18] [19]
+<graphics/usecases/server.png, id=1211, 1707.37875pt x 2372.865pt>
 File: graphics/usecases/server.png Graphic file (type png)
 <use graphics/usecases/server.png>
-Package pdftex.def Info: graphics/usecases/server.png  used on input line 176.
+Package pdftex.def Info: graphics/usecases/server.png  used on input line 182.
 (pdftex.def)             Requested size: 455.24411pt x 632.68039pt.
  [20]
 Overfull \vbox (13.77109pt too high) has occurred while \output is active []
 
 
 [21 <./graphics/usecases/server.png (PNG copy)>]
-<graphics/usecases/engapp-v2.png, id=1236, 1836.8625pt x 1951.29pt>
+<graphics/usecases/engapp-v2.png, id=1221, 1836.8625pt x 1951.29pt>
 File: graphics/usecases/engapp-v2.png Graphic file (type png)
 <use graphics/usecases/engapp-v2.png>
-Package pdftex.def Info: graphics/usecases/engapp-v2.png  used on input line 18
-6.
+Package pdftex.def Info: graphics/usecases/engapp-v2.png  used on input line 19
+2.
 (pdftex.def)             Requested size: 455.24411pt x 483.59335pt.
  [22 <./graphics/usecases/engapp-v2.png (PNG copy)>] (./chapters/main/usecases/
 0012-lambaithi.tex
@@ -1597,94 +1589,94 @@ d in box being split [27])
 (./chapters/main/usecases/0038-luyentapspeakingai.tex
 ignored: Infinite glue shrinkage fo
 und in box being split [28])
-<graphics/activity/lam_va_cham_diem_bai_thi.png, id=1335, 1409.265pt x 1911.14p
+<graphics/activity/lam_va_cham_diem_bai_thi.png, id=1320, 1409.265pt x 1911.14p
 t>
 File: graphics/activity/lam_va_cham_diem_bai_thi.png Graphic file (type png)
 <use graphics/activity/lam_va_cham_diem_bai_thi.png>
 Package pdftex.def Info: graphics/activity/lam_va_cham_diem_bai_thi.png  used o
-n input line 234.
+n input line 240.
 (pdftex.def)             Requested size: 455.24411pt x 617.3513pt.
  [29] [30]
 Overfull \vbox (33.46397pt too high) has occurred while \output is active []
 
 
 [31 <./graphics/activity/lam_va_cham_diem_bai_thi.png (PNG copy)>]
-<graphics/activity/tao_va_quan_ly_de_thi.png, id=1360, 1325.95375pt x 1208.515p
+<graphics/activity/tao_va_quan_ly_de_thi.png, id=1345, 1325.95375pt x 1208.515p
 t>
 File: graphics/activity/tao_va_quan_ly_de_thi.png Graphic file (type png)
 <use graphics/activity/tao_va_quan_ly_de_thi.png>
 Package pdftex.def Info: graphics/activity/tao_va_quan_ly_de_thi.png  used on i
-nput line 245.
+nput line 251.
 (pdftex.def)             Requested size: 455.24411pt x 414.90968pt.
  [32 <./graphics/activity/tao_va_quan_ly_de_thi.png (PNG copy)>]
-<graphics/activity/luyen_noi_ai.png, id=1366, 1509.64pt x 3517.14pt>
+<graphics/activity/luyen_noi_ai.png, id=1351, 1509.64pt x 3517.14pt>
 File: graphics/activity/luyen_noi_ai.png Graphic file (type png)
 <use graphics/activity/luyen_noi_ai.png>
 Package pdftex.def Info: graphics/activity/luyen_noi_ai.png  used on input line
- 256.
+ 262.
 (pdftex.def)             Requested size: 455.24411pt x 1060.6242pt.
  [33] [34]
 Overfull \vbox (475.84889pt too high) has occurred while \output is active []
 
 
 [35 <./graphics/activity/luyen_noi_ai.png (PNG copy)>]
-<graphics/activity/qua_trinh_hoc_tap.png, id=1381, 2011.515pt x 3918.64pt>
+<graphics/activity/qua_trinh_hoc_tap.png, id=1365, 2011.515pt x 3918.64pt>
 File: graphics/activity/qua_trinh_hoc_tap.png Graphic file (type png)
 <use graphics/activity/qua_trinh_hoc_tap.png>
 Package pdftex.def Info: graphics/activity/qua_trinh_hoc_tap.png  used on input
- line 267.
+ line 273.
 (pdftex.def)             Requested size: 455.24411pt x 886.85802pt.
  [36] [37]
 Overfull \vbox (302.0827pt too high) has occurred while \output is active []
 
 
 [38 <./graphics/activity/qua_trinh_hoc_tap.png (PNG copy)>]
-<graphics/activity/thanh_toan.png, id=1396, 1509.64pt x 2312.64pt>
+<graphics/activity/thanh_toan.png, id=1381, 1509.64pt x 2312.64pt>
 File: graphics/activity/thanh_toan.png Graphic file (type png)
 <use graphics/activity/thanh_toan.png>
 Package pdftex.def Info: graphics/activity/thanh_toan.png  used on input line 2
-78.
+84.
 (pdftex.def)             Requested size: 455.24411pt x 697.39674pt.
  [39] [40]
 Overfull \vbox (112.26863pt too high) has occurred while \output is active []
 
 
 [41 <./graphics/activity/thanh_toan.png (PNG copy)>]
-<graphics/activity/he_thong_huy_hieu.png, id=1410, 1258.7025pt x 1409.265pt>
+<graphics/activity/he_thong_huy_hieu.png, id=1395, 1258.7025pt x 1409.265pt>
 File: graphics/activity/he_thong_huy_hieu.png Graphic file (type png)
 <use graphics/activity/he_thong_huy_hieu.png>
 Package pdftex.def Info: graphics/activity/he_thong_huy_hieu.png  used on input
- line 289.
+ line 295.
 (pdftex.def)             Requested size: 455.24411pt x 509.70042pt.
  [42 <./graphics/activity/he_thong_huy_hieu.png (PNG copy)>]
-<graphics/activity/thong_bao.png, id=1416, 957.5775pt x 1409.265pt>
+<graphics/activity/thong_bao.png, id=1401, 957.5775pt x 1409.265pt>
 File: graphics/activity/thong_bao.png Graphic file (type png)
 <use graphics/activity/thong_bao.png>
 Package pdftex.def Info: graphics/activity/thong_bao.png  used on input line 30
-0.
+6.
 (pdftex.def)             Requested size: 455.24411pt x 669.98845pt.
  [43] [44]
 Overfull \vbox (84.86034pt too high) has occurred while \output is active []
 
 
 [45 <./graphics/activity/thong_bao.png (PNG copy)>]
-<graphics/sequence/lam_va_cham_diem_bai_thi.png, id=1431, 1574.88374pt x 2111.8
+<graphics/sequence/lam_va_cham_diem_bai_thi.png, id=1416, 1574.88374pt x 2111.8
 9pt>
 File: graphics/sequence/lam_va_cham_diem_bai_thi.png Graphic file (type png)
 <use graphics/sequence/lam_va_cham_diem_bai_thi.png>
 Package pdftex.def Info: graphics/sequence/lam_va_cham_diem_bai_thi.png  used o
-n input line 316.
+n input line 322.
 (pdftex.def)             Requested size: 455.24411pt x 610.4667pt.
  [46] [47]
 Overfull \vbox (23.74258pt too high) has occurred while \output is active []
 
 
 [48 <./graphics/sequence/lam_va_cham_diem_bai_thi.png (PNG copy)>]
-<graphics/sequence/tao_va_quan_ly_de_thi.png, id=1445, 1308.89pt x 1710.39pt>
+<graphics/sequence/tao_va_quan_ly_de_thi.png, id=1430, 1308.89pt x 1710.39pt>
 File: graphics/sequence/tao_va_quan_ly_de_thi.png Graphic file (type png)
 <use graphics/sequence/tao_va_quan_ly_de_thi.png>
 Package pdftex.def Info: graphics/sequence/tao_va_quan_ly_de_thi.png  used on i
-nput line 327.
+nput line 333.
 (pdftex.def)             Requested size: 455.24411pt x 594.88731pt.
  [49]
 [50]
@@ -1692,161 +1684,161 @@ Overfull \vbox (11.35278pt too high) has occurred while \output is active []
 
 
 [51 <./graphics/sequence/tao_va_quan_ly_de_thi.png (PNG copy)>]
-<graphics/sequence/luyen_noi_ai.png, id=1460, 1228.59pt x 2763.32375pt>
+<graphics/sequence/luyen_noi_ai.png, id=1445, 1228.59pt x 2763.32375pt>
 File: graphics/sequence/luyen_noi_ai.png Graphic file (type png)
 <use graphics/sequence/luyen_noi_ai.png>
 Package pdftex.def Info: graphics/sequence/luyen_noi_ai.png  used on input line
- 338.
+ 344.
 (pdftex.def)             Requested size: 455.24411pt x 1023.93173pt.
  [52] [53]
 Overfull \vbox (439.15642pt too high) has occurred while \output is active []
 
 
 [54 <./graphics/sequence/luyen_noi_ai.png (PNG copy)>]
-<graphics/sequence/qua_trinh_hoc_tap.png, id=1474, 1529.715pt x 4369.32375pt>
+<graphics/sequence/qua_trinh_hoc_tap.png, id=1459, 1529.715pt x 4369.32375pt>
 File: graphics/sequence/qua_trinh_hoc_tap.png Graphic file (type png)
 <use graphics/sequence/qua_trinh_hoc_tap.png>
 Package pdftex.def Info: graphics/sequence/qua_trinh_hoc_tap.png  used on input
- line 349.
+ line 355.
 (pdftex.def)             Requested size: 455.24411pt x 1300.27335pt.
  [55] [56]
 Overfull \vbox (715.49803pt too high) has occurred while \output is active []
 
 
 [57 <./graphics/sequence/qua_trinh_hoc_tap.png (PNG copy)>]
-<graphics/sequence/thanh_toan.png, id=1489, 1289.81876pt x 2261.44875pt>
+<graphics/sequence/thanh_toan.png, id=1474, 1289.81876pt x 2261.44875pt>
 File: graphics/sequence/thanh_toan.png Graphic file (type png)
 <use graphics/sequence/thanh_toan.png>
 Package pdftex.def Info: graphics/sequence/thanh_toan.png  used on input line 3
-60.
+66.
 (pdftex.def)             Requested size: 455.24411pt x 798.17876pt.
  [58] [59]
 Overfull \vbox (210.21385pt too high) has occurred while \output is active []
 
 
 [60 <./graphics/sequence/thanh_toan.png (PNG copy)>]
-<graphics/sequence/he_thong_huy_hieu.png, id=1504, 1559.8275pt x 2111.89pt>
+<graphics/sequence/he_thong_huy_hieu.png, id=1488, 1559.8275pt x 2111.89pt>
 File: graphics/sequence/he_thong_huy_hieu.png Graphic file (type png)
 <use graphics/sequence/he_thong_huy_hieu.png>
 Package pdftex.def Info: graphics/sequence/he_thong_huy_hieu.png  used on input
- line 371.
+ line 377.
 (pdftex.def)             Requested size: 455.24411pt x 616.36385pt.
  [61] [62]
 Overfull \vbox (32.82932pt too high) has occurred while \output is active []
 
 
 [63 <./graphics/sequence/he_thong_huy_hieu.png (PNG copy)>]
-<graphics/sequence/thong_bao.png, id=1519, 1158.3275pt x 1710.39pt>
+<graphics/sequence/thong_bao.png, id=1504, 1158.3275pt x 1710.39pt>
 File: graphics/sequence/thong_bao.png Graphic file (type png)
 <use graphics/sequence/thong_bao.png>
 Package pdftex.def Info: graphics/sequence/thong_bao.png  used on input line 38
-2.
+8.
 (pdftex.def)             Requested size: 455.24411pt x 672.21692pt.
  [64] [65]
 Overfull \vbox (87.0888pt too high) has occurred while \output is active []
 
 
 [66 <./graphics/sequence/thong_bao.png (PNG copy)>] [67] [68] [69]
-<graphics/architecture/clean.jpg, id=1553, 774.895pt x 569.12625pt>
+<graphics/architecture/clean.jpg, id=1538, 774.895pt x 569.12625pt>
 File: graphics/architecture/clean.jpg Graphic file (type jpg)
 <use graphics/architecture/clean.jpg>
-Package pdftex.def Info: graphics/architecture/clean.jpg  used on input line 47
-8.
+Package pdftex.def Info: graphics/architecture/clean.jpg  used on input line 48
+4.
 (pdftex.def)             Requested size: 341.43307pt x 250.77237pt.
  [70 <./graphics/architecture/clean.jpg>]
-<graphics/architecture/Architecture.png, id=1562, 804.00375pt x 423.5825pt>
+<graphics/architecture/Architecture.png, id=1547, 804.00375pt x 423.5825pt>
 File: graphics/architecture/Architecture.png Graphic file (type png)
 <use graphics/architecture/Architecture.png>
 Package pdftex.def Info: graphics/architecture/Architecture.png  used on input 
-line 497.
+line 503.
 (pdftex.def)             Requested size: 455.24411pt x 239.84163pt.
  [71]
-<graphics/db/erd_auth.png, id=1570, 997.7275pt x 675.52374pt>
+<graphics/db/erd_auth.png, id=1555, 997.7275pt x 675.52374pt>
 File: graphics/db/erd_auth.png Graphic file (type png)
 <use graphics/db/erd_auth.png>
-Package pdftex.def Info: graphics/db/erd_auth.png  used on input line 510.
+Package pdftex.def Info: graphics/db/erd_auth.png  used on input line 516.
 (pdftex.def)             Requested size: 455.24411pt x 308.22963pt.
  [72 <./graphics/architecture/Architecture.png>]
-<graphics/db/erd_exam.png, id=1577, 2252.415pt x 1183.42125pt>
+<graphics/db/erd_exam.png, id=1562, 2252.415pt x 1183.42125pt>
 File: graphics/db/erd_exam.png Graphic file (type png)
 <use graphics/db/erd_exam.png>
-Package pdftex.def Info: graphics/db/erd_exam.png  used on input line 527.
+Package pdftex.def Info: graphics/db/erd_exam.png  used on input line 533.
 (pdftex.def)             Requested size: 455.24411pt x 239.172pt.
  [73 <./graphics/db/erd_auth.png (PNG copy)>]
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 537.
+            Default family used instead on input line 543.
 
-Overfull \hbox (51.11856pt too wide) in paragraph at lines 539--540
+Overfull \hbox (51.11856pt too wide) in paragraph at lines 545--546
 []\T5/ptm/b/n/12 Question\T5/ptm/m/n/12 : C�u h�i v�i 5 lo�i (SIN-GLE_CHOICE, M
 UL-TI-PLE_CHOICE, FILL_IN_THE_BLANK,
  []
 
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 545.
+            Default family used instead on input line 551.
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
-            Default family used instead on input line 545.
+            Default family used instead on input line 551.
 [74 <./graphics/db/erd_exam.png (PNG copy)>]
-<graphics/db/erd_achievement.png, id=1589, 596.2275pt x 465.74pt>
+<graphics/db/erd_achievement.png, id=1574, 596.2275pt x 465.74pt>
 File: graphics/db/erd_achievement.png Graphic file (type png)
 <use graphics/db/erd_achievement.png>
-Package pdftex.def Info: graphics/db/erd_achievement.png  used on input line 56
-7.
+Package pdftex.def Info: graphics/db/erd_achievement.png  used on input line 57
+3.
 (pdftex.def)             Requested size: 364.19667pt x 284.49185pt.
  [75 <./graphics/db/erd_achievement.png (PNG copy)>]
-<graphics/db/erd_file_service.png, id=1596, 365.365pt x 385.44pt>
+<graphics/db/erd_file_service.png, id=1581, 365.365pt x 385.44pt>
 File: graphics/db/erd_file_service.png Graphic file (type png)
 <use graphics/db/erd_file_service.png>
 Package pdftex.def Info: graphics/db/erd_file_service.png  used on input line 5
-84.
+90.
 (pdftex.def)             Requested size: 227.62206pt x 240.12895pt.
-<graphics/db/erd_live.png, id=1597, 696.6025pt x 355.3275pt>
+<graphics/db/erd_live.png, id=1582, 696.6025pt x 355.3275pt>
 File: graphics/db/erd_live.png Graphic file (type png)
 <use graphics/db/erd_live.png>
-Package pdftex.def Info: graphics/db/erd_live.png  used on input line 595.
+Package pdftex.def Info: graphics/db/erd_live.png  used on input line 601.
 (pdftex.def)             Requested size: 318.66948pt x 162.54716pt.
  [76 <./graphics/db/erd_file_service.png (PNG copy)>]
-<graphics/db/erd_resource.png, id=1602, 1027.84pt x 435.6275pt>
+<graphics/db/erd_resource.png, id=1587, 1027.84pt x 435.6275pt>
 File: graphics/db/erd_resource.png Graphic file (type png)
 <use graphics/db/erd_resource.png>
-Package pdftex.def Info: graphics/db/erd_resource.png  used on input line 610.
+Package pdftex.def Info: graphics/db/erd_resource.png  used on input line 616.
 (pdftex.def)             Requested size: 364.19667pt x 154.3597pt.
  [77 <./graphics/db/erd_live.png (PNG copy)> <./graphics/db/erd_resource.png (P
 NG copy)>]
-<graphics/db/erd_engapp_v2.png, id=1608, 2300.595pt x 1921.1775pt>
+<graphics/db/erd_engapp_v2.png, id=1592, 2300.595pt x 1921.1775pt>
 File: graphics/db/erd_engapp_v2.png Graphic file (type png)
 <use graphics/db/erd_engapp_v2.png>
-Package pdftex.def Info: graphics/db/erd_engapp_v2.png  used on input line 626.
+Package pdftex.def Info: graphics/db/erd_engapp_v2.png  used on input line 632.
 
 (pdftex.def)             Requested size: 455.24411pt x 380.15395pt.
- [78 <./graphics/db/erd_engapp_v2.png (PNG copy)>] [79]) [80]
+ [78 <./graphics/db/erd_engapp_v2.png (PNG copy)>]) [79]
 \openout2 = `chapters/main/4-ai-features.aux'.
 
 
-(./chapters/main/4-ai-features.tex
-CHƯƠNG 4.
-[81
+(./chapters/main/4-ai-features.tex [80
 
 
 
 
 ]
-<graphics/lingriser/dashboard.png, id=1631, 1368.11125pt x 731.73375pt>
+CHƯƠNG 4.
+[81]
+<graphics/lingriser/dashboard.png, id=1612, 1368.11125pt x 731.73375pt>
 File: graphics/lingriser/dashboard.png Graphic file (type png)
 <use graphics/lingriser/dashboard.png>
 Package pdftex.def Info: graphics/lingriser/dashboard.png  used on input line 4
 8.
 (pdftex.def)             Requested size: 418.82375pt x 223.99911pt.
  [82] [83 <./graphics/lingriser/dashboard.png>]
-<graphics/lingriser/parents.png, id=1641, 671.50874pt x 663.47874pt>
+<graphics/lingriser/parents.png, id=1622, 671.50874pt x 663.47874pt>
 File: graphics/lingriser/parents.png Graphic file (type png)
 <use graphics/lingriser/parents.png>
 Package pdftex.def Info: graphics/lingriser/parents.png  used on input line 62.
 
 (pdftex.def)             Requested size: 400.61703pt x 395.82257pt.
-<graphics/lingriser/programs.png, id=1642, 1257.69875pt x 730.73pt>
+<graphics/lingriser/programs.png, id=1623, 1257.69875pt x 730.73pt>
 File: graphics/lingriser/programs.png Graphic file (type png)
 <use graphics/lingriser/programs.png>
 Package pdftex.def Info: graphics/lingriser/programs.png  used on input line 69
@@ -1854,7 +1846,7 @@ Package pdftex.def Info: graphics/lingriser/programs.png  used on input line 69
 (pdftex.def)             Requested size: 409.71692pt x 238.04193pt.
  [84 <./graphics/lingriser/parents.png>] [85 <./graphics/lingriser/programs.png
 >]
-<graphics/lingriser/system_architecture.png, id=1654, 7701.77374pt x 1197.47375
+<graphics/lingriser/system_architecture.png, id=1635, 7701.77374pt x 1197.47375
 pt>
 File: graphics/lingriser/system_architecture.png Graphic file (type png)
 <use graphics/lingriser/system_architecture.png>
@@ -1873,7 +1865,7 @@ File: graphics/lingriser/dashboard.png Graphic file (type png)
 Package pdftex.def Info: graphics/lingriser/dashboard.png  used on input line 1
 50.
 (pdftex.def)             Requested size: 455.24411pt x 243.48264pt.
-<graphics/lingriser/admin.png, id=1685, 1349.04pt x 651.43375pt>
+<graphics/lingriser/admin.png, id=1666, 1349.04pt x 651.43375pt>
 File: graphics/lingriser/admin.png Graphic file (type png)
 <use graphics/lingriser/admin.png>
 Package pdftex.def Info: graphics/lingriser/admin.png  used on input line 159.
@@ -1908,30 +1900,26 @@ Package pdftex.def Info: graphics/lingriser/parents.png  used on input line 256
 .
 (pdftex.def)             Requested size: 400.61703pt x 395.82257pt.
  [95] [96] [97] [98]
-<graphics/writing/phan_phoi_data_set.png, id=1761, 1072.005pt x 349.305pt>
+<graphics/writing/phan_phoi_data_set.png, id=1742, 1072.005pt x 349.305pt>
 File: graphics/writing/phan_phoi_data_set.png Graphic file (type png)
 <use graphics/writing/phan_phoi_data_set.png>
 Package pdftex.def Info: graphics/writing/phan_phoi_data_set.png  used on input
  line 341.
 (pdftex.def)             Requested size: 373.3035pt x 121.63496pt.
-<graphics/writing/phan_phoi_task_type.png, id=1762, 982.872pt x 349.305pt>
+<graphics/writing/phan_phoi_task_type.png, id=1743, 982.872pt x 349.305pt>
 File: graphics/writing/phan_phoi_task_type.png Graphic file (type png)
 <use graphics/writing/phan_phoi_task_type.png>
 Package pdftex.def Info: graphics/writing/phan_phoi_task_type.png  used on inpu
 t line 347.
 (pdftex.def)             Requested size: 373.3035pt x 132.66798pt.
  [99 <./graphics/writing/phan_phoi_data_set.png>] [100 <./graphics/writing/phan
-_phoi_task_type.png>]
-Overfull \hbox (142.7479pt too wide) in paragraph at lines 389--398
- [][] 
- []
-
-[101]) [102]
+_phoi_task_type.png>] [101])
+[102]
 \openout2 = `chapters/main/5-simulation-design.aux'.
 
  (./chapters/main/5-simulation-design.tex
 CHƯƠNG 5.
-<graphics/ui/homepage.jpg, id=1788, 1031.65425pt x 1009.97325pt>
+<graphics/ui/homepage.jpg, id=1769, 1031.65425pt x 1009.97325pt>
 File: graphics/ui/homepage.jpg Graphic file (type jpg)
 <use graphics/ui/homepage.jpg>
 Package pdftex.def Info: graphics/ui/homepage.jpg  used on input line 11.
@@ -1942,19 +1930,19 @@ Package pdftex.def Info: graphics/ui/homepage.jpg  used on input line 11.
 
 
 ]
-<graphics/ui/auth.jpg, id=1794, 1105.12875pt x 528.17325pt>
+<graphics/ui/auth.jpg, id=1775, 1105.12875pt x 528.17325pt>
 File: graphics/ui/auth.jpg Graphic file (type jpg)
 <use graphics/ui/auth.jpg>
 Package pdftex.def Info: graphics/ui/auth.jpg  used on input line 21.
 (pdftex.def)             Requested size: 455.24411pt x 217.56789pt.
  [104 <./graphics/ui/homepage.jpg>]
-<graphics/ui/dashboard.jpg, id=1799, 1094.8905pt x 525.162pt>
+<graphics/ui/dashboard.jpg, id=1780, 1094.8905pt x 525.162pt>
 File: graphics/ui/dashboard.jpg Graphic file (type jpg)
 <use graphics/ui/dashboard.jpg>
 Package pdftex.def Info: graphics/ui/dashboard.jpg  used on input line 32.
 (pdftex.def)             Requested size: 455.24411pt x 218.35486pt.
  [105 <./graphics/ui/auth.jpg>]
-<graphics/ui/exam/exam-selection.jpg, id=1805, 1844.8925pt x 892.33376pt>
+<graphics/ui/exam/exam-selection.jpg, id=1786, 1844.8925pt x 892.33376pt>
 File: graphics/ui/exam/exam-selection.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-selection.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-selection.jpg  used on input lin
@@ -1962,7 +1950,7 @@ e 44.
 (pdftex.def)             Requested size: 455.24411pt x 220.18271pt.
 
 [106 <./graphics/ui/dashboard.jpg>]
-<graphics/ui/exam/exam-detail.jpg, id=1811, 1549.79pt x 1772.6225pt>
+<graphics/ui/exam/exam-detail.jpg, id=1792, 1549.79pt x 1772.6225pt>
 File: graphics/ui/exam/exam-detail.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-detail.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-detail.jpg  used on input line 5
@@ -1970,21 +1958,21 @@ Package pdftex.def Info: graphics/ui/exam/exam-detail.jpg  used on input line 5
 (pdftex.def)             Requested size: 455.24411pt x 520.70117pt.
  [107 <./graphics/ui/exam/exam-selection.jpg>] [108 <./graphics/ui/exam/exam-de
 tail.jpg>]
-<graphics/ui/exam/exam-interface.jpg, id=1821, 1557.82pt x 1772.6225pt>
+<graphics/ui/exam/exam-interface.jpg, id=1802, 1557.82pt x 1772.6225pt>
 File: graphics/ui/exam/exam-interface.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-interface.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-interface.jpg  used on input lin
 e 63.
 (pdftex.def)             Requested size: 455.24411pt x 517.99638pt.
  [109 <./graphics/ui/exam/exam-interface.jpg>]
-<graphics/ui/exam/exam-interface-highlight.jpg, id=1827, 1379.1525pt x 735.7487
+<graphics/ui/exam/exam-interface-highlight.jpg, id=1808, 1379.1525pt x 735.7487
 5pt>
 File: graphics/ui/exam/exam-interface-highlight.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-interface-highlight.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-interface-highlight.jpg  used on
  input line 72.
 (pdftex.def)             Requested size: 455.24411pt x 242.86519pt.
-<graphics/ui/exam/exam-interface-create-flashcard.jpg, id=1828, 1476.51625pt x 
+<graphics/ui/exam/exam-interface-create-flashcard.jpg, id=1809, 1476.51625pt x 
 877.2775pt>
 File: graphics/ui/exam/exam-interface-create-flashcard.jpg Graphic file (type j
 pg)
@@ -1993,14 +1981,14 @@ Package pdftex.def Info: graphics/ui/exam/exam-interface-create-flashcard.jpg
 used on input line 81.
 (pdftex.def)             Requested size: 455.24411pt x 270.48073pt.
  [110 <./graphics/ui/exam/exam-interface-highlight.jpg>]
-<graphics/ui/exam/exam-result.jpg, id=1834, 1546.77875pt x 1772.6225pt>
+<graphics/ui/exam/exam-result.jpg, id=1814, 1546.77875pt x 1772.6225pt>
 File: graphics/ui/exam/exam-result.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-result.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-result.jpg  used on input line 9
 0.
 (pdftex.def)             Requested size: 455.24411pt x 521.70195pt.
  [111 <./graphics/ui/exam/exam-interface-create-flashcard.jpg>]
-<graphics/ui/exam/speaking-selection.jpg, id=1840, 1562.83875pt x 1442.38875pt>
+<graphics/ui/exam/speaking-selection.jpg, id=1820, 1562.83875pt x 1442.38875pt>
 
 File: graphics/ui/exam/speaking-selection.jpg Graphic file (type jpg)
 <use graphics/ui/exam/speaking-selection.jpg>
@@ -2008,7 +1996,7 @@ Package pdftex.def Info: graphics/ui/exam/speaking-selection.jpg  used on input
  line 102.
 (pdftex.def)             Requested size: 455.24411pt x 420.1528pt.
  [112 <./graphics/ui/exam/exam-result.jpg>]
-<graphics/ui/exam/speaking-test-interface-during-speak.jpg, id=1845, 1460.45625
+<graphics/ui/exam/speaking-test-interface-during-speak.jpg, id=1825, 1460.45625
 pt x 1690.315pt>
 File: graphics/ui/exam/speaking-test-interface-during-speak.jpg Graphic file (t
 ype jpg)
@@ -2018,21 +2006,21 @@ jpg  used on input line 110.
 (pdftex.def)             Requested size: 455.24411pt x 526.88095pt.
  [113 <./graphics/ui/exam/speaking-selection.jpg>] [114 <./graphics/ui/exam/spe
 aking-test-interface-during-speak.jpg>]
-<graphics/ui/exam/speaking-result.jpg, id=1854, 1535.7375pt x 1551.7975pt>
+<graphics/ui/exam/speaking-result.jpg, id=1835, 1535.7375pt x 1551.7975pt>
 File: graphics/ui/exam/speaking-result.jpg Graphic file (type jpg)
 <use graphics/ui/exam/speaking-result.jpg>
 Package pdftex.def Info: graphics/ui/exam/speaking-result.jpg  used on input li
 ne 118.
 (pdftex.def)             Requested size: 455.24411pt x 460.00208pt.
  [115 <./graphics/ui/exam/speaking-result.jpg>]
-<graphics/ui/exam/writing-interface.jpg, id=1860, 1556.81625pt x 1693.32625pt>
+<graphics/ui/exam/writing-interface.jpg, id=1841, 1556.81625pt x 1693.32625pt>
 File: graphics/ui/exam/writing-interface.jpg Graphic file (type jpg)
 <use graphics/ui/exam/writing-interface.jpg>
 Package pdftex.def Info: graphics/ui/exam/writing-interface.jpg  used on input 
 line 128.
 (pdftex.def)             Requested size: 455.24411pt x 495.1603pt.
  [116]
-<graphics/ui/exam/result-writing-interface.jpg, id=1865, 1342.01375pt x 1113.15
+<graphics/ui/exam/result-writing-interface.jpg, id=1846, 1342.01375pt x 1113.15
 875pt>
 File: graphics/ui/exam/result-writing-interface.jpg Graphic file (type jpg)
 <use graphics/ui/exam/result-writing-interface.jpg>
@@ -2040,7 +2028,7 @@ Package pdftex.def Info: graphics/ui/exam/result-writing-interface.jpg  used on
  input line 137.
 (pdftex.def)             Requested size: 455.24411pt x 377.60272pt.
  [117 <./graphics/ui/exam/writing-interface.jpg>]
-<graphics/ui/flashcard/flashcard-my-list.jpg, id=1870, 1857.94125pt x 889.3225p
+<graphics/ui/flashcard/flashcard-my-list.jpg, id=1851, 1857.94125pt x 889.3225p
 t>
 File: graphics/ui/flashcard/flashcard-my-list.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-my-list.jpg>
@@ -2049,7 +2037,7 @@ nput line 148.
 (pdftex.def)             Requested size: 455.24411pt x 217.90627pt.
 
 [118 <./graphics/ui/exam/result-writing-interface.jpg>]
-<graphics/ui/flashcard/flashcard-my-flashcard.jpg, id=1875, 1847.90375pt x 878.
+<graphics/ui/flashcard/flashcard-my-flashcard.jpg, id=1856, 1847.90375pt x 878.
 28125pt>
 File: graphics/ui/flashcard/flashcard-my-flashcard.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-my-flashcard.jpg>
@@ -2058,14 +2046,14 @@ Package pdftex.def Info: graphics/ui/flashcard/flashcard-my-flashcard.jpg  used
 (pdftex.def)             Requested size: 455.24411pt x 216.36682pt.
  [119 <./graphics/ui/flashcard/flashcard-my-list.jpg> <./graphics/ui/flashcard/
 flashcard-my-flashcard.jpg>]
-<graphics/ui/flashcard/flashcard-create-list.jpg, id=1882, 1850.915pt x 876.273
+<graphics/ui/flashcard/flashcard-create-list.jpg, id=1863, 1850.915pt x 876.273
 74pt>
 File: graphics/ui/flashcard/flashcard-create-list.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-create-list.jpg>
 Package pdftex.def Info: graphics/ui/flashcard/flashcard-create-list.jpg  used 
 on input line 166.
 (pdftex.def)             Requested size: 455.24411pt x 215.52461pt.
-<graphics/ui/flashcard/flashcard-create-flashcard.jpg, id=1883, 1851.91875pt x 
+<graphics/ui/flashcard/flashcard-create-flashcard.jpg, id=1864, 1851.91875pt x 
 876.27374pt>
 File: graphics/ui/flashcard/flashcard-create-flashcard.jpg Graphic file (type j
 pg)
@@ -2074,7 +2062,7 @@ Package pdftex.def Info: graphics/ui/flashcard/flashcard-create-flashcard.jpg
 used on input line 175.
 (pdftex.def)             Requested size: 455.24411pt x 215.40428pt.
  [120 <./graphics/ui/flashcard/flashcard-create-list.jpg>]
-<graphics/ui/profile/profile-overview.jpg, id=1889, 1535.7375pt x 1772.6225pt>
+<graphics/ui/profile/profile-overview.jpg, id=1870, 1535.7375pt x 1772.6225pt>
 File: graphics/ui/profile/profile-overview.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-overview.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-overview.jpg  used on inpu
@@ -2082,21 +2070,21 @@ t line 186.
 (pdftex.def)             Requested size: 455.24411pt x 525.46162pt.
  [121 <./graphics/ui/flashcard/flashcard-create-flashcard.jpg>] [122 <./graphic
 s/ui/profile/profile-overview.jpg>]
-<graphics/ui/profile/profile-achievement.jpg, id=1900, 1564.84625pt x 1436.3662
+<graphics/ui/profile/profile-achievement.jpg, id=1881, 1564.84625pt x 1436.3662
 6pt>
 File: graphics/ui/profile/profile-achievement.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-achievement.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-achievement.jpg  used on i
 nput line 194.
 (pdftex.def)             Requested size: 455.24411pt x 417.8725pt.
-<graphics/ui/profile/profile-history.jpg, id=1901, 1851.91875pt x 874.26625pt>
+<graphics/ui/profile/profile-history.jpg, id=1882, 1851.91875pt x 874.26625pt>
 File: graphics/ui/profile/profile-history.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-history.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-history.jpg  used on input
  line 203.
 (pdftex.def)             Requested size: 455.24411pt x 214.9108pt.
  [123 <./graphics/ui/profile/profile-achievement.jpg>]
-<graphics/ui/profile/profile-add-goal.jpg, id=1906, 869.04675pt x 516.7305pt>
+<graphics/ui/profile/profile-add-goal.jpg, id=1887, 869.04675pt x 516.7305pt>
 File: graphics/ui/profile/profile-add-goal.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-add-goal.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-add-goal.jpg  used on inpu
@@ -2104,7 +2092,7 @@ t line 212.
 (pdftex.def)             Requested size: 455.24411pt x 270.68834pt.
 
 [124 <./graphics/ui/profile/profile-history.jpg>]
-<graphics/ui/blog/blog-selection.jpg, id=1912, 1545.775pt x 1757.56625pt>
+<graphics/ui/blog/blog-selection.jpg, id=1893, 1545.775pt x 1757.56625pt>
 File: graphics/ui/blog/blog-selection.jpg Graphic file (type jpg)
 <use graphics/ui/blog/blog-selection.jpg>
 Package pdftex.def Info: graphics/ui/blog/blog-selection.jpg  used on input lin
@@ -2112,7 +2100,7 @@ e 223.
 (pdftex.def)             Requested size: 455.24411pt x 517.61937pt.
  [125 <./graphics/ui/profile/profile-add-goal.jpg>] [126 <./graphics/ui/blog/bl
 og-selection.jpg>]
-<graphics/ui/blog/blog-example.jpg, id=1922, 1871.99374pt x 890.32625pt>
+<graphics/ui/blog/blog-example.jpg, id=1903, 1871.99374pt x 890.32625pt>
 File: graphics/ui/blog/blog-example.jpg Graphic file (type jpg)
 <use graphics/ui/blog/blog-example.jpg>
 Package pdftex.def Info: graphics/ui/blog/blog-example.jpg  used on input line 
@@ -2125,7 +2113,7 @@ Package pdftex.def Info: graphics/lingriser/dashboard.png  used on input line 2
 77.
 (pdftex.def)             Requested size: 455.24411pt x 243.48264pt.
  [129]
-<graphics/lingriser/mentor.png, id=1937, 939.51pt x 689.57625pt>
+<graphics/lingriser/mentor.png, id=1918, 939.51pt x 689.57625pt>
 File: graphics/lingriser/mentor.png Graphic file (type png)
 <use graphics/lingriser/mentor.png>
 Package pdftex.def Info: graphics/lingriser/mentor.png  used on input line 288.
@@ -2157,71 +2145,71 @@ Package pdftex.def Info: graphics/lingriser/admin.png  used on input line 321.
 
 ]
 CHƯƠNG 6.
-[135] [136] [137] [138]) [139]
+[135] [136] [137]) [138]
 \openout2 = `chapters/main/7-system-eval.aux'.
 
- (./chapters/main/7-system-eval.tex [140
+ (./chapters/main/7-system-eval.tex
+CHƯƠNG 7.
+[139
 
 
 
 
 ]
-CHƯƠNG 7.
-[141]
 Overfull \hbox (4.47969pt too wide) in paragraph at lines 29--40
  [][] 
  []
 
-[142]
+[140]
 Overfull \hbox (43.32306pt too wide) in paragraph at lines 60--71
  [][] 
  []
 
-[143]) [144] [145]
+[141]) [142] [143]
 \openout2 = `chapters/main/8-work-evaluation-future-plan.aux'.
 
- (./chapters/main/8-work-evaluation-future-plan.tex [146
+ (./chapters/main/8-work-evaluation-future-plan.tex [144
 
 
 
 
 ]
 CHƯƠNG 8.
-[147] [148] [149] [150]) [151]
+[145] [146] [147] [148]) [149]
 \openout2 = `chapters/main/9-conclusion.aux'.
 
- (./chapters/main/9-conclusion.tex [152
+ (./chapters/main/9-conclusion.tex [150
 
 
 
 
 ]
 CHƯƠNG 9.
-) [153] [154
+) [151] [152
 
 
 
-] (./thesis.bbl [155
+] (./thesis.bbl [153
 
-] [156] [157]) [158]
+] [154] [155]) [156]
 \openout2 = `chapters/back/appendix-a-contributions.aux'.
 
 
 (./chapters/back/appendix-a-contributions.tex
 (./chapters/back/appendix-contributions.tex
 ignored: Infinite glue shrinkage found in box
- being split [159
+ being split [157
 
 
 
-])) [160]
+])) [158]
 \openout2 = `chapters/back/appendix-b-usecases.aux'.
 
 
 (./chapters/back/appendix-b-usecases.tex
 (./chapters/main/usecases/0001-dangnhap.tex
 ignored: Infinite glue shrinkage found in box
- being split [161
+ being split [159
 
 
 
@@ -2229,80 +2217,80 @@ ignored: Infinite glue shrinkage found in box
 ])
 (./chapters/main/usecases/0002-dangky.tex
 ignored: Infinite glue shrinkage found in box b
-eing split [162])
+eing split [160])
 (./chapters/main/usecases/0003-dangxuat.tex
 ignored: Infinite glue shrinkage found in box
- being split [163])
+ being split [161])
 (./chapters/main/usecases/0004-xemhoso.tex)
 (./chapters/main/usecases/0005-capnhathoso.tex
 ignored: Infinite glue shrinkage found in 
-box being split [164])
+box being split [162])
 (./chapters/main/usecases/0006-lienkettaikhoan.tex
 ignored: Infinite glue shrinkage found
- in box being split [165])
+ in box being split [163])
 (./chapters/main/usecases/0007-doimatkhau.tex
 ignored: Infinite glue shrinkage found in b
-ox being split [166])
+ox being split [164])
 (./chapters/main/usecases/0008-xoathongtinxacthuc.tex
 ignored: Infinite glue shrinkage fo
-und in box being split [167])
+und in box being split [165])
 (./chapters/main/usecases/0009-timkiemnguoidung.tex)
-(./chapters/main/usecases/0010-duyetbaithi.tex [168])
+(./chapters/main/usecases/0010-duyetbaithi.tex [166])
 (./chapters/main/usecases/0011-xemchitietbaithi.tex
 ignored: Infinite glue shrinkage foun
-d in box being split [169])
+d in box being split [167])
 (./chapters/main/usecases/0013-xemketquabaithi.tex
 ignored: Infinite glue shrinkage found
- in box being split [170])
+ in box being split [168])
 (./chapters/main/usecases/0014-xemlichsu.tex)
 (./chapters/main/usecases/0016-chinhsuabaithi.tex
 ignored: Infinite glue shrinkage found 
-in box being split [171])
+in box being split [169])
 (./chapters/main/usecases/0017-xoabaithi.tex
 ignored: Infinite glue shrinkage found in bo
-x being split [172])
+x being split [170])
 (./chapters/main/usecases/0018-pheduyetbaithi.tex
 ignored: Infinite glue shrinkage found 
-in box being split [173])
+in box being split [171])
 (./chapters/main/usecases/0019-quanlyphanthi.tex
 ignored: Infinite glue shrinkage found i
-n box being split [174])
+n box being split [172])
 (./chapters/main/usecases/0020-quanlycauhoi.tex
 ignored: Infinite glue shrinkage found in
- box being split [175])
+ box being split [173])
 (./chapters/main/usecases/0021-quanlythephanloai.tex
 ignored: Infinite glue shrinkage fou
-nd in box being split [176])
+nd in box being split [174])
 (./chapters/main/usecases/0022-quanlynguoidung.tex
 ignored: Infinite glue shrinkage found
- in box being split [177])
+ in box being split [175])
 (./chapters/main/usecases/0023-taiteplen.tex
 ignored: Infinite glue shrinkage found in bo
-x being split [178])
+x being split [176])
 (./chapters/main/usecases/0025-thamgiaphongchat.tex
 ignored: Infinite glue shrinkage foun
-d in box being split [179])
+d in box being split [177])
 (./chapters/main/usecases/0026-guitinnhan.tex
 ignored: Infinite glue shrinkage found in b
-ox being split [180])
+ox being split [178])
 (./chapters/main/usecases/0027-taophongchat.tex
 ignored: Infinite glue shrinkage found in
- box being split [181])
+ box being split [179])
 (./chapters/main/usecases/0028-xoaphongchat.tex
 ignored: Infinite glue shrinkage found in
- box being split [182])
+ box being split [180])
 (./chapters/main/usecases/0029-xemlichsutinnhan.tex
 ignored: Infinite glue shrinkage foun
-d in box being split [183])
+d in box being split [181])
 (./chapters/main/usecases/0030-cannguoidung.tex
 ignored: Infinite glue shrinkage found in
- box being split [184])
+ box being split [182])
 (./chapters/main/usecases/0031-quanlytheghinno.tex
 ignored: Infinite glue shrinkage found
- in box being split [185])
+ in box being split [183])
 (./chapters/main/usecases/0032-quanlybaiviet.tex
 ignored: Infinite glue shrinkage found i
-n box being split [186])
+n box being split [184])
 (./chapters/main/usecases/0033-quanlybaocao.tex
 LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
@@ -2314,18 +2302,18 @@ LaTeX Info: Symbol \textrightarrow not provided by
             font family ptm in TS1 encoding.
             Default family used instead on input line 63.
 
-ignored: Infinite glue shrinkage found in box being split [187])
+ignored: Infinite glue shrinkage found in box being split [185])
 (./chapters/main/usecases/0035-nhanthongbaotructiep.tex
 ignored: Infinite glue shrinkage 
-found in box being split [188])
+found in box being split [186])
 (./chapters/main/usecases/0036-datlichgoivideo.tex
 ignored: Infinite glue shrinkage found
- in box being split [189])) [190]
+ in box being split [187])) [188]
 \openout2 = `chapters/back/appendix-c-e2e.aux'.
 
 
 (./chapters/back/appendix-c-e2e.tex
-(./chapters/main/test/e2e-testcases-table.tex [191
+(./chapters/main/test/e2e-testcases-table.tex [189
 
 
 
@@ -2434,10 +2422,10 @@ Overfull \hbox (12.87811pt too wide) in paragraph at lines 511--512
 \T5/ptm/m/n/10 dent@example.com''  
  []
 
-[192
+[190
 
-] [193] [194] [195] [196] [197] [198] [199] [200] [201] [202] [203]
-[204] [205] [206] [207] [208] [209]))
+] [191] [192] [193] [194] [195] [196] [197] [198] [199] [200] [201]
+[202] [203] [204] [205] [206] [207]))
 \tf@toc=\write6
 \openout6 = `thesis.toc'.
 
@@ -2463,12 +2451,12 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 43DEC1C0A44847800286E0B20074FA6E;28518.
+(rerunfilecheck)             Checksum: 84B93B14300F1C2BBE897C842834E700;27947.
  ) 
 Here is how much of TeX's memory you used:
- 33845 strings out of 469515
- 628564 string characters out of 5470807
- 1295691 words of memory out of 5000000
+ 33825 strings out of 469515
+ 628365 string characters out of 5470807
+ 1295755 words of memory out of 5000000
  60506 multiletter control sequences out of 15000+600000
  713366 words of font info for 164 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -2485,10 +2473,10 @@ f-dist/fonts/type1/public/cm-super/sftt1200.pfb></home/culove/texmf/fonts/type1
 nts/type1/vntex/urwvn/utmr8v.pfb></usr/share/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb></home/culove/texmf/fonts/type1/vntex/urwvn/utmri8v.pfb></home/culov
 e/texmf/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on thesis.pdf (227 pages, 21577163 bytes).
+Output written on thesis.pdf (225 pages, 21573633 bytes).
 PDF statistics:
- 3261 PDF objects out of 3580 (max. 8388607)
- 2886 compressed objects within 29 object streams
- 1229 named destinations out of 1440 (max. 500000)
- 1499 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3220 PDF objects out of 3580 (max. 8388607)
+ 2847 compressed objects within 29 object streams
+ 1209 named destinations out of 1440 (max. 500000)
+ 1475 words of extra memory for PDF output out of 10000 (max. 10000000)
 
