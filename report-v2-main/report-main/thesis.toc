@@ -177,5 +177,5 @@
 \contentsline {chapter}{\chapternumberline {9}Kết luận}{121}{chapter.9}%
 \contentsline {chapter}{Tài liệu tham khảo}{123}{chapter*.59}%
 \contentsline {chapter}{Phân công công việc}{127}{chapter*.61}%
-\contentsline {chapter}{Danh sách use case}{131}{chapter*.63}%
-\contentsline {chapter}{Danh sách test case E2E}{167}{chapter*.65}%
+\contentsline {chapter}{Danh sách use case}{129}{chapter*.63}%
+\contentsline {chapter}{Danh sách test case E2E}{165}{chapter*.65}%
