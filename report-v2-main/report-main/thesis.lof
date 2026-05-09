@@ -17,52 +17,55 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Sequence diagram --- Luồng thông báo}}{36}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Tổng quan về mẫu Clean architecture \cite {nishanc_clean_arch}}}{40}{figure.3.14}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Tổng quan kiến trúc hệ thống}}{41}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces ERD --- Auth Service (Identity, Credential, RBAC)}}{42}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces ERD --- Exam Service (Exam, Practice, Tag, Goal, File)}}{43}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces ERD --- Achievement Service (Badges, Criteria)}}{44}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces ERD --- File Service}}{45}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces ERD --- Live Chat Service (branch \texttt {feat/live-chat-rooms})}}{46}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces ERD --- Resource Service (branch \texttt {feat/user-resources})}}{46}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces ERD --- Nền tảng Engapp-v2 (PostgreSQL trên Neon)}}{47}{figure.3.22}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces ERD --- Auth Service (Identity, Credential, RBAC, Google Calendar)}}{44}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces ERD --- Exam Service (Exam, Practice, Tag, Goal, File)}}{46}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces ERD --- Achievement Service (Badges, Criteria)}}{48}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces ERD --- File Service}}{49}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces ERD --- Live Chat Service}}{49}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces ERD --- Resource Service (Blog, Flashcard)}}{50}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces ERD --- Notification Service (thiết kế, chưa hiện thực)}}{52}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces ERD --- Report Service (thiết kế, chưa hiện thực)}}{53}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces ERD --- Engapp-v2 Core (Users, Auth, Chat, Notification)}}{54}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces ERD --- Engapp-v2 Domain (Program, Course, Booking, Learning History)}}{56}{figure.3.25}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Kiến trúc triển khai của Lingriser với mô-đun AI Practice}}{50}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Phân phối Overall Band Score}}{61}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Phân phối Task Type (Task 1 vs Task 2)}}{61}{figure.4.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Kiến trúc triển khai của Lingriser với mô-đun AI Practice}}{60}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Phân phối Overall Band Score}}{71}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Phân phối Task Type (Task 1 vs Task 2)}}{71}{figure.4.3}%
 \addvspace {10pt}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Giao diện trang chủ}}{66}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Trang xác thực người dùng}}{67}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Bảng điều khiển người dùng}}{67}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Giao diện lựa chọn bài thi}}{68}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Giao diện chi tiết bài thi}}{69}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Giao diện làm bài thi}}{70}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Công cụ tô sáng và ghi chú văn bản}}{71}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Tạo flashcard ngay trong lúc làm bài}}{71}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Kết quả và phân tích bài thi}}{72}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Danh sách bộ flashcard cá nhân}}{73}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Giao diện học với flashcard}}{73}{figure.5.11}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Tạo danh sách flashcard mới}}{74}{figure.5.12}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Thêm flashcard mới}}{74}{figure.5.13}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Trang giới thiệu LingriserSpeaking}}{75}{figure.5.14}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Tiến độ học tập}}{76}{figure.5.15}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Tổng quan hồ sơ cá nhân}}{77}{figure.5.16}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Danh hiệu trong hồ sơ cá nhân}}{78}{figure.5.17}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Lịch sử học tập}}{79}{figure.5.18}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Hộp thoại thiết lập mục tiêu}}{80}{figure.5.19}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Danh sách bài viết blog}}{81}{figure.5.20}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Trang chi tiết bài viết blog}}{82}{figure.5.21}%
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Danh sách phòng chat cộng đồng}}{82}{figure.5.22}%
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Bảng điều khiển quản trị}}{83}{figure.5.23}%
-\contentsline {figure}{\numberline {5.24}{\ignorespaces Giao diện tạo đề thi}}{84}{figure.5.24}%
-\contentsline {figure}{\numberline {5.25}{\ignorespaces Giao diện quản lý đề thi}}{84}{figure.5.25}%
-\contentsline {figure}{\numberline {5.26}{\ignorespaces Giao diện quản lý bài viết blog}}{85}{figure.5.26}%
-\contentsline {figure}{\numberline {5.27}{\ignorespaces Giao diện duyệt đề thi}}{86}{figure.5.27}%
-\contentsline {figure}{\numberline {5.28}{\ignorespaces Giao diện quản lý người dùng}}{86}{figure.5.28}%
-\contentsline {figure}{\numberline {5.29}{\ignorespaces Giao diện quản lý báo cáo}}{87}{figure.5.29}%
-\contentsline {figure}{\numberline {5.30}{\ignorespaces Bảng điều khiển học sinh trong Lingriser Speaking}}{88}{figure.5.30}%
-\contentsline {figure}{\numberline {5.31}{\ignorespaces Giao diện lựa chọn mentor và đặt lịch video call}}{89}{figure.5.31}%
-\contentsline {figure}{\numberline {5.32}{\ignorespaces Bảng điều khiển phụ huynh theo dõi tiến trình học tập}}{90}{figure.5.32}%
-\contentsline {figure}{\numberline {5.33}{\ignorespaces Giao diện quản lý chương trình học và tiến trình theo mô-đun}}{91}{figure.5.33}%
-\contentsline {figure}{\numberline {5.34}{\ignorespaces Bảng điều khiển quản trị của LingriserSpeaking}}{92}{figure.5.34}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Giao diện trang chủ}}{76}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Trang xác thực người dùng}}{77}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Bảng điều khiển người dùng}}{77}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Giao diện lựa chọn bài thi}}{78}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Giao diện chi tiết bài thi}}{79}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Giao diện làm bài thi}}{80}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Công cụ tô sáng và ghi chú văn bản}}{81}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tạo flashcard ngay trong lúc làm bài}}{81}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Kết quả và phân tích bài thi}}{82}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Danh sách bộ flashcard cá nhân}}{83}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Giao diện học với flashcard}}{83}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Tạo danh sách flashcard mới}}{84}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Thêm flashcard mới}}{84}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Trang giới thiệu LingriserSpeaking}}{85}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Tiến độ học tập}}{86}{figure.5.15}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Tổng quan hồ sơ cá nhân}}{87}{figure.5.16}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Danh hiệu trong hồ sơ cá nhân}}{88}{figure.5.17}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Lịch sử học tập}}{89}{figure.5.18}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Hộp thoại thiết lập mục tiêu}}{90}{figure.5.19}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Danh sách bài viết blog}}{91}{figure.5.20}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Trang chi tiết bài viết blog}}{92}{figure.5.21}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Danh sách phòng chat cộng đồng}}{92}{figure.5.22}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Bảng điều khiển quản trị}}{93}{figure.5.23}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Giao diện tạo đề thi}}{94}{figure.5.24}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Giao diện quản lý đề thi}}{94}{figure.5.25}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Giao diện quản lý bài viết blog}}{95}{figure.5.26}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Giao diện duyệt đề thi}}{96}{figure.5.27}%
+\contentsline {figure}{\numberline {5.28}{\ignorespaces Giao diện quản lý người dùng}}{96}{figure.5.28}%
+\contentsline {figure}{\numberline {5.29}{\ignorespaces Giao diện quản lý báo cáo}}{97}{figure.5.29}%
+\contentsline {figure}{\numberline {5.30}{\ignorespaces Bảng điều khiển học sinh trong Lingriser Speaking}}{98}{figure.5.30}%
+\contentsline {figure}{\numberline {5.31}{\ignorespaces Giao diện lựa chọn mentor và đặt lịch video call}}{99}{figure.5.31}%
+\contentsline {figure}{\numberline {5.32}{\ignorespaces Bảng điều khiển phụ huynh theo dõi tiến trình học tập}}{100}{figure.5.32}%
+\contentsline {figure}{\numberline {5.33}{\ignorespaces Giao diện quản lý chương trình học và tiến trình theo mô-đun}}{101}{figure.5.33}%
+\contentsline {figure}{\numberline {5.34}{\ignorespaces Bảng điều khiển quản trị của LingriserSpeaking}}{102}{figure.5.34}%
 \addvspace {10pt}
 \addvspace {10pt}
 \addvspace {10pt}

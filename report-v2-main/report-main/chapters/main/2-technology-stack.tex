@@ -47,9 +47,9 @@ Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng ng
 
 \textbf{FastAPI} (Python): framework API hiệu năng cao với async native và tự động sinh OpenAPI documentation. Lợi thế cốt lõi: Python là ngôn ngữ chủ đạo của AI/ML ecosystem. Các library thiết yếu cho dự án (Whisper, librosa, LangChain, PyTorch) chỉ hỗ trợ Python hoặc ưu tiên Python. Dùng framework non-Python cho AI backend sẽ tạo overhead xuyên ngôn ngữ không cần thiết. \cite{fastapi}
 
-\textbf{NestJS} (TypeScript/Node.js) --- framework modular với dependency injection, lấy cảm hứng từ Angular. Mô hình event-driven, non-blocking I/O của Node.js phù hợp cho workload concurrency cao (WebSocket, real-time dashboard). Chia sẻ TypeScript với frontend Next.js giúp tái sử dụng type definition và giảm context switching cho nhóm phát triển. \cite{nestjs}
+\textbf{NestJS} (TypeScript/Node.js): framework modular với dependency injection, lấy cảm hứng từ Angular. Mô hình event-driven, non-blocking I/O của Node.js phù hợp cho workload concurrency cao (WebSocket, real-time dashboard). Chia sẻ TypeScript với frontend Next.js giúp tái sử dụng type definition và giảm context switching cho nhóm phát triển. \cite{nestjs}
 
-\textbf{ASP.NET Core} (C\#) và \textbf{Spring Boot} (Java) --- đều là framework enterprise-grade với performance và reliability cao. Tuy nhiên, cả hai đều có chu kỳ phát triển dài hơn, không phù hợp với tiến độ ngắn của đồ án. Quan trọng hơn, AI ecosystem của C\# và Java hạn chế hơn nhiều so với Python --- việc tích hợp AI model cuối cùng vẫn đòi hỏi service Python riêng, làm tăng độ phức tạp kiến trúc mà không mang lại lợi ích bù đắp. \cite{aspnet, springboot}
+\textbf{ASP.NET Core} (C\#) và \textbf{Spring Boot} (Java): đều là framework enterprise-grade với performance và reliability cao. Tuy nhiên, cả hai đều có chu kỳ phát triển dài hơn, không phù hợp với tiến độ ngắn của đồ án. Quan trọng hơn, AI ecosystem của C\# và Java hạn chế hơn nhiều so với Python; việc tích hợp AI model cuối cùng vẫn đòi hỏi service Python riêng, làm tăng độ phức tạp kiến trúc mà không mang lại lợi ích bù đắp. \cite{aspnet, springboot}
 
 \begin{table}[H]
     \centering
