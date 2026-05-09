@@ -5,45 +5,49 @@
 \begin{longtable}{|>{\raggedright\arraybackslash}p{0.09\textwidth}|>{\raggedright\arraybackslash}p{0.205\textwidth}|>{\raggedright\arraybackslash}p{0.205\textwidth}|>{\raggedright\arraybackslash}p{0.205\textwidth}|>{\raggedright\arraybackslash}p{0.205\textwidth}|}
 \caption{Kế hoạch phân công công việc theo tuần}\\
 \hline
-\textbf{Tuần} & \textbf{Lap} & \textbf{Linh} & \textbf{Phu} & \textbf{Dang} \\
+\textbf{Giai đoạn} & \textbf{Lưu Chí Lập} & \textbf{Mã Hoàng Linh} & \textbf{Trần Xuân Phú} & \textbf{Nguyễn Hải Đăng} \\
 \hline
 \endfirsthead
 
 \hline
-\textbf{Tuần} & \textbf{Lap} & \textbf{Linh} & \textbf{Phu} & \textbf{Dang} \\
+\textbf{Giai đoạn} & \textbf{Lưu Chí Lập} & \textbf{Mã Hoàng Linh} & \textbf{Trần Xuân Phú} & \textbf{Nguyễn Hải Đăng} \\
 \hline
 \endhead
 
 \hline
 \endfoot
 
-1  & Phân tích business requirement & Phân tích business requirement & Phân tích business requirement & Phân tích business requirement \\
+12/1 -- 18/1 & Thiết lập cấu trúc Monorepo cho LingriserSpeaking, cài đặt NestJS Backend và Next.js Frontend. & Thu thập dữ liệu từ các nguồn dataset. Tổng hợp 3 tệp JSON với hơn 9500 mẫu bài viết. & Khởi tạo dự án Next.js, cấu hình TailwindCSS, PostCSS và thiết lập thư viện thành phần Shadcn UI. & Khởi tạo workspace Nx Monorepo. Thiết lập cấu trúc các Microservices cốt lõi: auth, exam, achievement, file-service và gateway. \\
 \hline
-2  & Phân tích và nghiên cứu các công nghệ Backend và Database cho mảng AI & Phân tích và nghiên cứu các công nghệ AI liên quan đến business requirement & Phân tích và nghiên cứu các công nghệ Frontend liên quan đến business requirement & Thiết kế use case \\
+19/1 -- 25/1 & Hiện thực Database Schema core bằng Postgres, cấu hình Prisma ORM và thực hiện các bản Migration đầu tiên. & Tiền xử lý dữ liệu: Lọc các mẫu không hợp lệ và chuẩn hóa dữ liệu về dạng hội thoại giữa hệ thống, người dùng và trợ lý. & Thiết lập Redux Store và các phần quản lý trạng thái cho xác thực, bài thi và người dùng. & Cấu hình các thư viện dùng chung cho kết nối cơ sở dữ liệu, ghi log và các tiện ích xử lý nghiệp vụ theo CQRS pattern, Interceptors và Filters. \\
 \hline
-3  & Thiết lập môi trường và thực nghiệm hiện thực AI bằng Python và FastAPI & So sánh performance của các model chấm điểm AI và công nghệ speech recognition & Nghiên cứu các hệ thống liên quan & Phân tích và nghiên cứu các công nghệ Backend và Database cho web application \\
+26/1 -- 1/2 & Xây dựng Module Auth và Google Auth; tích hợp xác thực đa phương thức cho hệ thống. & Cấu hình mô hình nền Phi-3-mini-4k-instruct và thiết lập kỹ thuật QLoRA với 4-bit quantization để tối ưu VRAM GPU Tesla T4. & Hiện thực hệ thống xác thực: Xây dựng biểu mẫu đăng nhập và xử lý luồng đăng nhập Email, Google OAuth. & Hiện thực Auth Service: Thiết kế mô hình dữ liệu xác thực. Xây dựng logic đăng ký, đăng nhập bằng Email và phân quyền theo vai trò, quyền hạn. \\
 \hline
-4  & Thiết kế ERD và ánh xạ EERD & Phát triển prototype cho speech recognition và đánh giá điểm Speaking & Thiết kế wireframe bằng Figma và thiết lập môi trường React & Thiết kế kiến trúc hệ thống \\
+2/2 -- 8/2 & Hiện thực hệ thống Chat và Notification; xây dựng logic gửi/nhận thông báo thời gian thực. & Phân chia tập Train/Eval. Bắt đầu tiến trình Fine-tuning (SFT) trên Kaggle GPU. Theo dõi các epoch đầu tiên để đảm bảo Loss hội tụ đúng hướng. & Xây dựng Layout chính: Hiện thực thanh điều hướng, thanh trên cùng và trang giới thiệu ban đầu. & Hiện thực API Gateway \& OAuth: Cấu hình routing tại Gateway. Tích hợp google-oauth2.strategy và cơ chế bảo mật JWT / Refresh Token. \\
 \hline
-5  & Nghiên cứu pipeline chấm điểm Speaking & Nghiên cứu các công nghệ AI cho tương tác người dùng & Phát triển giao diện login và registration & Thiết lập môi trường Backend với NestJS và Postgres \\
+9/2 -- 22/2 & \multicolumn{4}{c|}{Nghỉ tết Nguyên Đán} \\
 \hline
-6  & Nghiên cứu công nghệ RAG & Phát triển prototype AI cho spoken interaction với người dùng & Phát triển giao diện làm bài Listening và Reading & Thiết kế và hiện thực API cho Auth Service \\
+23/2 -- 1/3 & Hiện thực hóa cấu trúc dữ liệu chương trình học: Programs, Courses và Modules. & Tiếp tục Fine-tuning: Chạy huấn luyện trên Kaggle GPU. Hoàn tất huấn luyện sau 3 Epoch trong khoảng 7 giờ. Theo dõi Loss giảm dần và đạt mức khoảng 0.87. & Hiện thực giao diện luyện thi: Xây dựng màn hình làm bài, thẻ câu hỏi và logic chọn đề luyện tập. & Hiện thực Exam Service cho phần quản lý: Xây dựng các API Commands và Queries cho Admin để tạo, sửa, xóa Đề thi, Phần thi và Câu hỏi. \\
 \hline
-7  & Hiện thực RAG & Nghiên cứu công nghệ Blob Storage & Phát triển giao diện tìm kiếm bài thi Listening và Reading & Thiết kế và hiện thực Google login API \\
+2/3 -- 8/3 & Phát triển logic AI-practice và hệ thống Teacher Feedback để hỗ trợ tương tác giáo viên -- học sinh. & Xây dựng script kiểm thử. Chạy Evaluate mô hình với các metrics (MAE, RMSE, Pearson r). Tiến hành so sánh đối chuẩn (Benchmark) hiệu năng với model gpt-4o-mini. & Phát triển tính năng hỗ trợ Reading và Listening: Hiện thực chức năng tô sáng văn bản và trình phát Audio. & Hiện thực Exam Service cho phần thực hành: Xây dựng logic cho người dùng làm bài, lưu đáp án, chấm điểm tự động và theo dõi lịch sử làm bài. \\
 \hline
-8  & Nghiên cứu prompt engineering cho AI evaluation & Hiện thực Blob Storage bằng Google Cloud Storage & Phát triển giao diện hồ sơ người dùng & Thiết kế và hiện thực API cho User Service \\
+9/3 -- 15/3 & Xây dựng hệ thống Booking và tích hợp đồng bộ lịch trình với Google Calendar Service. & Khởi tạo repository ai-language-evaluator. Thiết lập writing server. Xây dựng cấu hình lõi (Core config), biến môi trường và hệ thống logging. & Xây dựng trang kết quả: Hiện thực giao diện hiển thị điểm số và đáp án chi tiết sau khi làm bài. & Tích hợp Queue: Cấu hình RabbitMQ để gửi và nhận sự kiện. Bắn các sự kiện bất đồng bộ khi người dùng nộp bài và khi hệ thống chấm điểm xong giữa các services. \\
 \hline
-9 (Thi giữa kỳ) & -- & -- & -- & -- \\
+16/3 -- 22/3 & Hiện thực tính năng phụ huynh theo dõi tiến độ học tập của con. & Hiện thực hóa logic chấm điểm: Xây dựng Prompt Builder, hàm Regex bóc tách điểm 4 tiêu chí và Overall Band. Viết bộ lọc an toàn dữ liệu đầu vào (Guardrails) như đếm số từ. & Hiện thực Dashboard cá nhân: Xây dựng biểu đồ tiến độ học tập và chức năng quản lý mục tiêu cá nhân. & Hiện thực Achievement Service: Lắng nghe event từ RabbitMQ để cấp phát Huy hiệu, tính chuỗi đăng nhập và tiến độ Mục tiêu. \\
 \hline
-10 & Hiện thực prompt instruction cho AI Speaking evaluation & Hiện thực prototype chấm điểm và feedback cho bài thi Writing & Phát triển giao diện bài thi Writing & Nghiên cứu giải pháp cho chức năng lưu trữ và tạo bài thi \\
+23/3 -- 29/3 & Hoàn thiện logic Backend cho Dashboard dành cho Student và Teacher; thực hiện Seed dữ liệu mẫu. & Kết nối RabbitMQ. Hiện thực tiến trình Consumer (lắng nghe bài làm được gửi tới) và tiến trình Publisher (gửi điểm và nhận xét về server chính). & Hiện thực tính năng học tập bổ trợ: Xây dựng hệ thống flashcard và chức năng ghi chú cá nhân. & Cấu hình MinIO/S3, xây dựng API cấp phát presigned-url để upload/download file an toàn. \\
 \hline
-11 & Hiện thực lại prototype chấm điểm bài thi Speaking và phân tích điểm yếu & Phát triển giao diện bài thi Writing & Phát triển giao diện quản lý bài thi Listening và Reading & Thiết kế và hiện thực API tạo bài thi \\
+30/3 -- 5/4 & Kiểm thử và triển khai hệ thống lên Vercel và Railway. & Đẩy mô hình GGUF lên Hugging Face Hub. Cấu hình triển khai lên Hugging Face Inference Endpoint với chế độ Scale-to-Zero để tối ưu chi phí. & Xây dựng Admin Panel: Hiện thực giao diện quản lý đề thi và duyệt đề. & Tối ưu hóa Database: Viết các SQL Triggers để xử lý cấu trúc phần thi và thay đổi tệp, đồng thời xây dựng Read Models để tối ưu truy xuất dữ liệu thống kê phức tạp. \\
 \hline
-12 & Hiện thực prototype phân tích điểm yếu cho bài thi Writing & Phát triển giao diện thông tin bài thi Listening và Reading & Phát triển giao diện upload bài thi Listening và Reading & Thiết kế và hiện thực API tìm kiếm bài thi \\
+6/4 -- 12/4 & Triển khai chạy thử cho khách hàng tại Đại học Ngoại ngữ Đà Nẵng. & Kết nối Queue: Hiện thực tiến trình lắng nghe bài làm từ RabbitMQ và tiến trình gửi điểm về server chính. & Xây dựng Admin Panel: Hiện thực giao diện quản lý người dùng và hệ thống quản lý bài viết blog. & -- \\
 \hline
-13 & Hiện thực chức năng gợi ý sau bài thi & Phát triển giao diện kết quả và đáp án bài thi Listening và Reading & Phát triển giao diện flashcard và blog & Thiết kế và hiện thực API làm bài thi và lịch sử bài thi \\
+13/4 -- 19/4 & Cải thiện từ đóng góp ý kiến của khách hàng và tiếp tục triển khai, chú trọng tính năng đánh giá bài nói Speaking của AI. & Tích hợp AI Server với Backend chính của hệ thống. Khắc phục các lỗi thực tế. & Xây dựng Admin Panel: Hiện thực tính năng cốt lõi cho phép Admin tạo đề thi, cấu trúc phần thi (sections) và câu hỏi (questions). & -- \\
 \hline
-14 & Phát triển giao diện bài thi Speaking & Phát triển giao diện kết quả bài thi Speaking & Cập nhật giao diện làm bài Listening và Reading & Thiết kế và hiện thực API quản lý bài thi \\
+20/4 -- 26/4 & Cải thiện từ đóng góp ý kiến của khách hàng và tiếp tục triển khai. & Kiểm thử toàn trình (End-to-End): Nhập bài từ giao diện Frontend $\rightarrow$ Backend $\rightarrow$ RabbitMQ $\rightarrow$ AI Server $\rightarrow$ Nhận kết quả hiển thị lên UI. Tối ưu hóa thời gian phản hồi. & Tích hợp API Backend, kiểm thử và chỉnh sửa giao diện, tính năng trên các trang đã tạo cho phù hợp với API docs. & Đóng gói hệ thống bằng Docker. Kiểm thử đầu cuối bằng E2E Test. \\
+\hline
+27/4 -- 3/5 & Kiểm thử đầu cuối bằng E2E Test, đảm bảo hệ thống hoạt động tốt và đáp ứng đúng nhu cầu khách hàng. & -- & Kiểm thử đầu cuối bằng E2E Test để đảm bảo các luồng chức năng quan trọng hoạt động ổn định. & Kiểm thử đầu cuối bằng E2E Test. \\
+\hline
+4/5 -- 10/5 & Viết báo cáo. & Viết báo cáo tổng kết đồ án. Chuẩn bị slide bảo vệ và quay video Demo tính năng. & Viết báo cáo. & Viết báo cáo. \\
 \hline
 \end{longtable}
 }

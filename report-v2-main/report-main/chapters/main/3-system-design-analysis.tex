@@ -169,33 +169,52 @@ NFR6 & Khả năng bảo trì & Mã nguồn phải tuân thủ các tiêu chuẩ
 }
 \section{Usecase của hệ thống}
 \subsection{Tổng quan}
-Các use case của hệ thống có thể được tổ chức thành ba module chính, mỗi module giải quyết một khía cạnh cốt lõi trong chức năng của nền tảng. Module thứ nhất, Authorization, Authentication, and Profile Management, bao gồm toàn bộ use case liên quan đến user registration, login, role-based access control và quản lý thông tin cá nhân. Module thứ hai, Learning Activities, bao gồm các use case về truy cập khóa học, thực hiện bài luyện tập, xem lại kết quả và tương tác với các công cụ học tập có hỗ trợ AI. Module thứ ba, Staff Activities, bao gồm các use case dành cho tác vụ quản trị, content management và monitoring.
+Hệ thống bao gồm tổng cộng 38 use case, được tổ chức thành ba nhóm chức năng chính. Bảng~\ref{tab:usecase-summary} liệt kê toàn bộ use case theo từng nhóm. Đặc tả chi tiết của từng use case được trình bày trong Phụ lục.
 
-Trong phiên bản hiện tại, phần use case chi tiết trong chương này được để trống tạm thời để phục vụ quá trình sắp xếp lại bộ use case mới. Toàn bộ use case mới hiện được đặt ở phần phụ lục, sau đó các use case chính sẽ được chọn và chuyển trở lại chương này ở bước tiếp theo.
+\begin{table}[H]
+\centering
+\caption{Danh sách use case của hệ thống}
+\label{tab:usecase-summary}
+\renewcommand{\arraystretch}{1.15}
+\small
+\begin{tabular}{|p{1.5cm}|p{6cm}|p{1.5cm}|p{5cm}|}
+\hline
+\textbf{Số hiệu} & \textbf{Tên use case} & \textbf{Số hiệu} & \textbf{Tên use case} \\
+\hline
+\multicolumn{4}{|l|}{\textit{Nhóm 1: Xác thực \& Hồ sơ}} \\
+\hline
+UC-0001 & Đăng nhập & UC-0006 & Liên kết tài khoản \\
+UC-0002 & Đăng ký & UC-0007 & Đổi mật khẩu \\
+UC-0003 & Đăng xuất & UC-0008 & Xóa thông tin xác thực \\
+UC-0004 & Xem hồ sơ cá nhân & UC-0009 & Tìm kiếm người dùng \\
+UC-0005 & Cập nhật hồ sơ cá nhân & & \\
+\hline
+\multicolumn{4}{|l|}{\textit{Nhóm 2: Hoạt động học tập}} \\
+\hline
+UC-0010 & Duyệt bài thi & UC-0031 & Quản lý thẻ ghi nhớ \\
+UC-0011 & Xem chi tiết bài thi & UC-0034 & Xem thông báo \\
+UC-0012 & Làm bài thi & UC-0035 & Nhận thông báo trực tiếp \\
+UC-0013 & Xem kết quả bài thi & UC-0036 & Đặt lịch gọi video \\
+UC-0014 & Xem lịch sử và thống kê & UC-0037 & Theo dõi tiến trình học \\
+UC-0024 & Xem huy hiệu & UC-0038 & Luyện tập speaking với AI \\
+UC-0025 & Tham gia phòng chat & & \\
+UC-0026 & Gửi tin nhắn & & \\
+UC-0029 & Xem lịch sử tin nhắn & & \\
+\hline
+\multicolumn{4}{|l|}{\textit{Nhóm 3: Quản trị hệ thống}} \\
+\hline
+UC-0015 & Tạo bài thi & UC-0022 & Quản lý người dùng \\
+UC-0016 & Chỉnh sửa bài thi & UC-0023 & Tải tệp lên \\
+UC-0017 & Xóa bài thi & UC-0027 & Tạo phòng chat \\
+UC-0018 & Phê duyệt bài thi & UC-0028 & Xóa phòng chat \\
+UC-0019 & Quản lý phần thi & UC-0030 & Cấm người dùng \\
+UC-0020 & Quản lý câu hỏi & UC-0032 & Quản lý bài viết \\
+UC-0021 & Quản lý thẻ phân loại & UC-0033 & Quản lý báo cáo \\
+\hline
+\end{tabular}
+\end{table}
 
-\subsection{Sơ đồ tổng quan các module use case}
-
-Hệ thống được chia thành hai hệ thống con chính: \textbf{Server} (hệ thống microservices phục vụ luyện thi) và \textbf{Engapp-v2} (nền tảng học tiếng Anh blended learning). Mỗi hệ thống con có bộ use case riêng biệt, được tổng hợp trong hai sơ đồ dưới đây.
-
-\begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{graphics/usecases/server}
-        \captionsetup{skip=5pt}
-        \caption{Sơ đồ Use case tổng quan --- Hệ thống Server (Microservices luyện thi)}
-        \label{UCServer}
-\end{figure}
-
-Hình~\ref{UCServer} minh họa các use case của hệ thống Server, bao gồm các module: Authentication \& Account (UC-0001 đến UC-0009), Exam Practice (UC-0010 đến UC-0014), Exam Management (UC-0015 đến UC-0020), Tag Taxonomy (UC-0021), User Management (UC-0022), File Upload (UC-0023), Achievements \& Badges (UC-0024), Live Chat (UC-0025 đến UC-0030), Flashcards (UC-0031), và Blog (UC-0032).
-
-\begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{graphics/usecases/engapp-v2}
-        \captionsetup{skip=5pt}
-        \caption{Sơ đồ Use case tổng quan --- Nền tảng Engapp-v2 (Blended Learning)}
-        \label{UCEngapp}
-\end{figure}
-
-Hình~\ref{UCEngapp} minh họa các use case của nền tảng Engapp-v2, bao gồm các module: Quản lý khóa học \& ghi danh, Đặt lịch video call với giáo viên, Theo dõi quá trình học tập, Quản lý kết nối tài khoản (học sinh -- phụ huynh -- giáo viên), Video trước/sau khóa học, và Thông báo.
+\noindent Do giới hạn về số trang, báo cáo sử dụng bảng tổng hợp thay vì sơ đồ use case tổng thể. Cách trình bày này giúp người đọc tra cứu nhanh chức năng hệ thống mà vẫn đảm bảo tính đầy đủ.
 
 \subsection{Các Use case chính}
 Hệ thống bao gồm tổng cộng 38 use case, được đánh số từ UC-0001 đến UC-0038. Phần này trình bày chi tiết các use case quan trọng nhất, tương ứng với các quy trình nghiệp vụ có biểu đồ hoạt động và biểu đồ tuần tự. Đặc tả đầy đủ các use case còn lại được trình bày trong Phụ lục.
@@ -315,17 +334,6 @@ Hình~\ref{SDLamThi} trình bày luồng tương tác giữa Client, Gateway, Ex
 \end{figure}
 
 Hình~\ref{SDQuanLyDeThi} mô tả luồng giao tiếp khi Mod/Admin tạo và quản lý đề thi. Các command (CreateExam, AddSection, AddQuestion) đi qua Gateway tới Exam Service, nơi áp dụng mẫu CQRS --- command handler xử lý ghi, query handler xử lý đọc.
-
-\subsection{Quá trình học tập}
-\begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{graphics/sequence/qua_trinh_hoc_tap}
-        \captionsetup{skip=5pt}
-        \caption{Sequence diagram --- Quá trình học tập hàng tuần}
-        \label{SDHocTap}
-\end{figure}
-
-Hình~\ref{SDHocTap} trình bày luồng giao tiếp giữa các thành phần trong chu trình học tập hàng tuần, bao gồm việc ghi nhận hoạt động vào learning history và thu thập feedback từ AI, giáo viên, và lớp học trực tiếp.
 
 \subsection{Hệ thống huy hiệu}
 \begin{figure}[H]

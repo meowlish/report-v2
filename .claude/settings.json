@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
-      "Bash(bibtex thesis *)"
+      "Bash(bibtex thesis *)",
+      "Bash(cp \"/home/culove/report-v2/new diagrams/AD he thong huy hieu.png\" graphics/activity/he_thong_huy_hieu.png)",
+      "Bash(cp \"/home/culove/report-v2/new diagrams/AD lam va cham diem bai thi.png\" graphics/activity/lam_va_cham_diem_bai_thi.png)",
+      "Bash(cp \"/home/culove/report-v2/new diagrams/AD luyen noi AI.png\" graphics/activity/luyen_noi_ai.png)",
+      "Bash(cp \"/home/culove/report-v2/new diagrams/AD qua trinh hoc tap.png\" graphics/activity/qua_trinh_hoc_tap.png)",
+      "Bash(cp \"/home/culove/report-v2/new diagrams/AD tao va quan ly de thi.png\" graphics/activity/tao_va_quan_ly_de_thi.png)"
     ]
   }
 }
