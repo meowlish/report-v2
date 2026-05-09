@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{nishanc_clean_arch}
+N.~Chathuranga, ``Clean architecture .net core --- part 1: Introduction.''
+  [Online]. Available:
+  \url{https://nishanc.medium.com/clean-architecture-net-core-part-1-introduction-e70e1c49ef6},
+  2020.
+\newblock [Accessed: May. 10, 2026].
+
 \bibitem{ielts_official}
 {IELTS}, ``About the ielts test.'' [Online]. Available:
   \url{https://www.ielts.org/about-ielts}, 2025.

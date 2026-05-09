@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pdflatex -interaction=nonstopmode thesis.tex)"
+      "Bash(pdflatex -interaction=nonstopmode thesis.tex)",
+      "Bash(bibtex thesis *)"
     ]
   }
 }

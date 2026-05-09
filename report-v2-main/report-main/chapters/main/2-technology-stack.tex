@@ -76,14 +76,14 @@ Hệ thống có hai nhóm workload rõ rệt: (1) application logic hướng ng
 \textbf{Quyết định}: Kiến trúc dual-backend kết hợp NestJS và FastAPI, mỗi framework đảm nhận đúng vai trò mà nó phát huy hiệu quả nhất:
 
 \begin{itemize}
-\item \textbf{NestJS (Application backend):} Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, payment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
+\item \textbf{NestJS (Application backend):} Xử lý toàn bộ tương tác người dùng, authentication, session management, CRUD và real-time notification. Kiến trúc modular của NestJS giúp tổ chức hệ thống thành các module độc lập (user, exam, enrollment), dễ phân chia công việc trong nhóm 4 người. TypeScript chung với Next.js frontend cho phép tái sử dụng DTO và API response type, giảm lỗi tích hợp.
 
 \item \textbf{FastAPI (AI backend):} Chuyên trách các tác vụ AI inference: speech-to-text (Whisper), phân tích phát âm (librosa, Parselmouth), chấm điểm bài luận và tự động hóa với LangChain. FastAPI được chọn vì đây là lựa chọn duy nhất cho phép truy cập trực tiếp vào toàn bộ AI/ML ecosystem của Python mà không cần lớp cầu nối. Async native của FastAPI cũng phù hợp với các inference task kéo dài (từ 5 đến 30 giây cho speech analysis).
 \end{itemize}
 
 \subsection{Phân tích và lựa chọn database}
 
-Hệ thống lưu trữ hai nhóm dữ liệu có tính chất khác nhau: (1) dữ liệu transactional có cấu trúc cố định (user, payment, permission) đòi hỏi ACID compliance nghiêm ngặt, và (2) dữ liệu nội dung giáo dục với schema thay đổi thường xuyên (câu hỏi thi, learning analytics, AI-generated content). Sự phân tách này dẫn đến kiến trúc dual-database.
+Hệ thống lưu trữ hai nhóm dữ liệu có tính chất khác nhau: (1) dữ liệu transactional có cấu trúc cố định (user, enrollment, permission) đòi hỏi ACID compliance nghiêm ngặt, và (2) dữ liệu nội dung giáo dục với schema thay đổi thường xuyên (câu hỏi thi, learning analytics, AI-generated content). Sự phân tách này dẫn đến kiến trúc dual-database.
 
 Bốn hệ quản trị database được đánh giá:
 
@@ -97,7 +97,7 @@ Bốn hệ quản trị database được đánh giá:
         \hline
         \textbf{Database} & \textbf{Loại} & \textbf{Phù hợp cho dự án} & \textbf{Hạn chế với dự án} \\
         \hline
-        \textbf{PostgreSQL} & Relational & ACID mạnh cho auth/payment; complex query cho báo cáo; JSONB cho dữ liệu bán cấu trúc & Schema migration phức tạp khi format bài thi thay đổi \\
+        \textbf{PostgreSQL} & Relational & ACID mạnh cho auth/enrollment; complex query cho báo cáo; JSONB cho dữ liệu bán cấu trúc & Schema migration phức tạp khi format bài thi thay đổi \\
         \hline
         \textbf{MongoDB} & Document NoSQL & Schema linh hoạt cho nội dung giáo dục; horizontal scaling; aggregation pipeline cho analytics & Không bảo đảm ACID đầy đủ cho transaction phức tạp \\
         \hline
@@ -113,8 +113,8 @@ Bốn hệ quản trị database được đánh giá:
 
 \textbf{PostgreSQL} cho web application lõi (NestJS backend):
 \begin{itemize}
-\item Các workflow transactional quan trọng (authentication, ghi danh, thanh toán, quản trị) đòi hỏi ACID compliance nghiêm ngặt mà PostgreSQL bảo đảm đáng tin cậy.
-\item Relational model phù hợp cho dữ liệu có quan hệ rõ ràng: user $\rightarrow$ enrollment $\rightarrow$ exam result $\rightarrow$ payment.
+\item Các workflow transactional quan trọng (authentication, ghi danh, quản trị) đòi hỏi ACID compliance nghiêm ngặt mà PostgreSQL bảo đảm đáng tin cậy.
+\item Relational model phù hợp cho dữ liệu có quan hệ rõ ràng: user $\rightarrow$ enrollment $\rightarrow$ exam result.
 \item Hỗ trợ JSONB cho phép lưu metadata linh hoạt khi cần, không bị giới hạn hoàn toàn bởi schema cứng. \cite{postgresql}
 \end{itemize}
 

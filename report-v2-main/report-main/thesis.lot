@@ -15,57 +15,57 @@
 \contentsline {table}{\numberline {3.11}{\ignorespaces Đặc tả Use case: UC-0034 Xem thông báo}}{27}{table.3.11}%
 \contentsline {table}{\numberline {3.13}{\ignorespaces Đặc tả ca sử dụng: UC-0037 Phụ huynh theo dõi tiến trình học}}{28}{table.3.13}%
 \contentsline {table}{\numberline {3.15}{\ignorespaces Đặc tả ca sử dụng: UC-0038 Luyện tập speaking với AI}}{29}{table.3.15}%
-\contentsline {table}{\numberline {3.16}{\ignorespaces Các đặc trưng then chốt}}{67}{table.3.16}%
-\contentsline {table}{\numberline {3.17}{\ignorespaces Các đặc trưng hàm ẩn cho tính ổn định dài hạn}}{68}{table.3.17}%
-\contentsline {table}{\numberline {3.18}{\ignorespaces So sánh các kiến trúc phần mềm theo các đặc trưng (1 = thấp, 5 = cao)}}{69}{table.3.18}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Các đặc trưng then chốt}}{55}{table.3.16}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces Các đặc trưng hàm ẩn cho tính ổn định dài hạn}}{56}{table.3.17}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces So sánh các kiến trúc phần mềm theo các đặc trưng (1 = thấp, 5 = cao)}}{57}{table.3.18}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {4.1}{\ignorespaces Lịch trình hoạt động học tập hằng tuần trên Lingriser}}{82}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Các vai trò người dùng trên nền tảng Lingriser}}{83}{table.4.2}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Các API endpoint của mô-đun AI Practice}}{84}{table.4.3}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Cấu hình siêu tham số huấn luyện (Hyperparameters)}}{95}{table.4.4}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces So sánh hiệu năng giữa Phi-3 SFT và GPT-4o-mini}}{96}{table.4.5}%
-\addvspace {10pt}
-\addvspace {10pt}
-\addvspace {10pt}
-\contentsline {table}{\numberline {7.1}{\ignorespaces Phương pháp kiểm thử yêu cầu phi chức năng}}{138}{table.7.1}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Kết quả kiểm thử hiệu năng với k6}}{139}{table.7.2}%
-\addvspace {10pt}
-\contentsline {table}{\numberline {8.1}{\ignorespaces So sánh lợi thế của hệ thống so với các nền tảng hiện có}}{145}{table.8.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Lịch trình hoạt động học tập hằng tuần trên Lingriser}}{68}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Các vai trò người dùng trên nền tảng Lingriser}}{69}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Các API endpoint của mô-đun AI Practice}}{70}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Cấu hình siêu tham số huấn luyện (Hyperparameters)}}{81}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces So sánh hiệu năng giữa Phi-3 SFT và GPT-4o-mini}}{82}{table.4.5}%
 \addvspace {10pt}
 \addvspace {10pt}
-\contentsline {table}{\numberline {1}{\ignorespaces Kế hoạch phân công công việc theo tuần}}{155}{table.Alph0.1}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {3}{\ignorespaces Đặc tả Use case: UC-0001 Đăng nhập}}{158}{table.Alph0.3}%
-\contentsline {table}{\numberline {5}{\ignorespaces Đặc tả Use case: UC-0002 Đăng ký}}{159}{table.Alph0.5}%
-\contentsline {table}{\numberline {7}{\ignorespaces Đặc tả Use case: UC-0003 Đăng xuất}}{160}{table.Alph0.7}%
-\contentsline {table}{\numberline {9}{\ignorespaces Đặc tả Use case: UC-0004 Xem hồ sơ cá nhân}}{161}{table.Alph0.9}%
-\contentsline {table}{\numberline {11}{\ignorespaces Đặc tả Use case: UC-0005 Cập nhật hồ sơ cá nhân}}{162}{table.Alph0.11}%
-\contentsline {table}{\numberline {13}{\ignorespaces Đặc tả Use case: UC-0006 Liên kết tài khoản}}{163}{table.Alph0.13}%
-\contentsline {table}{\numberline {15}{\ignorespaces Đặc tả Use case: UC-0007 Đổi mật khẩu}}{164}{table.Alph0.15}%
-\contentsline {table}{\numberline {17}{\ignorespaces Đặc tả Use case: UC-0008 Xóa thông tin xác thực}}{165}{table.Alph0.17}%
-\contentsline {table}{\numberline {19}{\ignorespaces Đặc tả Use case: UC-0009 Tìm kiếm người dùng}}{166}{table.Alph0.19}%
-\contentsline {table}{\numberline {21}{\ignorespaces Đặc tả Use case: UC-0010 Duyệt bài thi}}{167}{table.Alph0.21}%
-\contentsline {table}{\numberline {23}{\ignorespaces Đặc tả Use case: UC-0011 Xem chi tiết bài thi}}{168}{table.Alph0.23}%
-\contentsline {table}{\numberline {25}{\ignorespaces Đặc tả Use case: UC-0013 Xem kết quả bài thi}}{169}{table.Alph0.25}%
-\contentsline {table}{\numberline {27}{\ignorespaces Đặc tả Use case: UC-0014 Xem lịch sử và thống kê}}{170}{table.Alph0.27}%
-\contentsline {table}{\numberline {29}{\ignorespaces Đặc tả Use case: UC-0016 Chỉnh sửa bài thi}}{171}{table.Alph0.29}%
-\contentsline {table}{\numberline {31}{\ignorespaces Đặc tả Use case: UC-0017 Xóa bài thi}}{172}{table.Alph0.31}%
-\contentsline {table}{\numberline {33}{\ignorespaces Đặc tả Use case: UC-0018 Phê duyệt bài thi}}{173}{table.Alph0.33}%
-\contentsline {table}{\numberline {35}{\ignorespaces Đặc tả Use case: UC-0019 Quản lý phần thi}}{174}{table.Alph0.35}%
-\contentsline {table}{\numberline {37}{\ignorespaces Đặc tả Use case: UC-0020 Quản lý câu hỏi}}{175}{table.Alph0.37}%
-\contentsline {table}{\numberline {39}{\ignorespaces Đặc tả Use case: UC-0021 Quản lý thẻ phân loại}}{176}{table.Alph0.39}%
-\contentsline {table}{\numberline {41}{\ignorespaces Đặc tả Use case: UC-0022 Quản lý người dùng}}{177}{table.Alph0.41}%
-\contentsline {table}{\numberline {43}{\ignorespaces Đặc tả Use case: UC-0023 Tải tệp lên}}{178}{table.Alph0.43}%
-\contentsline {table}{\numberline {45}{\ignorespaces Đặc tả Use case: UC-0025 Tham gia phòng chat}}{179}{table.Alph0.45}%
-\contentsline {table}{\numberline {47}{\ignorespaces Đặc tả Use case: UC-0026 Gửi tin nhắn}}{180}{table.Alph0.47}%
-\contentsline {table}{\numberline {49}{\ignorespaces Đặc tả Use case: UC-0027 Tạo phòng chat}}{181}{table.Alph0.49}%
-\contentsline {table}{\numberline {51}{\ignorespaces Đặc tả Use case: UC-0028 Xóa phòng chat}}{182}{table.Alph0.51}%
-\contentsline {table}{\numberline {53}{\ignorespaces Đặc tả Use case: UC-0029 Xem lịch sử tin nhắn}}{183}{table.Alph0.53}%
-\contentsline {table}{\numberline {55}{\ignorespaces Đặc tả Use case: UC-0030 Cấm người dùng trong phòng chat}}{184}{table.Alph0.55}%
-\contentsline {table}{\numberline {57}{\ignorespaces Đặc tả Use case: UC-0031 Quản lý thẻ ghi nhớ}}{186}{table.Alph0.57}%
-\contentsline {table}{\numberline {59}{\ignorespaces Đặc tả Use case: UC-0032 Quản lý bài viết}}{187}{table.Alph0.59}%
-\contentsline {table}{\numberline {61}{\ignorespaces Đặc tả Use case: UC-0033 Quản lý báo cáo}}{188}{table.Alph0.61}%
-\contentsline {table}{\numberline {63}{\ignorespaces Đặc tả Use case: UC-0035 Nhận thông báo trực tiếp}}{190}{table.Alph0.63}%
-\contentsline {table}{\numberline {65}{\ignorespaces Đặc tả ca sử dụng: UC-0036 Đặt lịch gọi video qua Google Meet}}{191}{table.Alph0.65}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Phương pháp kiểm thử yêu cầu phi chức năng}}{118}{table.7.1}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Kết quả kiểm thử hiệu năng với k6}}{119}{table.7.2}%
 \addvspace {10pt}
-\contentsline {table}{\numberline {66}{\ignorespaces Danh sách test case E2E}}{194}{table.Alph0.66}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces So sánh lợi thế của hệ thống so với các nền tảng hiện có}}{125}{table.8.1}%
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {table}{\numberline {1}{\ignorespaces Kế hoạch phân công công việc theo tuần}}{135}{table.Alph0.1}%
+\addvspace {10pt}
+\contentsline {table}{\numberline {3}{\ignorespaces Đặc tả Use case: UC-0001 Đăng nhập}}{138}{table.Alph0.3}%
+\contentsline {table}{\numberline {5}{\ignorespaces Đặc tả Use case: UC-0002 Đăng ký}}{139}{table.Alph0.5}%
+\contentsline {table}{\numberline {7}{\ignorespaces Đặc tả Use case: UC-0003 Đăng xuất}}{140}{table.Alph0.7}%
+\contentsline {table}{\numberline {9}{\ignorespaces Đặc tả Use case: UC-0004 Xem hồ sơ cá nhân}}{141}{table.Alph0.9}%
+\contentsline {table}{\numberline {11}{\ignorespaces Đặc tả Use case: UC-0005 Cập nhật hồ sơ cá nhân}}{142}{table.Alph0.11}%
+\contentsline {table}{\numberline {13}{\ignorespaces Đặc tả Use case: UC-0006 Liên kết tài khoản}}{143}{table.Alph0.13}%
+\contentsline {table}{\numberline {15}{\ignorespaces Đặc tả Use case: UC-0007 Đổi mật khẩu}}{144}{table.Alph0.15}%
+\contentsline {table}{\numberline {17}{\ignorespaces Đặc tả Use case: UC-0008 Xóa thông tin xác thực}}{145}{table.Alph0.17}%
+\contentsline {table}{\numberline {19}{\ignorespaces Đặc tả Use case: UC-0009 Tìm kiếm người dùng}}{146}{table.Alph0.19}%
+\contentsline {table}{\numberline {21}{\ignorespaces Đặc tả Use case: UC-0010 Duyệt bài thi}}{147}{table.Alph0.21}%
+\contentsline {table}{\numberline {23}{\ignorespaces Đặc tả Use case: UC-0011 Xem chi tiết bài thi}}{148}{table.Alph0.23}%
+\contentsline {table}{\numberline {25}{\ignorespaces Đặc tả Use case: UC-0013 Xem kết quả bài thi}}{149}{table.Alph0.25}%
+\contentsline {table}{\numberline {27}{\ignorespaces Đặc tả Use case: UC-0014 Xem lịch sử và thống kê}}{150}{table.Alph0.27}%
+\contentsline {table}{\numberline {29}{\ignorespaces Đặc tả Use case: UC-0016 Chỉnh sửa bài thi}}{151}{table.Alph0.29}%
+\contentsline {table}{\numberline {31}{\ignorespaces Đặc tả Use case: UC-0017 Xóa bài thi}}{152}{table.Alph0.31}%
+\contentsline {table}{\numberline {33}{\ignorespaces Đặc tả Use case: UC-0018 Phê duyệt bài thi}}{153}{table.Alph0.33}%
+\contentsline {table}{\numberline {35}{\ignorespaces Đặc tả Use case: UC-0019 Quản lý phần thi}}{154}{table.Alph0.35}%
+\contentsline {table}{\numberline {37}{\ignorespaces Đặc tả Use case: UC-0020 Quản lý câu hỏi}}{155}{table.Alph0.37}%
+\contentsline {table}{\numberline {39}{\ignorespaces Đặc tả Use case: UC-0021 Quản lý thẻ phân loại}}{156}{table.Alph0.39}%
+\contentsline {table}{\numberline {41}{\ignorespaces Đặc tả Use case: UC-0022 Quản lý người dùng}}{157}{table.Alph0.41}%
+\contentsline {table}{\numberline {43}{\ignorespaces Đặc tả Use case: UC-0023 Tải tệp lên}}{158}{table.Alph0.43}%
+\contentsline {table}{\numberline {45}{\ignorespaces Đặc tả Use case: UC-0025 Tham gia phòng chat}}{159}{table.Alph0.45}%
+\contentsline {table}{\numberline {47}{\ignorespaces Đặc tả Use case: UC-0026 Gửi tin nhắn}}{160}{table.Alph0.47}%
+\contentsline {table}{\numberline {49}{\ignorespaces Đặc tả Use case: UC-0027 Tạo phòng chat}}{161}{table.Alph0.49}%
+\contentsline {table}{\numberline {51}{\ignorespaces Đặc tả Use case: UC-0028 Xóa phòng chat}}{162}{table.Alph0.51}%
+\contentsline {table}{\numberline {53}{\ignorespaces Đặc tả Use case: UC-0029 Xem lịch sử tin nhắn}}{163}{table.Alph0.53}%
+\contentsline {table}{\numberline {55}{\ignorespaces Đặc tả Use case: UC-0030 Cấm người dùng trong phòng chat}}{164}{table.Alph0.55}%
+\contentsline {table}{\numberline {57}{\ignorespaces Đặc tả Use case: UC-0031 Quản lý thẻ ghi nhớ}}{166}{table.Alph0.57}%
+\contentsline {table}{\numberline {59}{\ignorespaces Đặc tả Use case: UC-0032 Quản lý bài viết}}{167}{table.Alph0.59}%
+\contentsline {table}{\numberline {61}{\ignorespaces Đặc tả Use case: UC-0033 Quản lý báo cáo}}{168}{table.Alph0.61}%
+\contentsline {table}{\numberline {63}{\ignorespaces Đặc tả Use case: UC-0035 Nhận thông báo trực tiếp}}{170}{table.Alph0.63}%
+\contentsline {table}{\numberline {65}{\ignorespaces Đặc tả ca sử dụng: UC-0036 Đặt lịch gọi video qua Google Meet}}{171}{table.Alph0.65}%
+\addvspace {10pt}
+\contentsline {table}{\numberline {66}{\ignorespaces Danh sách test case E2E}}{174}{table.Alph0.66}%

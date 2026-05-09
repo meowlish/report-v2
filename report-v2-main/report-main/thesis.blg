@@ -18,36 +18,36 @@ A level-1 auxiliary file: chapters/back/appendix-a-contributions.aux
 A level-1 auxiliary file: chapters/back/appendix-b-usecases.aux
 A level-1 auxiliary file: chapters/back/appendix-c-e2e.aux
 Database file #1: refs/example.bib
-You've used 42 entries,
+You've used 43 entries,
             1876 wiz_defined-function locations,
-            669 strings with 9865 characters,
-and the built_in function-call counts, 6009 in all, are:
-= -- 593
-> -- 220
+            675 strings with 10096 characters,
+and the built_in function-call counts, 6145 in all, are:
+= -- 607
+> -- 224
 < -- 0
-+ -- 100
-- -- 58
-* -- 248
-:= -- 906
-add.period$ -- 84
-call.type$ -- 42
-change.case$ -- 39
++ -- 102
+- -- 59
+* -- 253
+:= -- 926
+add.period$ -- 86
+call.type$ -- 43
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 188
-empty$ -- 765
-format.name$ -- 58
-if$ -- 1524
+cite$ -- 43
+duplicate$ -- 192
+empty$ -- 783
+format.name$ -- 59
+if$ -- 1559
 int.to.chr$ -- 0
-int.to.str$ -- 42
+int.to.str$ -- 43
 missing$ -- 8
-newline$ -- 171
-num.names$ -- 42
-pop$ -- 251
+newline$ -- 175
+num.names$ -- 43
+pop$ -- 257
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 118
+skip$ -- 121
 stack$ -- 0
 substring$ -- 0
 swap$ -- 4
@@ -56,6 +56,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 42
-width$ -- 44
-write$ -- 419
+while$ -- 43
+width$ -- 45
+write$ -- 429
