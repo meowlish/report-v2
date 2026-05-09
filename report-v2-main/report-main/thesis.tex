@@ -1,0 +1,192 @@
+\documentclass{hcmut-thesis}
+
+% Khai báo bổ sung
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{silence}
+\WarningFilter{memoir}{\addtodef is marked deprecated}
+\usepackage{hyperref} 
+\usepackage{caption}
+\captionsetup{hypcap=false}
+
+% Tham khảo: https://tex.stackexchange.com/a/395416
+
+\usepackage{rotating}
+
+\usepackage[utf8]{inputenc}   % Hỗ trợ mã hóa UTF-8
+
+\usepackage{longtable}        % Hỗ trợ bảng nhiều trang
+\usepackage{ltablex}          % Hỗ trợ bảng nhiều trang với độ rộng linh hoạt
+\usepackage{pdflscape}       % Hỗ trợ xoay trang cho bảng rộng
+
+\usepackage{enumitem}         % Tùy chỉnh danh sách đánh số trong bảng
+
+\renewcommand{\arraystretch}{1.5}          % Điều chỉnh chiều cao và khoảng cách hàng
+
+\setlist[enumerate]{leftmargin=*, labelsep=0.5em} % Căn khoảng cách danh sách hợp lý
+
+\keepXColumns                               % Cần thiết để giữ cột X trong ltablex
+
+\emergencystretch=3em
+\hfuzz=15pt
+\vfuzz=30pt
+\hbadness=10000
+\vbadness=10000
+\raggedbottom
+
+
+
+\usepackage{appendix}
+
+%\usepackage{algorithm2e}
+
+%\usepackage{pdfpages}
+
+
+
+% Đổi 'draft' thành 'final' khi nộp báo cáo
+
+%\usepackage[draft,pageno]{listofsymbols}
+
+
+
+% Chỉ dùng để minh họa, bỏ khi hoàn thiện bản chính thức
+
+\usepackage{blindtext}
+
+\usepackage{float}
+
+% Cấu hình
+
+\reporttype{BÁO CÁO}
+
+\subtitle{ĐỒ ÁN TỐT NGHIỆP\\HỌC KỲ 252 NĂM HỌC 2025--2026}
+
+\title{Hệ thống hỗ trợ ôn luyện kỳ thi tiếng Anh \\ tích hợp AI}
+
+\defcouncil{KHOA HỌC VÀ KỸ THUẬT MÁY TÍNH}
+
+\supervisor{PGS. TS. QUẢN THÀNH THƠ}
+
+\stuname{
+
+    \begin{tabular}{@{}ll@{}} 
+
+        Sinh viên 1: & Lưu Chí Lập - 2211830 \\
+
+        Sinh viên 2: & Nguyễn Hải Đăng - 2210736 \\
+
+        Sinh viên 3: & Trần Xuân Phú - 2212601 \\
+
+        Sinh viên 4: & Mã Hoàng Linh - 2211853
+
+    \end{tabular}
+
+}
+
+
+
+% Lệnh tự định nghĩa
+
+\newcommand*\mean[1]{\bar{#1}}
+
+
+
+
+\begin{document}
+\renewcommand{\chaptername}{CHƯƠNG}
+\renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listtablename}{Danh mục bảng biểu}
+\renewcommand{\listfigurename}{Danh mục hình ảnh}
+
+\hypersetup{pageanchor=false}
+\coverpage%
+\clearpage
+\hypersetup{pageanchor=true}
+
+
+
+\frontmatter%
+
+
+
+%\includepdf[pages=-]{details.pdf}
+
+\include{chapters/front/1-declaration.tex}
+
+\include{chapters/front/2-acknowledge.tex}
+
+\include{chapters/front/3-abstract.tex}
+
+
+
+\tableofcontents
+
+%\clearpage
+
+%\listofsymbols%
+
+\clearpage
+
+\listoftables
+
+\clearpage
+
+\listoffigures
+
+%\clearpage
+
+%\listofalgorithms%
+
+
+
+\mainmatter%
+
+
+
+\include{chapters/main/1-introduction.tex}
+
+\include{chapters/main/2-technology-stack.tex}
+
+\include{chapters/main/3-system-design-analysis.tex}
+
+\include{chapters/main/4-ai-features.tex}
+
+\include{chapters/main/5-simulation-design.tex}
+
+\include{chapters/main/6-deployment.tex}
+
+\include{chapters/main/7-system-eval.tex}
+
+\include{chapters/main/8-work-evaluation-future-plan.tex}
+
+\include{chapters/main/9-conclusion.tex}
+
+
+
+
+
+
+
+\backmatter%
+
+\bibliographystyle{ieeetr}
+
+\bibliography{refs/example.bib}
+
+\nocite{*}
+
+\clearpage
+\appendix%
+
+% \include{chapters/back/1-design-docs.tex}
+
+\include{chapters/back/appendix-a-contributions.tex}
+
+\include{chapters/back/appendix-b-usecases.tex}
+
+\include{chapters/back/appendix-c-e2e.tex}
+
+
+
+\end{document}
