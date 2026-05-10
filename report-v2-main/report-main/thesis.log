@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  10 MAY 2026 13:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  10 MAY 2026 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1817,39 +1817,39 @@ CHƯƠNG 5.
 <graphics/ui/homepage.jpg, id=1591, 1031.65425pt x 1009.97325pt>
 File: graphics/ui/homepage.jpg Graphic file (type jpg)
 <use graphics/ui/homepage.jpg>
-Package pdftex.def Info: graphics/ui/homepage.jpg  used on input line 11.
+Package pdftex.def Info: graphics/ui/homepage.jpg  used on input line 13.
 (pdftex.def)             Requested size: 341.43307pt x 334.26309pt.
 [77]
 <graphics/ui/auth.jpg, id=1596, 1838.87pt x 1059.96pt>
 File: graphics/ui/auth.jpg Graphic file (type jpg)
 <use graphics/ui/auth.jpg>
-Package pdftex.def Info: graphics/ui/auth.jpg  used on input line 21.
+Package pdftex.def Info: graphics/ui/auth.jpg  used on input line 23.
 (pdftex.def)             Requested size: 341.43307pt x 196.80116pt.
  [78 <./graphics/ui/homepage.jpg>]
 <graphics/ui/dashboard.jpg, id=1601, 1852.9225pt x 889.3225pt>
 File: graphics/ui/dashboard.jpg Graphic file (type jpg)
 <use graphics/ui/dashboard.jpg>
-Package pdftex.def Info: graphics/ui/dashboard.jpg  used on input line 36.
+Package pdftex.def Info: graphics/ui/dashboard.jpg  used on input line 38.
 (pdftex.def)             Requested size: 341.43307pt x 163.87073pt.
  [79 <./graphics/ui/auth.jpg> <./graphics/ui/dashboard.jpg>]
 <graphics/ui/exam/exam-selection.jpg, id=1609, 1563.8425pt x 1224.575pt>
 File: graphics/ui/exam/exam-selection.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-selection.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-selection.jpg  used on input lin
-e 48.
+e 50.
 (pdftex.def)             Requested size: 341.43307pt x 267.35193pt.
 <graphics/ui/exam/exam-detail.jpg, id=1610, 1549.79pt x 1772.6225pt>
 File: graphics/ui/exam/exam-detail.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-detail.jpg>
-Package pdftex.def Info: graphics/ui/exam/exam-detail.jpg  used on input line 5
-8.
+Package pdftex.def Info: graphics/ui/exam/exam-detail.jpg  used on input line 6
+0.
 (pdftex.def)             Requested size: 341.43307pt x 390.51912pt.
  [80 <./graphics/ui/exam/exam-selection.jpg>]
 <graphics/ui/exam/exam-interface.jpg, id=1616, 1557.82pt x 1772.6225pt>
 File: graphics/ui/exam/exam-interface.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-interface.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-interface.jpg  used on input lin
-e 67.
+e 69.
 (pdftex.def)             Requested size: 341.43307pt x 388.49052pt.
  [81 <./graphics/ui/exam/exam-detail.jpg>]
 <graphics/ui/exam/exam-interface-highlight.jpg, id=1621, 1379.1525pt x 735.7487
@@ -1857,7 +1857,7 @@ e 67.
 File: graphics/ui/exam/exam-interface-highlight.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-interface-highlight.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-interface-highlight.jpg  used on
- input line 76.
+ input line 78.
 (pdftex.def)             Requested size: 341.43307pt x 182.14047pt.
  [82 <./graphics/ui/exam/exam-interface.jpg>]
 <graphics/ui/exam/exam-interface-create-flashcard.jpg, id=1626, 1476.51625pt x 
@@ -1866,13 +1866,13 @@ File: graphics/ui/exam/exam-interface-create-flashcard.jpg Graphic file (type j
 pg)
 <use graphics/ui/exam/exam-interface-create-flashcard.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-interface-create-flashcard.jpg  
-used on input line 85.
+used on input line 87.
 (pdftex.def)             Requested size: 341.43307pt x 202.85385pt.
 <graphics/ui/exam/exam-result.jpg, id=1627, 1533.73pt x 1759.57375pt>
 File: graphics/ui/exam/exam-result.jpg Graphic file (type jpg)
 <use graphics/ui/exam/exam-result.jpg>
 Package pdftex.def Info: graphics/ui/exam/exam-result.jpg  used on input line 9
-4.
+6.
 (pdftex.def)             Requested size: 341.43307pt x 391.6986pt.
 
 [83 <./graphics/ui/exam/exam-interface-highlight.jpg> <./graphics/ui/exam/exam-
@@ -1882,7 +1882,7 @@ t>
 File: graphics/ui/flashcard/flashcard-my-list.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-my-list.jpg>
 Package pdftex.def Info: graphics/ui/flashcard/flashcard-my-list.jpg  used on i
-nput line 108.
+nput line 110.
 (pdftex.def)             Requested size: 341.43307pt x 163.42291pt.
  [84 <./graphics/ui/exam/exam-result.jpg>]
 <graphics/ui/flashcard/flashcard-my-flashcard.jpg, id=1638, 1847.90375pt x 878.
@@ -1890,14 +1890,14 @@ nput line 108.
 File: graphics/ui/flashcard/flashcard-my-flashcard.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-my-flashcard.jpg>
 Package pdftex.def Info: graphics/ui/flashcard/flashcard-my-flashcard.jpg  used
- on input line 118.
+ on input line 120.
 (pdftex.def)             Requested size: 341.43307pt x 162.27846pt.
 <graphics/ui/flashcard/flashcard-create-list.jpg, id=1639, 1850.915pt x 876.273
 74pt>
 File: graphics/ui/flashcard/flashcard-create-list.jpg Graphic file (type jpg)
 <use graphics/ui/flashcard/flashcard-create-list.jpg>
 Package pdftex.def Info: graphics/ui/flashcard/flashcard-create-list.jpg  used 
-on input line 127.
+on input line 129.
 (pdftex.def)             Requested size: 341.43307pt x 161.64012pt.
 
 [85 <./graphics/ui/flashcard/flashcard-my-list.jpg> <./graphics/ui/flashcard/fl
@@ -1908,7 +1908,7 @@ File: graphics/ui/flashcard/flashcard-create-flashcard.jpg Graphic file (type j
 pg)
 <use graphics/ui/flashcard/flashcard-create-flashcard.jpg>
 Package pdftex.def Info: graphics/ui/flashcard/flashcard-create-flashcard.jpg  
-used on input line 136.
+used on input line 138.
 (pdftex.def)             Requested size: 341.43307pt x 161.54652pt.
 <graphics/ui/LingriserSpeaking/speaking-landing.jpg, id=1649, 1566.85374pt x 17
 08.3825pt>
@@ -1916,7 +1916,7 @@ File: graphics/ui/LingriserSpeaking/speaking-landing.jpg Graphic file (type jpg
 )
 <use graphics/ui/LingriserSpeaking/speaking-landing.jpg>
 Package pdftex.def Info: graphics/ui/LingriserSpeaking/speaking-landing.jpg  us
-ed on input line 147.
+ed on input line 149.
 (pdftex.def)             Requested size: 341.43307pt x 372.27403pt.
  [86 <./graphics/ui/flashcard/flashcard-create-list.jpg> <./graphics/ui/flashca
 rd/flashcard-create-flashcard.jpg>]
@@ -1924,14 +1924,14 @@ rd/flashcard-create-flashcard.jpg>]
 File: graphics/ui/profile/profile-progress.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-progress.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-progress.jpg  used on inpu
-t line 157.
+t line 159.
 (pdftex.def)             Requested size: 341.43307pt x 294.9901pt.
  [87 <./graphics/ui/LingriserSpeaking/speaking-landing.jpg>]
 <graphics/ui/profile/profile-overview.jpg, id=1662, 1549.79pt x 1635.10875pt>
 File: graphics/ui/profile/profile-overview.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-overview.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-overview.jpg  used on inpu
-t line 168.
+t line 170.
 (pdftex.def)             Requested size: 341.43307pt x 360.22403pt.
  [88 <./graphics/ui/profile/profile-progress.jpg>]
 <graphics/ui/profile/profile-achievement.jpg, id=1668, 1564.84625pt x 1436.3662
@@ -1939,61 +1939,61 @@ t line 168.
 File: graphics/ui/profile/profile-achievement.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-achievement.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-achievement.jpg  used on i
-nput line 176.
+nput line 178.
 (pdftex.def)             Requested size: 341.43307pt x 313.39342pt.
  [89 <./graphics/ui/profile/profile-overview.jpg>]
 <graphics/ui/profile/profile-history.jpg, id=1674, 1529.715pt x 1346.02875pt>
 File: graphics/ui/profile/profile-history.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-history.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-history.jpg  used on input
- line 187.
+ line 189.
 (pdftex.def)             Requested size: 341.43307pt x 300.41983pt.
  [90 <./graphics/ui/profile/profile-achievement.jpg>]
 <graphics/ui/profile/profile-add-goal.jpg, id=1679, 869.04675pt x 516.7305pt>
 File: graphics/ui/profile/profile-add-goal.jpg Graphic file (type jpg)
 <use graphics/ui/profile/profile-add-goal.jpg>
 Package pdftex.def Info: graphics/ui/profile/profile-add-goal.jpg  used on inpu
-t line 196.
+t line 198.
 (pdftex.def)             Requested size: 341.43307pt x 203.01428pt.
  [91 <./graphics/ui/profile/profile-history.jpg>]
 <graphics/ui/blog/blog-selection.jpg, id=1685, 1545.775pt x 1757.56625pt>
 File: graphics/ui/blog/blog-selection.jpg Graphic file (type jpg)
 <use graphics/ui/blog/blog-selection.jpg>
 Package pdftex.def Info: graphics/ui/blog/blog-selection.jpg  used on input lin
-e 207.
+e 209.
 (pdftex.def)             Requested size: 341.43307pt x 388.19441pt.
  [92 <./graphics/ui/profile/profile-add-goal.jpg>]
 <graphics/ui/blog/blog-example.jpg, id=1691, 1871.99374pt x 890.32625pt>
 File: graphics/ui/blog/blog-example.jpg Graphic file (type jpg)
 <use graphics/ui/blog/blog-example.jpg>
 Package pdftex.def Info: graphics/ui/blog/blog-example.jpg  used on input line 
-216.
+218.
 (pdftex.def)             Requested size: 341.43307pt x 162.38469pt.
  [93 <./graphics/ui/blog/blog-selection.jpg>]
 <graphics/ui/chat/chat.jpg, id=1697, 1592.95125pt x 880.28876pt>
 File: graphics/ui/chat/chat.jpg Graphic file (type jpg)
 <use graphics/ui/chat/chat.jpg>
-Package pdftex.def Info: graphics/ui/chat/chat.jpg  used on input line 226.
+Package pdftex.def Info: graphics/ui/chat/chat.jpg  used on input line 228.
 (pdftex.def)             Requested size: 341.43307pt x 188.6808pt.
  [94 <./graphics/ui/blog/blog-example.jpg> <./graphics/ui/chat/chat.jpg>]
 <graphics/ui/admin/admin-dashboard.jpg, id=1705, 1848.9075pt x 881.2925pt>
 File: graphics/ui/admin/admin-dashboard.jpg Graphic file (type jpg)
 <use graphics/ui/admin/admin-dashboard.jpg>
 Package pdftex.def Info: graphics/ui/admin/admin-dashboard.jpg  used on input l
-ine 239.
+ine 241.
 (pdftex.def)             Requested size: 341.43307pt x 162.7407pt.
 <graphics/ui/admin/exam-creation.jpg, id=1706, 1854.93pt x 880.28876pt>
 File: graphics/ui/admin/exam-creation.jpg Graphic file (type jpg)
 <use graphics/ui/admin/exam-creation.jpg>
 Package pdftex.def Info: graphics/ui/admin/exam-creation.jpg  used on input lin
-e 256.
+e 258.
 (pdftex.def)             Requested size: 341.43307pt x 162.03151pt.
  [95 <./graphics/ui/admin/admin-dashboard.jpg>]
 <graphics/ui/admin/exam-management.jpg, id=1713, 1584.92125pt x 1043.9pt>
 File: graphics/ui/admin/exam-management.jpg Graphic file (type jpg)
 <use graphics/ui/admin/exam-management.jpg>
 Package pdftex.def Info: graphics/ui/admin/exam-management.jpg  used on input l
-ine 270.
+ine 272.
 (pdftex.def)             Requested size: 341.43307pt x 224.88013pt.
  [96 <./graphics/ui/admin/exam-creation.jpg> <./graphics/ui/admin/exam-manageme
 nt.jpg>]
@@ -2001,13 +2001,13 @@ nt.jpg>]
 File: graphics/ui/admin/blog-management.jpg Graphic file (type jpg)
 <use graphics/ui/admin/blog-management.jpg>
 Package pdftex.def Info: graphics/ui/admin/blog-management.jpg  used on input l
-ine 285.
+ine 287.
 (pdftex.def)             Requested size: 341.43307pt x 212.17644pt.
 <graphics/ui/admin/exam-approval.jpg, id=1722, 1584.92125pt x 984.67876pt>
 File: graphics/ui/admin/exam-approval.jpg Graphic file (type jpg)
 <use graphics/ui/admin/exam-approval.jpg>
 Package pdftex.def Info: graphics/ui/admin/exam-approval.jpg  used on input lin
-e 297.
+e 299.
 (pdftex.def)             Requested size: 341.43307pt x 212.1225pt.
 
 [97 <./graphics/ui/admin/blog-management.jpg>]
@@ -2015,7 +2015,7 @@ e 297.
 File: graphics/ui/admin/user-management.jpg Graphic file (type jpg)
 <use graphics/ui/admin/user-management.jpg>
 Package pdftex.def Info: graphics/ui/admin/user-management.jpg  used on input l
-ine 309.
+ine 311.
 (pdftex.def)             Requested size: 341.43307pt x 194.54668pt.
  [98 <./graphics/ui/admin/exam-approval.jpg> <./graphics/ui/admin/user-manageme
 nt.jpg>]
@@ -2024,26 +2024,26 @@ nt.jpg>]
 File: graphics/ui/admin/norify-management.jpg Graphic file (type jpg)
 <use graphics/ui/admin/norify-management.jpg>
 Package pdftex.def Info: graphics/ui/admin/norify-management.jpg  used on input
- line 322.
+ line 324.
 (pdftex.def)             Requested size: 341.43307pt x 359.15952pt.
  [99 <./graphics/ui/admin/norify-management.jpg>]
 <graphics/lingriser/dashboard.png, id=1742, 1368.11125pt x 731.73375pt>
 File: graphics/lingriser/dashboard.png Graphic file (type png)
 <use graphics/lingriser/dashboard.png>
 Package pdftex.def Info: graphics/lingriser/dashboard.png  used on input line 3
-41.
+43.
 (pdftex.def)             Requested size: 341.43307pt x 182.60919pt.
 <graphics/lingriser/mentor.png, id=1743, 939.51pt x 689.57625pt>
 File: graphics/lingriser/mentor.png Graphic file (type png)
 <use graphics/lingriser/mentor.png>
-Package pdftex.def Info: graphics/lingriser/mentor.png  used on input line 352.
+Package pdftex.def Info: graphics/lingriser/mentor.png  used on input line 354.
 
 (pdftex.def)             Requested size: 409.71692pt x 300.72083pt.
  [100 <./graphics/lingriser/dashboard.png>]
 <graphics/lingriser/parents.png, id=1749, 671.50874pt x 663.47874pt>
 File: graphics/lingriser/parents.png Graphic file (type png)
 <use graphics/lingriser/parents.png>
-Package pdftex.def Info: graphics/lingriser/parents.png  used on input line 363
+Package pdftex.def Info: graphics/lingriser/parents.png  used on input line 365
 .
 (pdftex.def)             Requested size: 400.61703pt x 395.82257pt.
  [101 <./graphics/lingriser/mentor.png>]
@@ -2051,13 +2051,13 @@ Package pdftex.def Info: graphics/lingriser/parents.png  used on input line 363
 File: graphics/lingriser/programs.png Graphic file (type png)
 <use graphics/lingriser/programs.png>
 Package pdftex.def Info: graphics/lingriser/programs.png  used on input line 37
-4.
+6.
 (pdftex.def)             Requested size: 409.71692pt x 238.04193pt.
  [102 <./graphics/lingriser/parents.png>]
 <graphics/lingriser/admin.png, id=1761, 1349.04pt x 651.43375pt>
 File: graphics/lingriser/admin.png Graphic file (type png)
 <use graphics/lingriser/admin.png>
-Package pdftex.def Info: graphics/lingriser/admin.png  used on input line 385.
+Package pdftex.def Info: graphics/lingriser/admin.png  used on input line 387.
 (pdftex.def)             Requested size: 341.43307pt x 164.86592pt.
  [103 <./graphics/lingriser/programs.png>]) [104 <./graphics/lingriser/admin.pn
 g>]
@@ -2401,7 +2401,7 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Here is how much of TeX's memory you used:
  33816 strings out of 469515
  630084 string characters out of 5470807
- 1290062 words of memory out of 5000000
+ 1290122 words of memory out of 5000000
  60526 multiletter control sequences out of 15000+600000
  714271 words of font info for 163 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -2417,7 +2417,7 @@ wvn/utmbi8v.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/
 culove/texmf/fonts/type1/vntex/urwvn/utmr8v.pfb></usr/share/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb></home/culove/texmf/fonts/type1/vntex/urwvn/utmri8v.p
 fb></home/culove/texmf/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on thesis.pdf (202 pages, 29468669 bytes).
+Output written on thesis.pdf (202 pages, 29471186 bytes).
 PDF statistics:
  3074 PDF objects out of 3580 (max. 8388607)
  2710 compressed objects within 28 object streams
