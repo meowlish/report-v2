@@ -13,7 +13,11 @@
       "Bash(awk 'NR>=472' /home/culove/report-v2/report-v2-main/report-main/chapters/main/3-system-design-analysis.tex)",
       "Bash(cp \"/home/culove/report-v2/new diagrams/UC xac thuc va ho so.png\" \"/home/culove/report-v2/report-v2-main/report-main/graphics/usecases/UC-xac-thuc-va-ho-so.png\")",
       "Bash(cp \"/home/culove/report-v2/new diagrams/UC hoat dong hoc tap.png\" \"/home/culove/report-v2/report-v2-main/report-main/graphics/usecases/UC-hoat-dong-hoc-tap.png\")",
-      "Bash(cp \"/home/culove/report-v2/new diagrams/UC quan tri he thong.png\" \"/home/culove/report-v2/report-v2-main/report-main/graphics/usecases/UC-quan-tri-he-thong.png\")"
+      "Bash(cp \"/home/culove/report-v2/new diagrams/UC quan tri he thong.png\" \"/home/culove/report-v2/report-v2-main/report-main/graphics/usecases/UC-quan-tri-he-thong.png\")",
+      "Bash(cd /home/culove/report-v2/report-v2-main/report-main && rm -f thesis.aux thesis.log thesis.toc thesis.lof thesis.lot thesis.out thesis.bbl thesis.blg thesis.pdf chapters/**/*.aux)"
+    ],
+    "additionalDirectories": [
+      "/home/culove/report-v2/report-v2-main/report-main"
     ]
   }
 }

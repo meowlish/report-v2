@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  10 MAY 2026 13:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.4.30)  10 MAY 2026 13:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2072,13 +2072,13 @@ CHƯƠNG 6.
 
 
 ]
-<graphics/architecture/Deployment.png, id=1782, 1186.4325pt x 713.66624pt>
-File: graphics/architecture/Deployment.png Graphic file (type png)
-<use graphics/architecture/Deployment.png>
-Package pdftex.def Info: graphics/architecture/Deployment.png  used on input li
-ne 32.
-(pdftex.def)             Requested size: 455.24411pt x 273.84216pt.
- [106] [107 <./graphics/architecture/Deployment.png>] [108]) [109]
+<graphics/architecture/Deployment1.png, id=1782, 2009.5075pt x 993.7125pt>
+File: graphics/architecture/Deployment1.png Graphic file (type png)
+<use graphics/architecture/Deployment1.png>
+Package pdftex.def Info: graphics/architecture/Deployment1.png  used on input l
+ine 32.
+(pdftex.def)             Requested size: 455.24411pt x 225.1071pt.
+ [106] [107 <./graphics/architecture/Deployment1.png>] [108]) [109]
 \openout2 = `chapters/main/7-system-eval.aux'.
 
 
@@ -2400,8 +2400,8 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  33816 strings out of 469515
- 630073 string characters out of 5470807
- 1290123 words of memory out of 5000000
+ 630084 string characters out of 5470807
+ 1290062 words of memory out of 5000000
  60526 multiletter control sequences out of 15000+600000
  714271 words of font info for 163 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -2417,7 +2417,7 @@ wvn/utmbi8v.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></home/
 culove/texmf/fonts/type1/vntex/urwvn/utmr8v.pfb></usr/share/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb></home/culove/texmf/fonts/type1/vntex/urwvn/utmri8v.p
 fb></home/culove/texmf/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on thesis.pdf (202 pages, 29451788 bytes).
+Output written on thesis.pdf (202 pages, 29468669 bytes).
 PDF statistics:
  3074 PDF objects out of 3580 (max. 8388607)
  2710 compressed objects within 28 object streams
